@@ -1,0 +1,18 @@
+{
+  "name": "balance-dossier-watcher",
+  "version": "1.0.0",
+  "description": "Balance Druid Dossier - In-game combat tracker for Windows",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watcher.ts",
+    "build:bundle": "esbuild watcher.ts --format=cjs --platform=node --bundle --outfile=dist/watcher.cjs --external:fsevents",
+    "build:sea-config": "node -e \"require('fs').writeFileSync('dist/sea-config.json', JSON.stringify({main:'watcher.cjs',output:'sea-prep.blob',disableExperimentalSEAWarning:true}))\"",
+    "build:sea-blob": "cd dist && node --experimental-sea-config sea-config.json",
+    "build:exe": "node scripts/build-exe.mjs",
+    "build": "npm run build:bundle && npm run build:exe"
+  },
+  "dependencies": {
+    "tsx": "^4.0.0",
+    "esbuild": "^0.25.0"
+  }
+}

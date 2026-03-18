@@ -12,10 +12,7 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import { join } from 'path';
 
 // Detect platform and set WoW paths
 const isWindows = process.platform === 'win32';
@@ -38,7 +35,8 @@ const WOW_PATHS = isWindows
     '/Applications/World of Warcraft/_retail_/WTF/Account',
   ];
 
-const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'live-session.json');
+// Output next to the watcher executable, or to the app's data dir if run from source
+const OUTPUT_PATH = join(process.cwd(), 'live-session.json');
 const ADDON_SV_FILE = 'BalanceDossier.lua';
 
 // Find the SavedVariables file
