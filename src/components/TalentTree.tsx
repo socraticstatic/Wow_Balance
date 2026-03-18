@@ -12,63 +12,65 @@ interface TalentNode {
   row: number;        // 0-10
   col: number;        // 0-6
   type: 'passive' | 'active' | 'choice';
+  selected?: boolean; // true = picked in the recommended AoE build
+  pick?: string;      // For choice nodes: which option to pick
 }
 
 // Real Midnight 12.0.1 Balance spec tree from Wowhead
+// selected = true means this talent is picked in the recommended Elune's Chosen AoE M+ build.
+// pick = which side of a choice node to take.
 const specTalents: TalentNode[] = [
   // Row 0 - Entry
-  { name: 'Eclipse', row: 0, col: 3, type: 'passive' },
+  { name: 'Eclipse', row: 0, col: 3, type: 'active', selected: true },
   // Row 1
-  { name: 'Shooting Stars', row: 1, col: 2, type: 'passive' },
-  { name: 'Solar Beam', row: 1, col: 4, type: 'active' },
+  { name: 'Shooting Stars', row: 1, col: 2, type: 'passive', selected: true },
+  { name: 'Solar Beam', row: 1, col: 4, type: 'active', selected: true },
   // Row 2
-  { name: 'Solstice', row: 2, col: 1, type: 'passive' },
-  { name: 'Force of Nature', row: 2, col: 3, type: 'active' },
-  { name: 'Twin Moons', row: 2, col: 5, type: 'passive' },
+  { name: 'Solstice', row: 2, col: 1, type: 'passive', selected: true },
+  { name: 'Astral Smolder', row: 2, col: 3, type: 'passive', selected: true },
+  { name: 'Twin Moons', row: 2, col: 5, type: 'passive', selected: true },
   // Row 3
-  { name: 'Improved Eclipse', row: 3, col: 0, type: 'passive' },
-  { name: 'Nature\'s Balance', row: 3, col: 2, type: 'passive' },
-  { name: 'Umbral Intensity', row: 3, col: 4, type: 'passive' },
-  { name: 'Aetherial Kindling / Meteor Storm', row: 3, col: 6, type: 'choice' },
+  { name: 'Improved Eclipse', row: 3, col: 0, type: 'passive', selected: false },
+  { name: 'Nature\'s Balance', row: 3, col: 2, type: 'passive', selected: false },
+  { name: 'Umbral Intensity', row: 3, col: 4, type: 'passive', selected: false },
+  { name: 'Aetherial Kindling / Meteor Storm', row: 3, col: 6, type: 'choice', selected: true, pick: 'Aetherial Kindling' },
   // Row 4
-  { name: 'Wild Surges', row: 4, col: 1, type: 'passive' },
-  { name: 'Celestial Alignment', row: 4, col: 3, type: 'active' },
-  { name: 'Soul of the Forest', row: 4, col: 5, type: 'passive' },
+  { name: 'Wild Surges', row: 4, col: 1, type: 'passive', selected: true },
+  { name: 'Celestial Alignment', row: 4, col: 3, type: 'active', selected: true },
+  { name: 'Soul of the Forest', row: 4, col: 5, type: 'passive', selected: true },
   // Row 5
-  { name: 'Sunseeker Mushroom / Wild Mushroom', row: 5, col: 0, type: 'choice' },
-  { name: 'Nature\'s Grace / Elune\'s Challenge', row: 5, col: 1, type: 'choice' },
-  { name: 'Stellar Amplification', row: 5, col: 2, type: 'passive' },
-  { name: 'Whirling Stars / Orbital Strike', row: 5, col: 3, type: 'choice' },
-  { name: 'Touch the Cosmos', row: 5, col: 4, type: 'passive' },
-  { name: 'Meteorites', row: 5, col: 6, type: 'passive' },
+  { name: 'Sunseeker Mushroom / Wild Mushroom', row: 5, col: 0, type: 'choice', selected: true, pick: 'Sunseeker Mushroom' },
+  { name: 'Nature\'s Grace / Elune\'s Challenge', row: 5, col: 1, type: 'choice', selected: true, pick: 'Nature\'s Grace' },
+  { name: 'Stellar Amplification', row: 5, col: 2, type: 'passive', selected: false },
+  { name: 'Whirling Stars / Orbital Strike', row: 5, col: 3, type: 'choice', selected: true, pick: 'Orbital Strike' },
+  { name: 'Touch the Cosmos', row: 5, col: 4, type: 'passive', selected: true },
+  { name: 'Meteorites', row: 5, col: 6, type: 'passive', selected: false },
   // Row 6
-  { name: 'Cosmic Rapidity', row: 6, col: 1, type: 'passive' },
-  { name: 'Celestial Fire', row: 6, col: 2, type: 'active' },
-  { name: 'Astral Communion', row: 6, col: 3, type: 'active' },
-  { name: 'Hail of Stars', row: 6, col: 4, type: 'passive' },
-  { name: 'Starlord', row: 6, col: 5, type: 'passive' },
+  { name: 'Cosmic Rapidity', row: 6, col: 1, type: 'passive', selected: true },
+  { name: 'Celestial Fire', row: 6, col: 2, type: 'active', selected: false },
+  { name: 'Astral Communion', row: 6, col: 3, type: 'active', selected: false },
+  { name: 'Hail of Stars', row: 6, col: 4, type: 'passive', selected: false },
+  { name: 'Starlord', row: 6, col: 5, type: 'passive', selected: true },
   // Row 7
-  { name: 'Sculpt the Stars', row: 7, col: 1, type: 'passive' },
-  { name: 'Balance of All Things', row: 7, col: 2, type: 'passive' },
-  { name: 'Total Eclipse', row: 7, col: 3, type: 'passive' },
-  { name: 'Starweaver / Rattle the Stars', row: 7, col: 4, type: 'choice' },
-  { name: 'Power of Goldrinn', row: 7, col: 5, type: 'passive' },
+  { name: 'Sculpt the Stars', row: 7, col: 1, type: 'passive', selected: false },
+  { name: 'Balance of All Things', row: 7, col: 2, type: 'passive', selected: true },
+  { name: 'Total Eclipse', row: 7, col: 3, type: 'passive', selected: false },
+  { name: 'Starweaver / Rattle the Stars', row: 7, col: 4, type: 'choice', selected: true, pick: 'Rattle the Stars' },
+  { name: 'Power of Goldrinn', row: 7, col: 5, type: 'passive', selected: true },
   // Row 8 - Major choices
-  { name: 'Sundered Firmament / Orbit Breaker', row: 8, col: 1, type: 'choice' },
-  { name: 'Incarnation: Chosen of Elune / Convoke the Spirits', row: 8, col: 3, type: 'choice' },
-  { name: 'Fury of Elune / New Moon', row: 8, col: 5, type: 'choice' },
+  { name: 'Sundered Firmament / Orbit Breaker', row: 8, col: 1, type: 'choice', selected: false },
+  { name: 'Incarnation / Convoke', row: 8, col: 3, type: 'choice', selected: true, pick: 'Incarnation: Chosen of Elune' },
+  { name: 'Fury of Elune / New Moon', row: 8, col: 5, type: 'choice', selected: true, pick: 'Fury of Elune' },
   // Row 9
-  { name: 'Umbral Embrace', row: 9, col: 1, type: 'passive' },
-  { name: 'Harmony of the Heavens', row: 9, col: 2, type: 'passive' },
-  { name: 'Orbital Bombardment', row: 9, col: 3, type: 'passive' },
-  { name: 'Elune\'s Guidance', row: 9, col: 4, type: 'passive' },
-  { name: 'Radiant Moonlight', row: 9, col: 5, type: 'passive' },
+  { name: 'Umbral Embrace', row: 9, col: 1, type: 'passive', selected: true },
+  { name: 'Harmony of the Heavens', row: 9, col: 2, type: 'passive', selected: true },
+  { name: 'Orbital Bombardment', row: 9, col: 3, type: 'passive', selected: false },
+  { name: 'Elune\'s Guidance', row: 9, col: 4, type: 'passive', selected: true },
+  { name: 'Radiant Moonlight', row: 9, col: 5, type: 'passive', selected: true },
   // Row 10 - Capstones
-  { name: 'Astral Smolder', row: 10, col: 1, type: 'passive' },
-  { name: 'Lunar Shrapnel / Elune\'s Wrath', row: 10, col: 2, type: 'choice' },
-  { name: 'the Eternal Moon', row: 10, col: 3, type: 'passive' },
-  { name: 'Waning Twilight / Denizen of the Dream', row: 10, col: 4, type: 'choice' },
-  { name: 'Radiant Moonlight', row: 10, col: 5, type: 'passive' },
+  { name: 'Waning Twilight / Denizen of the Dream', row: 10, col: 2, type: 'choice', selected: true, pick: 'Waning Twilight' },
+  { name: 'The Eternal Moon', row: 10, col: 3, type: 'passive', selected: false },
+  { name: 'Lunar Shrapnel / Elune\'s Wrath', row: 10, col: 4, type: 'choice', selected: false },
 ];
 
 // Connections between adjacent rows
@@ -100,29 +102,20 @@ interface Props {
   buildName: string;
 }
 
-// Check if a talent name matches any active keystone (handles choice nodes)
-function isNodeActive(talentName: string, activeKeystones: string[]): boolean {
-  // Direct match
-  if (activeKeystones.includes(talentName)) return true;
-  // Choice node: check both halves
-  if (talentName.includes('/')) {
-    const parts = talentName.split('/').map(s => s.trim());
-    return parts.some(p => activeKeystones.includes(p));
-  }
-  // Check if any keystone is a substring (e.g., "Incarnation: Chosen of Elune" in "Incarnation: Chosen of Elune / Convoke the Spirits")
-  return activeKeystones.some(k => talentName.includes(k) || k.includes(talentName));
+// Use the node's built-in `selected` property
+function isNodeActive(node: TalentNode): boolean {
+  return node.selected === true;
 }
 
-// Get the first icon-friendly name from a potentially slashed choice name
-function getIconName(talentName: string, activeKeystones: string[]): string {
-  if (!talentName.includes('/')) return talentName;
-  const parts = talentName.split('/').map(s => s.trim());
-  // Prefer the active choice
-  const activePart = parts.find(p => activeKeystones.some(k => k.includes(p) || p.includes(k)));
-  return activePart || parts[0];
+// Get the icon name - for choice nodes, use the `pick` value if selected
+function getIconName(node: TalentNode): string {
+  if (node.pick && node.selected) return node.pick;
+  if (!node.name.includes('/')) return node.name;
+  const parts = node.name.split('/').map(s => s.trim());
+  return node.pick || parts[0];
 }
 
-export default function TalentTree({ activeKeystones, buildName }: Props) {
+export default function TalentTree({ buildName }: Props) {
   const [hovered, setHovered] = useState<number | null>(null);
   const [entered, setEntered] = useState(false);
 
@@ -147,7 +140,7 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
     y: padY + row * gapY + nodeSize / 2,
   });
 
-  const activeCount = specTalents.filter((_, i) => isNodeActive(specTalents[i].name, activeKeystones)).length;
+  const activeCount = specTalents.filter((_, i) => isNodeActive(specTalents[i])).length;
 
   return (
     <div className="relative">
@@ -187,7 +180,7 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
             if (!from || !to) return null;
             const p1 = pos(from.row, from.col);
             const p2 = pos(to.row, to.col);
-            const bothActive = isNodeActive(from.name, activeKeystones) && isNodeActive(to.name, activeKeystones);
+            const bothActive = isNodeActive(from) && isNodeActive(to);
             const delay = (from.row + to.row) * 30;
 
             return (
@@ -205,12 +198,12 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
           {/* Nodes */}
           {specTalents.map((t, idx) => {
             const p = pos(t.row, t.col);
-            const active = isNodeActive(t.name, activeKeystones);
+            const active = isNodeActive(t);
             const isHov = hovered === idx;
             const isChoice = t.type === 'choice';
             const delay = t.row * 60 + t.col * 15;
             const iconSz = 24;
-            const iconName = getIconName(t.name, activeKeystones);
+            const iconName = getIconName(t);
 
             return (
               <g
@@ -291,8 +284,8 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
       {hovered !== null && (() => {
         const t = specTalents[hovered];
         if (!t) return null;
-        const active = isNodeActive(t.name, activeKeystones);
-        const iconName = getIconName(t.name, activeKeystones);
+        const active = isNodeActive(t);
+        const iconName = getIconName(t);
         const displayName = t.name.includes('/') ? t.name.split('/').map(s => s.trim()).join('  /  ') : t.name;
 
         return (
