@@ -2,7 +2,7 @@ import SectionHeading from '../components/SectionHeading';
 import MilestoneTimeline from '../components/MilestoneTimeline';
 import { useReveal } from '../hooks/useReveal';
 import { getResetInfo } from '../utils/weeklyReset';
-import { bisGear, builds, enchantsGems } from '../data';
+import { bisGear, enchantsGems } from '../data';
 import characterData from '@data/my-character-clean.json';
 
 /*
@@ -290,7 +290,7 @@ export default function Progression() {
   const r1 = useReveal();
   const r2 = useReveal();
   const r3 = useReveal();
-  const { recs, avgIlvl, charLevel, phase, missingEnchants } = analyzeProgression();
+  const { recs, avgIlvl, charLevel, phase } = analyzeProgression();
 
   const phaseInfo = phaseLabels[phase] || phaseLabels.leveling;
   const criticalCount = recs.filter(r => r.priority === 'critical').length;

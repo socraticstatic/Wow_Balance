@@ -100,7 +100,6 @@ export const balanceDruidIcons: Record<string, string> = {
   'Celestial Fire': 'spell_nature_faeriefire',
   'Hail of Stars': 'ability_druid_starfall',
   'Sculpt the Stars': 'spell_arcane_arcanetorrent',
-  'Total Eclipse': 'ability_druid_eclipse',
   'Sundered Firmament': 'ability_druid_dreamstate',
   'Harmony of the Heavens': 'spell_nature_natureguardian',
   'Orbital Bombardment': 'artifactability_balancedruid_fullmoon',
@@ -112,10 +111,6 @@ export const balanceDruidIcons: Record<string, string> = {
   'Sunseeker Mushroom': 'druid_ability_wildmushroom_a',
   'Nature\'s Grace': 'spell_nature_naturetouchgrow',
   'Elune\'s Challenge': 'ability_druid_lunarguidance',
-  'Convoke the Spirits': 'ability_druid_flightform',
-  'Denizen of the Dream': 'inv_misc_herb_talandrasrose',
-  'Waning Twilight': 'ability_druid_lunarguidance',
-
   // ── Identity ──
   'Balance': 'spell_nature_starfall',
   'Druid': 'spell_druid_thrash',
