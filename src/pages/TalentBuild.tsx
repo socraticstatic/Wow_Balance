@@ -2,8 +2,10 @@ import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { useReveal } from '../hooks/useReveal';
 
-// Wowhead's recommended Elune's Chosen M+ build - verified 2026-03-18
-const IMPORT_STRING = 'CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgxMLzsYmZmlxyMLjZGshBAjltZGMmtRgJAAAALMzMzgNjZMGAAmZgB';
+// Pure AoE DPS: Elune's Chosen Raid build - maximum multi-target damage, zero utility tax.
+// This is NOT the M+ build (which wastes points on Solar Beam CD, Ursol's, etc.)
+// This is the build for someone who wants to be an AoE DPS god.
+const IMPORT_STRING = 'CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNjxMDwsMzMzMYYmZMzyMLmZGLjlZWGjBLYAwYZbmBjZbEYCAAAwiZmZmBbGGjBAgZGYA';
 
 interface TalentRow {
   name: string;
