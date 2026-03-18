@@ -1,0 +1,589 @@
+{
+  "lastScan": "2026-03-18T17:32:26.759Z",
+  "totalAddons": 14,
+  "essential": [
+    {
+      "name": "WeakAuras",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/weakauras-2",
+      "category": "Framework",
+      "description": "The addon framework. Every Balance Druid WA pack requires this. Non-negotiable.",
+      "downloads": 200000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "framework",
+        "essential"
+      ]
+    },
+    {
+      "name": "Details! Damage Meter",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/details",
+      "category": "Damage Meter",
+      "description": "Real-time DPS tracking. See your Starfall damage breakdown per pull. Essential for measuring AoE performance.",
+      "downloads": 150000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "damage",
+        "meter",
+        "essential"
+      ]
+    },
+    {
+      "name": "BigWigs / LittleWigs",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/big-wigs",
+      "category": "Boss Mods",
+      "description": "Boss and dungeon timers. Know when adds spawn so you can pool AP. Critical for CD mapping.",
+      "downloads": 90000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "boss",
+        "timers",
+        "mythicplus",
+        "raid"
+      ]
+    },
+    {
+      "name": "Plater Nameplates",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/plater-nameplates",
+      "category": "Nameplates",
+      "description": "Shows DoT timers on enemy nameplates. See Moonfire/Sunfire duration on every target. Critical for multi-DoT management.",
+      "downloads": 80000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "nameplates",
+        "dots",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Oi Balance Druid (Luxthos)",
+      "source": "Wago.io",
+      "url": "https://wago.io/LuxthosBalanceDruid",
+      "category": "WeakAura Pack",
+      "description": "Complete Balance Druid WA pack. Eclipse tracker, AP bar, Starfall timer, DoT tracker, cooldown display. The most popular boomkin WA.",
+      "downloads": 500000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "complete",
+        "eclipse",
+        "starfall",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Eclipse Bar (Animated)",
+      "source": "Wago.io",
+      "url": "https://wago.io/eclipse-bar",
+      "category": "WeakAura",
+      "description": "Animated Eclipse state tracker. Shows current Eclipse, charges remaining, and optimal transition timing.",
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "eclipse",
+        "tracker"
+      ]
+    },
+    {
+      "name": "Multi-DoT Tracker",
+      "source": "Wago.io",
+      "url": "https://wago.io/balance-dots",
+      "category": "WeakAura",
+      "description": "Track Moonfire and Sunfire on all targets. Shows remaining duration, targets missing DoTs. Critical for Shooting Stars procs.",
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "dots",
+        "moonfire",
+        "sunfire",
+        "aoe"
+      ]
+    }
+  ],
+  "recommended": [
+    {
+      "name": "Method Dungeon Tools (MDT)",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/method-dungeon-tools",
+      "category": "M+ Routes",
+      "description": "Plan M+ routes with pull-by-pull mapping. Know which pulls get your CDs. The foundation of AoE planning.",
+      "downloads": 55000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "routes",
+        "mythicplus",
+        "planning"
+      ]
+    },
+    {
+      "name": "Hekili Priority Helper",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/hekili",
+      "category": "Rotation",
+      "description": "Real-time rotation suggestions. Shows when to Starfall vs Starsurge based on target count. The training wheels for AoE mastery.",
+      "downloads": 35000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "rotation",
+        "priority",
+        "learning"
+      ]
+    },
+    {
+      "name": "Starfall Range Indicator",
+      "source": "Wago.io",
+      "url": "https://wago.io/starfall-range",
+      "category": "WeakAura",
+      "description": "Visual indicator showing Starfall radius relative to your position. Know exactly which mobs are in your Starfall. AoE essential.",
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "starfall",
+        "range",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Simulationcraft",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/simulationcraft",
+      "category": "Optimization",
+      "description": "Export your character to SimC for exact stat weights and DPS simulations. Know your real numbers.",
+      "downloads": 42000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "helpful",
+      "tags": [
+        "sim",
+        "optimization",
+        "stats"
+      ]
+    },
+    {
+      "name": "Raidbots Client",
+      "source": "raidbots.com",
+      "url": "https://www.raidbots.com/",
+      "category": "Optimization",
+      "description": "Cloud-based simming. Top Gear, Droptimizer, stat weight analysis. The companion to SimC addon.",
+      "downloads": 28000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "helpful",
+      "tags": [
+        "sim",
+        "optimization",
+        "cloud"
+      ]
+    },
+    {
+      "name": "OmniCD",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/omnicd",
+      "category": "Cooldowns",
+      "description": "Track party cooldowns. Know when your group has defensives up for big pulls. Essential for M+ coordination.",
+      "downloads": 22000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "helpful",
+      "tags": [
+        "cooldowns",
+        "party",
+        "mythicplus"
+      ]
+    },
+    {
+      "name": "ElvUI",
+      "source": "tukui.org",
+      "url": "https://www.tukui.org/elvui",
+      "category": "UI Overhaul",
+      "description": "Complete UI replacement. Clean, minimal, configurable. Most top druids run ElvUI as their base.",
+      "downloads": 75000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "general",
+      "tags": [
+        "ui",
+        "overhaul",
+        "clean"
+      ]
+    }
+  ],
+  "optional": [],
+  "aoeCritical": [
+    {
+      "name": "WeakAuras",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/weakauras-2",
+      "category": "Framework",
+      "description": "The addon framework. Every Balance Druid WA pack requires this. Non-negotiable.",
+      "downloads": 200000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "framework",
+        "essential"
+      ]
+    },
+    {
+      "name": "Details! Damage Meter",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/details",
+      "category": "Damage Meter",
+      "description": "Real-time DPS tracking. See your Starfall damage breakdown per pull. Essential for measuring AoE performance.",
+      "downloads": 150000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "damage",
+        "meter",
+        "essential"
+      ]
+    },
+    {
+      "name": "BigWigs / LittleWigs",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/big-wigs",
+      "category": "Boss Mods",
+      "description": "Boss and dungeon timers. Know when adds spawn so you can pool AP. Critical for CD mapping.",
+      "downloads": 90000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "boss",
+        "timers",
+        "mythicplus",
+        "raid"
+      ]
+    },
+    {
+      "name": "Plater Nameplates",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/plater-nameplates",
+      "category": "Nameplates",
+      "description": "Shows DoT timers on enemy nameplates. See Moonfire/Sunfire duration on every target. Critical for multi-DoT management.",
+      "downloads": 80000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "nameplates",
+        "dots",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Oi Balance Druid (Luxthos)",
+      "source": "Wago.io",
+      "url": "https://wago.io/LuxthosBalanceDruid",
+      "category": "WeakAura Pack",
+      "description": "Complete Balance Druid WA pack. Eclipse tracker, AP bar, Starfall timer, DoT tracker, cooldown display. The most popular boomkin WA.",
+      "downloads": 500000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "complete",
+        "eclipse",
+        "starfall",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Eclipse Bar (Animated)",
+      "source": "Wago.io",
+      "url": "https://wago.io/eclipse-bar",
+      "category": "WeakAura",
+      "description": "Animated Eclipse state tracker. Shows current Eclipse, charges remaining, and optimal transition timing.",
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "eclipse",
+        "tracker"
+      ]
+    },
+    {
+      "name": "Multi-DoT Tracker",
+      "source": "Wago.io",
+      "url": "https://wago.io/balance-dots",
+      "category": "WeakAura",
+      "description": "Track Moonfire and Sunfire on all targets. Shows remaining duration, targets missing DoTs. Critical for Shooting Stars procs.",
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "dots",
+        "moonfire",
+        "sunfire",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Method Dungeon Tools (MDT)",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/method-dungeon-tools",
+      "category": "M+ Routes",
+      "description": "Plan M+ routes with pull-by-pull mapping. Know which pulls get your CDs. The foundation of AoE planning.",
+      "downloads": 55000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "routes",
+        "mythicplus",
+        "planning"
+      ]
+    },
+    {
+      "name": "Hekili Priority Helper",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/hekili",
+      "category": "Rotation",
+      "description": "Real-time rotation suggestions. Shows when to Starfall vs Starsurge based on target count. The training wheels for AoE mastery.",
+      "downloads": 35000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "rotation",
+        "priority",
+        "learning"
+      ]
+    },
+    {
+      "name": "Starfall Range Indicator",
+      "source": "Wago.io",
+      "url": "https://wago.io/starfall-range",
+      "category": "WeakAura",
+      "description": "Visual indicator showing Starfall radius relative to your position. Know exactly which mobs are in your Starfall. AoE essential.",
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "starfall",
+        "range",
+        "aoe"
+      ]
+    }
+  ],
+  "all": [
+    {
+      "name": "WeakAuras",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/weakauras-2",
+      "category": "Framework",
+      "description": "The addon framework. Every Balance Druid WA pack requires this. Non-negotiable.",
+      "downloads": 200000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "framework",
+        "essential"
+      ]
+    },
+    {
+      "name": "Details! Damage Meter",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/details",
+      "category": "Damage Meter",
+      "description": "Real-time DPS tracking. See your Starfall damage breakdown per pull. Essential for measuring AoE performance.",
+      "downloads": 150000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "damage",
+        "meter",
+        "essential"
+      ]
+    },
+    {
+      "name": "BigWigs / LittleWigs",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/big-wigs",
+      "category": "Boss Mods",
+      "description": "Boss and dungeon timers. Know when adds spawn so you can pool AP. Critical for CD mapping.",
+      "downloads": 90000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "boss",
+        "timers",
+        "mythicplus",
+        "raid"
+      ]
+    },
+    {
+      "name": "Plater Nameplates",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/plater-nameplates",
+      "category": "Nameplates",
+      "description": "Shows DoT timers on enemy nameplates. See Moonfire/Sunfire duration on every target. Critical for multi-DoT management.",
+      "downloads": 80000000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "nameplates",
+        "dots",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Oi Balance Druid (Luxthos)",
+      "source": "Wago.io",
+      "url": "https://wago.io/LuxthosBalanceDruid",
+      "category": "WeakAura Pack",
+      "description": "Complete Balance Druid WA pack. Eclipse tracker, AP bar, Starfall timer, DoT tracker, cooldown display. The most popular boomkin WA.",
+      "downloads": 500000,
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "complete",
+        "eclipse",
+        "starfall",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Eclipse Bar (Animated)",
+      "source": "Wago.io",
+      "url": "https://wago.io/eclipse-bar",
+      "category": "WeakAura",
+      "description": "Animated Eclipse state tracker. Shows current Eclipse, charges remaining, and optimal transition timing.",
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "eclipse",
+        "tracker"
+      ]
+    },
+    {
+      "name": "Multi-DoT Tracker",
+      "source": "Wago.io",
+      "url": "https://wago.io/balance-dots",
+      "category": "WeakAura",
+      "description": "Track Moonfire and Sunfire on all targets. Shows remaining duration, targets missing DoTs. Critical for Shooting Stars procs.",
+      "balanceRelevance": "essential",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "dots",
+        "moonfire",
+        "sunfire",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Method Dungeon Tools (MDT)",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/method-dungeon-tools",
+      "category": "M+ Routes",
+      "description": "Plan M+ routes with pull-by-pull mapping. Know which pulls get your CDs. The foundation of AoE planning.",
+      "downloads": 55000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "routes",
+        "mythicplus",
+        "planning"
+      ]
+    },
+    {
+      "name": "Hekili Priority Helper",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/hekili",
+      "category": "Rotation",
+      "description": "Real-time rotation suggestions. Shows when to Starfall vs Starsurge based on target count. The training wheels for AoE mastery.",
+      "downloads": 35000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "rotation",
+        "priority",
+        "learning"
+      ]
+    },
+    {
+      "name": "Starfall Range Indicator",
+      "source": "Wago.io",
+      "url": "https://wago.io/starfall-range",
+      "category": "WeakAura",
+      "description": "Visual indicator showing Starfall radius relative to your position. Know exactly which mobs are in your Starfall. AoE essential.",
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "critical",
+      "tags": [
+        "weakaura",
+        "starfall",
+        "range",
+        "aoe"
+      ]
+    },
+    {
+      "name": "Simulationcraft",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/simulationcraft",
+      "category": "Optimization",
+      "description": "Export your character to SimC for exact stat weights and DPS simulations. Know your real numbers.",
+      "downloads": 42000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "helpful",
+      "tags": [
+        "sim",
+        "optimization",
+        "stats"
+      ]
+    },
+    {
+      "name": "Raidbots Client",
+      "source": "raidbots.com",
+      "url": "https://www.raidbots.com/",
+      "category": "Optimization",
+      "description": "Cloud-based simming. Top Gear, Droptimizer, stat weight analysis. The companion to SimC addon.",
+      "downloads": 28000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "helpful",
+      "tags": [
+        "sim",
+        "optimization",
+        "cloud"
+      ]
+    },
+    {
+      "name": "OmniCD",
+      "source": "CurseForge",
+      "url": "https://www.curseforge.com/wow/addons/omnicd",
+      "category": "Cooldowns",
+      "description": "Track party cooldowns. Know when your group has defensives up for big pulls. Essential for M+ coordination.",
+      "downloads": 22000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "helpful",
+      "tags": [
+        "cooldowns",
+        "party",
+        "mythicplus"
+      ]
+    },
+    {
+      "name": "ElvUI",
+      "source": "tukui.org",
+      "url": "https://www.tukui.org/elvui",
+      "category": "UI Overhaul",
+      "description": "Complete UI replacement. Clean, minimal, configurable. Most top druids run ElvUI as their base.",
+      "downloads": 75000000,
+      "balanceRelevance": "recommended",
+      "aoeRelevance": "general",
+      "tags": [
+        "ui",
+        "overhaul",
+        "clean"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, ChevronUp, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target } from 'lucide-react';
+import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, ChevronUp, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio } from 'lucide-react';
 
 const items = [
   { id: 'hero', label: 'Overview', icon: Moon },
@@ -15,6 +15,7 @@ const items = [
   { id: 'raid', label: 'Raid', icon: Users },
   { id: 'dungeons', label: 'M+', icon: Gem },
   { id: 'rankings', label: 'Rankings', icon: Trophy },
+  { id: 'live', label: 'Live Session', icon: Radio },
   { id: 'changelog', label: 'Changelog', icon: ScrollText },
   { id: 'setup', label: 'Make Yours', icon: Settings },
 ];

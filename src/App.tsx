@@ -20,9 +20,10 @@ const Rankings = lazy(() => import('./pages/Rankings'));
 const BossGuides = lazy(() => import('./pages/BossGuides'));
 const DungeonGuides = lazy(() => import('./pages/DungeonGuides'));
 const Changelog = lazy(() => import('./pages/Changelog'));
+const LiveSession = lazy(() => import('./pages/LiveSession'));
 const Setup = lazy(() => import('./pages/Setup'));
 
-const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'breakpoints', 'builds', 'gear', 'geardelta', 'consumables', 'raid', 'dungeons', 'rankings', 'changelog', 'setup'] as const;
+const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'breakpoints', 'builds', 'gear', 'geardelta', 'consumables', 'raid', 'dungeons', 'rankings', 'live', 'changelog', 'setup'] as const;
 
 function SectionFallback() {
   return (
@@ -165,6 +166,8 @@ export default function App() {
           </div>
           <Divider />
           <div id="rankings" ref={ref('rankings')}><Rankings /></div>
+          <Divider />
+          <div id="live" ref={ref('live')}><LiveSession /></div>
           <Divider />
           <div id="changelog" ref={ref('changelog')}><Changelog /></div>
           <Divider />

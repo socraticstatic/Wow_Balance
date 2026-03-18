@@ -1,0 +1,11 @@
+## Interface: 120001
+## Title: Balance Dossier
+## Notes: Companion addon for the Balance Druid Dossier. Tracks AoE performance, Starfall uptime, AP efficiency, and rotation quality.
+## Author: Spiracle
+## Version: 1.0.0
+## SavedVariables: BalanceDossierDB
+## DefaultState: enabled
+
+Core.lua
+Combat.lua
+UI.lua
