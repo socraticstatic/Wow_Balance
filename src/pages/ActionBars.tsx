@@ -26,7 +26,7 @@ const mainBar: KeyBind[] = [
   { key: '5', spell: 'Sunfire', color: 'oklch(80% 0.16 70)', role: 'AoE DoT', note: 'Instant. Hits ALL nearby enemies. Cast FIRST on every pull.' },
   { key: '6', spell: 'Fury of Elune', color: 'oklch(72% 0.16 285)', role: 'AoE CD', note: '1 min CD. AoE beam + massive AP gen. 4% damage amp via Atmospheric Exposure.' },
   { key: '7', spell: 'Incarnation', color: 'oklch(88% 0.12 65)', role: 'Major CD', note: '3 min CD, 30s duration, +10% Haste. Use on biggest trash pulls, not just bosses.' },
-  { key: '8', spell: 'Force of Nature', color: 'oklch(60% 0.16 155)', role: 'Treants', note: '1 min CD. Treants taunt + generate AP. Use on every pull.' },
+  { key: '8', spell: 'Sunseeker Mushroom', color: 'oklch(68% 0.16 155)', role: 'AoE Damage', note: 'Place under mobs. Extra AoE damage. From spec tree.' },
   { key: '9', spell: 'Solar Beam', color: 'oklch(80% 0.14 80)', role: 'Interrupt', note: 'AoE silence. Mandatory on caster packs. Reduced CD from Light of the Sun.' },
   { key: '0', spell: 'Typhoon', color: 'oklch(65% 0.12 200)', role: 'Knockback', note: 'AoE knockback. Reposition mobs. Environmental kills near ledges.' },
   { key: '-', spell: 'Ursol\'s Vortex', color: 'oklch(68% 0.14 270)', role: 'AoE Control', note: 'Slow + pull. Keeps mobs grouped in your Starfall. Huge for M+.' },
@@ -47,7 +47,7 @@ const shiftBar: KeyBind[] = [
   { key: 'S-9', spell: 'Rebirth', color: 'oklch(68% 0.18 155)', role: 'Battle Res', note: 'Combat rez. Most valuable raid utility a druid brings.' },
   { key: 'S-0', spell: 'Mark of the Wild', color: 'oklch(60% 0.14 155)', role: 'Buff', note: '+3% Versatility for group. Cast before every key. Keep up always.' },
   { key: 'S--', spell: 'Moonkin Form', color: 'oklch(72% 0.14 270)', role: 'Form', note: 'Your DPS form. Re-enter after using Bear Form or Cat Form.' },
-  { key: 'S-=', spell: 'Sunseeker Mushroom', color: 'oklch(68% 0.16 155)', role: 'AoE Damage', note: 'Place on pull location. Extra AoE damage tool from talent tree.' },
+  { key: 'S-=', spell: 'Dash', color: 'oklch(60% 0.12 155)', role: 'Cat Sprint', note: 'Shift to Cat Form + sprint. Fastest way to move between packs.' },
 ];
 
 // ── Rotation sequences ──
@@ -78,7 +78,7 @@ const aoePriority: RotationStep[] = [
   { key: '5', spell: 'Sunfire', condition: 'Refresh if falling off. Instant cast, hits all targets.' },
   { key: '4', spell: 'Moonfire', condition: 'Refresh on targets. Each tick can proc free Fury of Elune.' },
   { key: '6', spell: 'Fury of Elune', condition: 'On cooldown. 4% damage amp on targets hit.' },
-  { key: '8', spell: 'Force of Nature', condition: 'On cooldown. Free AP generation.' },
+  { key: '8', spell: 'Sunseeker Mushroom', condition: 'Place under mobs for extra AoE.' },
   { key: '1', spell: 'Starfire', condition: 'Your builder. Cleaves all nearby. Feeds Lunation (Fury CD reduction).', critical: true },
   { key: '3', spell: 'Starsurge', condition: 'ONLY on 1-2 targets. Never use in AoE.' },
 ];
