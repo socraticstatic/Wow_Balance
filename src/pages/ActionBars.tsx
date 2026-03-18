@@ -19,7 +19,7 @@ interface KeyBind {
 // Elune's Chosen M+ build - VERIFIED against Method, Maxroll, Icy Veins, Wowhead.
 // Lunar Calling = no Solar Eclipse. Starfire only builder. Incarnation replaces CA.
 // Force of Nature = Keeper of the Grove only. Sunseeker Mushroom = PASSIVE (not a button).
-// Warrior of Elune = 45s CD, 3 instant Starfires. Eclipse = ACTIVE BUTTON in Midnight.
+// Warrior of Elune was REMOVED in 12.0.0. Instant Starfire now comes from Ascendant Eclipses Rank 1.
 const mainBar: KeyBind[] = [
   { key: '1', spell: 'Starfire', color: 'oklch(72% 0.18 270)', role: 'ONLY Builder', note: 'Your ONLY builder. Cleaves in Lunar. Reduces Fury CD by 2s each cast (Lunation). Spam this.' },
   { key: '2', spell: 'Starfall', color: 'oklch(72% 0.2 270)', role: 'AoE Spender', note: '50 AP. 3+ targets. ALWAYS keep active in AoE. Your #1 priority button.' },
@@ -29,9 +29,9 @@ const mainBar: KeyBind[] = [
   { key: '6', spell: 'Eclipse', color: 'oklch(88% 0.1 270)', role: 'Eclipse Toggle', note: 'ACTIVE BUTTON in Midnight. 32s CD, 2 charges. Press after Starfire to enter Lunar Eclipse.' },
   { key: '7', spell: 'Fury of Elune', color: 'oklch(72% 0.16 285)', role: 'AoE CD', note: '45s CD (reduced by Lunation to ~every pack). AoE beam + AP gen + 4% damage amp.' },
   { key: '8', spell: 'Incarnation', color: 'oklch(88% 0.12 65)', role: 'Major CD', note: '3 min CD, 30s, +10% Haste, +10% Arcane damage. Use on biggest pulls.' },
-  { key: '9', spell: 'Warrior of Elune', color: 'oklch(72% 0.14 270)', role: 'Burst CD', note: '45s CD. Next 3 Starfires are INSTANT. Critical for burst + movement.' },
-  { key: '0', spell: 'Solar Beam', color: 'oklch(80% 0.14 80)', role: 'Interrupt', note: '8s AoE silence. 1 min CD (reduced by Light of the Sun). Best interrupt in M+.' },
-  { key: '-', spell: 'Typhoon', color: 'oklch(65% 0.12 200)', role: 'Knockback', note: '25s CD. AoE knockback. Reposition mobs. Pseudo-interrupt. Environmental kills.' },
+  { key: '9', spell: 'Solar Beam', color: 'oklch(80% 0.14 80)', role: 'Interrupt', note: '8s AoE silence. 1 min CD (reduced by Light of the Sun). Best interrupt in M+.' },
+  { key: '0', spell: 'Ursol\'s Vortex', color: 'oklch(68% 0.14 270)', role: 'AoE Control', note: '1 min CD. AoE slow + pull. Keeps mobs grouped in Starfall radius.' },
+  { key: '-', spell: 'Typhoon', color: 'oklch(65% 0.12 200)', role: 'Knockback', note: '25s CD. AoE knockback. Knock casters INTO Solar Beam zone. Environmental kills.' },
   { key: '=', spell: 'Wild Charge', color: 'oklch(60% 0.14 155)', role: 'Movement', note: '15s CD. Disengage in Moonkin Form. Your mobility between packs.' },
 ];
 
@@ -39,7 +39,7 @@ const mainBar: KeyBind[] = [
 const shiftBar: KeyBind[] = [
   { key: 'S-1', spell: 'Barkskin', color: 'oklch(60% 0.14 155)', role: 'Defensive', note: '20% DR. 1 min CD. Use BEFORE big damage hits, not after.' },
   { key: 'S-2', spell: 'Bear Form', color: 'oklch(65% 0.1 45)', role: 'Oh Shit', note: 'Emergency. +25% HP, +220% armor. Well-Honed Instincts auto-heals at 40%.' },
-  { key: 'S-3', spell: 'Ursol\'s Vortex', color: 'oklch(68% 0.14 270)', role: 'AoE Control', note: '1 min CD. AoE slow + pull. Keeps mobs grouped in Starfall radius.' },
+  { key: 'S-3', spell: 'Renewal', color: 'oklch(68% 0.18 155)', role: 'Self Heal', note: '30% HP heal. 1.5 min CD. Stack with Barkskin for double save.' },
   { key: 'S-4', spell: 'Stampeding Roar', color: 'oklch(65% 0.1 45)', role: 'Group Sprint', note: '2 min CD. 60% speed for whole group. Essential M+ utility.' },
   { key: 'S-5', spell: 'Incapacitating Roar', color: 'oklch(72% 0.14 270)', role: 'AoE CC', note: '30s CD. AoE incapacitate. Stops Ascendant affix orbs.' },
   { key: 'S-6', spell: 'Innervate', color: 'oklch(72% 0.14 240)', role: 'Healer Buff', note: '3 min CD. Free healer mana for 12s. Give on hardest pulls.' },
@@ -69,11 +69,10 @@ const aoeOpener: RotationStep[] = [
   { key: '6', spell: 'Eclipse', condition: 'Press after Starfire to enter Lunar Eclipse.' },
   { key: '8', spell: 'Incarnation', condition: 'If available (3 min CD). +10% Haste + 10% Arcane for 30s.', critical: true },
   { key: '7', spell: 'Fury of Elune', condition: 'Beam on pack. AP gen + 4% damage amp (Atmospheric Exposure).', critical: true },
-  { key: '9', spell: 'Warrior of Elune', condition: 'Next 3 Starfires instant. Press before Starfire spam.' },
-  { key: '2', spell: 'Starfall', condition: 'Dump AP. First 3 get +20% from Ascendant Eclipse.', critical: true },
-  { key: '1', spell: 'Starfire', condition: 'Instant (from Warrior). Cleaves. Reduces Fury CD by 2s.' },
-  { key: '1', spell: 'Starfire', condition: 'Instant #2. Keep dumping into Starfall when AP allows.' },
-  { key: '1', spell: 'Starfire', condition: 'Instant #3. After this, Starfires are cast-time again.' },
+  { key: '2', spell: 'Starfall', condition: 'Dump AP. First 3 spenders get +20% from Ascendant Eclipse.', critical: true },
+  { key: '1', spell: 'Starfire', condition: 'First Starfire after Eclipse entry is INSTANT (Ascendant Eclipses Rank 1).', critical: true },
+  { key: '1', spell: 'Starfire', condition: 'Cast-time Starfire. Cleaves all nearby. Reduces Fury CD by 1.5s.' },
+  { key: '1', spell: 'Starfire', condition: 'Keep building AP for next Starfall.' },
   { key: '2', spell: 'Starfall', condition: 'AP refilled. Starfall again. Loop: 1 1 1 > 2 > 1 1 1 > 2.', critical: true },
 ];
 
@@ -82,8 +81,7 @@ const aoePriority: RotationStep[] = [
   { key: '5', spell: 'Sunfire', condition: 'Refresh if falling off. Instant cast, hits all targets.' },
   { key: '4', spell: 'Moonfire', condition: 'Refresh on targets. Each tick can proc free Fury of Elune.' },
   { key: '7', spell: 'Fury of Elune', condition: 'On cooldown (45s base, reduced by Lunation). 4% damage amp.' },
-  { key: '9', spell: 'Warrior of Elune', condition: 'On cooldown (45s). Makes next 3 Starfires instant for burst.' },
-  { key: '1', spell: 'Starfire', condition: 'Your builder. Cleaves all nearby. Each cast reduces Fury CD by 2s.', critical: true },
+  { key: '1', spell: 'Starfire', condition: 'Your builder. Cleaves all nearby. Each cast reduces Fury CD by 1.5s (Lunation).', critical: true },
   { key: '3', spell: 'Starsurge', condition: 'ONLY on 1-2 targets or Starweaver proc. Never in AoE otherwise.' },
 ];
 
@@ -94,7 +92,7 @@ const stOpener: RotationStep[] = [
   { key: '6', spell: 'Eclipse', condition: 'Enter Lunar Eclipse.' },
   { key: '8', spell: 'Incarnation', condition: 'If available (3 min CD).', critical: true },
   { key: '7', spell: 'Fury of Elune', condition: '4% damage amp on target.' },
-  { key: '9', spell: 'Warrior of Elune', condition: '3 instant Starfires for burst window.' },
+  { key: '7', spell: 'Fury of Elune', condition: '6% damage amp on target (Atmospheric Exposure).' },
   { key: '3', spell: 'Starsurge', condition: 'Dump AP. First 3 spenders get +20% from Ascendant Eclipse.', critical: true },
   { key: '1', spell: 'Starfire', condition: 'Build AP. +100% to primary via Lunar Calling.' },
   { key: '3', spell: 'Starsurge', condition: 'Dump at 40+ AP.', critical: true },
@@ -254,7 +252,7 @@ export default function ActionBars() {
             {' \u2192 repeat'}
           </div>
           <p className="text-[15px] mt-3" style={{ color: 'oklch(90% 0.004 55)' }}>
-            Sunfire \u2192 Moonfire \u2192 Eclipse \u2192 Incarnation \u2192 Fury \u2192 Warrior \u2192 Starfall \u2192 Starfire x3 \u2192 Starfall \u2192 loop
+            Sunfire \u2192 Moonfire \u2192 Eclipse \u2192 Incarnation \u2192 Fury \u2192 Starfall \u2192 Starfire (instant) \u2192 Starfire \u2192 Starfall \u2192 loop
           </p>
           <p className="text-sm mt-2 font-bold" style={{ color: 'oklch(72% 0.18 270)' }}>
             No Wrath. No Force of Nature. No Convoke. Lunar Calling = Starfire only builder.
