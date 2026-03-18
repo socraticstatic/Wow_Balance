@@ -40,7 +40,7 @@ export default function MyCharacter() {
             style={{ background: 'radial-gradient(ellipse, oklch(45% 0.25 270), oklch(30% 0.15 155) 60%, transparent 80%)' }}
           />
           <img
-            src="/spiracle-cropped.png"
+            src={`${import.meta.env.BASE_URL}spiracle-cropped.png`}
             alt="Spiracle - Night Elf Balance Druid"
             className="relative z-10 h-[520px] w-auto object-contain"
             style={{
