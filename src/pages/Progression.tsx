@@ -104,9 +104,9 @@ function analyzeProgression() {
     recs.push({
       priority: 'medium',
       category: 'Talents',
-      title: 'Use an AoE Leveling Build',
-      detail: 'While leveling, prioritize AoE and self-sustain over single-target DPS.',
-      actionable: 'Take Starfall, Wild Mushroom, and Stellar Drift for huge AoE pulls. Take Restoration Affinity for passive healing. Pull 3-5 mobs, dot with Moonfire/Sunfire, then Starfall. Move to next pack.',
+      title: 'Use Elune\'s Chosen AoE Build',
+      detail: 'Your endgame goal is AoE domination. Start practicing now. Elune\'s Chosen with Lunar Calling turns every builder into Starfire. Fury of Elune + Starfall = massive pack damage.',
+      actionable: 'Take Lunar Calling, Fury of Elune, Starfall, Aetherial Kindling, and Starweaver. Pull 3-5 mobs, Sunfire, Moonfire all targets, Fury of Elune, Starfall, Starfire spam. Move to next pack. This IS your endgame rotation - practice it now.',
     });
 
     if (charLevel && charLevel >= 87) {

@@ -6,7 +6,9 @@ import { builds } from '../data';
 import { useReveal } from '../hooks/useReveal';
 
 export default function Builds() {
-  const [activeId, setActiveId] = useState(builds[0].id);
+  // Default to M+ AoE build (Elune's Chosen) since Spiracle focuses on AoE
+  const aoeDefault = builds.find(b => b.id === 'mythicplus-elune') || builds.find(b => b.id === 'raid-aoe-elune') || builds[0];
+  const [activeId, setActiveId] = useState(aoeDefault.id);
   const active = builds.find(b => b.id === activeId)!;
   const r1 = useReveal();
   const r2 = useReveal();

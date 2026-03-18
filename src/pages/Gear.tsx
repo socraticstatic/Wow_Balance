@@ -27,6 +27,19 @@ export default function Gear() {
         </p>
       </div>
 
+      {/* AoE stat priority callout */}
+      <div className="glass-lunar pl-5 pr-5 py-4 mb-16 max-w-2xl rounded-lg" style={{ borderLeft: '2px solid oklch(68% 0.16 285)' }}>
+        <h4 className="text-[10px] uppercase font-bold mb-2" style={{ color: 'oklch(68% 0.16 285)', letterSpacing: '0.1em' }}>
+          AoE Stat Priority (Elune's Chosen)
+        </h4>
+        <p className="text-[13px] font-semibold" style={{ color: 'oklch(82% 0.01 270)' }}>
+          Intellect {'>'} <span style={{ color: 'oklch(80% 0.18 80)' }}>Haste</span> {'>'} Mastery {'>'} Crit {'>'} Versatility
+        </p>
+        <p className="text-[12px] mt-1" style={{ color: 'oklch(50% 0.012 270)' }}>
+          Haste reduces Fury of Elune CD via Lunation and increases Starfire cast speed for bigger AoE windows.
+        </p>
+      </div>
+
       {/* Gear table - clean rows, no outer card */}
       <div ref={r3} className="reveal rounded-lg overflow-hidden mb-16" style={{ border: '1px solid oklch(14% 0.01 270)' }}>
         {/* Header row - desktop only */}
