@@ -95,7 +95,7 @@ export default function Faith() {
 
 function Parallel({ wow, faith, text, accent }: { wow: string; faith: string; text: string; accent: string }) {
   return (
-    <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.012 45)', border: '1px solid oklch(16% 0.012 45)' }}>
+    <div className="p-6 rounded-lg glass card-hover">
       <div className="flex items-baseline gap-2 mb-1">
         <span className="text-[13px] font-bold" style={{ color: accent }}>{wow}</span>
       </div>

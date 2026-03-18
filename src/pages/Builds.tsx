@@ -99,7 +99,7 @@ export default function Builds() {
 
       {/* Rotation: opener (solar) + priority (lunar) side by side */}
       <div ref={r3} className="reveal grid lg:grid-cols-2 gap-3">
-        <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.02 80)', border: '1px solid oklch(17% 0.03 80)' }}>
+        <div className="p-6 rounded-lg glass-solar">
           <h4 className="text-sm font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)' }}>Opener</h4>
           <ol className="space-y-2">
             {active.rotation.opener.map((step, i) => (
@@ -114,7 +114,7 @@ export default function Builds() {
           </ol>
         </div>
 
-        <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.02 270)', border: '1px solid oklch(17% 0.03 270)' }}>
+        <div className="p-6 rounded-lg glass-lunar">
           <h4 className="text-sm font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)' }}>Priority</h4>
           <ul className="space-y-2">
             {active.rotation.priority.map((step, i) => (

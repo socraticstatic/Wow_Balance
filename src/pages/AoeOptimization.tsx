@@ -139,7 +139,7 @@ export default function AoeOptimization() {
 
         <div className="grid md:grid-cols-2 gap-4">
           {/* Opener */}
-          <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.02 270)', border: '1px solid oklch(17% 0.03 270)' }}>
+          <div className="p-6 rounded-lg glass-lunar">
             <h4 className="text-sm font-bold mb-4" style={{ color: 'oklch(72% 0.18 270)' }}>Pull Sequence</h4>
             <ol className="space-y-2">
               {aoeBuild.rotation.opener.map((step, i) => (
@@ -155,7 +155,7 @@ export default function AoeOptimization() {
           </div>
 
           {/* Priority */}
-          <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.02 155)', border: '1px solid oklch(17% 0.03 155)' }}>
+          <div className="p-6 rounded-lg glass-nature">
             <h4 className="text-sm font-bold mb-4" style={{ color: 'oklch(68% 0.18 155)' }}>Sustained Priority</h4>
             <ul className="space-y-2">
               {aoeBuild.rotation.priority.map((step, i) => (
@@ -169,7 +169,7 @@ export default function AoeOptimization() {
         </div>
 
         {/* Target count thresholds */}
-        <div className="mt-6 p-5 rounded-lg max-w-xl" style={{ background: 'oklch(10% 0.012 270)', border: '1px solid oklch(16% 0.012 270)' }}>
+        <div className="mt-6 p-5 rounded-lg max-w-xl glass">
           <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(57% 0.012 50)', letterSpacing: '0.12em' }}>
             Target Count Rules
           </div>
@@ -252,7 +252,7 @@ export default function AoeOptimization() {
 
 function TalentGroup({ group }: { group: { label: string; color: string; talents: Array<{ name: string; desc: string }> } }) {
   return (
-    <div className="p-5 rounded-lg" style={{ background: 'oklch(9.5% 0.01 270)', border: '1px solid oklch(15% 0.012 270)' }}>
+    <div className="p-5 rounded-lg glass card-hover">
       <div className="text-[10px] uppercase font-bold mb-4" style={{ color: group.color, letterSpacing: '0.1em' }}>
         {group.label}
       </div>

@@ -210,7 +210,7 @@ export default function MyCharacter() {
       {/* ── Audit cards ── */}
       <div ref={r3} className="reveal grid sm:grid-cols-2 gap-4 mb-16">
         {/* Tier progress */}
-        <div className="p-5 rounded-lg" style={{ background: 'oklch(10% 0.02 80)', border: '1px solid oklch(17% 0.03 80)' }}>
+        <div className="p-5 rounded-lg glass-solar">
           <div className="flex items-baseline justify-between mb-4">
             <span className="text-[9px] uppercase font-bold" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
               Tier Pieces
@@ -240,10 +240,7 @@ export default function MyCharacter() {
         </div>
 
         {/* Missing enchants */}
-        <div className="p-5 rounded-lg" style={{
-          background: missingEnchants.length > 0 ? 'oklch(10% 0.02 30)' : 'oklch(10% 0.02 155)',
-          border: `1px solid ${missingEnchants.length > 0 ? 'oklch(17% 0.03 30)' : 'oklch(17% 0.03 155)'}`,
-        }}>
+        <div className={`p-5 rounded-lg ${missingEnchants.length > 0 ? 'glass' : 'glass-nature'}`}>
           <div className="flex items-baseline justify-between mb-4">
             <span className="text-[9px] uppercase font-bold" style={{
               color: missingEnchants.length > 0 ? 'oklch(72% 0.16 30)' : 'oklch(68% 0.18 155)',
