@@ -11,9 +11,10 @@ import CelestialBg from './components/CelestialBg';
 import CursorTrail from './components/CursorTrail';
 import Setup from './pages/Setup';
 import Faith from './pages/Faith';
+import Progression from './pages/Progression';
 import { meta } from './data';
 
-const sectionIds = ['hero', 'spiracle', 'faith', 'aoe', 'builds', 'gear', 'rankings', 'changelog', 'setup'] as const;
+const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'builds', 'gear', 'rankings', 'changelog', 'setup'] as const;
 
 export default function App() {
   const [active, setActive] = useState('hero');
@@ -57,6 +58,8 @@ export default function App() {
         <div id="hero" ref={ref('hero')}><Hero /></div>
         <Divider />
         <div id="spiracle" ref={ref('spiracle')}><MyCharacter /></div>
+        <Divider />
+        <div id="progression" ref={ref('progression')}><Progression /></div>
         <Divider />
         <div id="faith" ref={ref('faith')}><Faith /></div>
         <Divider />

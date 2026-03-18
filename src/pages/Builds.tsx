@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
+import SpellIcon from '../components/SpellIcon';
+import TalentTree from '../components/TalentTree';
 import { builds } from '../data';
 import { useReveal } from '../hooks/useReveal';
 
@@ -9,6 +11,7 @@ export default function Builds() {
   const r1 = useReveal();
   const r2 = useReveal();
   const r3 = useReveal();
+  const r4 = useReveal();
 
   const diffColor = active.difficulty === 'Beginner' ? 'oklch(68% 0.18 155)' :
     active.difficulty === 'Intermediate' ? 'oklch(80% 0.18 80)' : 'oklch(72% 0.16 30)';
@@ -40,7 +43,7 @@ export default function Builds() {
         })}
       </div>
 
-      {/* Active build: asymmetric - wide left, narrow rating right */}
+      {/* Active build: asymmetric */}
       <div className="grid lg:grid-cols-[1fr_120px] gap-12 items-start mb-20">
         <div>
           <div className="flex items-baseline gap-3 mb-1.5">
@@ -59,14 +62,15 @@ export default function Builds() {
             {active.description}
           </p>
 
-          {/* Keystones as pills */}
-          <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(44% 0.012 270)', letterSpacing: '0.12em' }}>
+          {/* Keystones with spell icons */}
+          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(44% 0.012 270)', letterSpacing: '0.12em' }}>
             Key Talents
           </div>
-          <div className="flex flex-wrap gap-1.5 mb-6">
+          <div className="flex flex-wrap gap-2 mb-8">
             {active.keystones.map(t => (
-              <span key={t} className="px-2.5 py-1 rounded text-[12px] font-medium"
-                style={{ color: 'oklch(68% 0.015 270)', background: 'oklch(12% 0.012 270)', border: '1px solid oklch(18% 0.012 270)' }}>
+              <span key={t} className="glass flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-medium card-hover"
+                style={{ color: 'oklch(72% 0.015 270)' }}>
+                <SpellIcon name={t} size="small" px={20} />
                 {t}
               </span>
             ))}
@@ -80,7 +84,7 @@ export default function Builds() {
           </p>
         </div>
 
-        {/* Rating - left-aligned on mobile */}
+        {/* Rating */}
         <div className="pt-1">
           <div className="relative w-20 h-20 mb-1">
             <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
@@ -97,7 +101,12 @@ export default function Builds() {
         </div>
       </div>
 
-      {/* Rotation: opener (solar) + priority (lunar) side by side */}
+      {/* Talent Tree Visualization */}
+      <div ref={r4} className="reveal mb-20">
+        <TalentTree activeKeystones={active.keystones} buildName={active.use} />
+      </div>
+
+      {/* Rotation: opener + priority */}
       <div ref={r3} className="reveal grid lg:grid-cols-2 gap-3">
         <div className="p-6 rounded-lg glass-solar">
           <h4 className="text-sm font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)' }}>Opener</h4>
