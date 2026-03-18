@@ -79,7 +79,7 @@ const dungeons: DungeonGuide[] = [
     ],
     bossNotes: [
       'Bosses are ST checks. Keeper may outperform Elune\'s here.',
-      'Movement-heavy boss mechanics. Bank Eclipse charges.',
+      'Movement-heavy boss mechanics. Save instant-cast procs for movement.',
       'Timer is the real enemy. Every second counts.',
     ],
     balanceTips: [

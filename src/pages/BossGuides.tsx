@@ -28,7 +28,7 @@ const bosses: BossGuide[] = [
       'Kill servants before they finish claiming. Interrupt Pitch Bulwark.',
     ],
     balanceTips: [
-      'Primarily ST on boss. Save an Eclipse charge for servant spawns.',
+      'Primarily ST on boss. Eclipse triggers passively from casting Starfire. Focus builders on boss, swap to adds when they spawn.',
       'Starfall is wasted - adds die fast and are spread across the grid.',
       'Interrupt Pitch Bulwark (gives absorb shields to nearby enemies).',
       'Ramp time works against you on quick add swaps. Pre-DoT as servants spawn.',
@@ -181,7 +181,7 @@ const bosses: BossGuide[] = [
     ],
     balanceTips: [
       'Egg burn phases are where you dump everything. Classic "save and dump" fight.',
-      'Bank Eclipse charges and CDs for egg phases.',
+      'Save CDs for egg phases. Eclipse triggers passively from your builders.',
       'Feather mechanic is positioning, not DPS. Stay disciplined.',
       'ST-focused. Keeper is better than Elune\'s here.',
     ],
