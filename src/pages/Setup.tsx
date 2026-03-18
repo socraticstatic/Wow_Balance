@@ -9,6 +9,10 @@ interface FormData {
   heroTalent: string;
   playstyle: string;
   priorities: string[];
+  faithOrigin: string;
+  faithStruggle: string;
+  faithVirtue: string;
+  faithCalling: string;
   blizzardClientId: string;
   blizzardClientSecret: string;
   wclClientId: string;
@@ -27,6 +31,10 @@ const defaultForm: FormData = {
   heroTalent: '',
   playstyle: '',
   priorities: [],
+  faithOrigin: '',
+  faithStruggle: '',
+  faithVirtue: '',
+  faithCalling: '',
   blizzardClientId: '',
   blizzardClientSecret: '',
   wclClientId: '',
@@ -45,11 +53,12 @@ export default function Setup() {
     setForm(prev => ({ ...prev, [key]: e.target.value }));
 
   const steps = [
-    { title: 'Your Character', icon: '1' },
+    { title: 'Character', icon: '1' },
     { title: 'Playstyle', icon: '2' },
-    { title: 'Blizzard API', icon: '3' },
-    { title: 'WarcraftLogs API', icon: '4' },
-    { title: 'Deploy', icon: '5' },
+    { title: 'Faith Story', icon: '3' },
+    { title: 'Blizzard', icon: '4' },
+    { title: 'WCL', icon: '5' },
+    { title: 'Deploy', icon: '6' },
   ];
 
   const togglePriority = (p: string) => {
@@ -282,8 +291,183 @@ export default function Setup() {
         </div>
       )}
 
-      {/* Step 2: Blizzard API */}
+      {/* Step 2: Faith Story Creator */}
       {step === 2 && (
+        <div className="space-y-8">
+          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+            Your Character's Faith Story
+          </h3>
+
+          <p className="text-[13px]" style={{ color: 'oklch(52% 0.012 50)', lineHeight: 1.7 }}>
+            Every character carries the soul of their player. This section creates a personal "Light Within" meditation
+            that maps your faith journey onto your character's story in Azeroth. Optional but meaningful.
+          </p>
+
+          {/* Origin */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+              Where did your faith begin?
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { id: 'cradle', label: 'Cradle Faith', desc: 'Raised in the church. Faith was the water you swam in before you knew it was water.' },
+                { id: 'prodigal', label: 'The Prodigal Road', desc: 'Left, wandered, burned bridges. Came back changed. The return was harder than the leaving.' },
+                { id: 'seeker', label: 'The Seeker', desc: 'Found faith later. You went looking for something and it found you first.' },
+                { id: 'wrestling', label: 'Still Wrestling', desc: 'Not sure. Drawn to something. The questions are honest and the doubt is not the enemy.' },
+              ].map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setForm(prev => ({ ...prev, faithOrigin: opt.id }))}
+                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: form.faithOrigin === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.faithOrigin === opt.id ? 'oklch(78% 0.16 60 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  <span className="text-[13px] font-bold block mb-1" style={{
+                    color: form.faithOrigin === opt.id ? 'oklch(78% 0.16 60)' : 'oklch(72% 0.01 50)',
+                  }}>{opt.label}</span>
+                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Struggle */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.16 285)', letterSpacing: '0.1em' }}>
+              What's the tension you carry?
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { id: 'doubt', label: 'Doubt vs. Devotion', desc: 'The mind questions what the heart knows. You live in the gap between evidence and faith.' },
+                { id: 'mask', label: 'The Mask', desc: 'The public face and the private self don\'t match. Authenticity is the unfinished work.' },
+                { id: 'control', label: 'Surrender vs. Control', desc: 'You know you should let go. You can\'t stop holding on. Every boss fight is this.' },
+                { id: 'anger', label: 'Righteous Anger', desc: 'The world is broken and you feel it in your teeth. Justice and mercy fight inside you.' },
+              ].map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setForm(prev => ({ ...prev, faithStruggle: opt.id }))}
+                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: form.faithStruggle === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.faithStruggle === opt.id ? 'oklch(68% 0.16 285 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  <span className="text-[13px] font-bold block mb-1" style={{
+                    color: form.faithStruggle === opt.id ? 'oklch(68% 0.16 285)' : 'oklch(72% 0.01 50)',
+                  }}>{opt.label}</span>
+                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Virtue */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(52% 0.14 155)', letterSpacing: '0.1em' }}>
+              What virtue defines your play?
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { id: 'patience', label: 'Patience', desc: 'You build before you burst. The rotation is a discipline. You trust the process.' },
+                { id: 'sacrifice', label: 'Sacrifice', desc: 'You Innervate the healer. You Stampeding Roar for the group. Your DPS is not the point.' },
+                { id: 'stewardship', label: 'Stewardship', desc: 'Every cooldown used wisely. No wasted GCD. The talent tree is a garden you tend.' },
+                { id: 'hope', label: 'Hope', desc: 'You wipe and go again. The boss will die. The key will time. Tomorrow\'s parse will be better.' },
+              ].map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setForm(prev => ({ ...prev, faithVirtue: opt.id }))}
+                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: form.faithVirtue === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.faithVirtue === opt.id ? 'oklch(52% 0.14 155 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  <span className="text-[13px] font-bold block mb-1" style={{
+                    color: form.faithVirtue === opt.id ? 'oklch(52% 0.14 155)' : 'oklch(72% 0.01 50)',
+                  }}>{opt.label}</span>
+                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Calling */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+              What does your character serve?
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { id: 'protector', label: 'The Protector', desc: 'You stand between the darkness and the people you love. Barkskin is a prayer.' },
+                { id: 'witness', label: 'The Witness', desc: 'You see the beauty in the made-up world and recognize something real underneath it.' },
+                { id: 'healer', label: 'The Mender', desc: 'Even as Balance, you off-heal. You notice who\'s hurting. The moonkin has a pastoral heart.' },
+                { id: 'pilgrim', label: 'The Pilgrim', desc: 'Every zone is a new chapter. Every expansion is a book in the canon. You walk and you learn.' },
+              ].map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setForm(prev => ({ ...prev, faithCalling: opt.id }))}
+                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: form.faithCalling === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.faithCalling === opt.id ? 'oklch(78% 0.16 60 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  <span className="text-[13px] font-bold block mb-1" style={{
+                    color: form.faithCalling === opt.id ? 'oklch(78% 0.16 60)' : 'oklch(72% 0.01 50)',
+                  }}>{opt.label}</span>
+                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Generated story preview */}
+          {(form.faithOrigin || form.faithStruggle || form.faithVirtue || form.faithCalling) && (
+            <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(16% 0.015 45)' }}>
+              <div className="text-[10px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+                Your Story Preview
+              </div>
+              <p style={{
+                fontFamily: '"Cormorant", Georgia, serif',
+                fontStyle: 'italic',
+                fontSize: '1rem',
+                color: 'oklch(65% 0.015 55)',
+                lineHeight: 1.85,
+              }}>
+                {form.characterName || 'Your character'} {form.faithOrigin === 'cradle' ? 'was born under the light of Elune, raised in a grove where worship was as natural as breathing. The old prayers came before language.'
+                  : form.faithOrigin === 'prodigal' ? 'walked away from the grove once. The Emerald Dream held no comfort, and the moon looked like a dead eye. But the road out led back, and the return was the real journey.'
+                  : form.faithOrigin === 'seeker' ? 'did not grow up in the moonlight. The call came later, unexpected, in a dungeon or a battlefield or a quiet moment between pulls. Something whispered, and the druid listened.'
+                  : 'carries questions like others carry totems. The light of Elune is visible but not yet understood. The doubt is not weakness. It is the gravity that keeps faith from floating away.'}
+                {' '}
+                {form.faithStruggle === 'doubt' ? 'The tension between what the mind demands and what the heart already knows is the real Eclipse cycle, longer and less predictable than any in-game mechanic.'
+                  : form.faithStruggle === 'mask' ? 'In Moonkin Form, the true self is hidden inside feathers and starfire. The real transformation is not the shapeshift but the decision to stop performing.'
+                  : form.faithStruggle === 'control' ? 'Every Eclipse is a small surrender. You cannot force Solar. You cannot rush Lunar. The balance comes from letting go of the outcome and trusting the rhythm.'
+                  : form.faithStruggle === 'anger' ? 'Solar Beam is not just an interrupt. It is the righteous refusal to let the darkness cast freely. The anger is not sin. Misdirected anger is. Channel it.'
+                  : ''}
+                {' '}
+                {form.faithVirtue === 'patience' ? 'Astral Power builds one cast at a time. No shortcuts. The virtue is in the casting, not the critting.'
+                  : form.faithVirtue === 'sacrifice' ? 'Stampeding Roar saves lives that will never know they were saved. The best ministry is invisible.'
+                  : form.faithVirtue === 'stewardship' ? 'Every talent point placed with intention. Every cooldown a resource to be honored. The tree is a garden, and the druid is its keeper.'
+                  : form.faithVirtue === 'hope' ? 'The wipe is not the end. The depleted key is not the verdict. Tomorrow, the rotation will be cleaner. Hope is a 3-minute cooldown that never stops recharging.'
+                  : ''}
+                {' '}
+                {form.faithCalling === 'protector' ? 'Barkskin is the prayer of a body willing to absorb what others cannot. The druid stands in fire so the healer can breathe.'
+                  : form.faithCalling === 'witness' ? 'The made-up moon over a made-up world still stirs something real. To notice beauty in the imagined is to practice noticing it in the actual.'
+                  : form.faithCalling === 'healer' ? 'Even specced for damage, the druid notices who is hurting. An off-heal at the right moment is worth more than a parse. The moonkin has a pastor\'s instinct.'
+                  : form.faithCalling === 'pilgrim' ? 'Quel\'Thalas is new ground, but the walking is ancient. Every zone is a chapter. Every expansion is a book. The pilgrimage has no final destination this side of the veil.'
+                  : ''}
+              </p>
+            </div>
+          )}
+
+          <NavButtons onBack={() => setStep(1)} onNext={() => setStep(3)} />
+        </div>
+      )}
+
+      {/* Step 3: Blizzard API */}
+      {step === 3 && (
         <div className="space-y-6">
           <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
             Blizzard API Credentials
@@ -305,12 +489,12 @@ export default function Setup() {
           <Field label="Blizzard Client ID" value={form.blizzardClientId} onChange={set('blizzardClientId')} placeholder="0b9acdab664f4ebabdc537af3d884e24" />
           <Field label="Blizzard Client Secret" value={form.blizzardClientSecret} onChange={set('blizzardClientSecret')} placeholder="OKPUQL9zqwp6cXdwPDOWAAqS8N2kKE3k" type="password" />
 
-          <NavButtons onBack={() => setStep(1)} onNext={() => setStep(3)} />
+          <NavButtons onBack={() => setStep(2)} onNext={() => setStep(4)} />
         </div>
       )}
 
-      {/* Step 3: WarcraftLogs API */}
-      {step === 3 && (
+      {/* Step 4: WarcraftLogs API */}
+      {step === 4 && (
         <div className="space-y-6">
           <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
             WarcraftLogs API Credentials
@@ -333,12 +517,12 @@ export default function Setup() {
           <Field label="WarcraftLogs Client Secret" value={form.wclClientSecret} onChange={set('wclClientSecret')} placeholder="0qc14wJRiLEoqZDHuKt4..." type="password" />
           <Field label="WarcraftLogs v1 API Key (optional)" value={form.wclV1Key} onChange={set('wclV1Key')} placeholder="431ed1018fe97bb2..." type="password" />
 
-          <NavButtons onBack={() => setStep(2)} onNext={() => setStep(4)} />
+          <NavButtons onBack={() => setStep(3)} onNext={() => setStep(5)} />
         </div>
       )}
 
-      {/* Step 4: Deploy */}
-      {step === 4 && (
+      {/* Step 5: Deploy */}
+      {step === 5 && (
         <div className="space-y-6">
           <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
             Deploy Your Dossier
@@ -379,7 +563,7 @@ EOF`} />
             </p>
           </InfoBox>
 
-          <NavButtons onBack={() => setStep(3)} />
+          <NavButtons onBack={() => setStep(4)} />
         </div>
       )}
     </section>
