@@ -77,6 +77,19 @@ body::after {
   --gold-bright: oklch(88% 0.14 65);
 }
 
+/* ── Character idle animation ── */
+@keyframes characterIdle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-8px) rotate(0.3deg); }
+  70% { transform: translateY(-4px) rotate(-0.2deg); }
+}
+
+/* ── Glow pulse ── */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.18; transform: translate(-50%, -50%) scale(1.05); }
+}
+
 /* ── Gold leaf shimmer on hero title ── */
 @keyframes shimmer {
   0% { background-position: -200% center; }

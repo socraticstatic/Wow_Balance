@@ -34,10 +34,13 @@ export default function MyCharacter() {
 
         {/* Character render - right side, full height */}
         <div className="relative order-2 md:order-2 flex justify-center md:justify-end">
-          {/* Subtle ambient glow centered on character */}
+          {/* Ambient glow - pulses gently */}
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[480px] blur-[80px] opacity-12 rounded-full"
-            style={{ background: 'radial-gradient(ellipse, oklch(40% 0.18 270), transparent 70%)' }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[480px] blur-[80px] rounded-full"
+            style={{
+              background: 'radial-gradient(ellipse, oklch(40% 0.18 270), transparent 70%)',
+              animation: 'glowPulse 6s ease-in-out infinite',
+            }}
           />
           <img
             src={`${import.meta.env.BASE_URL}spiracle-cropped.png`}
@@ -45,6 +48,7 @@ export default function MyCharacter() {
             className="relative z-10 h-[520px] w-auto object-contain"
             style={{
               filter: 'drop-shadow(0 4px 40px oklch(25% 0.15 270 / 0.3))',
+              animation: 'characterIdle 6s ease-in-out infinite',
             }}
           />
         </div>
