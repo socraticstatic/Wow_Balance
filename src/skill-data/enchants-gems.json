@@ -1,0 +1,19 @@
+{
+  "patchVersion": "12.0.1",
+  "lastUpdated": "2026-03-17T00:00:00Z",
+  "gems": {
+    "primary": { "name": "Indecipherable Eversong Diamond", "slot": "One socket (unique-equipped)", "notes": "Midnight equivalent of Algari Diamond. Always use one." },
+    "secondary": { "name": "Sim yourself", "recommendation": "Masterful gems (Mastery) or Crit gems depending on your current stat profile", "notes": "Fill all remaining sockets. Use Raidbots Top Gear to determine best gem for your current gear." }
+  },
+  "enchants": {
+    "head": { "name": "Enchant Helm - Empowered Rune of Avoidance", "alternative": "Enchant Helm - Empowered Hex of Leeching", "notes": "Avoidance for raid survivability, Leeching for M+ self-sustain" },
+    "cloak": { "name": "Sim dependent", "notes": "Usually Haste or Mastery enchant" },
+    "chest": { "name": "Sim dependent", "notes": "Intellect enchant if available, otherwise best secondary" },
+    "wrist": { "name": "Sim dependent", "notes": "Usually Haste or Mastery" },
+    "legs": { "name": "Sim dependent", "notes": "Spellthread (Intellect + Stamina)" },
+    "boots": { "name": "Sim dependent", "notes": "Speed enchant for M+, stat enchant for raid" },
+    "rings": { "name": "Sim dependent", "notes": "Best secondary stat per ring. Usually Mastery or Haste." },
+    "weapon": { "name": "Thalassian Phoenix Oil", "notes": "Weapon imbue, not a permanent enchant. Reapply every hour." }
+  },
+  "notes": "ALWAYS sim yourself on Raidbots for exact gem and enchant recommendations. Stats shift with every gear change. The above are general guidelines for when you can't sim."
+}

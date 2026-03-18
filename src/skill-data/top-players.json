@@ -1,0 +1,421 @@
+{
+  "lastUpdated": "2026-03-17T22:02:58.616Z",
+  "notes": "Top 50 Balance Druid parses from encounter 3009. Auto-synced.",
+  "communityFigures": [
+    {
+      "name": "Naguura",
+      "role": "Content Creator / Streamer",
+      "notes": "One of the most well-known Balance Druid players. Raid and M+ content."
+    },
+    {
+      "name": "Tettles",
+      "role": "Theorycrafter / Raider",
+      "notes": "High-end raider, contributes to Dreamgrove theorycraft."
+    },
+    {
+      "name": "Borabank",
+      "role": "Theorycrafter",
+      "notes": "Balance Druid theorycraft contributor on Dreamgrove."
+    }
+  ],
+  "pvpLeaderboard": [
+    {
+      "rank": 1,
+      "name": "Bum",
+      "rating": 3021,
+      "region": "US",
+      "notes": "Season 1 early leader"
+    },
+    {
+      "rank": 2,
+      "name": "Nicotinefien",
+      "rating": 2941,
+      "region": "US"
+    },
+    {
+      "rank": 3,
+      "name": "Laryfsherman",
+      "rating": 2911,
+      "region": "US"
+    }
+  ],
+  "raidLeaderboard": [
+    {
+      "rank": 1,
+      "name": "Dakd",
+      "guild": "Unknown",
+      "dps": 5745707,
+      "encounterID": 3009
+    },
+    {
+      "rank": 2,
+      "name": "Gorelul",
+      "guild": "Unknown",
+      "dps": 5728252,
+      "encounterID": 3009
+    },
+    {
+      "rank": 3,
+      "name": "Recruitie",
+      "guild": "Unknown",
+      "dps": 5546098,
+      "encounterID": 3009
+    },
+    {
+      "rank": 4,
+      "name": "Noctuss",
+      "guild": "Unknown",
+      "dps": 5517296,
+      "encounterID": 3009
+    },
+    {
+      "rank": 5,
+      "name": "Finalsai",
+      "guild": "Unknown",
+      "dps": 5505031,
+      "encounterID": 3009
+    },
+    {
+      "rank": 6,
+      "name": "Pcb",
+      "guild": "Unknown",
+      "dps": 5493768,
+      "encounterID": 3009
+    },
+    {
+      "rank": 7,
+      "name": "펩시짱",
+      "guild": "Unknown",
+      "dps": 5488313,
+      "encounterID": 3009
+    },
+    {
+      "rank": 8,
+      "name": "Чичкинс",
+      "guild": "Unknown",
+      "dps": 5455756,
+      "encounterID": 3009
+    },
+    {
+      "rank": 9,
+      "name": "Revelstoke",
+      "guild": "Unknown",
+      "dps": 5452858,
+      "encounterID": 3009
+    },
+    {
+      "rank": 10,
+      "name": "Jtrolling",
+      "guild": "Unknown",
+      "dps": 5415175,
+      "encounterID": 3009
+    },
+    {
+      "rank": 11,
+      "name": "Metakælling",
+      "guild": "Unknown",
+      "dps": 5410530,
+      "encounterID": 3009
+    },
+    {
+      "rank": 12,
+      "name": "긴호흡딜링머신",
+      "guild": "Unknown",
+      "dps": 5380227,
+      "encounterID": 3009
+    },
+    {
+      "rank": 13,
+      "name": "Cyon",
+      "guild": "Unknown",
+      "dps": 5357356,
+      "encounterID": 3009
+    },
+    {
+      "rank": 14,
+      "name": "스왑맨",
+      "guild": "Unknown",
+      "dps": 5343096,
+      "encounterID": 3009
+    },
+    {
+      "rank": 15,
+      "name": "Kayzed",
+      "guild": "Unknown",
+      "dps": 5338155,
+      "encounterID": 3009
+    },
+    {
+      "rank": 16,
+      "name": "Scalyskin",
+      "guild": "Unknown",
+      "dps": 5295979,
+      "encounterID": 3009
+    },
+    {
+      "rank": 17,
+      "name": "Laminatoren",
+      "guild": "Unknown",
+      "dps": 5266498,
+      "encounterID": 3009
+    },
+    {
+      "rank": 18,
+      "name": "프로빙",
+      "guild": "Unknown",
+      "dps": 5262160,
+      "encounterID": 3009
+    },
+    {
+      "rank": 19,
+      "name": "Thota",
+      "guild": "Unknown",
+      "dps": 5256581,
+      "encounterID": 3009
+    },
+    {
+      "rank": 20,
+      "name": "튀동쨩",
+      "guild": "Unknown",
+      "dps": 5223983,
+      "encounterID": 3009
+    },
+    {
+      "rank": 21,
+      "name": "Mîndï",
+      "guild": "Unknown",
+      "dps": 5223936,
+      "encounterID": 3009
+    },
+    {
+      "rank": 22,
+      "name": "Wasril",
+      "guild": "Unknown",
+      "dps": 5204066,
+      "encounterID": 3009
+    },
+    {
+      "rank": 23,
+      "name": "Clecia",
+      "guild": "Unknown",
+      "dps": 5203915,
+      "encounterID": 3009
+    },
+    {
+      "rank": 24,
+      "name": "Manalul",
+      "guild": "Unknown",
+      "dps": 5203006,
+      "encounterID": 3009
+    },
+    {
+      "rank": 25,
+      "name": "Boomburger",
+      "guild": "Unknown",
+      "dps": 5196945,
+      "encounterID": 3009
+    },
+    {
+      "rank": 26,
+      "name": "Mukotwo",
+      "guild": "Unknown",
+      "dps": 5193343,
+      "encounterID": 3009
+    },
+    {
+      "rank": 27,
+      "name": "뱅그랄라",
+      "guild": "Unknown",
+      "dps": 5192764,
+      "encounterID": 3009
+    },
+    {
+      "rank": 28,
+      "name": "Roiiben",
+      "guild": "Unknown",
+      "dps": 5189664,
+      "encounterID": 3009
+    },
+    {
+      "rank": 29,
+      "name": "Suprakin",
+      "guild": "Unknown",
+      "dps": 5179377,
+      "encounterID": 3009
+    },
+    {
+      "rank": 30,
+      "name": "Krám",
+      "guild": "Unknown",
+      "dps": 5174961,
+      "encounterID": 3009
+    },
+    {
+      "rank": 31,
+      "name": "Dimwit",
+      "guild": "Unknown",
+      "dps": 5165843,
+      "encounterID": 3009
+    },
+    {
+      "rank": 32,
+      "name": "Mayaler",
+      "guild": "Unknown",
+      "dps": 5160649,
+      "encounterID": 3009
+    },
+    {
+      "rank": 33,
+      "name": "Nayrobirb",
+      "guild": "Unknown",
+      "dps": 5158567,
+      "encounterID": 3009
+    },
+    {
+      "rank": 34,
+      "name": "Hollerkin",
+      "guild": "Unknown",
+      "dps": 5158311,
+      "encounterID": 3009
+    },
+    {
+      "rank": 35,
+      "name": "Mowsffs",
+      "guild": "Unknown",
+      "dps": 5155450,
+      "encounterID": 3009
+    },
+    {
+      "rank": 36,
+      "name": "Moonkiki",
+      "guild": "Unknown",
+      "dps": 5154491,
+      "encounterID": 3009
+    },
+    {
+      "rank": 37,
+      "name": "뚜기스",
+      "guild": "Unknown",
+      "dps": 5151751,
+      "encounterID": 3009
+    },
+    {
+      "rank": 38,
+      "name": "Starkypoo",
+      "guild": "Unknown",
+      "dps": 5141068,
+      "encounterID": 3009
+    },
+    {
+      "rank": 39,
+      "name": "Scratland",
+      "guild": "Unknown",
+      "dps": 5138636,
+      "encounterID": 3009
+    },
+    {
+      "rank": 40,
+      "name": "Eskabigd",
+      "guild": "Unknown",
+      "dps": 5132208,
+      "encounterID": 3009
+    },
+    {
+      "rank": 41,
+      "name": "Wunderxd",
+      "guild": "Unknown",
+      "dps": 5122457,
+      "encounterID": 3009
+    },
+    {
+      "rank": 42,
+      "name": "Mawts",
+      "guild": "Unknown",
+      "dps": 5121221,
+      "encounterID": 3009
+    },
+    {
+      "rank": 43,
+      "name": "소군",
+      "guild": "Unknown",
+      "dps": 5116157,
+      "encounterID": 3009
+    },
+    {
+      "rank": 44,
+      "name": "Gamz",
+      "guild": "Unknown",
+      "dps": 5115876,
+      "encounterID": 3009
+    },
+    {
+      "rank": 45,
+      "name": "Neur",
+      "guild": "Unknown",
+      "dps": 5108788,
+      "encounterID": 3009
+    },
+    {
+      "rank": 46,
+      "name": "Scrappd",
+      "guild": "Unknown",
+      "dps": 5104342,
+      "encounterID": 3009
+    },
+    {
+      "rank": 47,
+      "name": "Мусенптенчик",
+      "guild": "Unknown",
+      "dps": 5100817,
+      "encounterID": 3009
+    },
+    {
+      "rank": 48,
+      "name": "Anonymous",
+      "guild": "Unknown",
+      "dps": 5090911,
+      "encounterID": 3009
+    },
+    {
+      "rank": 49,
+      "name": "Chickenism",
+      "guild": "Unknown",
+      "dps": 5082568,
+      "encounterID": 3009
+    },
+    {
+      "rank": 50,
+      "name": "Cêthix",
+      "guild": "Unknown",
+      "dps": 5079971,
+      "encounterID": 3009
+    }
+  ],
+  "mythicPlusLeaderboard": [],
+  "liveDataSources": {
+    "warcraftlogs": "https://www.warcraftlogs.com/zone/rankings/latest#class=Druid&spec=Balance",
+    "raiderio": "https://raider.io/mythic-plus-character-rankings/season-midnight-1/world/druid/balance",
+    "murlokio": "https://murlok.io/druid/balance/m+"
+  },
+  "currentAffixes": {
+    "title": "Xal'atath's Bargain: Ascendant, Fortified, Tyrannical, Xal'atath's Guile",
+    "affixes": [
+      {
+        "name": "Xal'atath's Bargain: Ascendant",
+        "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players."
+      },
+      {
+        "name": "Fortified",
+        "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage."
+      },
+      {
+        "name": "Tyrannical",
+        "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage."
+      },
+      {
+        "name": "Xal'atath's Guile",
+        "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining."
+      }
+    ]
+  }
+}

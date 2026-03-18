@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Surfaces (warm-tinted, like aged parchment on dark wood) ── */
+  --color-void: oklch(7% 0.01 45);
+  --color-surface-1: oklch(10.5% 0.012 45);
+  --color-surface-2: oklch(14% 0.014 45);
+  --color-surface-3: oklch(18% 0.016 45);
+
+  /* ── Accent palette (medieval jewel tones) ── */
+  --color-solar: oklch(78% 0.16 60);
+  --color-lunar: oklch(68% 0.16 285);
+  --color-nature: oklch(52% 0.14 155);
+  --color-burgundy: oklch(50% 0.14 20);
+
+  /* ── Text (warm-tinted, parchment feel) ── */
+  --color-text-1: oklch(90% 0.01 60);
+  --color-text-2: oklch(68% 0.015 55);
+  --color-text-3: oklch(50% 0.012 50);
+  --color-text-4: oklch(36% 0.01 45);
+
+  /* ── Borders ── */
+  --color-border: oklch(16% 0.012 45);
+
+  /* ── Fonts ── */
+  --font-display: "Cormorant", "Georgia", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-void);
+  color: var(--color-text-1);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Parchment noise texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Vignette - like candlelight illumination */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 30% 20%, transparent 30%, oklch(4% 0.01 45 / 0.5) 100%);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: oklch(22% 0.02 50); border-radius: 3px; }
+
+::selection { background: oklch(78% 0.16 60 / 0.3); color: oklch(95% 0.01 60); }
+
+:root {
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --gold: oklch(78% 0.16 60);
+  --gold-dim: oklch(60% 0.12 55);
+  --gold-bright: oklch(88% 0.14 65);
+}
+
+/* ── Gold leaf shimmer on hero title ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.gold-shimmer {
+  background: linear-gradient(
+    105deg,
+    oklch(82% 0.12 55) 0%,
+    oklch(92% 0.08 65) 25%,
+    oklch(78% 0.16 60) 50%,
+    oklch(92% 0.08 65) 75%,
+    oklch(82% 0.12 55) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* ── Illuminated drop cap ── */
+.drop-cap::first-letter {
+  font-family: "Cormorant", Georgia, serif;
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 8px;
+  margin-top: 4px;
+  color: var(--gold);
+  text-shadow: 0 0 20px oklch(78% 0.16 60 / 0.3);
+}
+
+/* ── Scroll-triggered reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Stagger children ── */
+.stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger > .reveal:nth-child(2) { transition-delay: 60ms; }
+.stagger > .reveal:nth-child(3) { transition-delay: 120ms; }
+.stagger > .reveal:nth-child(4) { transition-delay: 180ms; }
+.stagger > .reveal:nth-child(5) { transition-delay: 240ms; }
+.stagger > .reveal:nth-child(6) { transition-delay: 300ms; }
+
+/* ── Scroll progress - gold gradient ── */
+.scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: 100;
+  background: linear-gradient(90deg, oklch(78% 0.16 60), oklch(88% 0.1 65), oklch(78% 0.16 60));
+  transition: width 80ms linear;
+}
+
+/* ── Heraldic ornamental divider ── */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 240px;
+  margin: 0 auto;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(78% 0.16 60 / 0.25), transparent);
+}
+.ornament-diamond {
+  width: 6px;
+  height: 6px;
+  background: oklch(78% 0.16 60 / 0.4);
+  transform: rotate(45deg);
+}
+.ornament-diamond::before,
+.ornament-diamond::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: oklch(78% 0.16 60 / 0.25);
+  transform: rotate(0deg);
+}
+.ornament-diamond::before { left: -10px; top: 1px; }
+.ornament-diamond::after { right: -10px; top: 1px; }
+
+/* ── Gilt border for special cards ── */
+.gilt-border {
+  border: 1px solid oklch(78% 0.16 60 / 0.15);
+  box-shadow:
+    inset 0 0 0 1px oklch(78% 0.16 60 / 0.05),
+    0 0 30px oklch(78% 0.16 60 / 0.03);
+}
+
+/* ── Manuscript rule lines ── */
+.manuscript-rule {
+  border-bottom: 1px solid oklch(78% 0.16 60 / 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .gold-shimmer { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

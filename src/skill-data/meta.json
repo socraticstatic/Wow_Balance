@@ -1,0 +1,34 @@
+{
+  "expansion": "Midnight",
+  "patch": "12.0.1",
+  "season": "Season 1",
+  "lastSynced": "2026-03-17T22:02:58.617Z",
+  "raidTier": "Manaforge Omega / Windrunner Spire / Midnight Falls",
+  "mythicPlusUnlock": "2026-03-24",
+  "dataSources": {
+    "rankings": "WarcraftLogs v2 API + Raider.io",
+    "gear": "Blizzard Game Data API + WarcraftLogs parse inspection",
+    "talents": "Blizzard Game Data API + Method/Icy Veins/Dreamgrove",
+    "consumables": "Method + Icy Veins (manual)",
+    "rotation": "Method + Dreamgrove (manual curation)"
+  },
+  "nextExpectedPatch": "12.0.5 (TBD)",
+  "notes": "M+ keystones unlock March 24. Live ranking data will stabilize after first 2 weeks of Season 1.",
+  "syncResults": [
+    {
+      "step": "fetch-rankings",
+      "status": "ok",
+      "duration": "1453ms"
+    },
+    {
+      "step": "fetch-gear",
+      "status": "ok",
+      "duration": "1626ms"
+    },
+    {
+      "step": "fetch-mythicplus",
+      "status": "ok",
+      "duration": "1298ms"
+    }
+  ]
+}

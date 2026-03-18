@@ -1,0 +1,194 @@
+[
+  {
+    "id": "raid-st-keeper",
+    "name": "Keeper Single Target",
+    "use": "Raid - Single Target",
+    "heroSpec": "Keeper of the Grove",
+    "difficulty": "Advanced",
+    "rating": 98,
+    "description": "Burst-focused ST build. Force of Nature treants provide 24% damage amp. Plan cooldowns around 1-minute burst windows. Incarnation for longer, safer burst. Eclipse timing syncs with Starlord refresh.",
+    "keystones": ["Incarnation: Chosen of Elune", "Force of Nature", "Starweaver", "Soul of the Forest", "Starlord", "Total Eclipse", "Orbit Breaker", "Solstice"],
+    "statPriority": ["Intellect", "Mastery", "Haste", "Crit", "Versatility"],
+    "rotation": {
+      "opener": [
+        "Pre-cast Wrath 3-4s before pull",
+        "Moonfire on pull",
+        "Sunfire",
+        "Enter Solar Eclipse",
+        "Starsurge x3 (Ascendant Eclipse buffed)",
+        "Wrath (generate AP if needed)",
+        "Fury of Elune / New Moon",
+        "Sunfire refresh",
+        "Force of Nature",
+        "Incarnation: Chosen of Elune"
+      ],
+      "priority": [
+        "Maintain Moonfire and Sunfire",
+        "Force of Nature with Eclipse or CA active",
+        "Fury of Elune aligned with Eclipse or Force of Nature",
+        "Celestial Alignment if charge ready before Convoke",
+        "Enter Solar Eclipse when Starlord falls off + have free Starsurge procs",
+        "Spend Starweaver/Touch the Cosmos procs on Starfall if no Ascendant Eclipse stacks",
+        "Starsurge to prevent AP overcap or consume Ascendant Eclipse stacks",
+        "Wrath as filler"
+      ],
+      "cooldowns": [
+        "Incarnation: overlap with Force of Nature for maximum burst",
+        "Force of Nature: every 1 minute, always during Eclipse",
+        "Potion of Recklessness: on pull (pre-pot) and during strongest CD window"
+      ]
+    },
+    "notes": "Keeper demands strategic CD planning. Research fight lengths and damage amp phases to determine CD efficiency. Hold Force of Nature to overlap Harmony of the Grove with other CDs.",
+    "source": "Method.gg Midnight 12.0.1 guide"
+  },
+  {
+    "id": "raid-aoe-elune",
+    "name": "Elune's Chosen Multi-Target",
+    "use": "Raid - Multi-Target / Council",
+    "heroSpec": "Elune's Chosen",
+    "difficulty": "Intermediate",
+    "rating": 96,
+    "description": "Stacked cleave beast. Lunar Calling means you always cast Starfire. Fury of Elune applies Atmospheric Exposure for 4% damage amp on all targets. Highest simming for sustained multi-target.",
+    "keystones": ["Incarnation: Chosen of Elune", "Fury of Elune", "Lunar Calling", "Starweaver", "Aetherial Kindling", "Soul of the Forest", "Starlord", "Total Eclipse"],
+    "statPriority": ["Intellect", "Haste", "Mastery", "Crit", "Versatility"],
+    "rotation": {
+      "opener": [
+        "Moonfire all targets",
+        "Sunfire",
+        "Incarnation (outside Eclipse, when Fury of Elune available)",
+        "Fury of Elune",
+        "Enter Lunar Eclipse at 90%+ AP",
+        "Starfall (Ascendant Eclipse buffed)",
+        "Starfire filler"
+      ],
+      "priority": [
+        "Moonfire every target",
+        "Sunfire",
+        "Starfall on 2+ targets to prevent AP overcap",
+        "Starweaver/Touch the Cosmos procs on Starfall",
+        "Starsurge on single target only near AP cap",
+        "Starfire as primary filler (reduces Fury of Elune CD via Lunation)",
+        "Fury of Elune on cooldown"
+      ],
+      "cooldowns": [
+        "Incarnation when Fury of Elune is available",
+        "Fury of Elune on cooldown, always during Eclipse or Incarnation"
+      ]
+    },
+    "notes": "You will NOT enter Solar Eclipse with Elune's Chosen due to Lunar Calling. Always Lunar. Maximize casting uptime to reduce Fury of Elune CD via Lunation.",
+    "source": "Method.gg Midnight 12.0.1 guide"
+  },
+  {
+    "id": "mythicplus-elune",
+    "name": "Elune's Chosen M+",
+    "use": "Mythic+",
+    "heroSpec": "Elune's Chosen",
+    "difficulty": "Intermediate",
+    "rating": 97,
+    "description": "Sustained AoE throughput build. Uncapped Starfall + Starfire damage scales infinitely with pull size. Pool AP between packs. Fury of Elune + Atmospheric Exposure for permanent AoE amp.",
+    "keystones": ["Incarnation: Chosen of Elune", "Fury of Elune", "Lunar Calling", "Starweaver", "Aetherial Kindling", "Soul of the Forest", "Starlord", "Total Eclipse"],
+    "statPriority": ["Intellect", "Haste", "Mastery", "Crit", "Versatility"],
+    "rotation": {
+      "opener": [
+        "Pool AP to 80-100 between packs",
+        "Sunfire (AoE apply)",
+        "Moonfire high-priority targets",
+        "Enter Lunar Eclipse",
+        "Fury of Elune",
+        "Starfall (Ascendant Eclipse buffed)",
+        "Starfire spam",
+        "Starfall/Starsurge as AP allows"
+      ],
+      "priority": [
+        "Pool AP between packs (80+ minimum)",
+        "Sunfire on pull start",
+        "Moonfire priority targets",
+        "Starfall on 2+ targets",
+        "Fury of Elune on cooldown",
+        "Starfire filler (uncapped AoE + Lunation CD reduction)",
+        "Starsurge on 1 target or to prevent AP overcap"
+      ],
+      "cooldowns": [
+        "Use CDs on trash, not just bosses. Treat dungeon as one long fight.",
+        "Solar Beam every caster pack (1-min CD)",
+        "Stampeding Roar for group movement"
+      ]
+    },
+    "notes": "Pool AP. Use CDs liberally. Solar Beam every caster pack. Stampeding Roar for the group. Elune's caps higher than Keeper on large pulls.",
+    "source": "Method.gg + Maxroll Midnight 12.0.1 guides"
+  },
+  {
+    "id": "pvp-keeper",
+    "name": "Keeper PvP Burst",
+    "use": "PvP Arena",
+    "heroSpec": "Keeper of the Grove",
+    "difficulty": "Advanced",
+    "rating": 90,
+    "description": "Burst-focused PvP build. Force of Nature + Incarnation kill windows every 1-3 minutes. Cyclone chains on healer. Shadowmeld for resets.",
+    "keystones": ["Incarnation: Chosen of Elune", "Force of Nature", "Starweaver", "Soul of the Forest", "Starlord", "Total Eclipse"],
+    "statPriority": ["Intellect", "Versatility", "Mastery", "Haste", "Crit"],
+    "rotation": {
+      "opener": [
+        "Position at max range",
+        "Moonfire + Sunfire kill target",
+        "Enter Solar Eclipse",
+        "Starsurge x3 (Ascendant Eclipse buffed)",
+        "Force of Nature (24% amp)",
+        "Incarnation during teammate stun on healer",
+        "Cyclone healer when stun DRs"
+      ],
+      "priority": [
+        "Maintain DoTs on all targets (pressure + Shooting Stars)",
+        "Solar Beam enemy healer on cast",
+        "Cyclone healer during kill attempts",
+        "Starsurge when AP available",
+        "Bear Form when being trained by melee",
+        "Typhoon melee off you"
+      ],
+      "cooldowns": [
+        "Force of Nature every 1 minute for kill windows",
+        "Incarnation every 3 minutes for major burst",
+        "Barkskin proactively when being focused"
+      ]
+    },
+    "notes": "Versatility is king for PvP. Survivability wins games. Shadowmeld to dodge CC and reset positioning.",
+    "source": "Icy Veins PvP guide + Skill-Capped Midnight 12.0.1"
+  },
+  {
+    "id": "learning",
+    "name": "Keeper Learning Build",
+    "use": "General / Learning",
+    "heroSpec": "Keeper of the Grove",
+    "difficulty": "Beginner",
+    "rating": 85,
+    "description": "Simplified build for learning Balance Druid. Fewer cooldowns to manage. Incarnation for straightforward burst. Focus on Eclipse management and DoT uptime before optimizing further.",
+    "keystones": ["Incarnation: Chosen of Elune", "Force of Nature", "Starweaver", "Soul of the Forest", "Starlord", "Total Eclipse"],
+    "statPriority": ["Intellect", "Mastery", "Haste", "Crit", "Versatility"],
+    "rotation": {
+      "opener": [
+        "Moonfire",
+        "Sunfire",
+        "Enter Solar Eclipse",
+        "Starsurge x3",
+        "Incarnation",
+        "Wrath filler",
+        "Starsurge when you have 40+ AP"
+      ],
+      "priority": [
+        "Keep Moonfire and Sunfire up at all times",
+        "Enter Eclipse whenever you have charges",
+        "Starsurge at 40+ AP (single target)",
+        "Starfall at 50+ AP (2+ targets)",
+        "Wrath as filler in Solar Eclipse",
+        "Starfire as filler on 2+ targets",
+        "Incarnation on cooldown"
+      ],
+      "cooldowns": [
+        "Incarnation on cooldown (don't overthink timing yet)",
+        "Force of Nature during Incarnation"
+      ]
+    },
+    "notes": "Master three things first: 1) Keep DoTs up. 2) Don't overcap AP. 3) Use Eclipse charges, don't sit on 2. Once these are automatic, move to the Advanced builds.",
+    "source": "Adapted from Method/Icy Veins for learning"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "patch": "12.0.1",
+    "expansion": "Midnight",
+    "date": "2026-03-02",
+    "type": "expansion_launch",
+    "changes": [
+      "Eclipse reworked: now an active button (2 charges, 30s CD) instead of passive trigger",
+      "Apex Talents added: Ascendant Eclipses (4 ranks, Eclipse bolts, crit DoT scaling)",
+      "Mastery simplified: flat damage increase, no longer interacts with Moonfire/Sunfire",
+      "Starlord: now 20s duration, no longer cancellable",
+      "Stellar Flare REMOVED",
+      "Waning Twilight REMOVED",
+      "Warrior of Elune REMOVED",
+      "Umbral Inspiration REMOVED",
+      "Astronomical Impact REMOVED",
+      "Nature's Vigil replaced by Gift of the Wild",
+      "Heart of the Wild reworked: form-dependent 2-min cooldown",
+      "Orbit Breaker: Full Moon every 25 Shooting Stars (was 30)",
+      "Convoke the Spirits: now prefers Starsurge or Full Moon on current target",
+      "Many class tree talents converted to 1-point talents",
+      "3 new Hero Talent nodes per tree (level 90)",
+      "New tier set: Luminous Bloom (Shooting Stars synergy)",
+      "New raids: Manaforge Omega, Windrunner Spire, Midnight Falls",
+      "New M+ dungeons: Windrunner Spire, Murder Row, Den of Nalorakk, Maisara Caverns",
+      "Level cap raised to 90"
+    ]
+  },
+  {
+    "patch": "12.0.1 Hotfix",
+    "expansion": "Midnight",
+    "date": "2026-03-10",
+    "type": "tuning",
+    "changes": [
+      "Balance Druid received 20% flat damage increase in Season 1 tuning pass",
+      "4pc tier set Shooting Star proc chance reduced from 40% to 30%",
+      "Lunar Calling damage buff increased to 160%"
+    ]
+  },
+  {
+    "patch": "11.1.5",
+    "expansion": "The War Within",
+    "date": "2025-02",
+    "type": "patch",
+    "changes": [
+      "Final TWW patch before Midnight",
+      "Power of Goldrinn increased by 100%",
+      "Wrath damage increased by 30%",
+      "Starsurge damage increased by 5%"
+    ]
+  }
+]

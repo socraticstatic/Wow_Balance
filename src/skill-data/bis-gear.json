@@ -1,0 +1,151 @@
+{
+  "patchVersion": "12.0.1",
+  "season": "Midnight Season 1",
+  "lastUpdated": "2026-03-17T22:02:57.318Z",
+  "tierSet": {
+    "name": "Luminous Bloom",
+    "twoPiece": "Shooting Stars deal 50% more damage and generate 3 additional Astral Power outside Eclipse.",
+    "fourPiece": "Starfall and Starsurge damage increased by 5%, and casting them has a 30% chance to strike an affected target with an exploding Shooting Star that deals Astral damage to all nearby enemies.",
+    "notes": "4pc chance was reduced from 40% to 30% in a tuning pass. Still extremely strong for both ST and AoE. Synergizes with Starweaver (free spenders proc more Shooting Stars) and Hail of Stars."
+  },
+  "raidMythic": [
+    {
+      "slot": "Head",
+      "name": "Branches of the Luminous Bloom",
+      "source": "Tier",
+      "isTier": true
+    },
+    {
+      "slot": "Neck",
+      "name": "Eternal Voidsong Chain",
+      "source": "Alleria Windrunner",
+      "isTier": false
+    },
+    {
+      "slot": "Shoulders",
+      "name": "Seedpods of the Luminous Bloom",
+      "source": "Tier",
+      "isTier": true
+    },
+    {
+      "slot": "Cloak",
+      "name": "Draconic Nullcape",
+      "source": "Vaelgor",
+      "isTier": false
+    },
+    {
+      "slot": "Chest",
+      "name": "Trunk of the Luminous Bloom",
+      "source": "Tier",
+      "isTier": true
+    },
+    {
+      "slot": "Wrist",
+      "name": "Silvermoon Agent's Deflectors",
+      "source": "Crafted (Embellishment slot)",
+      "isTier": false
+    },
+    {
+      "slot": "Gloves",
+      "name": "Gloves of Viscous Goo",
+      "source": "Magister's Terrace",
+      "isTier": false
+    },
+    {
+      "slot": "Belt",
+      "name": "Snapvine Cinch",
+      "source": "Windrunner Spire",
+      "isTier": false
+    },
+    {
+      "slot": "Legs",
+      "name": "Phloemwraps of the Luminous Bloom",
+      "source": "Tier",
+      "isTier": true
+    },
+    {
+      "slot": "Boots",
+      "name": "Canopy Walker's Footwraps",
+      "source": "Alleria Windrunner",
+      "isTier": false
+    },
+    {
+      "slot": "Ring 1",
+      "name": "Occulsion of Void",
+      "source": "Nexus-Point Xenas (double-socketed)",
+      "isTier": false
+    },
+    {
+      "slot": "Ring 2",
+      "name": "Omission of Light",
+      "source": "Nexus-Point Xenas (double-socketed)",
+      "isTier": false
+    },
+    {
+      "slot": "Weapon",
+      "name": "Belo'melorn, The Shattered Talon",
+      "source": "Belo'ren",
+      "isTier": false
+    },
+    {
+      "slot": "Off-Hand",
+      "name": "Aln'hara Lantern",
+      "source": "Crafted",
+      "isTier": false
+    }
+  ],
+  "trinkets": {
+    "bestCombination": "Vaelgor's Final Stare + Gaze of the Alnseer",
+    "rankings": [
+      {
+        "name": "Vaelgor's Final Stare",
+        "type": "On-Use",
+        "cooldown": "2 min",
+        "source": "Vaelgor",
+        "notes": "Coordinate with Incarnation/CA + Force of Nature. Your best burst trinket."
+      },
+      {
+        "name": "Gaze of the Alnseer",
+        "type": "Passive",
+        "source": "Windrunner Spire",
+        "notes": "Mastery stat-stick with random Intellect stacks. Consistent value."
+      },
+      {
+        "name": "Emberwing Feather",
+        "type": "On-Use",
+        "source": "Windrunner Spire",
+        "notes": "Alternative on-use. Slightly weaker than Vaelgor's."
+      },
+      {
+        "name": "Locus-Walker's Ribbon",
+        "type": "Passive",
+        "source": "Maisara Caverns",
+        "notes": "Good passive alternative. Best overall low-target trinket."
+      },
+      {
+        "name": "Wraps of Cosmic Madness",
+        "type": "On-Use",
+        "cooldown": "60s",
+        "source": "Raid",
+        "notes": "2s channel weapon. Resets CD if raid member dies. Niche."
+      }
+    ]
+  },
+  "weapon": {
+    "best": "Belo'melorn, The Shattered Talon (2H Staff from Belo'ren)",
+    "craftedAlternative": "Aln'hara Cane with Darkmoon Sigil: Hunt embellishment",
+    "notes": "Craft a weapon FIRST if you don't have a raid weapon. Weapons scale best with ilvl."
+  },
+  "embellishments": {
+    "first": {
+      "name": "Darkmoon Sigil: Hunt",
+      "slot": "Weapon (crafted)",
+      "notes": "Best first craft. Put on Aln'hara Cane."
+    },
+    "second": {
+      "name": "Arcanoweave Lining",
+      "slot": "Wrist or Waist (low stat budget)",
+      "notes": "Craft on Silvermoon Agent's Deflectors (wrist) or Silvermoon Agent's Utility Belt (waist)."
+    }
+  }
+}

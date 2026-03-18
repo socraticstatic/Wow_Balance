@@ -1,0 +1,3301 @@
+{
+  "name": "Spiracle",
+  "realm": "zuljin",
+  "region": "us",
+  "lastUpdated": "2026-03-17T22:40:58.257Z",
+  "warcraftlogs": {
+    "name": "Spiracle",
+    "classID": 2,
+    "server": {
+      "slug": "zuljin",
+      "name": "Zul'jin"
+    },
+    "zoneRankings": {
+      "bestPerformanceAverage": null,
+      "medianPerformanceAverage": null,
+      "difficulty": 4,
+      "metric": "dps",
+      "partition": 1,
+      "zone": 46,
+      "size": 10,
+      "allStars": [],
+      "rankings": [
+        {
+          "encounter": {
+            "id": 3176,
+            "name": "Imperator Averzian"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3177,
+            "name": "Vorasius"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3178,
+            "name": "Vaelgor & Ezzorak"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3179,
+            "name": "Fallen-King Salhadaar"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3180,
+            "name": "Lightblinded Vanguard"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3181,
+            "name": "Crown of the Cosmos"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3306,
+            "name": "Chimaerus the Undreamt God"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3182,
+            "name": "Belo'ren, Child of Al'ar"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        },
+        {
+          "encounter": {
+            "id": 3183,
+            "name": "Midnight Falls"
+          },
+          "rankPercent": null,
+          "medianPercent": null,
+          "allStars": null,
+          "lockedIn": true,
+          "totalKills": 0,
+          "fastestKill": 0,
+          "bestAmount": 0,
+          "spec": null
+        }
+      ]
+    }
+  },
+  "raiderio": {
+    "name": "Spiracle",
+    "race": "Night Elf",
+    "class": "Druid",
+    "active_spec_name": "Balance",
+    "active_spec_role": "DPS",
+    "gender": "female",
+    "faction": "alliance",
+    "achievement_points": 17180,
+    "thumbnail_url": "https://render.worldofwarcraft.com/us/character/zuljin/199/247588295-avatar.jpg?alt=/wow/static/images/2d/avatar/4-1.jpg",
+    "region": "us",
+    "realm": "Zul'jin",
+    "last_crawled_at": "2026-02-17T22:54:29.000Z",
+    "profile_url": "https://raider.io/characters/us/zuljin/Spiracle",
+    "profile_banner": "alliancebanner1",
+    "mythic_plus_scores_by_season": [
+      {
+        "season": "season-mn-1",
+        "scores": {
+          "all": 0,
+          "dps": 0,
+          "healer": 0,
+          "tank": 0,
+          "spec_0": 0,
+          "spec_1": 0,
+          "spec_2": 0,
+          "spec_3": 0
+        },
+        "segments": {
+          "all": {
+            "score": 0,
+            "color": "#ff8000"
+          },
+          "dps": {
+            "score": 0,
+            "color": "#ff8000"
+          },
+          "healer": {
+            "score": 0,
+            "color": "#ff8000"
+          },
+          "tank": {
+            "score": 0,
+            "color": "#ff8000"
+          },
+          "spec_0": {
+            "score": 0,
+            "color": "#ff8000"
+          },
+          "spec_1": {
+            "score": 0,
+            "color": "#ff8000"
+          },
+          "spec_2": {
+            "score": 0,
+            "color": "#ff8000"
+          },
+          "spec_3": {
+            "score": 0,
+            "color": "#ff8000"
+          }
+        }
+      }
+    ],
+    "mythic_plus_best_runs": [],
+    "gear": {
+      "created_at": "2026-02-17T22:54:29.590Z",
+      "updated_at": "2026-02-17T22:54:29.590Z",
+      "source": "s3",
+      "item_level_equipped": 146,
+      "item_level_total": 0,
+      "artifact_traits": 0,
+      "corruption": {
+        "added": 0,
+        "resisted": 0,
+        "total": 0,
+        "cloakRank": 0,
+        "spells": []
+      },
+      "items": {
+        "head": {
+          "item_id": 219329,
+          "item_level": 156,
+          "icon": "inv_leather_outdoorarathor_d_01_helm",
+          "name": "Rune-Branded Hood",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": true,
+          "azerite_powers": [
+            null,
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            null
+          ],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [
+            213488
+          ],
+          "gems_detail": [
+            {
+              "id": 213488,
+              "name": "12 Haste",
+              "icon": "inv_jewelcrafting_cutstandartgem_color2"
+            }
+          ],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            10421,
+            9633,
+            8902,
+            9626,
+            12053,
+            12050,
+            12922
+          ]
+        },
+        "neck": {
+          "item_id": 237963,
+          "item_level": 144,
+          "icon": "inv_arathor_necklace_01_color5",
+          "name": "Void-Scarred Brooch",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            6652,
+            10395,
+            10392,
+            12297
+          ]
+        },
+        "shoulder": {
+          "item_id": 237680,
+          "item_level": 157,
+          "icon": "inv_shoulder_leather_raiddruidethereal_d_01",
+          "name": "Ritual Pauldrons of the Mother Eagle",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": true,
+          "azerite_powers": [
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            null
+          ],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "tier": "34",
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            12233,
+            6652,
+            12675,
+            13444,
+            1527,
+            10255
+          ]
+        },
+        "back": {
+          "item_id": 235499,
+          "item_level": 170,
+          "enchant": 6592,
+          "icon": "inv_cape_armor_etherealshawl_d_01",
+          "name": "Reshii Wraps",
+          "item_quality": 6,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [
+            238037
+          ],
+          "gems_detail": [
+            {
+              "id": 238037,
+              "name": "Energizing Fiber",
+              "icon": "inv_112_etherealwraps_basic_original"
+            }
+          ],
+          "enchants": [
+            6592
+          ],
+          "enchants_detail": [
+            {
+              "id": 200031,
+              "name": "Graceful Avoidance",
+              "icon": "inv_misc_enchantedscroll"
+            }
+          ],
+          "bonuses": [
+            12401,
+            9893,
+            12255
+          ]
+        },
+        "chest": {
+          "item_id": 237685,
+          "item_level": 141,
+          "icon": "inv_chest_leather_raiddruidethereal_d_01",
+          "name": "Vest of the Mother Eagle",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": true,
+          "azerite_powers": [
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            {
+              "id": 580,
+              "spell": {
+                "id": 0,
+                "school": 0,
+                "icon": "inv_misc_questionmark",
+                "name": "Unknown",
+                "rank": null
+              },
+              "tier": 999
+            },
+            null
+          ],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "tier": "34",
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            12229,
+            6652,
+            12676,
+            12352,
+            1511,
+            10255
+          ]
+        },
+        "waist": {
+          "item_id": 245964,
+          "item_level": 141,
+          "icon": "inv_armor_waistoftime_d_01_belt_titancopy",
+          "name": "Durable Information Securing Container",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            12533,
+            1489
+          ]
+        },
+        "wrist": {
+          "item_id": 211020,
+          "item_level": 147,
+          "icon": "inv_bracer_leather_undergroundquest_b_01",
+          "name": "Treasure-Seeker's Bindings",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            42,
+            12921,
+            12239,
+            12354
+          ]
+        },
+        "hands": {
+          "item_id": 237683,
+          "item_level": 147,
+          "icon": "inv_glove_leather_raiddruidethereal_d_01",
+          "name": "Wings of the Mother Eagle",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "tier": "34",
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            12230,
+            6652,
+            12675,
+            12354,
+            1517,
+            10255
+          ]
+        },
+        "legs": {
+          "item_id": 237681,
+          "item_level": 131,
+          "icon": "inv_pant_leather_raiddruidethereal_d_01",
+          "name": "Breeches of the Mother Eagle",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "tier": "34",
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            10353,
+            12232,
+            6652,
+            12676,
+            12289,
+            1501,
+            10255
+          ]
+        },
+        "feet": {
+          "item_id": 243041,
+          "item_level": 144,
+          "icon": "inv_boot_leather_raidrogueethereal_d_01",
+          "name": "Umbral Stalker's Footpads",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            6652,
+            12239,
+            10354,
+            12297,
+            1514,
+            10255
+          ]
+        },
+        "finger1": {
+          "item_id": 211061,
+          "item_level": 147,
+          "icon": "inv_11_0_earthen_jewelcraftingring_color3",
+          "name": "Unearthed Relic Band",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            6652,
+            10395,
+            10392,
+            12354,
+            1612,
+            10255
+          ]
+        },
+        "finger2": {
+          "item_id": 237956,
+          "item_level": 144,
+          "icon": "inv_jewelry_ring_108",
+          "name": "Void-Scarred Band",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            6652,
+            10395,
+            10392,
+            12297,
+            9925,
+            10255
+          ]
+        },
+        "trinket1": {
+          "item_id": 238386,
+          "item_level": 134,
+          "icon": "inv_enchant_voidcrystal",
+          "name": "Void-Touched Fragment",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            6652,
+            12350,
+            1566,
+            10255
+          ]
+        },
+        "trinket2": {
+          "item_id": 238390,
+          "item_level": 150,
+          "icon": "inv_jewelry_necklace_110",
+          "name": "Soulbreaker's Sigil",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            6652,
+            12355,
+            1582,
+            10255
+          ]
+        },
+        "mainhand": {
+          "item_id": 246071,
+          "item_level": 147,
+          "icon": "inv_staff_2h_etherealraid_d_01",
+          "name": "Mana-Seamster's Arcane-Needle",
+          "item_quality": 4,
+          "is_legendary": false,
+          "is_azerite_armor": false,
+          "azerite_powers": [],
+          "corruption": {
+            "added": 0,
+            "resisted": 0,
+            "total": 0
+          },
+          "domination_shards": [],
+          "gems": [],
+          "gems_detail": [],
+          "enchants": [],
+          "enchants_detail": [],
+          "bonuses": [
+            6652,
+            12354,
+            1517,
+            10255
+          ]
+        }
+      }
+    },
+    "talentLoadout": {
+      "loadout_spec_id": 102,
+      "loadout_text": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2oMbNjxMDwswMzMLMwMmZZmFzMDzsNzyYMYDDAGbLzMYMLDgZAAAAswMzYwmxMGDAAALA",
+      "loadout": [
+        {
+          "node": {
+            "id": 82198,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 103276,
+                "traitDefinitionId": 108281,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 102401,
+                  "name": "Wild Charge",
+                  "icon": "spell_druid_wildcharge",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              },
+              {
+                "id": 103275,
+                "traitDefinitionId": 108280,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 252216,
+                  "name": "Tiger Dash",
+                  "icon": "ability_druid_dash_orange",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 2700,
+            "posY": 4499,
+            "row": 5,
+            "col": 2
+          },
+          "entryIndex": 1,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82201,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103279,
+                "traitDefinitionId": 108284,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 194153,
+                  "name": "Starfire",
+                  "icon": "spell_arcane_starfire",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5700,
+            "posY": 1500,
+            "row": 10,
+            "col": 7
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82202,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103280,
+                "traitDefinitionId": 108285,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 78674,
+                  "name": "Starsurge",
+                  "icon": "spell_arcane_arcane03",
+                  "school": 72,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 6300,
+            "posY": 2100,
+            "row": 9,
+            "col": 8
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82206,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103284,
+                "traitDefinitionId": 108289,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 377796,
+                  "name": "Natural Recovery",
+                  "icon": "ability_druid_naturalperfection",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 4500,
+            "posY": 3900,
+            "row": 6,
+            "col": 5
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82207,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 103285,
+                "traitDefinitionId": 108290,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 102359,
+                  "name": "Mass Entanglement",
+                  "icon": "spell_druid_massentanglement",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              },
+              {
+                "id": 128589,
+                "traitDefinitionId": 133392,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 102793,
+                  "name": "Ursol's Vortex",
+                  "icon": "spell_druid_ursolsvortex",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5700,
+            "posY": 5100,
+            "row": 4,
+            "col": 7
+          },
+          "entryIndex": 1,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82208,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103286,
+                "traitDefinitionId": 108291,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 24858,
+                  "name": "Moonkin Form",
+                  "icon": "spell_nature_forceofnature",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5700,
+            "posY": 2700,
+            "row": 8,
+            "col": 7
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82209,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103287,
+                "traitDefinitionId": 108292,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 132469,
+                  "name": "Typhoon",
+                  "icon": "ability_druid_typhoon",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5100,
+            "posY": 5100,
+            "row": 4,
+            "col": 6
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82210,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103288,
+                "traitDefinitionId": 108293,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 197524,
+                  "name": "Astral Influence",
+                  "icon": "ability_skyreach_lens_flare",
+                  "school": 72,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5700,
+            "posY": 3900,
+            "row": 6,
+            "col": 7
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82214,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103292,
+                "traitDefinitionId": 108297,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 2,
+                "spell": {
+                  "id": 33873,
+                  "name": "Nurturing Instinct",
+                  "icon": "ability_druid_healinginstincts",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5100,
+            "posY": 3300,
+            "row": 7,
+            "col": 6
+          },
+          "entryIndex": 0,
+          "rank": 2
+        },
+        {
+          "node": {
+            "id": 82218,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103296,
+                "traitDefinitionId": 108301,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 301768,
+                  "name": "Verdant Heart",
+                  "icon": "ability_bullrush",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3300,
+            "posY": 2700,
+            "row": 8,
+            "col": 3
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82219,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103297,
+                "traitDefinitionId": 108302,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 449182,
+                  "name": "Ursoc's Spirit",
+                  "icon": "spell_nature_spiritarmor",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3900,
+            "posY": 2100,
+            "row": 9,
+            "col": 4
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82220,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103298,
+                "traitDefinitionId": 108303,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 22842,
+                  "name": "Frenzied Regeneration",
+                  "icon": "ability_bullrush",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3300,
+            "posY": 1500,
+            "row": 10,
+            "col": 3
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82228,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103306,
+                "traitDefinitionId": 108311,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 16931,
+                  "name": "Thick Hide",
+                  "icon": "inv_misc_pelt_bear_03",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3300,
+            "posY": 3900,
+            "row": 6,
+            "col": 3
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82229,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 103307,
+                "traitDefinitionId": 108312,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 2908,
+                  "name": "Soothe",
+                  "icon": "ability_hunter_beastsoothe",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              },
+              {
+                "id": 128587,
+                "traitDefinitionId": 133390,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 33786,
+                  "name": "Cyclone",
+                  "icon": "spell_nature_earthbind",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3900,
+            "posY": 4500,
+            "row": 5,
+            "col": 4
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82232,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 128581,
+                "traitDefinitionId": 133384,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 474678,
+                  "name": "Aessina's Renewal",
+                  "icon": "spell_nature_healingtouch",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5099,
+            "posY": 4499,
+            "row": 5,
+            "col": 6
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82233,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103311,
+                "traitDefinitionId": 108316,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 2,
+                "spell": {
+                  "id": 378988,
+                  "name": "Lycara's Teachings",
+                  "icon": "inv_trinket_ardenweald_02_green",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3900,
+            "posY": 5700,
+            "row": 3,
+            "col": 4
+          },
+          "entryIndex": 0,
+          "rank": 2
+        },
+        {
+          "node": {
+            "id": 82234,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103312,
+                "traitDefinitionId": 108317,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 106898,
+                  "name": "Stampeding Roar",
+                  "icon": "spell_druid_stampedingroar_cat",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": true,
+            "posX": 3900,
+            "posY": 5100,
+            "row": 4,
+            "col": 4
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82235,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103313,
+                "traitDefinitionId": 108318,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 377847,
+                  "name": "Well-Honed Instincts",
+                  "icon": "ability_druid_tigersroar",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 2700,
+            "posY": 5099,
+            "row": 4,
+            "col": 2
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82236,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103314,
+                "traitDefinitionId": 108319,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 131768,
+                  "name": "Feline Swiftness",
+                  "icon": "ability_druid_dash",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 2100,
+            "posY": 5099,
+            "row": 4,
+            "col": 1
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82237,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 103316,
+                "traitDefinitionId": 108321,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 99,
+                  "name": "Incapacitating Roar",
+                  "icon": "ability_druid_demoralizingroar",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              },
+              {
+                "id": 103315,
+                "traitDefinitionId": 108320,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 5211,
+                  "name": "Mighty Bash",
+                  "icon": "ability_druid_bash",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 1500,
+            "posY": 6300,
+            "row": 2,
+            "col": 0
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 82241,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 103320,
+                "traitDefinitionId": 108325,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 2782,
+                  "name": "Remove Corruption",
+                  "icon": "spell_holy_removecurse",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 4500,
+            "posY": 2700,
+            "row": 8,
+            "col": 5
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88200,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109832,
+                "traitDefinitionId": 114837,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 2,
+                "spell": {
+                  "id": 1240206,
+                  "name": "Total Eclipse",
+                  "icon": "inv12_ability_druid_totaleclipse",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12897,
+            "posY": 5700,
+            "row": 3,
+            "col": 18
+          },
+          "entryIndex": 0,
+          "rank": 2
+        },
+        {
+          "node": {
+            "id": 88201,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109833,
+                "traitDefinitionId": 114838,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 279620,
+                  "name": "Twin Moons",
+                  "icon": "spell_nature_starfall",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 13499,
+            "posY": 2701,
+            "row": 8,
+            "col": 19
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88203,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109835,
+                "traitDefinitionId": 114840,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 343647,
+                  "name": "Solstice",
+                  "icon": "artifactability_balancedruid_moonandstars",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11100,
+            "posY": 2700,
+            "row": 8,
+            "col": 15
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88204,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109836,
+                "traitDefinitionId": 114841,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 406890,
+                  "name": "Wild Surges",
+                  "icon": "ability_skyreach_lens_flare",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11100,
+            "posY": 3900,
+            "row": 6,
+            "col": 15
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88206,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109839,
+                "traitDefinitionId": 114844,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 394013,
+                  "name": "Incarnation: Chosen of Elune",
+                  "icon": "spell_druid_incarnation",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 109838,
+                "traitDefinitionId": 114843,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 391528,
+                  "name": "Convoke the Spirits",
+                  "icon": "inv_ability_druid_convokethespirits",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12299,
+            "posY": 6299,
+            "row": 2,
+            "col": 17
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88207,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109840,
+                "traitDefinitionId": 114845,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 2,
+                "spell": {
+                  "id": 202345,
+                  "name": "Starlord",
+                  "icon": "spell_shaman_measuredinsight",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 13499,
+            "posY": 5100,
+            "row": 4,
+            "col": 19
+          },
+          "entryIndex": 0,
+          "rank": 2
+        },
+        {
+          "node": {
+            "id": 88208,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109842,
+                "traitDefinitionId": 114847,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 383195,
+                  "name": "Umbral Intensity",
+                  "icon": "ability_druid_eclipse",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12897,
+            "posY": 3300,
+            "row": 7,
+            "col": 18
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88209,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109843,
+                "traitDefinitionId": 114848,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 327541,
+                  "name": "Aetherial Kindling",
+                  "icon": "ability_druid_starfall",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 133406,
+                "traitDefinitionId": 138192,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1240262,
+                  "name": "Meteor Storm",
+                  "icon": "spell_arcane_starfire",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 14100,
+            "posY": 3300,
+            "row": 7,
+            "col": 20
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88212,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109846,
+                "traitDefinitionId": 114851,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 450212,
+                  "name": "Stellar Amplification",
+                  "icon": "spell_arcane_arcane04",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11699,
+            "posY": 4497,
+            "row": 5,
+            "col": 16
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88213,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109847,
+                "traitDefinitionId": 114852,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 394121,
+                  "name": "Radiant Moonlight",
+                  "icon": "artifactability_balancedruid_fullmoon",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 13499,
+            "posY": 6900,
+            "row": 1,
+            "col": 19
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88214,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109848,
+                "traitDefinitionId": 114853,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 2,
+                "spell": {
+                  "id": 394048,
+                  "name": "Balance of All Things",
+                  "icon": "ability_druid_earthandsky",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11699,
+            "posY": 5700,
+            "row": 3,
+            "col": 16
+          },
+          "entryIndex": 0,
+          "rank": 2
+        },
+        {
+          "node": {
+            "id": 88215,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109849,
+                "traitDefinitionId": 114854,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 395022,
+                  "name": "Celestial Alignment",
+                  "icon": "spell_nature_natureguardian",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12299,
+            "posY": 3900,
+            "row": 6,
+            "col": 17
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88219,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109853,
+                "traitDefinitionId": 114858,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 114107,
+                  "name": "Soul of the Forest",
+                  "icon": "ability_druid_manatree",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 13499,
+            "posY": 3900,
+            "row": 6,
+            "col": 19
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88220,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 117100,
+                "traitDefinitionId": 122112,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1240188,
+                  "name": "Sculpt the Stars",
+                  "icon": "ability_druid_eclipseorange",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 10500,
+            "posY": 5700,
+            "row": 3,
+            "col": 14
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88221,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109856,
+                "traitDefinitionId": 114861,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 468743,
+                  "name": "Whirling Stars",
+                  "icon": "spell_druid_equinox",
+                  "school": 72,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 109855,
+                "traitDefinitionId": 114860,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 390378,
+                  "name": "Orbital Strike",
+                  "icon": "ability_druid_cresentburn",
+                  "school": 72,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12299,
+            "posY": 4497,
+            "row": 5,
+            "col": 17
+          },
+          "entryIndex": 1,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88222,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109857,
+                "traitDefinitionId": 114862,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 450356,
+                  "name": "Touch the Cosmos",
+                  "icon": "ability_bossgorefiend_touchofdoom",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12897,
+            "posY": 4497,
+            "row": 5,
+            "col": 18
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88223,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109858,
+                "traitDefinitionId": 114863,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1239669,
+                  "name": "Eclipse",
+                  "icon": "ability_druid_eclipseorange",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12299,
+            "posY": 1501,
+            "row": 10,
+            "col": 17
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88224,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109859,
+                "traitDefinitionId": 114864,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 202770,
+                  "name": "Fury of Elune",
+                  "icon": "ability_druid_dreamstate",
+                  "school": 72,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              },
+              {
+                "id": 109860,
+                "traitDefinitionId": 114865,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 274281,
+                  "name": "New Moon",
+                  "icon": "artifactability_balancedruid_newmoon",
+                  "school": 72,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 13499,
+            "posY": 6299,
+            "row": 2,
+            "col": 19
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88225,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109861,
+                "traitDefinitionId": 114866,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 202342,
+                  "name": "Shooting Stars",
+                  "icon": "spell_priest_divinestar_shadow2",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11699,
+            "posY": 2101,
+            "row": 9,
+            "col": 16
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88227,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109863,
+                "traitDefinitionId": 114868,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 2,
+                "spell": {
+                  "id": 400059,
+                  "name": "Cosmic Rapidity",
+                  "icon": "spell_druid_swarm",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11100,
+            "posY": 5100,
+            "row": 4,
+            "col": 15
+          },
+          "entryIndex": 0,
+          "rank": 2
+        },
+        {
+          "node": {
+            "id": 88231,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 109867,
+                "traitDefinitionId": 114872,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 78675,
+                  "name": "Solar Beam",
+                  "icon": "ability_vehicle_sonicshockwave",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 12897,
+            "posY": 2101,
+            "row": 9,
+            "col": 18
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 88236,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 109873,
+                "traitDefinitionId": 114878,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 393940,
+                  "name": "Starweaver",
+                  "icon": "spell_arcane_invocation",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 109872,
+                "traitDefinitionId": 114877,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 393954,
+                  "name": "Rattle the Stars",
+                  "icon": "spell_arcane_arcane01",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 13499,
+            "posY": 5700,
+            "row": 3,
+            "col": 19
+          },
+          "entryIndex": 1,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 91048,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 115458,
+                "traitDefinitionId": 120470,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1240906,
+                  "name": "Improved Eclipse",
+                  "icon": "ability_druid_eclipseorange",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 10500,
+            "posY": 3300,
+            "row": 7,
+            "col": 14
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 93714,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 116102,
+                "traitDefinitionId": 121114,
+                "traitSubTreeId": 0,
+                "type": 1,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 93402,
+                  "name": "Sunfire",
+                  "icon": "ability_mage_firestarter",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": true
+                }
+              }
+            ],
+            "important": false,
+            "posX": 6300,
+            "posY": 3300,
+            "row": 7,
+            "col": 8
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94585,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 117176,
+                "traitDefinitionId": 122188,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 428655,
+                  "name": "The Light of Elune",
+                  "icon": "ability_druid_dreamstate",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 117772,
+                "traitDefinitionId": 122784,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429536,
+                  "name": "Astral Insight",
+                  "icon": "spell_druid_incarnation",
+                  "school": 32,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 7800,
+            "posY": 3300,
+            "row": 7,
+            "col": 6
+          },
+          "entryIndex": 1,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94586,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 117178,
+                "traitDefinitionId": 122190,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429540,
+                  "name": "Arcane Affinity",
+                  "icon": "spell_arcane_arcane01",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 117177,
+                "traitDefinitionId": 122189,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429539,
+                  "name": "Lunation",
+                  "icon": "spell_nature_moonglow",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 8400,
+            "posY": 3300,
+            "row": 7,
+            "col": 8
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94587,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117179,
+                "traitDefinitionId": 122191,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 424113,
+                  "name": "The Eternal Moon",
+                  "icon": "artifactability_balancedruid_newmoon",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 8100,
+            "posY": 3900,
+            "row": 6,
+            "col": 7
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94588,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117181,
+                "traitDefinitionId": 122193,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429530,
+                  "name": "Lunar Insight",
+                  "icon": "spell_nature_starfall",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 7800,
+            "posY": 2100,
+            "row": 9,
+            "col": 6
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94590,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117183,
+                "traitDefinitionId": 122195,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429523,
+                  "name": "Lunar Calling",
+                  "icon": "ability_druid_cresentburn",
+                  "school": 32,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 7200,
+            "posY": 3300,
+            "row": 7,
+            "col": 5
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94594,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117769,
+                "traitDefinitionId": 122781,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429533,
+                  "name": "Glistening Fur",
+                  "icon": "ability_druid_ironfur",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 8400,
+            "posY": 2100,
+            "row": 9,
+            "col": 8
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94596,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117190,
+                "traitDefinitionId": 122202,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429668,
+                  "name": "Stellar Command",
+                  "icon": "artifactability_balancedruid_moonandstars",
+                  "school": 72,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 7200,
+            "posY": 2700,
+            "row": 8,
+            "col": 5
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94597,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 117192,
+                "traitDefinitionId": 122204,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429538,
+                  "name": "Moondust",
+                  "icon": "inv_enchant_dust",
+                  "school": 32,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 123304,
+                "traitDefinitionId": 128177,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 443046,
+                  "name": "Elune's Grace",
+                  "icon": "spell_druid_wildcharge",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 8400,
+            "posY": 2700,
+            "row": 8,
+            "col": 8
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94598,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117193,
+                "traitDefinitionId": 122205,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429520,
+                  "name": "Moon Guardian",
+                  "icon": "spell_nature_moonglow",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 7200,
+            "posY": 2100,
+            "row": 9,
+            "col": 5
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94607,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117204,
+                "traitDefinitionId": 122216,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 429532,
+                  "name": "Atmospheric Exposure",
+                  "icon": "inv_cosmicvoid_nova",
+                  "school": 64,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 7800,
+            "posY": 2700,
+            "row": 8,
+            "col": 6
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 94608,
+            "treeId": 793,
+            "subTreeId": 24,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 117205,
+                "traitDefinitionId": 122217,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 424058,
+                  "name": "Boundless Moonlight",
+                  "icon": "inv_ability_eluneschosendruid_boundlessmoonlight",
+                  "school": 32,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 8100,
+            "posY": 1500,
+            "row": 10,
+            "col": 7
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 99808,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 3,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 123302,
+                "traitDefinitionId": 0,
+                "traitSubTreeId": 24,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": null
+              },
+              {
+                "id": 123300,
+                "traitDefinitionId": 0,
+                "traitSubTreeId": 23,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": null
+              }
+            ],
+            "important": false,
+            "posX": 7200,
+            "posY": 900,
+            "row": 11,
+            "col": 9
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 100175,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 123794,
+                "traitDefinitionId": 128632,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1262034,
+                  "name": "Gift of the Wild",
+                  "icon": "spell_nature_giftofthewild",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 5700,
+            "posY": 5700,
+            "row": 3,
+            "col": 7
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 100176,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 123795,
+                "traitDefinitionId": 128633,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 449191,
+                  "name": "Oakskin",
+                  "icon": "spell_nature_stoneclawtotem",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 2100,
+            "posY": 5700,
+            "row": 3,
+            "col": 1
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 100177,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 123796,
+                "traitDefinitionId": 128634,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 2,
+                "spell": {
+                  "id": 385786,
+                  "name": "Matted Fur",
+                  "icon": "inv_misc_pelt_15",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3300,
+            "posY": 5099,
+            "row": 4,
+            "col": 3
+          },
+          "entryIndex": 0,
+          "rank": 2
+        },
+        {
+          "node": {
+            "id": 100223,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 123868,
+                "traitDefinitionId": 128706,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 451211,
+                  "name": "Starlight Conduit",
+                  "icon": "spell_arcane_arcane01",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 6300,
+            "posY": 4500,
+            "row": 5,
+            "col": 8
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 103847,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 128231,
+                "traitDefinitionId": 133038,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1240185,
+                  "name": "Celestial Fire",
+                  "icon": "ability_mage_firestarter",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11700,
+            "posY": 5100,
+            "row": 4,
+            "col": 16
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 104078,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 9,
+            "entries": [
+              {
+                "id": 128580,
+                "traitDefinitionId": 133383,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 474530,
+                  "name": "Circle of the Wild",
+                  "icon": "ability_druid_disembowel",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 128579,
+                "traitDefinitionId": 133382,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 474541,
+                  "name": "Circle of the Heavens",
+                  "icon": "spell_druid_equinox",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3900,
+            "posY": 6300,
+            "row": 2,
+            "col": 4
+          },
+          "entryIndex": 1,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 104080,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 128584,
+                "traitDefinitionId": 133387,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 449185,
+                  "name": "Lore of the Grove",
+                  "icon": "spell_nature_starfall",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 4500,
+            "posY": 5700,
+            "row": 3,
+            "col": 5
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 104082,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 128586,
+                "traitDefinitionId": 133389,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1213597,
+                  "name": "Perfectly-Honed Instincts",
+                  "icon": "ability_druid_tigersroar",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 2700,
+            "posY": 5700,
+            "row": 3,
+            "col": 2
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 104083,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 128588,
+                "traitDefinitionId": 133391,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 202918,
+                  "name": "Light of the Sun",
+                  "icon": "ability_vehicle_sonicshockwave",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3900,
+            "posY": 3900,
+            "row": 6,
+            "col": 4
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 104085,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 8,
+            "entries": [
+              {
+                "id": 128591,
+                "traitDefinitionId": 133394,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 327993,
+                  "name": "Improved Barkskin",
+                  "icon": "spell_nature_stoneclawtotem",
+                  "school": 8,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 3900,
+            "posY": 3300,
+            "row": 7,
+            "col": 4
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 108032,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 0,
+            "flags": 0,
+            "entries": [
+              {
+                "id": 133404,
+                "traitDefinitionId": 138190,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 450558,
+                  "name": "Harmony of the Heavens",
+                  "icon": "spell_arcane_massdispel",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11700,
+            "posY": 6900,
+            "row": 1,
+            "col": 16
+          },
+          "entryIndex": 0,
+          "rank": 1
+        },
+        {
+          "node": {
+            "id": 110279,
+            "treeId": 793,
+            "subTreeId": 0,
+            "type": 2,
+            "flags": 1,
+            "entries": [
+              {
+                "id": 136832,
+                "traitDefinitionId": 141595,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 450347,
+                  "name": "Nature's Grace",
+                  "icon": "ability_druid_lunarguidance",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              },
+              {
+                "id": 136831,
+                "traitDefinitionId": 141594,
+                "traitSubTreeId": 0,
+                "type": 2,
+                "maxRanks": 1,
+                "spell": {
+                  "id": 1240283,
+                  "name": "Elune's Challenge",
+                  "icon": "spell_nature_moonglow",
+                  "school": 1,
+                  "rank": null,
+                  "hasCooldown": false
+                }
+              }
+            ],
+            "important": false,
+            "posX": 11100,
+            "posY": 4500,
+            "row": 5,
+            "col": 15
+          },
+          "entryIndex": 0,
+          "rank": 1
+        }
+      ]
+    },
+    "raid_progression": {
+      "tier-mn-1": {
+        "summary": "",
+        "expansion_id": 11,
+        "total_bosses": 9,
+        "normal_bosses_killed": 0,
+        "heroic_bosses_killed": 0,
+        "mythic_bosses_killed": 0
+      }
+    }
+  }
+}
