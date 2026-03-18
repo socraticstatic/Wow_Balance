@@ -347,7 +347,7 @@ function analyzeSession(summary: any, fights: any[]): Advice[] {
     advice.push({
       severity: 'tip',
       title: 'Minor AP capping detected',
-      detail: `~${avgApCapPerFight} capped builders per fight. This happens when you cast Wrath/Starfire at 90+ AP. The fix: at 80+ AP, stop building and spend. Starsurge on 1-2 targets, Starfall on 3+. The 80 AP rule exists for this reason.`,
+      detail: `~${avgApCapPerFight} capped builders per fight. This happens when you cast Starfire at 90+ AP. The fix: at 80+ AP, stop building and spend. Starsurge on 1-2 targets, Starfall on 3+. The 80 AP rule exists for this reason.`,
       metric: String(avgApCapPerFight),
     });
   } else {

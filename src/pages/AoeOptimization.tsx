@@ -176,7 +176,7 @@ export default function AoeOptimization() {
             Target Count Rules
           </div>
           <div className="space-y-1.5 text-[15px]" style={{ color: 'oklch(62% 0.012 270)' }}>
-            <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>1 target:</strong> Starsurge only. Wrath/Starfire filler.</p>
+            <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>1 target:</strong> Starsurge only. Starfire filler (Lunar Calling = no Wrath).</p>
             <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>2+ targets:</strong> Starfall &gt; Starsurge. Starfire filler (hits all nearby).</p>
             <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>3+ targets:</strong> Moonfire all. Sunfire. Starfall on cooldown. Starfire spam.</p>
             <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>5+ targets:</strong> Never Starsurge. Starfall + Starfire only. Fury of Elune on CD.</p>

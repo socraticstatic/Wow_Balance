@@ -197,7 +197,7 @@ export default function ActionBars() {
               Single Target Opener (1-2 Targets)
             </h3>
             <p className="text-sm mb-5" style={{ color: 'oklch(82% 0.005 55)' }}>
-              Boss fights. Pool AP. Pre-cast Wrath 2 seconds before pull.
+              Boss fights. Pool AP. Pre-cast Starfire 2 seconds before pull.
             </p>
             <div className="space-y-2">
               {stOpener.map((step, i) => (

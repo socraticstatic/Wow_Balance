@@ -265,9 +265,9 @@ export default function AoeBreakpoints() {
 
         <div className="grid sm:grid-cols-2 gap-4">
           {[
-            { title: 'Incarnation / CA', desc: 'With 50% AP gen buff, cast Starfall every 4-5 GCDs. Stack overlapping Starfalls for massive AoE.', color: 'oklch(80% 0.18 80)' },
-            { title: 'Fury of Elune', desc: 'Generates massive AP. Use Fury + Starfall spam for the single biggest AoE window in your kit.', color: 'oklch(72% 0.18 270)' },
-            { title: 'Convoke the Spirits', desc: 'Convoke casts random Balance spells including Starfall. On 5+ targets, Convoke is devastating combined with manual Starfalls.', color: 'oklch(68% 0.18 155)' },
+            { title: 'Incarnation Window', desc: '30s of +10% Haste + 10% Arcane damage. Starfall every 3-4 GCDs. Stack overlapping Starfalls. Your biggest AoE window.', color: 'oklch(80% 0.18 80)' },
+            { title: 'Fury of Elune', desc: 'AoE beam + 6% damage amp (Atmospheric Exposure). Massive AP gen. Lunation brings it back every 20-25s in AoE.', color: 'oklch(72% 0.18 270)' },
+            { title: 'Ascendant Eclipse', desc: 'First 3 spenders after Eclipse entry deal +20% damage. First Starfire is instant. Eclipse bolts always crit, triggering DoT cascade.', color: 'oklch(68% 0.18 155)' },
             { title: 'Two Starfalls on 6 Targets', desc: '1.73M total damage over 8 seconds. 216K DPS from Starfall alone. Plus DoTs, Shooting Stars, Orbit Breaker Full Moons.', color: 'oklch(95% 0.005 60)' },
           ].map(item => (
             <div key={item.title} className="p-5 rounded-lg glass card-hover">
