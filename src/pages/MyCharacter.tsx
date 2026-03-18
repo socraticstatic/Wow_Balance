@@ -54,6 +54,8 @@ export default function MyCharacter() {
           <img
             src={`${import.meta.env.BASE_URL}spiracle-cropped.png`}
             alt="Spiracle - Night Elf Balance Druid"
+            loading="lazy"
+            decoding="async"
             className="relative z-10 h-[520px] w-auto object-contain"
             style={{
               filter: 'drop-shadow(0 4px 40px oklch(25% 0.15 270 / 0.3))',

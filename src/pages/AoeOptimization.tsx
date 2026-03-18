@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
+import SpellIcon from '../components/SpellIcon';
 import { useReveal } from '../hooks/useReveal';
 import { builds, bisGear } from '../data';
 
@@ -182,6 +184,14 @@ export default function AoeOptimization() {
         </div>
       </div>
 
+      {/* ── AoE Damage Scaling Calculator ── */}
+      <div className="reveal mb-20">
+        <div className="text-[9px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+          AoE Damage Scaling
+        </div>
+        <AoeDamageCalculator />
+      </div>
+
       {/* ── AoE Gear & Enhancements ── */}
       <div ref={r5} className="reveal">
         <div className="text-[9px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
@@ -259,16 +269,97 @@ function TalentGroup({ group }: { group: { label: string; color: string; talents
       <div className="space-y-3">
         {group.talents.map(t => (
           <div key={t.name} className="flex items-start gap-3">
-            <div
-              className="w-2 h-2 rounded-full shrink-0 mt-1.5"
-              style={{ background: group.color, boxShadow: `0 0 6px ${group.color}40` }}
-            />
+            <SpellIcon name={t.name} size="small" className="shrink-0 mt-0.5 rounded" />
             <div>
               <span className="text-[13px] font-bold" style={{ color: 'oklch(86% 0.006 270)' }}>{t.name}</span>
               <p className="text-[11px] mt-0.5" style={{ color: 'oklch(50% 0.012 270)', lineHeight: 1.5 }}>{t.desc}</p>
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+/** Interactive AoE damage scaling calculator */
+function AoeDamageCalculator() {
+  const [targets, setTargets] = useState(5);
+
+  // Approximate relative DPS multipliers for Balance Druid AoE
+  // Based on: Starfall hits all, Starfire cleaves sqrt-scaled, Shooting Stars scale linearly
+  const starfallDmg = targets * 1.0;           // Linear scaling
+  const starfireDmg = Math.sqrt(targets) * 1.2; // Sqrt scaling (uncapped but diminishing)
+  const shootingStars = targets * 0.6;           // Linear (more DoTs = more procs)
+  const furyOfElune = Math.min(targets, 8) * 0.8; // Soft cap at 8
+  const moonfireDots = targets * 0.35;           // Each target has a dot
+  const apexBolts = Math.min(targets, 6) * 0.5;  // Splash capped
+  const totalRelative = starfallDmg + starfireDmg + shootingStars + furyOfElune + moonfireDots + apexBolts;
+  const stMultiplier = (totalRelative / (1.0 + 1.2 + 0.6 + 0.8 + 0.35 + 0.5)).toFixed(1);
+
+  const bars = [
+    { label: 'Starfall', value: starfallDmg, max: 20, color: 'oklch(72% 0.18 270)' },
+    { label: 'Starfire', value: starfireDmg, max: 6, color: 'oklch(68% 0.16 285)' },
+    { label: 'Shooting Stars', value: shootingStars, max: 12, color: 'oklch(80% 0.18 80)' },
+    { label: 'Fury of Elune', value: furyOfElune, max: 8, color: 'oklch(68% 0.18 155)' },
+    { label: 'Moonfire DoTs', value: moonfireDots, max: 7, color: 'oklch(60% 0.12 45)' },
+    { label: 'Apex Bolts', value: apexBolts, max: 4, color: 'oklch(65% 0.14 300)' },
+  ];
+
+  return (
+    <div className="max-w-xl">
+      <div className="flex items-center gap-4 mb-6">
+        <label className="text-[13px] font-semibold" style={{ color: 'oklch(70% 0.012 270)' }}>
+          Targets:
+        </label>
+        <input
+          type="range"
+          min={1}
+          max={20}
+          value={targets}
+          onChange={e => setTargets(Number(e.target.value))}
+          className="flex-1 h-1.5 rounded-full appearance-none cursor-pointer"
+          style={{ background: `linear-gradient(to right, oklch(80% 0.18 80) ${(targets / 20) * 100}%, oklch(14% 0.01 270) ${(targets / 20) * 100}%)` }}
+        />
+        <span className="font-mono text-lg font-bold w-8 text-right" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
+          {targets}
+        </span>
+      </div>
+
+      <div className="space-y-3 mb-6">
+        {bars.map(b => (
+          <div key={b.label}>
+            <div className="flex items-baseline justify-between mb-1">
+              <span className="text-[12px] font-medium" style={{ color: 'oklch(68% 0.012 270)' }}>{b.label}</span>
+              <span className="font-mono text-[11px]" style={{ color: b.color, fontVariantNumeric: 'tabular-nums' }}>
+                {b.value.toFixed(1)}x
+              </span>
+            </div>
+            <div className="h-1 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.01 270)' }}>
+              <div
+                className="h-full rounded-full transition-all duration-300"
+                style={{ width: `${Math.min((b.value / b.max) * 100, 100)}%`, background: b.color }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="p-4 rounded-lg glass-solar">
+        <div className="flex items-baseline justify-between">
+          <span className="text-[13px] font-bold" style={{ color: 'oklch(88% 0.006 270)' }}>
+            Relative DPS vs Single Target
+          </span>
+          <span className="font-mono text-xl font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
+            {stMultiplier}x
+          </span>
+        </div>
+        <p className="text-[11px] mt-1" style={{ color: 'oklch(50% 0.012 270)' }}>
+          {targets === 1 ? 'Single target baseline' :
+           targets <= 3 ? 'Starfall becomes efficient. Starfire cleaves worth it.' :
+           targets <= 6 ? 'Sweet spot for Balance. All abilities scale well.' :
+           targets <= 10 ? 'Massive AoE. Shooting Stars chain-proccing. Starfall dominates.' :
+           'Absolute carnage. Starfall + Starfire spam. Never press Starsurge.'}
+        </p>
       </div>
     </div>
   );

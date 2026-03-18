@@ -1,22 +1,32 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import Nav from './components/Nav';
 import Hero from './pages/Hero';
-import Builds from './pages/Builds';
-import Gear from './pages/Gear';
-import Rankings from './pages/Rankings';
-import Changelog from './pages/Changelog';
-import MyCharacter from './pages/MyCharacter';
-import AoeOptimization from './pages/AoeOptimization';
 import CelestialBg from './components/CelestialBg';
 import CursorTrail from './components/CursorTrail';
-import Setup from './pages/Setup';
-import Faith from './pages/Faith';
-import Progression from './pages/Progression';
-import GearDelta from './pages/GearDelta';
-import Consumables from './pages/Consumables';
 import { meta } from './data';
 
+// Lazy load below-fold sections for faster initial paint
+const MyCharacter = lazy(() => import('./pages/MyCharacter'));
+const Progression = lazy(() => import('./pages/Progression'));
+const Faith = lazy(() => import('./pages/Faith'));
+const AoeOptimization = lazy(() => import('./pages/AoeOptimization'));
+const Builds = lazy(() => import('./pages/Builds'));
+const Gear = lazy(() => import('./pages/Gear'));
+const GearDelta = lazy(() => import('./pages/GearDelta'));
+const Consumables = lazy(() => import('./pages/Consumables'));
+const Rankings = lazy(() => import('./pages/Rankings'));
+const Changelog = lazy(() => import('./pages/Changelog'));
+const Setup = lazy(() => import('./pages/Setup'));
+
 const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'builds', 'gear', 'geardelta', 'consumables', 'rankings', 'changelog', 'setup'] as const;
+
+function SectionFallback() {
+  return (
+    <div className="px-6 py-32 flex items-center justify-center">
+      <div className="w-5 h-5 rounded-full animate-pulse" style={{ background: 'oklch(78% 0.16 60 / 0.3)' }} />
+    </div>
+  );
+}
 
 export default function App() {
   const [active, setActive] = useState('hero');
@@ -46,6 +56,27 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Keyboard navigation: j/k to move between sections, / to focus nav
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      // Don't capture when typing in inputs
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement) return;
+
+      if (e.key === 'j' || e.key === 'k') {
+        e.preventDefault();
+        const idx = sectionIds.indexOf(active as typeof sectionIds[number]);
+        const next = e.key === 'j'
+          ? Math.min(idx + 1, sectionIds.length - 1)
+          : Math.max(idx - 1, 0);
+        const nextId = sectionIds[next];
+        refs.current[nextId]?.scrollIntoView({ behavior: 'smooth' });
+        setActive(nextId);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [active]);
+
   const nav = (id: string) => refs.current[id]?.scrollIntoView({ behavior: 'smooth' });
   const ref = (id: string) => (el: HTMLDivElement | null) => { refs.current[id] = el; };
 
@@ -59,34 +90,39 @@ export default function App() {
       <main className="relative z-10">
         <div id="hero" ref={ref('hero')}><Hero /></div>
         <Divider />
-        <div id="spiracle" ref={ref('spiracle')}><MyCharacter /></div>
-        <Divider />
-        <div id="progression" ref={ref('progression')}><Progression /></div>
-        <Divider />
-        <div id="faith" ref={ref('faith')}><Faith /></div>
-        <Divider />
-        <div id="aoe" ref={ref('aoe')}><AoeOptimization /></div>
-        <Divider />
-        <div id="builds" ref={ref('builds')}><Builds /></div>
-        <Divider />
-        <div id="gear" ref={ref('gear')}><Gear /></div>
-        <Divider />
-        <div id="geardelta" ref={ref('geardelta')}><GearDelta /></div>
-        <Divider />
-        <div id="consumables" ref={ref('consumables')}><Consumables /></div>
-        <Divider />
-        <div id="rankings" ref={ref('rankings')}><Rankings /></div>
-        <Divider />
-        <div id="changelog" ref={ref('changelog')}><Changelog /></div>
-        <Divider />
-        <div id="setup" ref={ref('setup')}><Setup /></div>
+        <Suspense fallback={<SectionFallback />}>
+          <div id="spiracle" ref={ref('spiracle')}><MyCharacter /></div>
+          <Divider />
+          <div id="progression" ref={ref('progression')}><Progression /></div>
+          <Divider />
+          <div id="faith" ref={ref('faith')}><Faith /></div>
+          <Divider />
+          <div id="aoe" ref={ref('aoe')}><AoeOptimization /></div>
+          <Divider />
+          <div id="builds" ref={ref('builds')}><Builds /></div>
+          <Divider />
+          <div id="gear" ref={ref('gear')}><Gear /></div>
+          <Divider />
+          <div id="geardelta" ref={ref('geardelta')}><GearDelta /></div>
+          <Divider />
+          <div id="consumables" ref={ref('consumables')}><Consumables /></div>
+          <Divider />
+          <div id="rankings" ref={ref('rankings')}><Rankings /></div>
+          <Divider />
+          <div id="changelog" ref={ref('changelog')}><Changelog /></div>
+          <Divider />
+          <div id="setup" ref={ref('setup')}><Setup /></div>
+        </Suspense>
 
         <footer className="px-6 py-20 text-center">
           <p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'oklch(28% 0.015 270)', letterSpacing: '0.14em' }}>
             BALANCE DRUID DOSSIER
           </p>
-          <p className="text-[11px]" style={{ color: 'oklch(22% 0.01 270)' }}>
+          <p className="text-[11px] mb-2" style={{ color: 'oklch(22% 0.01 270)' }}>
             {meta.expansion} {meta.season}. Not affiliated with Blizzard Entertainment.
+          </p>
+          <p className="text-[10px]" style={{ color: 'oklch(18% 0.008 270)' }}>
+            Press <kbd className="px-1.5 py-0.5 rounded text-[9px] font-mono" style={{ background: 'oklch(12% 0.01 270)', border: '1px solid oklch(18% 0.01 270)' }}>j</kbd> / <kbd className="px-1.5 py-0.5 rounded text-[9px] font-mono" style={{ background: 'oklch(12% 0.01 270)', border: '1px solid oklch(18% 0.01 270)' }}>k</kbd> to navigate sections
           </p>
         </footer>
       </main>
