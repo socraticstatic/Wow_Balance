@@ -292,179 +292,7 @@ export default function Setup() {
       )}
 
       {/* Step 2: Faith Story Creator */}
-      {step === 2 && (
-        <div className="space-y-8">
-          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
-            Your Character's Faith Story
-          </h3>
-
-          <p className="text-[13px]" style={{ color: 'oklch(52% 0.012 50)', lineHeight: 1.7 }}>
-            Every character carries the soul of their player. This section creates a personal "Light Within" meditation
-            that maps your faith journey onto your character's story in Azeroth. Optional but meaningful.
-          </p>
-
-          {/* Origin */}
-          <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
-              Where did your faith begin?
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { id: 'cradle', label: 'Cradle Faith', desc: 'Raised in the church. Faith was the water you swam in before you knew it was water.' },
-                { id: 'prodigal', label: 'The Prodigal Road', desc: 'Left, wandered, burned bridges. Came back changed. The return was harder than the leaving.' },
-                { id: 'seeker', label: 'The Seeker', desc: 'Found faith later. You went looking for something and it found you first.' },
-                { id: 'wrestling', label: 'Still Wrestling', desc: 'Not sure. Drawn to something. The questions are honest and the doubt is not the enemy.' },
-              ].map(opt => (
-                <button
-                  key={opt.id}
-                  onClick={() => setForm(prev => ({ ...prev, faithOrigin: opt.id }))}
-                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
-                  style={{
-                    background: form.faithOrigin === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.faithOrigin === opt.id ? 'oklch(78% 0.16 60 / 0.4)' : 'oklch(16% 0.012 45)'}`,
-                  }}
-                >
-                  <span className="text-[13px] font-bold block mb-1" style={{
-                    color: form.faithOrigin === opt.id ? 'oklch(78% 0.16 60)' : 'oklch(72% 0.01 50)',
-                  }}>{opt.label}</span>
-                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Struggle */}
-          <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.16 285)', letterSpacing: '0.1em' }}>
-              What's the tension you carry?
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { id: 'doubt', label: 'Doubt vs. Devotion', desc: 'The mind questions what the heart knows. You live in the gap between evidence and faith.' },
-                { id: 'mask', label: 'The Mask', desc: 'The public face and the private self don\'t match. Authenticity is the unfinished work.' },
-                { id: 'control', label: 'Surrender vs. Control', desc: 'You know you should let go. You can\'t stop holding on. Every boss fight is this.' },
-                { id: 'anger', label: 'Righteous Anger', desc: 'The world is broken and you feel it in your teeth. Justice and mercy fight inside you.' },
-              ].map(opt => (
-                <button
-                  key={opt.id}
-                  onClick={() => setForm(prev => ({ ...prev, faithStruggle: opt.id }))}
-                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
-                  style={{
-                    background: form.faithStruggle === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.faithStruggle === opt.id ? 'oklch(68% 0.16 285 / 0.4)' : 'oklch(16% 0.012 45)'}`,
-                  }}
-                >
-                  <span className="text-[13px] font-bold block mb-1" style={{
-                    color: form.faithStruggle === opt.id ? 'oklch(68% 0.16 285)' : 'oklch(72% 0.01 50)',
-                  }}>{opt.label}</span>
-                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Virtue */}
-          <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(52% 0.14 155)', letterSpacing: '0.1em' }}>
-              What virtue defines your play?
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { id: 'patience', label: 'Patience', desc: 'You build before you burst. The rotation is a discipline. You trust the process.' },
-                { id: 'sacrifice', label: 'Sacrifice', desc: 'You Innervate the healer. You Stampeding Roar for the group. Your DPS is not the point.' },
-                { id: 'stewardship', label: 'Stewardship', desc: 'Every cooldown used wisely. No wasted GCD. The talent tree is a garden you tend.' },
-                { id: 'hope', label: 'Hope', desc: 'You wipe and go again. The boss will die. The key will time. Tomorrow\'s parse will be better.' },
-              ].map(opt => (
-                <button
-                  key={opt.id}
-                  onClick={() => setForm(prev => ({ ...prev, faithVirtue: opt.id }))}
-                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
-                  style={{
-                    background: form.faithVirtue === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.faithVirtue === opt.id ? 'oklch(52% 0.14 155 / 0.4)' : 'oklch(16% 0.012 45)'}`,
-                  }}
-                >
-                  <span className="text-[13px] font-bold block mb-1" style={{
-                    color: form.faithVirtue === opt.id ? 'oklch(52% 0.14 155)' : 'oklch(72% 0.01 50)',
-                  }}>{opt.label}</span>
-                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Calling */}
-          <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
-              What does your character serve?
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { id: 'protector', label: 'The Protector', desc: 'You stand between the darkness and the people you love. Barkskin is a prayer.' },
-                { id: 'witness', label: 'The Witness', desc: 'You see the beauty in the made-up world and recognize something real underneath it.' },
-                { id: 'healer', label: 'The Mender', desc: 'Even as Balance, you off-heal. You notice who\'s hurting. The moonkin has a pastoral heart.' },
-                { id: 'pilgrim', label: 'The Pilgrim', desc: 'Every zone is a new chapter. Every expansion is a book in the canon. You walk and you learn.' },
-              ].map(opt => (
-                <button
-                  key={opt.id}
-                  onClick={() => setForm(prev => ({ ...prev, faithCalling: opt.id }))}
-                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
-                  style={{
-                    background: form.faithCalling === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.faithCalling === opt.id ? 'oklch(78% 0.16 60 / 0.4)' : 'oklch(16% 0.012 45)'}`,
-                  }}
-                >
-                  <span className="text-[13px] font-bold block mb-1" style={{
-                    color: form.faithCalling === opt.id ? 'oklch(78% 0.16 60)' : 'oklch(72% 0.01 50)',
-                  }}>{opt.label}</span>
-                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Generated story preview */}
-          {(form.faithOrigin || form.faithStruggle || form.faithVirtue || form.faithCalling) && (
-            <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(16% 0.015 45)' }}>
-              <div className="text-[10px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
-                Your Story Preview
-              </div>
-              <p style={{
-                fontFamily: '"Cormorant", Georgia, serif',
-                fontStyle: 'italic',
-                fontSize: '1rem',
-                color: 'oklch(65% 0.015 55)',
-                lineHeight: 1.85,
-              }}>
-                {form.characterName || 'Your character'} {form.faithOrigin === 'cradle' ? 'was born under the light of Elune, raised in a grove where worship was as natural as breathing. The old prayers came before language.'
-                  : form.faithOrigin === 'prodigal' ? 'walked away from the grove once. The Emerald Dream held no comfort, and the moon looked like a dead eye. But the road out led back, and the return was the real journey.'
-                  : form.faithOrigin === 'seeker' ? 'did not grow up in the moonlight. The call came later, unexpected, in a dungeon or a battlefield or a quiet moment between pulls. Something whispered, and the druid listened.'
-                  : 'carries questions like others carry totems. The light of Elune is visible but not yet understood. The doubt is not weakness. It is the gravity that keeps faith from floating away.'}
-                {' '}
-                {form.faithStruggle === 'doubt' ? 'The tension between what the mind demands and what the heart already knows is the real Eclipse cycle, longer and less predictable than any in-game mechanic.'
-                  : form.faithStruggle === 'mask' ? 'In Moonkin Form, the true self is hidden inside feathers and starfire. The real transformation is not the shapeshift but the decision to stop performing.'
-                  : form.faithStruggle === 'control' ? 'Every Eclipse is a small surrender. You cannot force Solar. You cannot rush Lunar. The balance comes from letting go of the outcome and trusting the rhythm.'
-                  : form.faithStruggle === 'anger' ? 'Solar Beam is not just an interrupt. It is the righteous refusal to let the darkness cast freely. The anger is not sin. Misdirected anger is. Channel it.'
-                  : ''}
-                {' '}
-                {form.faithVirtue === 'patience' ? 'Astral Power builds one cast at a time. No shortcuts. The virtue is in the casting, not the critting.'
-                  : form.faithVirtue === 'sacrifice' ? 'Stampeding Roar saves lives that will never know they were saved. The best ministry is invisible.'
-                  : form.faithVirtue === 'stewardship' ? 'Every talent point placed with intention. Every cooldown a resource to be honored. The tree is a garden, and the druid is its keeper.'
-                  : form.faithVirtue === 'hope' ? 'The wipe is not the end. The depleted key is not the verdict. Tomorrow, the rotation will be cleaner. Hope is a 3-minute cooldown that never stops recharging.'
-                  : ''}
-                {' '}
-                {form.faithCalling === 'protector' ? 'Barkskin is the prayer of a body willing to absorb what others cannot. The druid stands in fire so the healer can breathe.'
-                  : form.faithCalling === 'witness' ? 'The made-up moon over a made-up world still stirs something real. To notice beauty in the imagined is to practice noticing it in the actual.'
-                  : form.faithCalling === 'healer' ? 'Even specced for damage, the druid notices who is hurting. An off-heal at the right moment is worth more than a parse. The moonkin has a pastor\'s instinct.'
-                  : form.faithCalling === 'pilgrim' ? 'Quel\'Thalas is new ground, but the walking is ancient. Every zone is a chapter. Every expansion is a book. The pilgrimage has no final destination this side of the veil.'
-                  : ''}
-              </p>
-            </div>
-          )}
-
-          <NavButtons onBack={() => setStep(1)} onNext={() => setStep(3)} />
-        </div>
-      )}
+      {step === 2 && <FaithStoryStep form={form} setForm={setForm} onBack={() => setStep(1)} onNext={() => setStep(3)} />}
 
       {/* Step 3: Blizzard API */}
       {step === 3 && (
@@ -567,6 +395,232 @@ EOF`} />
         </div>
       )}
     </section>
+  );
+}
+
+// ── Faith Story Step (deep branching) ──
+
+const faithQuestions = {
+  origin: [
+    { id: 'cradle', label: 'Cradle Faith', desc: 'Raised in the church. Faith was the water you swam in before you knew it was water.' },
+    { id: 'prodigal', label: 'The Prodigal Road', desc: 'Left, wandered, burned bridges. Came back changed. The return was harder than the leaving.' },
+    { id: 'seeker', label: 'The Seeker', desc: 'Found faith later. You went looking for something and it found you first.' },
+    { id: 'wrestling', label: 'Still Wrestling', desc: 'Not sure. Drawn to something. The questions are honest and the doubt is not the enemy.' },
+    { id: 'inherited', label: 'Inherited but Untested', desc: 'Your parents believed. You said the words. But you have never had to fight for the belief yourself. That reckoning is coming.' },
+    { id: 'broken', label: 'Broken and Rebuilt', desc: 'Something shattered you. Loss, betrayal, the silence of a God who did not answer. What grew back was different. Harder. More honest.' },
+  ],
+  struggle: [
+    { id: 'doubt', label: 'Doubt vs. Devotion', desc: 'The mind questions what the heart knows. You live in the gap between evidence and faith.' },
+    { id: 'mask', label: 'The Mask', desc: 'The public face and the private self don\'t match. Authenticity is the unfinished work.' },
+    { id: 'control', label: 'Surrender vs. Control', desc: 'You know you should let go. You can\'t stop holding on. Every boss fight is this.' },
+    { id: 'anger', label: 'Righteous Anger', desc: 'The world is broken and you feel it in your teeth. Justice and mercy fight inside you.' },
+    { id: 'loneliness', label: 'The Alone Place', desc: 'You believe in a crowd but feel it alone. The guild is full. The soul is quiet. Connection is the prayer you cannot seem to finish.' },
+    { id: 'pride', label: 'The Parse Trap', desc: 'You know your worth should not be measured in percentiles. But you check. Every time. The idol is performance, and you have built it an altar.' },
+  ],
+  virtue: [
+    { id: 'patience', label: 'Patience', desc: 'You build before you burst. The rotation is a discipline. You trust the process.' },
+    { id: 'sacrifice', label: 'Sacrifice', desc: 'You Innervate the healer. You Stampeding Roar for the group. Your DPS is not the point.' },
+    { id: 'stewardship', label: 'Stewardship', desc: 'Every cooldown used wisely. No wasted GCD. The talent tree is a garden you tend.' },
+    { id: 'hope', label: 'Hope', desc: 'You wipe and go again. The boss will die. The key will time. Tomorrow\'s parse will be better.' },
+    { id: 'faithfulness', label: 'Faithfulness', desc: 'You show up. Every raid night. Every key. Not because you feel it, but because you said you would. The feeling follows the obedience.' },
+    { id: 'joy', label: 'Joy', desc: 'You actually enjoy this. The moonkin dance is not ironic. The stars are beautiful even in pixels. You refuse to be too sophisticated for delight.' },
+  ],
+  calling: [
+    { id: 'protector', label: 'The Protector', desc: 'You stand between the darkness and the people you love. Barkskin is a prayer.' },
+    { id: 'witness', label: 'The Witness', desc: 'You see the beauty in the made-up world and recognize something real underneath it.' },
+    { id: 'healer', label: 'The Mender', desc: 'Even as Balance, you off-heal. You notice who\'s hurting. The moonkin has a pastoral heart.' },
+    { id: 'pilgrim', label: 'The Pilgrim', desc: 'Every zone is a new chapter. Every expansion is a book in the canon. You walk and you learn.' },
+    { id: 'teacher', label: 'The Guide', desc: 'You explain the fight. You link the WeakAura. You whisper the nervous DPS that they are doing fine. You disciple without calling it that.' },
+    { id: 'builder', label: 'The Builder', desc: 'You founded the guild. You organized the roster. You built the Discord. The body of Christ needs people who set up chairs.' },
+  ],
+};
+
+// Cross-referenced prose: origin x struggle combinations produce unique bridging sentences
+const crossBridge: Record<string, Record<string, string>> = {
+  cradle: {
+    doubt: 'The prayers you memorized as a child now feel like someone else\'s language. But the muscle memory of worship is still there, buried under the questions, waiting.',
+    mask: 'Everyone at church knew your name. Nobody knew your mind. The grove raised you, but the grove also taught you to perform.',
+    control: 'You learned early that God has a plan. You learned late that you cannot manage the plan for Him.',
+    anger: 'The church taught you gentleness. The world taught you rage. You are learning they are not opposites.',
+    loneliness: 'Surrounded by a congregation since birth, you never learned how to be known. Community and intimacy are not the same spell.',
+    pride: 'You were the good kid. The one who knew the verses. The performance started before you had a parse to check.',
+  },
+  prodigal: {
+    doubt: 'You left because the answers stopped working. You came back because the questions led somewhere familiar.',
+    mask: 'On the road, you were yourself for the first time. In the return, you learned the harder art: being yourself at home.',
+    control: 'The leaving was control. The return was surrender. Both cost everything.',
+    anger: 'You are angry at what the church did. You are angrier that you still need what the church carries.',
+    loneliness: 'The road was lonely. The return was lonelier. You are in the building but not yet in the room.',
+    pride: 'You came back humbled. But humility has its own vanity, and you know it.',
+  },
+  seeker: {
+    doubt: 'You chose this. That makes the doubt more personal. You cannot blame inheritance for a decision you made with open eyes.',
+    mask: 'You found faith in private. The public profession is still catching up. You are learning to be the same person in both rooms.',
+    control: 'You searched methodically. You found something that cannot be methodized. The transition is ongoing.',
+    anger: 'You found God in the wreckage. That does not make you grateful for the wreckage.',
+    loneliness: 'You came to faith alone. The community part is the harder conversion.',
+    pride: 'You researched your way in. You know more theology than some lifelong believers. That knowledge is a gift and a trap.',
+  },
+  wrestling: {
+    doubt: 'The doubt is not the obstacle. It is the terrain. You walk it honestly, and that honesty is its own kind of worship.',
+    mask: 'You are not pretending to believe. You are not pretending to doubt. You are the rarest thing in the pew: authentic.',
+    control: 'You cannot surrender to something you have not yet fully grasped. But you keep showing up. That is its own surrender.',
+    anger: 'You are angry that you care. If it were nothing, you could walk away. The anger is evidence of investment.',
+    loneliness: 'You are between worlds. The believers think you lack faith. The skeptics think you lack nerve. The truth is you lack neither.',
+    pride: 'You are proud of your honesty. That is the most forgivable pride there is.',
+  },
+  inherited: {
+    doubt: 'The faith you received was never tested because it was never yours. The first real doubt is not loss. It is birth.',
+    mask: 'You wear your parents\' religion like a hand-me-down coat. It fits in some places. In others, you can feel the seams of someone else\' body.',
+    control: 'They handed you a map. You are learning that the map is not the territory, and the territory is where God actually lives.',
+    anger: 'You are angry at the ease of it. Faith should cost something. Yours was free, and that cheapness haunts you.',
+    loneliness: 'You are surrounded by people who believe for reasons you have never been asked to articulate. The belonging is real. The understanding is not.',
+    pride: 'You can recite the catechism. You cannot yet feel it in your bones. The distance between head and heart is the longest journey.',
+  },
+  broken: {
+    doubt: 'After the breaking, doubt was not a question. It was a landscape. You live there now. Slowly, things are growing.',
+    mask: 'The scar is real. The smile is sometimes real. You are learning that strength is not the absence of the wound but the willingness to show it.',
+    control: 'You controlled nothing when it mattered most. That helplessness was the beginning of something you did not ask for and cannot name.',
+    anger: 'The anger is sacred. It is the proof that you expected goodness. That expectation is the ember of faith the breaking could not reach.',
+    loneliness: 'Suffering isolates. Even in a room of sympathetic faces, the grief is yours alone. But alone with God is still with God.',
+    pride: 'You survived. The temptation is to make survival the whole identity. It is not. It is the prologue.',
+  },
+};
+
+function generateStory(form: FormData): string {
+  const name = form.characterName || 'Your character';
+  const parts: string[] = [];
+
+  // Opening (origin)
+  const originText: Record<string, string> = {
+    cradle: `${name} was born under the light of Elune, raised in a grove where worship was as natural as breathing. The old prayers came before language. Moonfire was the first word, and it meant both illumination and obedience.`,
+    prodigal: `${name} walked away from the grove once. The Emerald Dream held no comfort, and the moon looked like a dead eye in a sky that did not care. But the road out led back, as prodigal roads always do, and the return was the real journey. The grove had not changed. The druid had.`,
+    seeker: `${name} did not grow up in the moonlight. The call came later, unexpected, in a dungeon or a battlefield or a quiet moment between pulls when the stars aligned and something whispered. Not Elune. Something behind Elune. The druid listened, and listening was the first act of faith.`,
+    wrestling: `${name} carries questions like others carry totems. The light of Elune is visible but not yet understood, and the honesty of that uncertainty is its own form of reverence. The doubt is not weakness. It is the gravity that keeps faith from floating away into abstraction.`,
+    inherited: `${name} received the old ways without asking for them. The grove was home before it was chosen. The rituals were muscle memory before they were meaning. Now, standing in the midnight of a new expansion, the druid wonders: is this mine, or am I still borrowing?`,
+    broken: `${name} was broken before becoming balanced. Something shattered. The details do not matter here. What matters is that the pieces reassembled into something the original blueprint did not anticipate. The cracks let in moonlight. The scars conduct starfire.`,
+  };
+  if (form.faithOrigin) parts.push(originText[form.faithOrigin] || '');
+
+  // Bridge (origin x struggle cross-reference)
+  if (form.faithOrigin && form.faithStruggle) {
+    const bridge = crossBridge[form.faithOrigin]?.[form.faithStruggle];
+    if (bridge) parts.push(bridge);
+  }
+
+  // Struggle expanded
+  const struggleText: Record<string, string> = {
+    doubt: 'The Eclipse cycle is the metaphor that fits: Solar certainty burns bright and brief, Lunar questioning runs deep and long. The rotation between them is not failure. It is the mechanic. To master it is to stop fearing the transition and start trusting it.',
+    mask: 'Moonkin Form hides the body in feathers and fury. It is the original mask. But the real shapeshift is not the one on the action bar. It is the moment you decide to cast without the costume. To pray without the performance. To show up as yourself.',
+    control: 'Eclipse has 2 charges and a 30-second cooldown. You will spend time outside Eclipse. This is not a bug. It is the design. The druid who accepts the downtime, who trusts the recharge, who does not panic in the absence of the buff, has learned something the game cannot teach.',
+    anger: 'Solar Beam silences the darkness for 8 seconds. It does not destroy it. The anger that interrupts injustice is holy. The anger that believes it can eliminate injustice alone is hubris. Know the difference. Cast the beam. Then keep casting.',
+    loneliness: 'The druid is the only moonkin in the raid. Balance is a spec most people do not understand. The metaphor writes itself. Faith in a secular world is a solo spec. The connection is not in being understood. It is in showing up anyway.',
+    pride: 'The parse is not the point. The parse is never the point. But the number glows gold, and the ranking feels like anointing, and the temptation to make the meter the measure of the soul is the oldest idol dressed in the newest clothes. Log out. The character sheet is not your identity.',
+  };
+  if (form.faithStruggle) parts.push(struggleText[form.faithStruggle] || '');
+
+  // Virtue as practice
+  const virtueText: Record<string, string> = {
+    patience: 'Astral Power builds one cast at a time. Wrath after Wrath. Starfire after Starfire. No shortcuts. The Starsurge comes when the work has been done. The virtue is in the casting, not the critting. Patience is not waiting. It is building.',
+    sacrifice: 'Stampeding Roar saves lives that will never know they were saved. Innervate empties you to fill someone else. The best ministry is invisible, and the druid who measures worth by the help they gave instead of the damage they dealt has found the narrow path.',
+    stewardship: 'Every talent point placed with intention. Every cooldown a resource to be honored, not squandered. The tree is a garden, and the druid is its keeper. Stewardship is not control. It is care. The garden grows on its own. You just remove the weeds.',
+    hope: 'The wipe is not the end. The depleted key is not the verdict. Tomorrow, the rotation will be cleaner, the gear will be higher, the healer will be awake. Hope is a 3-minute cooldown that never stops recharging. It is the only ability in the game that cannot be nerfed.',
+    faithfulness: 'You show up. Every Tuesday. Every reset. Not because the loot is guaranteed or the group is perfect. Because you said you would. The feeling follows the obedience. The obedience follows the decision. The decision was made long ago, in a quieter moment than this.',
+    joy: 'The moonkin dances. Not ironically. The stars are beautiful even rendered in polygons. The made-up world produces real delight, and the refusal to be too sophisticated for that delight is itself a form of worship. Joy is not naive. Joy is defiant.',
+  };
+  if (form.faithVirtue) parts.push(virtueText[form.faithVirtue] || '');
+
+  // Calling as commission
+  const callingText: Record<string, string> = {
+    protector: 'Barkskin is the prayer of a body willing to absorb what others cannot. Bear Form is not retreat. It is intercession. The druid stands in fire so the healer can breathe, takes the hit so the DPS can finish the cast. Ministry has always looked like this: the one who steps forward when stepping back is rational.',
+    witness: 'The made-up moon over a made-up world still stirs something real. To notice beauty in the imagined is to practice noticing it in the actual. The witness does not create the light. The witness points at it and says: there. See that? That is not nothing.',
+    healer: 'Even specced for damage, the druid notices who is hurting. An off-heal at the right moment is worth more than a parse. A whispered encouragement in party chat costs zero mana. The moonkin has a pastor\'s instinct: scan the room, find the wounded, move toward them.',
+    pilgrim: 'Quel\'Thalas is new ground, but the walking is ancient. Kalimdor, Northrend, Pandaria, the Shadowlands, the Dragon Isles, Khaz Algar, and now Silvermoon. Every zone is a chapter. Every expansion is a book. The pilgrimage has no final destination this side of the veil, and that is the point.',
+    teacher: 'You link the WeakAura string. You explain the Eclipse rework for the third time without sighing. You whisper the undergeared DPS that they are doing fine and that gear comes with time. You disciple without calling it that. The Great Commission does not require a pulpit. It requires patience and a willingness to type.',
+    builder: 'You founded the guild or you maintain it. You organized the roster. You built the Discord. You resolve the loot drama. The body of Christ needs people who set up chairs, and in Azeroth the chairs are raid invites and the sanctuary is a voice channel. The work is unglamorous and essential.',
+  };
+  if (form.faithCalling) parts.push(callingText[form.faithCalling] || '');
+
+  return parts.join('\n\n');
+}
+
+function FaithStoryStep({ form, setForm, onBack, onNext }: {
+  form: FormData;
+  setForm: React.Dispatch<React.SetStateAction<FormData>>;
+  onBack: () => void;
+  onNext: () => void;
+}) {
+  const setField = (key: keyof FormData) => (id: string) =>
+    setForm(prev => ({ ...prev, [key]: id }));
+
+  return (
+    <div className="space-y-8">
+      <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+        Your Character's Faith Story
+      </h3>
+      <p className="text-[13px]" style={{ color: 'oklch(52% 0.012 50)', lineHeight: 1.7 }}>
+        Every character carries the soul of their player. Answer these questions and a personal "Light Within"
+        meditation will be generated, mapping your faith journey onto your character's story in Azeroth.
+        Each combination produces unique prose. 6 x 6 x 6 x 6 = 1,296 possible stories.
+      </p>
+
+      <FaithQuestion label="Where did your faith begin?" color="oklch(78% 0.16 60)" options={faithQuestions.origin} selected={form.faithOrigin} onSelect={setField('faithOrigin')} />
+      <FaithQuestion label="What tension do you carry?" color="oklch(68% 0.16 285)" options={faithQuestions.struggle} selected={form.faithStruggle} onSelect={setField('faithStruggle')} />
+      <FaithQuestion label="What virtue defines your play?" color="oklch(52% 0.14 155)" options={faithQuestions.virtue} selected={form.faithVirtue} onSelect={setField('faithVirtue')} />
+      <FaithQuestion label="What does your character serve?" color="oklch(78% 0.16 60)" options={faithQuestions.calling} selected={form.faithCalling} onSelect={setField('faithCalling')} />
+
+      {/* Generated story preview */}
+      {(form.faithOrigin || form.faithStruggle || form.faithVirtue || form.faithCalling) && (
+        <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(78% 0.16 60 / 0.15)' }}>
+          <div className="text-[10px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+            {form.characterName ? `${form.characterName}'s Story` : 'Your Story Preview'}
+          </div>
+          {generateStory(form).split('\n\n').map((para, i) => (
+            <p key={i} className={i === 0 ? 'drop-cap mb-4' : 'mb-4'} style={{
+              fontFamily: '"Cormorant", Georgia, serif',
+              fontStyle: 'italic',
+              fontSize: '1rem',
+              color: 'oklch(65% 0.015 55)',
+              lineHeight: 1.85,
+            }}>
+              {para}
+            </p>
+          ))}
+        </div>
+      )}
+
+      <NavButtons onBack={onBack} onNext={onNext} />
+    </div>
+  );
+}
+
+function FaithQuestion({ label, color, options, selected, onSelect }: {
+  label: string; color: string;
+  options: Array<{ id: string; label: string; desc: string }>;
+  selected: string; onSelect: (id: string) => void;
+}) {
+  return (
+    <div>
+      <label className="block text-[10px] uppercase font-bold mb-3" style={{ color, letterSpacing: '0.1em' }}>{label}</label>
+      <div className="grid grid-cols-2 gap-2">
+        {options.map(opt => (
+          <button
+            key={opt.id}
+            onClick={() => onSelect(opt.id)}
+            className="text-left p-4 rounded-lg cursor-pointer transition-all"
+            style={{
+              background: selected === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+              border: `1px solid ${selected === opt.id ? `${color}60` : 'oklch(16% 0.012 45)'}`,
+            }}
+          >
+            <span className="text-[13px] font-bold block mb-1" style={{ color: selected === opt.id ? color : 'oklch(72% 0.01 50)' }}>
+              {opt.label}
+            </span>
+            <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }
 
