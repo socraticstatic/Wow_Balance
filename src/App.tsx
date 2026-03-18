@@ -15,10 +15,12 @@ const Gear = lazy(() => import('./pages/Gear'));
 const GearDelta = lazy(() => import('./pages/GearDelta'));
 const Consumables = lazy(() => import('./pages/Consumables'));
 const Rankings = lazy(() => import('./pages/Rankings'));
+const BossGuides = lazy(() => import('./pages/BossGuides'));
+const DungeonGuides = lazy(() => import('./pages/DungeonGuides'));
 const Changelog = lazy(() => import('./pages/Changelog'));
 const Setup = lazy(() => import('./pages/Setup'));
 
-const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'builds', 'gear', 'geardelta', 'consumables', 'rankings', 'changelog', 'setup'] as const;
+const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'builds', 'gear', 'geardelta', 'consumables', 'raid', 'dungeons', 'rankings', 'changelog', 'setup'] as const;
 
 function SectionFallback() {
   return (
@@ -106,6 +108,10 @@ export default function App() {
           <div id="geardelta" ref={ref('geardelta')}><GearDelta /></div>
           <Divider />
           <div id="consumables" ref={ref('consumables')}><Consumables /></div>
+          <Divider />
+          <div id="raid" ref={ref('raid')}><BossGuides /></div>
+          <Divider />
+          <div id="dungeons" ref={ref('dungeons')}><DungeonGuides /></div>
           <Divider />
           <div id="rankings" ref={ref('rankings')}><Rankings /></div>
           <Divider />

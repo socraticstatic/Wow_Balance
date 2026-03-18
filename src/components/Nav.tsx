@@ -11,6 +11,8 @@ const items = [
   { id: 'gear', label: 'Gear' },
   { id: 'geardelta', label: 'Delta' },
   { id: 'consumables', label: 'Consumables' },
+  { id: 'raid', label: 'Raid' },
+  { id: 'dungeons', label: 'M+' },
   { id: 'rankings', label: 'Rankings' },
   { id: 'changelog', label: 'Changelog' },
   { id: 'setup', label: 'Make Yours' },
