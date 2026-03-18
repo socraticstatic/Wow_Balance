@@ -5,6 +5,10 @@ interface FormData {
   characterName: string;
   realm: string;
   region: string;
+  primaryContent: string;
+  heroTalent: string;
+  playstyle: string;
+  priorities: string[];
   blizzardClientId: string;
   blizzardClientSecret: string;
   wclClientId: string;
@@ -19,6 +23,10 @@ const defaultForm: FormData = {
   characterName: '',
   realm: '',
   region: 'us',
+  primaryContent: '',
+  heroTalent: '',
+  playstyle: '',
+  priorities: [],
   blizzardClientId: '',
   blizzardClientSecret: '',
   wclClientId: '',
@@ -38,10 +46,20 @@ export default function Setup() {
 
   const steps = [
     { title: 'Your Character', icon: '1' },
-    { title: 'Blizzard API', icon: '2' },
-    { title: 'WarcraftLogs API', icon: '3' },
-    { title: 'Deploy', icon: '4' },
+    { title: 'Playstyle', icon: '2' },
+    { title: 'Blizzard API', icon: '3' },
+    { title: 'WarcraftLogs API', icon: '4' },
+    { title: 'Deploy', icon: '5' },
   ];
+
+  const togglePriority = (p: string) => {
+    setForm(prev => ({
+      ...prev,
+      priorities: prev.priorities.includes(p)
+        ? prev.priorities.filter(x => x !== p)
+        : [...prev.priorities, p],
+    }));
+  };
 
   return (
     <section className="px-6 sm:px-10 py-28 max-w-3xl mx-auto">
@@ -108,8 +126,164 @@ export default function Setup() {
         </div>
       )}
 
-      {/* Step 1: Blizzard API */}
+      {/* Step 1: Playstyle Questionnaire */}
       {step === 1 && (
+        <div className="space-y-8">
+          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+            How do you play?
+          </h3>
+
+          <p className="text-[13px]" style={{ color: 'oklch(52% 0.012 50)', lineHeight: 1.7 }}>
+            This shapes your optimization page - gear, enchants, talents, and rotation will be tailored to your focus.
+          </p>
+
+          {/* Primary content */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(50% 0.012 50)', letterSpacing: '0.1em' }}>
+              What content do you focus on?
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { id: 'mythic-plus', label: 'Mythic+', desc: 'Dungeons, keystones, AoE' },
+                { id: 'raid', label: 'Raiding', desc: 'Boss fights, single target + cleave' },
+                { id: 'pvp', label: 'PvP', desc: 'Arena, battlegrounds, burst' },
+                { id: 'all-rounder', label: 'All-Rounder', desc: 'A bit of everything' },
+              ].map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setForm(prev => ({ ...prev, primaryContent: opt.id }))}
+                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: form.primaryContent === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.primaryContent === opt.id ? 'oklch(78% 0.16 60 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  <span className="text-sm font-bold block mb-0.5" style={{
+                    color: form.primaryContent === opt.id ? 'oklch(78% 0.16 60)' : 'oklch(78% 0.01 50)',
+                  }}>{opt.label}</span>
+                  <span className="text-[11px]" style={{ color: 'oklch(45% 0.012 50)' }}>{opt.desc}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Hero talent preference */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(50% 0.012 50)', letterSpacing: '0.1em' }}>
+              Preferred Hero Talent Tree
+            </label>
+            <div className="grid grid-cols-3 gap-2">
+              {[
+                { id: 'keeper', label: 'Keeper of the Grove', desc: 'Burst windows, Force of Nature, short CD planning', color: 'oklch(78% 0.16 60)' },
+                { id: 'elune', label: "Elune's Chosen", desc: 'Sustained throughput, Starfire spam, Fury of Elune', color: 'oklch(68% 0.16 285)' },
+                { id: 'flexible', label: 'Flexible', desc: 'Show me both, I swap', color: 'oklch(58% 0.14 155)' },
+              ].map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setForm(prev => ({ ...prev, heroTalent: opt.id }))}
+                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: form.heroTalent === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.heroTalent === opt.id ? `${opt.color}60` : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  <span className="text-[13px] font-bold block mb-0.5" style={{
+                    color: form.heroTalent === opt.id ? opt.color : 'oklch(72% 0.01 50)',
+                  }}>{opt.label}</span>
+                  <span className="text-[10px]" style={{ color: 'oklch(42% 0.012 50)' }}>{opt.desc}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* AoE vs ST preference */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(50% 0.012 50)', letterSpacing: '0.1em' }}>
+              Damage Profile
+            </label>
+            <div className="grid grid-cols-3 gap-2">
+              {[
+                { id: 'aoe', label: 'AoE / Cleave', desc: 'Starfall, Starfire, big pulls' },
+                { id: 'st', label: 'Single Target', desc: 'Starsurge, boss damage, parsing' },
+                { id: 'hybrid', label: 'Hybrid', desc: 'Adaptive to the situation' },
+              ].map(opt => (
+                <button
+                  key={opt.id}
+                  onClick={() => setForm(prev => ({ ...prev, playstyle: opt.id }))}
+                  className="text-left p-4 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: form.playstyle === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.playstyle === opt.id ? 'oklch(68% 0.16 285 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  <span className="text-sm font-bold block mb-0.5" style={{
+                    color: form.playstyle === opt.id ? 'oklch(68% 0.16 285)' : 'oklch(72% 0.01 50)',
+                  }}>{opt.label}</span>
+                  <span className="text-[11px]" style={{ color: 'oklch(42% 0.012 50)' }}>{opt.desc}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* What matters most */}
+          <div>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(50% 0.012 50)', letterSpacing: '0.1em' }}>
+              What matters most to you? (select all that apply)
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {[
+                'Best DPS output',
+                'Survivability',
+                'Rotation simplicity',
+                'Parsing high',
+                'Utility for the group',
+                'M+ score pushing',
+                'PvP rating',
+                'Transmog / fashion',
+              ].map(p => (
+                <button
+                  key={p}
+                  onClick={() => togglePriority(p)}
+                  className="px-3.5 py-2 rounded-lg text-[12px] font-semibold cursor-pointer transition-all"
+                  style={{
+                    color: form.priorities.includes(p) ? 'oklch(90% 0.01 60)' : 'oklch(52% 0.012 50)',
+                    background: form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.12)' : 'oklch(10.5% 0.012 45)',
+                    border: `1px solid ${form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.3)' : 'oklch(16% 0.012 45)'}`,
+                  }}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Summary of their profile */}
+          {(form.primaryContent || form.heroTalent || form.playstyle) && (
+            <div className="p-5 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(16% 0.015 45)' }}>
+              <div className="text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+                Your Optimization Profile
+              </div>
+              <p className="text-[13px]" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
+                {form.primaryContent === 'mythic-plus' && 'Your dossier will prioritize M+ builds, AoE rotation, dungeon tips, and Haste-focused gearing.'}
+                {form.primaryContent === 'raid' && 'Your dossier will prioritize raid builds, boss-specific tips, ST rotation, and Mastery-focused gearing.'}
+                {form.primaryContent === 'pvp' && 'Your dossier will prioritize PvP builds, arena strategy, burst windows, and Versatility-focused gearing.'}
+                {form.primaryContent === 'all-rounder' && 'Your dossier will show all builds with balanced recommendations across content types.'}
+                {form.heroTalent === 'keeper' && ' Keeper of the Grove builds featured prominently.'}
+                {form.heroTalent === 'elune' && " Elune's Chosen builds featured prominently."}
+                {form.heroTalent === 'flexible' && ' Both hero talent trees shown with comparison.'}
+                {form.playstyle === 'aoe' && ' AoE optimization page will be your main reference.'}
+                {form.playstyle === 'st' && ' Single target optimization page will be your main reference.'}
+                {form.playstyle === 'hybrid' && ' Both AoE and ST optimization pages included.'}
+              </p>
+            </div>
+          )}
+
+          <NavButtons onBack={() => setStep(0)} onNext={() => setStep(2)} />
+        </div>
+      )}
+
+      {/* Step 2: Blizzard API */}
+      {step === 2 && (
         <div className="space-y-6">
           <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
             Blizzard API Credentials
@@ -131,12 +305,12 @@ export default function Setup() {
           <Field label="Blizzard Client ID" value={form.blizzardClientId} onChange={set('blizzardClientId')} placeholder="0b9acdab664f4ebabdc537af3d884e24" />
           <Field label="Blizzard Client Secret" value={form.blizzardClientSecret} onChange={set('blizzardClientSecret')} placeholder="OKPUQL9zqwp6cXdwPDOWAAqS8N2kKE3k" type="password" />
 
-          <NavButtons onBack={() => setStep(0)} onNext={() => setStep(2)} />
+          <NavButtons onBack={() => setStep(1)} onNext={() => setStep(3)} />
         </div>
       )}
 
-      {/* Step 2: WarcraftLogs API */}
-      {step === 2 && (
+      {/* Step 3: WarcraftLogs API */}
+      {step === 3 && (
         <div className="space-y-6">
           <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
             WarcraftLogs API Credentials
@@ -159,12 +333,12 @@ export default function Setup() {
           <Field label="WarcraftLogs Client Secret" value={form.wclClientSecret} onChange={set('wclClientSecret')} placeholder="0qc14wJRiLEoqZDHuKt4..." type="password" />
           <Field label="WarcraftLogs v1 API Key (optional)" value={form.wclV1Key} onChange={set('wclV1Key')} placeholder="431ed1018fe97bb2..." type="password" />
 
-          <NavButtons onBack={() => setStep(1)} onNext={() => setStep(3)} />
+          <NavButtons onBack={() => setStep(2)} onNext={() => setStep(4)} />
         </div>
       )}
 
-      {/* Step 3: Deploy */}
-      {step === 3 && (
+      {/* Step 4: Deploy */}
+      {step === 4 && (
         <div className="space-y-6">
           <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
             Deploy Your Dossier
@@ -205,7 +379,7 @@ EOF`} />
             </p>
           </InfoBox>
 
-          <NavButtons onBack={() => setStep(2)} />
+          <NavButtons onBack={() => setStep(3)} />
         </div>
       )}
     </section>

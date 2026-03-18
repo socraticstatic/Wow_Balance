@@ -9,9 +9,10 @@ import MyCharacter from './pages/MyCharacter';
 import AoeOptimization from './pages/AoeOptimization';
 import CelestialBg from './components/CelestialBg';
 import Setup from './pages/Setup';
+import Faith from './pages/Faith';
 import { meta } from './data';
 
-const sectionIds = ['hero', 'spiracle', 'aoe', 'builds', 'gear', 'rankings', 'changelog', 'setup'] as const;
+const sectionIds = ['hero', 'spiracle', 'aoe', 'builds', 'gear', 'rankings', 'changelog', 'faith', 'setup'] as const;
 
 export default function App() {
   const [active, setActive] = useState('hero');
@@ -64,6 +65,8 @@ export default function App() {
         <div id="rankings" ref={ref('rankings')}><Rankings /></div>
         <Divider />
         <div id="changelog" ref={ref('changelog')}><Changelog /></div>
+        <Divider />
+        <div id="faith" ref={ref('faith')}><Faith /></div>
         <Divider />
         <div id="setup" ref={ref('setup')}><Setup /></div>
 

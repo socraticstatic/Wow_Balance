@@ -9,6 +9,7 @@ const items = [
   { id: 'gear', label: 'Gear' },
   { id: 'rankings', label: 'Rankings' },
   { id: 'changelog', label: 'Changelog' },
+  { id: 'faith', label: 'The Light' },
   { id: 'setup', label: 'Make Yours' },
 ];
 
