@@ -49,6 +49,32 @@ export default function App() {
     return () => obs.disconnect();
   }, []);
 
+  // Global reveal observer - catches ALL .reveal elements including those without useReveal hook
+  useEffect(() => {
+    const revealObs = new IntersectionObserver(
+      entries => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            revealObs.unobserve(e.target);
+          }
+        }
+      },
+      { threshold: 0.01, rootMargin: '50px 0px 0px 0px' },
+    );
+
+    // Observe existing and watch for new .reveal elements via MutationObserver
+    const observeReveals = () => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObs.observe(el));
+    };
+    observeReveals();
+
+    const mutObs = new MutationObserver(() => observeReveals());
+    mutObs.observe(document.body, { childList: true, subtree: true });
+
+    return () => { revealObs.disconnect(); mutObs.disconnect(); };
+  }, []);
+
   // Scroll progress
   useEffect(() => {
     const onScroll = () => {
