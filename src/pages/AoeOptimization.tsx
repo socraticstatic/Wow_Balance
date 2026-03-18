@@ -125,7 +125,7 @@ export default function AoeOptimization() {
                   }}
                 />
               </div>
-              <p className="text-[11px]" style={{ color: 'oklch(48% 0.012 270)' }}>{s.note}</p>
+              <p className="text-[11px]" style={{ color: 'oklch(57% 0.012 50)' }}>{s.note}</p>
             </div>
           ))}
         </div>
@@ -170,7 +170,7 @@ export default function AoeOptimization() {
 
         {/* Target count thresholds */}
         <div className="mt-6 p-5 rounded-lg max-w-xl" style={{ background: 'oklch(10% 0.012 270)', border: '1px solid oklch(16% 0.012 270)' }}>
-          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(48% 0.012 270)', letterSpacing: '0.12em' }}>
+          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(57% 0.012 50)', letterSpacing: '0.12em' }}>
             Target Count Rules
           </div>
           <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(62% 0.012 270)' }}>
@@ -223,7 +223,7 @@ export default function AoeOptimization() {
             </div>
 
             <div className="mt-6">
-              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(48% 0.012 270)', letterSpacing: '0.12em' }}>
+              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(57% 0.012 50)', letterSpacing: '0.12em' }}>
                 Gems
               </div>
               <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(58% 0.012 270)' }}>
@@ -233,7 +233,7 @@ export default function AoeOptimization() {
             </div>
 
             <div className="mt-6">
-              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(48% 0.012 270)', letterSpacing: '0.12em' }}>
+              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(57% 0.012 50)', letterSpacing: '0.12em' }}>
                 Consumables
               </div>
               <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(58% 0.012 270)' }}>
@@ -278,7 +278,7 @@ function EnchantRow({ slot, value, note }: { slot: string; value: string; note: 
   return (
     <div className="flex items-baseline justify-between gap-3 py-1.5" style={{ borderBottom: '1px solid oklch(12% 0.008 270)' }}>
       <div className="flex items-baseline gap-2">
-        <span className="text-[12px] font-medium w-14" style={{ color: 'oklch(48% 0.012 270)' }}>{slot}</span>
+        <span className="text-[12px] font-medium w-14" style={{ color: 'oklch(57% 0.012 50)' }}>{slot}</span>
         <span className="text-[13px] font-semibold" style={{ color: 'oklch(68% 0.18 155)' }}>{value}</span>
       </div>
       <span className="text-[10px]" style={{ color: 'oklch(40% 0.012 270)' }}>{note}</span>

@@ -51,7 +51,7 @@ export default function Nav({ active, onNav }: Props) {
               onClick={() => onNav(i.id)}
               className="px-3 py-1.5 rounded text-xs font-semibold cursor-pointer transition-colors"
               style={{
-                color: active === i.id ? 'oklch(90% 0.01 60)' : 'oklch(50% 0.012 50)',
+                color: active === i.id ? 'oklch(90% 0.01 60)' : 'oklch(60% 0.012 50)',
                 background: active === i.id ? 'oklch(16% 0.015 45)' : 'transparent',
               }}
             >
@@ -73,7 +73,7 @@ export default function Nav({ active, onNav }: Props) {
               onClick={() => { onNav(i.id); setOpen(false); }}
               className="text-left px-3 py-2 rounded text-sm font-semibold cursor-pointer"
               style={{
-                color: active === i.id ? 'oklch(90% 0.01 60)' : 'oklch(52% 0.012 50)',
+                color: active === i.id ? 'oklch(90% 0.01 60)' : 'oklch(60% 0.012 50)',
                 background: active === i.id ? 'oklch(16% 0.015 45)' : 'transparent',
               }}
             >

@@ -43,7 +43,7 @@ export default function Hero() {
             fontSize: 'clamp(1rem, 2.5vw, 1.75rem)',
             lineHeight: 1,
             letterSpacing: '0.08em',
-            color: 'oklch(42% 0.012 50)',
+            color: 'oklch(55% 0.012 50)',
             marginTop: '8px',
           }}
         >
@@ -53,7 +53,7 @@ export default function Hero() {
 
       {/* Two-column: description left, stats right */}
       <div ref={r3} className="reveal grid lg:grid-cols-[1fr_340px] gap-16 items-end">
-        <p style={{ color: 'oklch(50% 0.012 50)', fontSize: 'clamp(0.875rem, 1.1vw, 1rem)', lineHeight: 1.8, maxWidth: '38ch' }}>
+        <p style={{ color: 'oklch(60% 0.012 50)', fontSize: 'clamp(0.875rem, 1.1vw, 1rem)', lineHeight: 1.8, maxWidth: '38ch' }}>
           The definitive guide to Eclipse mechanics, optimal builds,
           best-in-slot gear, and everything a Night Elf moonkin needs
           to dominate in {meta.expansion}.
@@ -71,7 +71,7 @@ export default function Hero() {
 }
 
 function QuickStat({ label, value, color }: { label: string; value: string; color?: string }) {
-  const c = color ?? 'oklch(48% 0.012 270)';
+  const c = color ?? 'oklch(57% 0.012 50)';
   return (
     <div className="py-3 px-4 rounded-lg" style={{ background: 'oklch(10% 0.012 270)', border: '1px solid oklch(16% 0.012 270)' }}>
       <div className="text-[9px] uppercase font-bold mb-1" style={{ color: c, letterSpacing: '0.12em' }}>{label}</div>
