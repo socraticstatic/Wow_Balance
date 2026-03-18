@@ -94,9 +94,8 @@ export default function CelestialBg() {
   );
 }
 
-/** A small constellation cluster - connected stars */
+/** A small constellation cluster with animated line drawing */
 function ConstellationGroup({ cx, cy }: { cx: number; cy: number }) {
-  // Generate a small cluster of 5-7 connected stars
   const points = [
     [cx, cy],
     [cx + 35, cy - 20],

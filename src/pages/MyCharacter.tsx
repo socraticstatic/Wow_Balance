@@ -165,6 +165,48 @@ export default function MyCharacter() {
         </div>
       </div>
 
+      {/* ── iLvl Gap Visualization ── */}
+      <div className="reveal mb-16">
+        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+          Gear Progress (Current vs Myth Track)
+        </div>
+        <div className="space-y-1.5">
+          {gear.slice(0, 14).map(item => {
+            const mythTarget = 180; // Approximate myth track cap
+            const pct = Math.min((item.ilvl / mythTarget) * 100, 100);
+            const gap = mythTarget - item.ilvl;
+            return (
+              <div key={item.slot} className="flex items-center gap-3 group">
+                <span className="text-[11px] w-16 capitalize shrink-0" style={{ color: 'oklch(55% 0.012 50)' }}>
+                  {item.slot.replace(/(\d)/, ' $1')}
+                </span>
+                <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.012 45)' }}>
+                  <div
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${pct}%`,
+                      background: gap <= 10 ? 'oklch(68% 0.18 155)' : gap <= 30 ? 'oklch(78% 0.16 60)' : 'oklch(60% 0.14 30)',
+                      transition: 'width 1s var(--ease)',
+                    }}
+                  />
+                </div>
+                <span className="font-mono text-[10px] w-8 text-right" style={{
+                  color: gap <= 10 ? 'oklch(68% 0.18 155)' : 'oklch(60% 0.012 50)',
+                  fontVariantNumeric: 'tabular-nums',
+                }}>
+                  {item.ilvl}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex items-center gap-4 mt-3 text-[10px]" style={{ color: 'oklch(50% 0.012 50)' }}>
+          <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'oklch(68% 0.18 155)' }} /> Near cap</span>
+          <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'oklch(78% 0.16 60)' }} /> Upgradeable</span>
+          <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'oklch(60% 0.14 30)' }} /> Priority upgrade</span>
+        </div>
+      </div>
+
       {/* ── Audit cards ── */}
       <div ref={r3} className="reveal grid sm:grid-cols-2 gap-4 mb-16">
         {/* Tier progress */}

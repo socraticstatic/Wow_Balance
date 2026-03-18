@@ -43,7 +43,7 @@ export default function Rankings() {
           <div className="grid sm:grid-cols-3 gap-2.5 mb-4">
             {topPlayers.raidLeaderboard.slice(0, 3).map((p, i) => (
               <div key={p.name} className={`py-4 px-5 rounded-lg card-hover ${i === 0 ? 'glass-solar' : 'glass'}`}
-                style={{ borderTop: `2px solid ${podiumColors[i]}` }}>
+                style={{ borderTopWidth: 2, borderTopStyle: 'solid', borderTopColor: podiumColors[i] }}>
                 <div className="flex items-baseline justify-between mb-1">
                   <span className="font-mono text-xs font-bold" style={{ color: podiumColors[i] }}>#{p.rank}</span>
                   <span className="font-mono text-xs font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>

@@ -8,6 +8,7 @@ import Changelog from './pages/Changelog';
 import MyCharacter from './pages/MyCharacter';
 import AoeOptimization from './pages/AoeOptimization';
 import CelestialBg from './components/CelestialBg';
+import CursorTrail from './components/CursorTrail';
 import Setup from './pages/Setup';
 import Faith from './pages/Faith';
 import { meta } from './data';
@@ -48,6 +49,7 @@ export default function App() {
   return (
     <div className="min-h-screen relative">
       <CelestialBg />
+      <CursorTrail />
       <div className="scroll-bar" style={{ width: `${scrollPct}%` }} />
       <Nav active={active} onNav={nav} />
 
