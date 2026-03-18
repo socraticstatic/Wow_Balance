@@ -39,19 +39,31 @@ In-game tracking addon for the Balance Druid Dossier web app.
 
 The addon automatically tracks every combat encounter when you're in Balance spec. A small HUD shows real-time Starfall status, AP level, and Eclipse state during combat.
 
-## Connecting to the web app
+## Connecting to the web app (auto-push to GitHub Pages)
 
-1. Start the file watcher:
-   ```bash
-   cd companion-addon
-   npx tsx watcher.ts
+The watcher pushes your combat data directly to GitHub. No Mac needed. No manual syncing.
+
+### One-time setup:
+
+1. Create a GitHub Personal Access Token:
+   - Go to https://github.com/settings/tokens
+   - Click "Generate new token (classic)"
+   - Give it `repo` scope
+   - Copy the token (starts with `ghp_`)
+
+2. Create a `.env` file next to `BalanceDossier.bat`:
+   ```
+   GITHUB_TOKEN=ghp_your_token_here
    ```
 
-2. Play WoW normally. After each fight, `/reload` or change zones to trigger a SavedVariables write.
+### How it works:
 
-3. The watcher detects the file change, parses it, and writes to `src/data/live-session.json`.
-
-4. The web app's Live Session page auto-refreshes with your latest data.
+1. Double-click `BalanceDossier.bat`
+2. Play WoW. `/reload` after fights to trigger a SavedVariables write.
+3. Watcher detects the change, parses your combat data.
+4. Watcher pushes `live-session.json` to the GitHub repo via API.
+5. GitHub Pages automatically rebuilds with your fresh data.
+6. Visit https://socraticstatic.github.io/Wow_Balance/ to see your Live Session.
 
 ## How it works
 

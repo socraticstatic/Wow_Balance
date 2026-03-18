@@ -18,6 +18,74 @@ var WOW_PATHS = isWindows ? [
   "/Applications/World of Warcraft/_retail_/WTF/Account"
 ];
 var OUTPUT_PATH = (0, import_path.join)(process.cwd(), "live-session.json");
+var GITHUB_CONFIG = {
+  owner: "socraticstatic",
+  repo: "Wow_Balance",
+  branch: "main",
+  filePath: "src/data/live-session.json",
+  // Token loaded from environment variable or config file
+  token: process.env.GITHUB_TOKEN || loadTokenFromFile()
+};
+function loadTokenFromFile() {
+  const configPath = (0, import_path.join)(process.cwd(), ".env");
+  if ((0, import_fs.existsSync)(configPath)) {
+    const content = (0, import_fs.readFileSync)(configPath, "utf-8");
+    const match = content.match(/GITHUB_TOKEN=(.+)/);
+    if (match) return match[1].trim();
+  }
+  return "";
+}
+async function pushToGitHub(data) {
+  if (!GITHUB_CONFIG.token) {
+    console.log("  [GitHub] No token configured. Skipping push.");
+    console.log("  [GitHub] Set GITHUB_TOKEN env var or create .env file with GITHUB_TOKEN=ghp_...");
+    return false;
+  }
+  const content = Buffer.from(JSON.stringify(data, null, 2)).toString("base64");
+  const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.filePath}`;
+  try {
+    let sha;
+    try {
+      const getResp = await fetch(apiUrl, {
+        headers: {
+          "Authorization": `Bearer ${GITHUB_CONFIG.token}`,
+          "Accept": "application/vnd.github.v3+json"
+        }
+      });
+      if (getResp.ok) {
+        const existing = await getResp.json();
+        sha = existing.sha;
+      }
+    } catch {
+    }
+    const body = {
+      message: `Live session update: ${(/* @__PURE__ */ new Date()).toISOString()}`,
+      content,
+      branch: GITHUB_CONFIG.branch
+    };
+    if (sha) body.sha = sha;
+    const putResp = await fetch(apiUrl, {
+      method: "PUT",
+      headers: {
+        "Authorization": `Bearer ${GITHUB_CONFIG.token}`,
+        "Accept": "application/vnd.github.v3+json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    });
+    if (putResp.ok) {
+      console.log("  [GitHub] Pushed to repo. Pages will rebuild.");
+      return true;
+    } else {
+      const err = await putResp.text();
+      console.log(`  [GitHub] Push failed: ${putResp.status} ${err.substring(0, 100)}`);
+      return false;
+    }
+  } catch (e) {
+    console.log(`  [GitHub] Push error: ${e.message}`);
+    return false;
+  }
+}
 var ADDON_SV_FILE = "BalanceDossier.lua";
 function findSavedVariables() {
   for (const basePath of WOW_PATHS) {
@@ -170,6 +238,8 @@ function processFile(svPath) {
     (0, import_fs.writeFileSync)(OUTPUT_PATH, JSON.stringify(appData, null, 2));
     const ts = (/* @__PURE__ */ new Date()).toLocaleTimeString();
     console.log(`[${ts}] Updated: ${appData.summary.totalFights} fights, avg ${appData.summary.avgDps.toLocaleString()} DPS, ${appData.summary.avgStarfallUptime}% SF uptime`);
+    pushToGitHub(appData).catch(() => {
+    });
   } catch (e) {
     console.error("  Error:", e.message);
   }

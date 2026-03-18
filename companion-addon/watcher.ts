@@ -13,6 +13,7 @@
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
+import { execSync } from 'child_process';
 
 // Detect platform and set WoW paths
 const isWindows = process.platform === 'win32';
@@ -35,8 +36,90 @@ const WOW_PATHS = isWindows
     '/Applications/World of Warcraft/_retail_/WTF/Account',
   ];
 
-// Output next to the watcher executable, or to the app's data dir if run from source
+// Output path for the JSON data
 const OUTPUT_PATH = join(process.cwd(), 'live-session.json');
+
+// GitHub config for auto-push
+// The watcher pushes live-session.json directly to the repo via GitHub API.
+// No local clone needed. Just a personal access token.
+const GITHUB_CONFIG = {
+  owner: 'socraticstatic',
+  repo: 'Wow_Balance',
+  branch: 'main',
+  filePath: 'src/data/live-session.json',
+  // Token loaded from environment variable or config file
+  token: process.env.GITHUB_TOKEN || loadTokenFromFile(),
+};
+
+function loadTokenFromFile(): string {
+  const configPath = join(process.cwd(), '.env');
+  if (existsSync(configPath)) {
+    const content = readFileSync(configPath, 'utf-8');
+    const match = content.match(/GITHUB_TOKEN=(.+)/);
+    if (match) return match[1].trim();
+  }
+  return '';
+}
+
+async function pushToGitHub(data: any): Promise<boolean> {
+  if (!GITHUB_CONFIG.token) {
+    console.log('  [GitHub] No token configured. Skipping push.');
+    console.log('  [GitHub] Set GITHUB_TOKEN env var or create .env file with GITHUB_TOKEN=ghp_...');
+    return false;
+  }
+
+  const content = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
+  const apiUrl = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.filePath}`;
+
+  try {
+    // Get current file SHA (needed for update)
+    let sha: string | undefined;
+    try {
+      const getResp = await fetch(apiUrl, {
+        headers: {
+          'Authorization': `Bearer ${GITHUB_CONFIG.token}`,
+          'Accept': 'application/vnd.github.v3+json',
+        },
+      });
+      if (getResp.ok) {
+        const existing = await getResp.json() as { sha: string };
+        sha = existing.sha;
+      }
+    } catch {
+      // File doesn't exist yet, that's fine
+    }
+
+    // Push update
+    const body: Record<string, string> = {
+      message: `Live session update: ${new Date().toISOString()}`,
+      content,
+      branch: GITHUB_CONFIG.branch,
+    };
+    if (sha) body.sha = sha;
+
+    const putResp = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${GITHUB_CONFIG.token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (putResp.ok) {
+      console.log('  [GitHub] Pushed to repo. Pages will rebuild.');
+      return true;
+    } else {
+      const err = await putResp.text();
+      console.log(`  [GitHub] Push failed: ${putResp.status} ${err.substring(0, 100)}`);
+      return false;
+    }
+  } catch (e) {
+    console.log(`  [GitHub] Push error: ${(e as Error).message}`);
+    return false;
+  }
+}
 const ADDON_SV_FILE = 'BalanceDossier.lua';
 
 // Find the SavedVariables file
@@ -254,6 +337,9 @@ function processFile(svPath: string) {
 
     const ts = new Date().toLocaleTimeString();
     console.log(`[${ts}] Updated: ${appData.summary.totalFights} fights, avg ${appData.summary.avgDps.toLocaleString()} DPS, ${appData.summary.avgStarfallUptime}% SF uptime`);
+
+    // Push to GitHub so Pages rebuilds with fresh data
+    pushToGitHub(appData).catch(() => {});
   } catch (e) {
     console.error('  Error:', (e as Error).message);
   }
