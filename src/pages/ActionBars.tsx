@@ -16,35 +16,38 @@ interface KeyBind {
 }
 
 // Main action bar: keys 1 through =
+// Elune's Chosen build: Lunar Calling means NO Solar Eclipse. Starfire is your ONLY builder.
+// Incarnation replaces Celestial Alignment. Convoke is NOT talented.
 const mainBar: KeyBind[] = [
-  { key: '1', spell: 'Wrath', color: 'oklch(80% 0.18 80)', role: 'Builder (Solar)', note: 'Spam in Solar Eclipse. Generates 8 AP.' },
-  { key: '2', spell: 'Starfire', color: 'oklch(72% 0.18 270)', role: 'Builder (Lunar)', note: 'Spam in Lunar Eclipse. CLEAVES nearby targets. Your AoE builder.' },
-  { key: '3', spell: 'Starsurge', color: 'oklch(85% 0.14 270)', role: 'ST Spender', note: '30 AP. Use on 1-2 targets ONLY.' },
-  { key: '4', spell: 'Starfall', color: 'oklch(72% 0.2 270)', role: 'AoE Spender', note: '50 AP. Use on 3+ targets. ALWAYS keep active in AoE.' },
-  { key: '5', spell: 'Moonfire', color: 'oklch(72% 0.14 240)', role: 'DoT', note: 'Apply to all targets. Procs Shooting Stars.' },
-  { key: '6', spell: 'Sunfire', color: 'oklch(80% 0.16 70)', role: 'AoE DoT', note: 'Instant. Hits ALL nearby enemies. Cast FIRST on pull.' },
-  { key: '7', spell: 'Celestial Alignment', color: 'oklch(88% 0.12 65)', role: 'Major CD', note: '2 min CD. Both Eclipses active. +10% damage. Use on big pulls.' },
-  { key: '8', spell: 'Fury of Elune', color: 'oklch(72% 0.16 285)', role: 'AoE CD', note: '1 min CD. Massive AP generation. Use on 4+ targets.' },
-  { key: '9', spell: 'Force of Nature', color: 'oklch(60% 0.16 155)', role: 'Treants', note: '1 min CD. Treants taunt + generate AP. Use on pull.' },
-  { key: '0', spell: 'Solar Beam', color: 'oklch(80% 0.14 80)', role: 'Interrupt', note: 'AoE silence. 1 min CD. Mandatory on caster packs in M+.' },
-  { key: '-', spell: 'Typhoon', color: 'oklch(65% 0.12 200)', role: 'Knockback', note: 'AoE knockback. Reposition mobs. Environmental kills near ledges.' },
-  { key: '=', spell: 'Wild Charge', color: 'oklch(60% 0.14 155)', role: 'Movement', note: 'Fly to target (Moonkin Form). Your gap closer.' },
+  { key: '1', spell: 'Starfire', color: 'oklch(72% 0.18 270)', role: 'ONLY Builder', note: 'Your ONLY builder. Cleaves in Lunar. Reduces Fury CD via Lunation. Spam this.' },
+  { key: '2', spell: 'Starfall', color: 'oklch(72% 0.2 270)', role: 'AoE Spender', note: '50 AP. Use on 3+ targets. ALWAYS keep active in AoE. #1 priority.' },
+  { key: '3', spell: 'Starsurge', color: 'oklch(85% 0.14 270)', role: 'ST Spender', note: '30 AP. Use on 1-2 targets ONLY. Never in AoE.' },
+  { key: '4', spell: 'Moonfire', color: 'oklch(72% 0.14 240)', role: 'DoT', note: 'Apply to all targets. Procs Shooting Stars + Light of Elune (free Fury).' },
+  { key: '5', spell: 'Sunfire', color: 'oklch(80% 0.16 70)', role: 'AoE DoT', note: 'Instant. Hits ALL nearby enemies. Cast FIRST on every pull.' },
+  { key: '6', spell: 'Fury of Elune', color: 'oklch(72% 0.16 285)', role: 'AoE CD', note: '1 min CD. AoE beam + massive AP gen. 4% damage amp via Atmospheric Exposure.' },
+  { key: '7', spell: 'Incarnation', color: 'oklch(88% 0.12 65)', role: 'Major CD', note: '3 min CD, 30s duration, +10% Haste. Use on biggest trash pulls, not just bosses.' },
+  { key: '8', spell: 'Force of Nature', color: 'oklch(60% 0.16 155)', role: 'Treants', note: '1 min CD. Treants taunt + generate AP. Use on every pull.' },
+  { key: '9', spell: 'Solar Beam', color: 'oklch(80% 0.14 80)', role: 'Interrupt', note: 'AoE silence. Mandatory on caster packs. Reduced CD from Light of the Sun.' },
+  { key: '0', spell: 'Typhoon', color: 'oklch(65% 0.12 200)', role: 'Knockback', note: 'AoE knockback. Reposition mobs. Environmental kills near ledges.' },
+  { key: '-', spell: 'Ursol\'s Vortex', color: 'oklch(68% 0.14 270)', role: 'AoE Control', note: 'Slow + pull. Keeps mobs grouped in your Starfall. Huge for M+.' },
+  { key: '=', spell: 'Wild Charge', color: 'oklch(60% 0.14 155)', role: 'Movement', note: 'Fly to target (Moonkin Form). Your gap closer between packs.' },
 ];
 
 // Shift bar: Shift+1 through Shift+=
+// Shift bar: defensives, utility, situational. Convoke NOT talented (we use Incarnation).
 const shiftBar: KeyBind[] = [
-  { key: 'S-1', spell: 'Moonkin Form', color: 'oklch(72% 0.14 270)', role: 'Form', note: 'Your DPS form. Should always be active.' },
-  { key: 'S-2', spell: 'Bear Form', color: 'oklch(65% 0.1 45)', role: 'Survival', note: 'Emergency. +25% HP, +220% armor. Use when about to die.' },
-  { key: 'S-3', spell: 'Barkskin', color: 'oklch(60% 0.14 155)', role: 'Defensive', note: '20% DR. 1 min CD. Use before big damage.' },
-  { key: 'S-4', spell: 'Renewal', color: 'oklch(68% 0.18 155)', role: 'Self Heal', note: '30% HP heal. 1.5 min CD. Emergency button.' },
-  { key: 'S-5', spell: 'Stampeding Roar', color: 'oklch(65% 0.1 45)', role: 'Raid Utility', note: '60% movement speed for group. Use for mechanics.' },
-  { key: 'S-6', spell: 'Innervate', color: 'oklch(72% 0.14 240)', role: 'Healer Buff', note: 'Free healer mana for 12s. Give to healer on hard pulls.' },
+  { key: 'S-1', spell: 'Barkskin', color: 'oklch(60% 0.14 155)', role: 'Defensive', note: '20% DR. 1 min CD. Use BEFORE big damage hits, not after.' },
+  { key: 'S-2', spell: 'Bear Form', color: 'oklch(65% 0.1 45)', role: 'Oh Shit', note: 'Emergency. +25% HP, +220% armor. Press when about to die.' },
+  { key: 'S-3', spell: 'Renewal', color: 'oklch(68% 0.18 155)', role: 'Self Heal', note: '30% HP heal. 1.5 min CD. Use with Barkskin for double save.' },
+  { key: 'S-4', spell: 'Stampeding Roar', color: 'oklch(65% 0.1 45)', role: 'Group Sprint', note: '60% speed for whole group. Use for boss mechanics, kiting, between pulls.' },
+  { key: 'S-5', spell: 'Incapacitating Roar', color: 'oklch(72% 0.14 270)', role: 'AoE CC', note: 'AoE incapacitate. Stops Ascendant affix orbs. Emergency CC.' },
+  { key: 'S-6', spell: 'Innervate', color: 'oklch(72% 0.14 240)', role: 'Healer Buff', note: 'Free healer mana for 12s. Give to healer on hardest pulls.' },
   { key: 'S-7', spell: 'Remove Corruption', color: 'oklch(68% 0.18 155)', role: 'Dispel', note: 'Removes curses and poisons. Critical for Devour affix.' },
-  { key: 'S-8', spell: 'Soothe', color: 'oklch(60% 0.12 200)', role: 'Enrage Dispel', note: 'Removes enrage effects. Niche but important in M+.' },
-  { key: 'S-9', spell: 'Rebirth', color: 'oklch(68% 0.18 155)', role: 'Battle Res', note: 'Combat rez. One of the most valuable raid utilities.' },
-  { key: 'S-0', spell: 'Mark of the Wild', color: 'oklch(60% 0.14 155)', role: 'Buff', note: '+3% Versatility for group. Cast before every key/pull.' },
-  { key: 'S--', spell: 'Convoke the Spirits', color: 'oklch(72% 0.18 270)', role: 'Burst CD', note: '2 min CD. Channels 16 random druid spells. Devastating in AoE.' },
-  { key: 'S-=', spell: 'Heart of the Wild', color: 'oklch(60% 0.14 155)', role: 'Emergency', note: 'Buffs non-spec abilities. In Bear: +20% max HP for 20s.' },
+  { key: 'S-8', spell: 'Soothe', color: 'oklch(60% 0.12 200)', role: 'Enrage Dispel', note: 'Removes enrage effects. Some M+ mobs require this.' },
+  { key: 'S-9', spell: 'Rebirth', color: 'oklch(68% 0.18 155)', role: 'Battle Res', note: 'Combat rez. Most valuable raid utility a druid brings.' },
+  { key: 'S-0', spell: 'Mark of the Wild', color: 'oklch(60% 0.14 155)', role: 'Buff', note: '+3% Versatility for group. Cast before every key. Keep up always.' },
+  { key: 'S--', spell: 'Moonkin Form', color: 'oklch(72% 0.14 270)', role: 'Form', note: 'Your DPS form. Re-enter after using Bear Form or Cat Form.' },
+  { key: 'S-=', spell: 'Sunseeker Mushroom', color: 'oklch(68% 0.16 155)', role: 'AoE Damage', note: 'Place on pull location. Extra AoE damage tool from talent tree.' },
 ];
 
 // ── Rotation sequences ──
@@ -56,38 +59,40 @@ interface RotationStep {
   critical?: boolean;
 }
 
+// With Elune's Chosen: Lunar Calling means you're ALWAYS in Lunar Eclipse.
+// No Solar Eclipse. No Wrath. Starfire is your only builder.
 const aoeOpener: RotationStep[] = [
-  { key: '6', spell: 'Sunfire', condition: 'Instant AoE DoT - hits all targets', critical: true },
-  { key: '4', spell: 'Starfall', condition: 'Spend 50 AP immediately', critical: true },
-  { key: '5', spell: 'Moonfire', condition: 'Tab-target Moonfire high-HP targets' },
-  { key: '7', spell: 'Celestial Alignment', condition: 'If available (2 min CD)' },
-  { key: '8', spell: 'Fury of Elune', condition: 'If available - massive AP gen' },
-  { key: '2', spell: 'Starfire', condition: 'Enter Lunar Eclipse (2 casts)' },
-  { key: '2', spell: 'Starfire', condition: 'Now in Lunar - Starfire cleaves' },
-  { key: '4', spell: 'Starfall', condition: 'AP refilled from SotF - Starfall again', critical: true },
-  { key: '2', spell: 'Starfire', condition: 'Continue Starfire spam in Lunar' },
+  { key: '5', spell: 'Sunfire', condition: 'Instant AoE DoT. Hits ALL targets. Always first.', critical: true },
+  { key: '4', spell: 'Moonfire', condition: 'Tab-target Moonfire priority targets. Procs Light of Elune (free Fury).' },
+  { key: '7', spell: 'Incarnation', condition: 'If available (3 min CD). +10% Haste for 30s.', critical: true },
+  { key: '6', spell: 'Fury of Elune', condition: 'Beam on pack. Massive AP gen + 4% damage amp.', critical: true },
+  { key: '2', spell: 'Starfall', condition: 'Dump AP. Ascendant Eclipse makes first 3 Starfalls +20% damage.', critical: true },
+  { key: '1', spell: 'Starfire', condition: 'Build AP. Cleaves all targets. Reduces Fury CD by 2s each cast.' },
+  { key: '1', spell: 'Starfire', condition: 'Keep building. You are always in Lunar Eclipse.' },
+  { key: '2', spell: 'Starfall', condition: 'AP refilled from SotF. Starfall again.', critical: true },
+  { key: '1', spell: 'Starfire', condition: 'Repeat: Starfire > Starfall > Starfire > Starfall forever.' },
 ];
 
 const aoePriority: RotationStep[] = [
-  { key: '4', spell: 'Starfall', condition: '50+ AP and 3+ targets. ALWAYS #1 priority.', critical: true },
-  { key: '6', spell: 'Sunfire', condition: 'Refresh if falling off any target' },
-  { key: '5', spell: 'Moonfire', condition: 'Refresh on targets where it\'s falling off' },
-  { key: '8', spell: 'Fury of Elune', condition: 'On cooldown, 4+ targets' },
-  { key: '9', spell: 'Force of Nature', condition: 'On cooldown' },
-  { key: '2', spell: 'Starfire', condition: 'In Lunar Eclipse (cleaves)', critical: true },
-  { key: '1', spell: 'Wrath', condition: 'In Solar Eclipse (filler until Lunar)' },
-  { key: '3', spell: 'Starsurge', condition: 'ONLY if 1-2 targets' },
+  { key: '2', spell: 'Starfall', condition: '50+ AP and 3+ targets. ALWAYS #1 priority. Never let it drop.', critical: true },
+  { key: '5', spell: 'Sunfire', condition: 'Refresh if falling off. Instant cast, hits all targets.' },
+  { key: '4', spell: 'Moonfire', condition: 'Refresh on targets. Each tick can proc free Fury of Elune.' },
+  { key: '6', spell: 'Fury of Elune', condition: 'On cooldown. 4% damage amp on targets hit.' },
+  { key: '8', spell: 'Force of Nature', condition: 'On cooldown. Free AP generation.' },
+  { key: '1', spell: 'Starfire', condition: 'Your builder. Cleaves all nearby. Feeds Lunation (Fury CD reduction).', critical: true },
+  { key: '3', spell: 'Starsurge', condition: 'ONLY on 1-2 targets. Never use in AoE.' },
 ];
 
+// ST opener also uses Starfire (Lunar Calling). No Wrath. No Solar Eclipse.
 const stOpener: RotationStep[] = [
-  { key: '5', spell: 'Moonfire', condition: 'Apply DoT' },
-  { key: '6', spell: 'Sunfire', condition: 'Apply DoT' },
-  { key: '1', spell: 'Wrath', condition: 'Enter Solar Eclipse (2 casts)' },
-  { key: '1', spell: 'Wrath', condition: 'Now in Solar' },
-  { key: '7', spell: 'Celestial Alignment', condition: 'If available' },
-  { key: '3', spell: 'Starsurge', condition: 'Dump AP into Starsurge', critical: true },
-  { key: '1', spell: 'Wrath', condition: 'Build AP' },
+  { key: '4', spell: 'Moonfire', condition: 'Apply DoT' },
+  { key: '5', spell: 'Sunfire', condition: 'Apply DoT' },
+  { key: '7', spell: 'Incarnation', condition: 'If available (3 min CD)', critical: true },
+  { key: '6', spell: 'Fury of Elune', condition: '4% damage amp on target' },
+  { key: '3', spell: 'Starsurge', condition: 'Dump AP. Ascendant Eclipse buffs first 3.', critical: true },
+  { key: '1', spell: 'Starfire', condition: 'Build AP. +40% to primary via Lunar Calling.' },
   { key: '3', spell: 'Starsurge', condition: 'Dump at 30+ AP', critical: true },
+  { key: '1', spell: 'Starfire', condition: 'Repeat: Starfire > Starsurge > Starfire > Starsurge' },
 ];
 
 export default function ActionBars() {
@@ -218,28 +223,31 @@ export default function ActionBars() {
           <div className="text-sm font-bold mb-3" style={{ color: 'oklch(80% 0.18 80)' }}>
             AoE Cheat Sheet - Tape This to Your Monitor
           </div>
-          <div className="font-mono text-sm font-bold" style={{ color: 'oklch(90% 0.006 60)', lineHeight: 2 }}>
-            <span style={{ color: 'oklch(80% 0.16 70)' }}>6</span>
+          <div className="font-mono text-lg font-bold" style={{ color: 'oklch(90% 0.006 60)', lineHeight: 2.2 }}>
+            <span style={{ color: 'oklch(80% 0.16 70)' }}>5</span>
             {' \u2192 '}
-            <span style={{ color: 'oklch(72% 0.2 270)' }}>4</span>
-            {' \u2192 '}
-            <span style={{ color: 'oklch(72% 0.14 240)' }}>5</span>
+            <span style={{ color: 'oklch(72% 0.14 240)' }}>4</span>
             {' \u2192 '}
             <span style={{ color: 'oklch(88% 0.12 65)' }}>7</span>
             {' \u2192 '}
-            <span style={{ color: 'oklch(72% 0.16 285)' }}>8</span>
+            <span style={{ color: 'oklch(72% 0.16 285)' }}>6</span>
             {' \u2192 '}
-            <span style={{ color: 'oklch(72% 0.18 270)' }}>2 2</span>
+            <span style={{ color: 'oklch(72% 0.2 270)' }}>2</span>
             {' \u2192 '}
-            <span style={{ color: 'oklch(72% 0.2 270)' }}>4</span>
+            <span style={{ color: 'oklch(72% 0.18 270)' }}>1 1</span>
             {' \u2192 '}
-            <span style={{ color: 'oklch(72% 0.18 270)' }}>2 2 2</span>
+            <span style={{ color: 'oklch(72% 0.2 270)' }}>2</span>
             {' \u2192 '}
-            <span style={{ color: 'oklch(72% 0.2 270)' }}>4</span>
+            <span style={{ color: 'oklch(72% 0.18 270)' }}>1 1 1</span>
+            {' \u2192 '}
+            <span style={{ color: 'oklch(72% 0.2 270)' }}>2</span>
             {' \u2192 repeat'}
           </div>
-          <p className="text-[13px] mt-2" style={{ color: 'oklch(78% 0.005 55)' }}>
-            Sunfire \u2192 Starfall \u2192 Moonfire \u2192 CDs \u2192 Starfire Starfire \u2192 Starfall \u2192 Starfire loop
+          <p className="text-[15px] mt-3" style={{ color: 'oklch(90% 0.004 55)' }}>
+            Sunfire \u2192 Moonfire \u2192 Incarnation \u2192 Fury \u2192 Starfall \u2192 Starfire Starfire \u2192 Starfall \u2192 Starfire loop
+          </p>
+          <p className="text-sm mt-2 font-bold" style={{ color: 'oklch(72% 0.18 270)' }}>
+            No Wrath. Ever. Lunar Calling = Starfire only. You never leave Lunar Eclipse.
           </p>
         </div>
       </div>
