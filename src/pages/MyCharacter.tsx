@@ -264,8 +264,8 @@ function ProgStat({ label, value, total }: { label: string; value: number; total
 function ExtLink({ href, label }: { href: string; label: string }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer"
-      className="text-[12px] font-semibold px-3.5 py-2 rounded-lg transition-colors inline-flex items-center gap-1.5"
-      style={{ color: 'oklch(62% 0.012 270)', background: 'oklch(12% 0.012 270)', border: '1px solid oklch(18% 0.012 270)' }}>
+      className="glass text-[12px] font-semibold px-3.5 py-2 rounded-lg transition-all inline-flex items-center gap-1.5 hover:scale-105"
+      style={{ color: 'oklch(68% 0.012 50)' }}>
       {label}
       <span style={{ fontSize: '10px' }}>&#8599;</span>
     </a>

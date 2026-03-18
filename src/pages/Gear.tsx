@@ -14,8 +14,8 @@ export default function Gear() {
         <SectionHeading title="Best in Slot" sub={`${bisGear.season}. ${bisGear.tierSet.name} tier set.`} accent="solar" />
       </div>
 
-      {/* Tier set - left border accent, not a card */}
-      <div ref={r2} className="reveal pl-5 mb-16 max-w-2xl" style={{ borderLeft: '2px solid oklch(80% 0.18 80)' }}>
+      {/* Tier set - glass callout with gold border */}
+      <div ref={r2} className="reveal glass-solar pl-5 pr-5 py-5 mb-16 max-w-2xl rounded-lg" style={{ borderLeft: '2px solid oklch(80% 0.18 80)' }}>
         <h4 className="text-sm font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)' }}>
           {bisGear.tierSet.name}
         </h4>
@@ -61,10 +61,7 @@ export default function Gear() {
         </div>
         <div className="grid sm:grid-cols-2 gap-3 mb-10">
           {bisGear.trinkets.rankings.slice(0, 2).map(t => (
-            <div key={t.name} className="p-5 rounded-lg" style={{
-              background: t.type === 'On-Use' ? 'oklch(10% 0.02 80)' : 'oklch(10% 0.012 270)',
-              border: `1px solid ${t.type === 'On-Use' ? 'oklch(17% 0.03 80)' : 'oklch(16% 0.012 270)'}`,
-            }}>
+            <div key={t.name} className={`p-5 rounded-lg card-hover ${t.type === 'On-Use' ? 'glass-solar' : 'glass'}`}>
               <div className="flex items-baseline justify-between mb-2">
                 <span className="text-sm font-bold" style={{ color: 'oklch(88% 0.006 270)' }}>{t.name}</span>
                 <span className="text-[10px] font-semibold" style={{ color: 'oklch(44% 0.012 270)' }}>{t.type}</span>

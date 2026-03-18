@@ -73,7 +73,7 @@ export default function Hero() {
 function QuickStat({ label, value, color }: { label: string; value: string; color?: string }) {
   const c = color ?? 'oklch(57% 0.012 50)';
   return (
-    <div className="py-3 px-4 rounded-lg" style={{ background: 'oklch(10% 0.012 270)', border: '1px solid oklch(16% 0.012 270)' }}>
+    <div className="glass card-hover py-3 px-4 rounded-lg">
       <div className="text-[9px] uppercase font-bold mb-1" style={{ color: c, letterSpacing: '0.12em' }}>{label}</div>
       <div className="text-base font-bold" style={{ color: color ? c : 'oklch(82% 0.008 270)' }}>{value}</div>
     </div>

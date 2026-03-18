@@ -42,8 +42,8 @@ export default function Rankings() {
           {/* Top 3 - featured */}
           <div className="grid sm:grid-cols-3 gap-2.5 mb-4">
             {topPlayers.raidLeaderboard.slice(0, 3).map((p, i) => (
-              <div key={p.name} className="py-4 px-5 rounded-lg"
-                style={{ background: 'oklch(10% 0.012 270)', border: '1px solid oklch(16% 0.012 270)', borderTop: `2px solid ${podiumColors[i]}` }}>
+              <div key={p.name} className={`py-4 px-5 rounded-lg card-hover ${i === 0 ? 'glass-solar' : 'glass'}`}
+                style={{ borderTop: `2px solid ${podiumColors[i]}` }}>
                 <div className="flex items-baseline justify-between mb-1">
                   <span className="font-mono text-xs font-bold" style={{ color: podiumColors[i] }}>#{p.rank}</span>
                   <span className="font-mono text-xs font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
