@@ -19,7 +19,7 @@ export default function Changelog() {
 
       <div className="max-w-2xl space-y-10">
         {changelog.map(entry => {
-          const color = typeColors[entry.type] || 'oklch(50% 0.012 270)';
+          const color = typeColors[entry.type] || 'oklch(58% 0.012 270)';
           return (
             <ChangelogEntry key={entry.patch + entry.date} entry={entry} color={color} />
           );
@@ -36,7 +36,7 @@ function ChangelogEntry({ entry, color }: { entry: { patch: string; date: string
     <div ref={ref} className="reveal pl-5" style={{ borderLeft: `2px solid ${color}` }}>
       <div className="flex items-baseline gap-3 mb-3">
         <span className="text-base font-extrabold" style={{ color }}>{entry.patch}</span>
-        <span className="text-[11px]" style={{ color: 'oklch(40% 0.012 270)' }}>{entry.date}</span>
+        <span className="text-[11px]" style={{ color: 'oklch(48% 0.012 270)' }}>{entry.date}</span>
         <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded"
           style={{ color, background: `${color}0C`, letterSpacing: '0.08em' }}>
           {entry.type.replace('_', ' ')}
@@ -44,7 +44,7 @@ function ChangelogEntry({ entry, color }: { entry: { patch: string; date: string
       </div>
       <ul className="space-y-1">
         {entry.changes.map((c, i) => (
-          <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(58% 0.012 270)', lineHeight: 1.65 }}>
+          <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(66% 0.012 270)', lineHeight: 1.65 }}>
             <span className="w-1 h-1 rounded-full shrink-0 mt-2" style={{ background: 'oklch(28% 0.012 270)' }} />
             {c}
           </li>

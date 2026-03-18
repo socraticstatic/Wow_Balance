@@ -156,10 +156,10 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
         <span className="px-2 py-0.5 rounded" style={{ color: 'oklch(80% 0.18 80)', background: 'oklch(80% 0.18 80 / 0.1)' }}>
           {buildName}
         </span>
-        <span style={{ color: 'oklch(42% 0.01 50)' }}>
+        <span style={{ color: 'oklch(50% 0.01 50)' }}>
           {activeCount}/{specTalents.length} highlighted
         </span>
-        <span style={{ color: 'oklch(36% 0.01 50)' }}>
+        <span style={{ color: 'oklch(44% 0.01 50)' }}>
           Midnight 12.0.1
         </span>
       </div>
@@ -312,7 +312,7 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
                   {displayName}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[9px]" style={{ color: 'oklch(42% 0.01 50)' }}>
+                  <span className="text-[9px]" style={{ color: 'oklch(50% 0.01 50)' }}>
                     {t.type === 'choice' ? 'Choice' : t.type === 'active' ? 'Active' : 'Passive'} - Row {t.row + 1}
                   </span>
                   {active && (

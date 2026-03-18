@@ -34,7 +34,7 @@ export default function Builds() {
               onClick={() => setActiveId(b.id)}
               className="px-4 py-2 rounded text-[13px] font-semibold cursor-pointer transition-all duration-150"
               style={{
-                color: on ? 'oklch(96% 0.005 270)' : 'oklch(57% 0.012 50)',
+                color: on ? 'oklch(96% 0.005 270)' : 'oklch(64% 0.012 50)',
                 background: on ? 'oklch(16% 0.02 270)' : 'transparent',
                 border: `1px solid ${on ? 'oklch(24% 0.025 270)' : 'oklch(14% 0.01 270)'}`,
               }}
@@ -57,15 +57,15 @@ export default function Builds() {
             </span>
           </div>
 
-          <p className="text-[13px] font-medium mb-1" style={{ color: 'oklch(44% 0.012 270)' }}>
+          <p className="text-[13px] font-medium mb-1" style={{ color: 'oklch(52% 0.012 270)' }}>
             {active.heroSpec}
           </p>
-          <p className="mb-8" style={{ color: 'oklch(58% 0.012 270)', fontSize: '0.9rem', lineHeight: 1.8, maxWidth: '52ch' }}>
+          <p className="mb-8" style={{ color: 'oklch(66% 0.012 270)', fontSize: '0.9rem', lineHeight: 1.8, maxWidth: '52ch' }}>
             {active.description}
           </p>
 
           {/* Keystones with spell icons */}
-          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(44% 0.012 270)', letterSpacing: '0.12em' }}>
+          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(52% 0.012 270)', letterSpacing: '0.12em' }}>
             Key Talents
           </div>
           <div className="flex flex-wrap gap-2 mb-8">
@@ -78,7 +78,7 @@ export default function Builds() {
             ))}
           </div>
 
-          <div className="text-[9px] uppercase font-bold mb-1.5" style={{ color: 'oklch(44% 0.012 270)', letterSpacing: '0.12em' }}>
+          <div className="text-[9px] uppercase font-bold mb-1.5" style={{ color: 'oklch(52% 0.012 270)', letterSpacing: '0.12em' }}>
             Stat Priority
           </div>
           <p className="text-sm font-mono" style={{ color: 'oklch(62% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>

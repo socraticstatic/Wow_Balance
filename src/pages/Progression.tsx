@@ -465,7 +465,7 @@ export default function Progression() {
       </div>
 
       <div className="text-center">
-        <p className="text-[11px] italic" style={{ color: 'oklch(42% 0.01 50)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[11px] italic" style={{ color: 'oklch(50% 0.01 50)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           Recommendations update automatically as your character progresses.
         </p>
       </div>

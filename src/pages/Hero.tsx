@@ -118,11 +118,11 @@ export default function Hero() {
             <div className="text-lg font-bold" style={{ color: 'oklch(68% 0.16 285)' }}>A-Tier</div>
           </TiltCard>
           <TiltCard className="glass py-3 px-4 rounded-lg">
-            <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(57% 0.012 50)', letterSpacing: '0.12em' }}>Meta</div>
+            <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>Meta</div>
             <div className="text-base font-bold" style={{ color: 'oklch(82% 0.008 270)' }}>{raidBuild?.heroSpec ?? 'Keeper'}</div>
           </TiltCard>
           <TiltCard className="glass py-3 px-4 rounded-lg">
-            <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(57% 0.012 50)', letterSpacing: '0.12em' }}>Raid</div>
+            <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>Raid</div>
             <div className="text-base font-bold" style={{ color: 'oklch(82% 0.008 270)' }}>{meta.raidTier.split('/')[0].trim()}</div>
           </TiltCard>
         </div>

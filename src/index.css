@@ -13,11 +13,11 @@
   --color-nature: oklch(52% 0.14 155);
   --color-burgundy: oklch(50% 0.14 20);
 
-  /* ── Text (warm-tinted, parchment feel) ── */
-  --color-text-1: oklch(90% 0.01 60);
-  --color-text-2: oklch(68% 0.015 55);
-  --color-text-3: oklch(50% 0.012 50);
-  --color-text-4: oklch(36% 0.01 45);
+  /* ── Text (warm-tinted, boosted for dark bg readability) ── */
+  --color-text-1: oklch(92% 0.008 60);
+  --color-text-2: oklch(75% 0.012 55);
+  --color-text-3: oklch(58% 0.01 50);
+  --color-text-4: oklch(42% 0.008 45);
 
   /* ── Borders ── */
   --color-border: oklch(16% 0.012 45);
@@ -38,7 +38,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.8; /* +0.1 for light-on-dark readability per frontend-design */
 }
 
 /* Parchment noise texture */
@@ -196,28 +196,28 @@ body::after {
 
 /* ── Glassmorphism (purposeful, not decorative) ── */
 .glass {
-  background: oklch(10% 0.012 45 / 0.55);
+  background: oklch(10% 0.012 45 / 0.7);
   backdrop-filter: blur(20px) saturate(1.3);
   -webkit-backdrop-filter: blur(20px) saturate(1.3);
-  border: 1px solid oklch(78% 0.16 60 / 0.08);
+  border: 1px solid oklch(78% 0.16 60 / 0.1);
 }
 .glass-solar {
-  background: oklch(12% 0.02 60 / 0.45);
+  background: oklch(12% 0.02 60 / 0.6);
   backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border: 1px solid oklch(78% 0.16 60 / 0.12);
+  border: 1px solid oklch(78% 0.16 60 / 0.14);
 }
 .glass-lunar {
-  background: oklch(12% 0.02 285 / 0.45);
+  background: oklch(12% 0.02 285 / 0.6);
   backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border: 1px solid oklch(68% 0.16 285 / 0.12);
+  border: 1px solid oklch(68% 0.16 285 / 0.14);
 }
 .glass-nature {
-  background: oklch(11% 0.02 155 / 0.45);
+  background: oklch(11% 0.02 155 / 0.6);
   backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border: 1px solid oklch(58% 0.14 155 / 0.12);
+  border: 1px solid oklch(58% 0.14 155 / 0.14);
 }
 
 /* ── Manuscript rule lines ── */

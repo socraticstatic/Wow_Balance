@@ -20,7 +20,7 @@ export default function Rankings() {
       {/* Affixes - inline pills */}
       {topPlayers.currentAffixes && (
         <div className="flex flex-wrap items-center gap-2 mb-14">
-          <span className="text-[9px] uppercase font-bold mr-1" style={{ color: 'oklch(42% 0.012 270)', letterSpacing: '0.12em' }}>
+          <span className="text-[9px] uppercase font-bold mr-1" style={{ color: 'oklch(50% 0.012 270)', letterSpacing: '0.12em' }}>
             Affixes
           </span>
           {topPlayers.currentAffixes.affixes.map(a => (
@@ -51,7 +51,7 @@ export default function Rankings() {
                   </span>
                 </div>
                 <div className="text-sm font-bold" style={{ color: 'oklch(90% 0.006 270)' }}>{p.name}</div>
-                <div className="text-[11px]" style={{ color: 'oklch(42% 0.012 270)' }}>{p.realm} - {p.region}</div>
+                <div className="text-[11px]" style={{ color: 'oklch(50% 0.012 270)' }}>{p.realm} - {p.region}</div>
               </div>
             ))}
           </div>
@@ -69,7 +69,7 @@ export default function Rankings() {
                     {p.rank}
                   </span>
                   <span className="text-[13px] font-semibold" style={{ color: 'oklch(82% 0.006 270)' }}>{p.name}</span>
-                  {p.region && <span className="text-[10px]" style={{ color: 'oklch(40% 0.012 270)' }}>{p.region}</span>}
+                  {p.region && <span className="text-[10px]" style={{ color: 'oklch(48% 0.012 270)' }}>{p.region}</span>}
                 </div>
                 <span className="font-mono text-[12px] font-bold" style={{ color: 'oklch(72% 0.12 80)', fontVariantNumeric: 'tabular-nums' }}>
                   {p.dps ? `${(p.dps / 1e6).toFixed(2)}M` : '-'}
@@ -94,8 +94,8 @@ export default function Rankings() {
               </div>
               <div>
                 <span className="text-sm font-bold" style={{ color: 'oklch(86% 0.006 270)' }}>{f.name}</span>
-                <span className="text-[11px] ml-2" style={{ color: 'oklch(42% 0.012 270)' }}>{f.role}</span>
-                <p className="text-[12px] mt-0.5" style={{ color: 'oklch(50% 0.012 270)' }}>{f.notes}</p>
+                <span className="text-[11px] ml-2" style={{ color: 'oklch(50% 0.012 270)' }}>{f.role}</span>
+                <p className="text-[12px] mt-0.5" style={{ color: 'oklch(58% 0.012 270)' }}>{f.notes}</p>
               </div>
             </div>
           ))}

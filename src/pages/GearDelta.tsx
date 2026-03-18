@@ -167,7 +167,7 @@ export default function GearDelta() {
                 <div className="text-[12px] font-semibold" style={{ color: d.bisTier ? 'oklch(80% 0.18 80)' : 'oklch(68% 0.012 50)' }}>
                   {d.bisName}
                 </div>
-                <div className="text-[10px]" style={{ color: 'oklch(42% 0.01 50)' }}>
+                <div className="text-[10px]" style={{ color: 'oklch(50% 0.01 50)' }}>
                   {d.bisSource}
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function GearDelta() {
       )}
 
       <div className="mt-12 text-center">
-        <p className="text-[11px] italic" style={{ color: 'oklch(42% 0.01 50)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[11px] italic" style={{ color: 'oklch(50% 0.01 50)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           BiS targets are for Mythic raid. Gear delta updates when character data syncs.
         </p>
       </div>

@@ -43,7 +43,7 @@ export default function Consumables() {
               onClick={() => setContentType(ct)}
               className="px-4 py-2 rounded text-[13px] font-semibold cursor-pointer transition-all"
               style={{
-                color: on ? 'oklch(96% 0.005 270)' : 'oklch(57% 0.012 50)',
+                color: on ? 'oklch(96% 0.005 270)' : 'oklch(64% 0.012 50)',
                 background: on ? 'oklch(16% 0.02 270)' : 'transparent',
                 border: `1px solid ${on ? 'oklch(24% 0.025 270)' : 'oklch(14% 0.01 270)'}`,
               }}
