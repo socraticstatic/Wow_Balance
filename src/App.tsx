@@ -11,6 +11,7 @@ const MyCharacter = lazy(() => import('./pages/MyCharacter'));
 const Progression = lazy(() => import('./pages/Progression'));
 const Faith = lazy(() => import('./pages/Faith'));
 const AoeOptimization = lazy(() => import('./pages/AoeOptimization'));
+const AoeBreakpoints = lazy(() => import('./pages/AoeBreakpoints'));
 const Builds = lazy(() => import('./pages/Builds'));
 const Gear = lazy(() => import('./pages/Gear'));
 const GearDelta = lazy(() => import('./pages/GearDelta'));
@@ -21,7 +22,7 @@ const DungeonGuides = lazy(() => import('./pages/DungeonGuides'));
 const Changelog = lazy(() => import('./pages/Changelog'));
 const Setup = lazy(() => import('./pages/Setup'));
 
-const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'builds', 'gear', 'geardelta', 'consumables', 'raid', 'dungeons', 'rankings', 'changelog', 'setup'] as const;
+const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'breakpoints', 'builds', 'gear', 'geardelta', 'consumables', 'raid', 'dungeons', 'rankings', 'changelog', 'setup'] as const;
 
 function SectionFallback() {
   return (
@@ -129,6 +130,11 @@ export default function App() {
           <div id="aoe" ref={ref('aoe')} className="relative">
             <SectionArt variant="eclipse" />
             <AoeOptimization />
+          </div>
+          <Divider />
+          <div id="breakpoints" ref={ref('breakpoints')} className="relative">
+            <SectionArt variant="lunar" />
+            <AoeBreakpoints />
           </div>
           <Divider />
           <div id="builds" ref={ref('builds')} className="relative">

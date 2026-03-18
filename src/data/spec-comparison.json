@@ -1,0 +1,62 @@
+{
+  "encounter": "Lightblinded Vanguard (Council - AoE)",
+  "difficulty": "Mythic",
+  "totalSpecs": 9,
+  "balanceDruidRank": 0,
+  "top10": [
+    {
+      "spec": "Unknown - Devastation",
+      "avgDps": 4293450,
+      "maxDps": 4633825,
+      "count": 2
+    },
+    {
+      "spec": "Unknown - Augmentation",
+      "avgDps": 4154598,
+      "maxDps": 4154598,
+      "count": 1
+    },
+    {
+      "spec": "Unknown - Marksmanship",
+      "avgDps": 4143344,
+      "maxDps": 4822925,
+      "count": 74
+    },
+    {
+      "spec": "Unknown - Arcane",
+      "avgDps": 4090666,
+      "maxDps": 4090666,
+      "count": 1
+    },
+    {
+      "spec": "Unknown - Elemental",
+      "avgDps": 4046808,
+      "maxDps": 4046808,
+      "count": 1
+    },
+    {
+      "spec": "Unknown - Retribution",
+      "avgDps": 4017129,
+      "maxDps": 4266642,
+      "count": 17
+    },
+    {
+      "spec": "Unknown - Havoc",
+      "avgDps": 4010654,
+      "maxDps": 4010654,
+      "count": 1
+    },
+    {
+      "spec": "Unknown - BeastMastery",
+      "avgDps": 3976309,
+      "maxDps": 3984010,
+      "count": 2
+    },
+    {
+      "spec": "Unknown - Frost",
+      "avgDps": 3951086,
+      "maxDps": 3951086,
+      "count": 1
+    }
+  ]
+}

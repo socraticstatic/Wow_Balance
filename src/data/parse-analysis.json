@@ -1,0 +1,372 @@
+{
+  "Imperator Averzian": {
+    "encounterId": 3009,
+    "topParses": [
+      {
+        "name": "Dakd",
+        "server": "Illidan",
+        "region": "US",
+        "dps": 5745707,
+        "duration": 182204,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "z3mDVbaH7CNc4jfq",
+        "fightID": 6
+      },
+      {
+        "name": "Gorelul",
+        "server": "Frostmourne",
+        "region": "US",
+        "dps": 5728252,
+        "duration": 143916,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "KJ3By1TM4jngGch9",
+        "fightID": 27
+      },
+      {
+        "name": "Recruitie",
+        "server": "Illidan",
+        "region": "US",
+        "dps": 5546098,
+        "duration": 188984,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "pTQtd8Fh4J3bXDrz",
+        "fightID": 5
+      },
+      {
+        "name": "Noctuss",
+        "server": "Mal'Ganis",
+        "region": "US",
+        "dps": 5517296,
+        "duration": 162721,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "hbngPwpGJZvmrC8M",
+        "fightID": 3
+      },
+      {
+        "name": "Finalsai",
+        "server": "死亡之翼",
+        "region": "CN",
+        "dps": 5505031,
+        "duration": 186684,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "K4wdvLybPXfjRF6q",
+        "fightID": 1
+      }
+    ],
+    "avgDps": 5608477,
+    "maxDps": 5745707
+  },
+  "Vorasius": {
+    "encounterId": 3010,
+    "topParses": [
+      {
+        "name": "개새야",
+        "server": "아즈샤라",
+        "region": "KR",
+        "dps": 3964561,
+        "duration": 247394,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "FvGXxgtqJ7Cc6APW",
+        "fightID": 14
+      },
+      {
+        "name": "Rotí",
+        "server": "Tarren Mill",
+        "region": "EU",
+        "dps": 3949454,
+        "duration": 213943,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "xVzc4RDPghZBALYM",
+        "fightID": 53
+      },
+      {
+        "name": "Dimwit",
+        "server": "아즈샤라",
+        "region": "KR",
+        "dps": 3887383,
+        "duration": 250642,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "FzGQcLbD1Z6BRHYP",
+        "fightID": 16
+      },
+      {
+        "name": "Dakd",
+        "server": "Illidan",
+        "region": "US",
+        "dps": 3878301,
+        "duration": 203960,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "z3mDVbaH7CNc4jfq",
+        "fightID": 11
+      },
+      {
+        "name": "사스케",
+        "server": "아즈샤라",
+        "region": "KR",
+        "dps": 3862595,
+        "duration": 215630,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "2CzgAP6njWaLbkf8",
+        "fightID": 14
+      }
+    ],
+    "avgDps": 3908459,
+    "maxDps": 3964561
+  },
+  "Fallen-King Salhadaar": {
+    "encounterId": 3011,
+    "topParses": [
+      {
+        "name": "Hedwigjr",
+        "server": "Kazzak",
+        "region": "EU",
+        "dps": 4151753,
+        "duration": 119372,
+        "ilvl": 684,
+        "spec": "Balance",
+        "reportCode": "fYJmCkGhbKqr46Fg",
+        "fightID": 53
+      },
+      {
+        "name": "Gorelul",
+        "server": "Frostmourne",
+        "region": "US",
+        "dps": 4004730,
+        "duration": 110532,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "Fv8cqLVpCrgYTf4x",
+        "fightID": 50
+      },
+      {
+        "name": "Recruitie",
+        "server": "Illidan",
+        "region": "US",
+        "dps": 3984927,
+        "duration": 192610,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "z3mDVbaH7CNc4jfq",
+        "fightID": 16
+      },
+      {
+        "name": "Чичкинс",
+        "server": "Ревущий фьорд",
+        "region": "EU",
+        "dps": 3964612,
+        "duration": 116303,
+        "ilvl": 684,
+        "spec": "Balance",
+        "reportCode": "WFwd8PVGNrg3KfC4",
+        "fightID": 108
+      },
+      {
+        "name": "Lascalpa",
+        "server": "Blackrock",
+        "region": "EU",
+        "dps": 3918462,
+        "duration": 119372,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "fYJmCkGhbKqr46Fg",
+        "fightID": 53
+      }
+    ],
+    "avgDps": 4004897,
+    "maxDps": 4151753
+  },
+  "Vaelgor & Ezzorak": {
+    "encounterId": 3012,
+    "topParses": [
+      {
+        "name": "Dimwit",
+        "server": "아즈샤라",
+        "region": "KR",
+        "dps": 6533798,
+        "duration": 261267,
+        "ilvl": 684,
+        "spec": "Balance",
+        "reportCode": "HXbG6TNJZtWzw1dq",
+        "fightID": 22
+      },
+      {
+        "name": "개새야",
+        "server": "아즈샤라",
+        "region": "KR",
+        "dps": 6383577,
+        "duration": 249608,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "jYX7NdcAgVC4vHTa",
+        "fightID": 16
+      },
+      {
+        "name": "Anonymous",
+        "dps": 6170805,
+        "duration": 375067,
+        "ilvl": 679,
+        "spec": "Balance",
+        "reportCode": "a:1fryhMJZLWCtY3c8",
+        "fightID": 57
+      },
+      {
+        "name": "Чичкинг",
+        "server": "Ревущий фьорд",
+        "region": "EU",
+        "dps": 6167280,
+        "duration": 251127,
+        "ilvl": 684,
+        "spec": "Balance",
+        "reportCode": "RhFrjPpzxnH4vDdc",
+        "fightID": 25
+      },
+      {
+        "name": "星辰轨道炮",
+        "server": "罗宁",
+        "region": "CN",
+        "dps": 6085244,
+        "duration": 320190,
+        "ilvl": 684,
+        "spec": "Balance",
+        "reportCode": "kBhQbZqmLP1KD36z",
+        "fightID": 87
+      }
+    ],
+    "avgDps": 6268141,
+    "maxDps": 6533798
+  },
+  "Lightblinded Vanguard": {
+    "encounterId": 3013,
+    "topParses": [
+      {
+        "name": "Chickenism",
+        "server": "Icecrown",
+        "region": "US",
+        "dps": 3807355,
+        "duration": 198745,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "tCXmPcgkx3wRZ9Tv",
+        "fightID": 57
+      },
+      {
+        "name": "Tickledtits",
+        "server": "Tarren Mill",
+        "region": "EU",
+        "dps": 3754550,
+        "duration": 241312,
+        "ilvl": 681,
+        "spec": "Balance",
+        "reportCode": "XbVrfDyRtP2A7ZGp",
+        "fightID": 56
+      },
+      {
+        "name": "Boomkinbird",
+        "server": "Area 52",
+        "region": "US",
+        "dps": 3719699,
+        "duration": 252355,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "Nq9TGhWPYLbBH7jw",
+        "fightID": 36
+      },
+      {
+        "name": "Jeezus",
+        "server": "Twisting Nether",
+        "region": "EU",
+        "dps": 3702612,
+        "duration": 222841,
+        "ilvl": 684,
+        "spec": "Balance",
+        "reportCode": "nZC2gpRk4f1MA86a",
+        "fightID": 80
+      },
+      {
+        "name": "별똥부엉",
+        "server": "아즈샤라",
+        "region": "KR",
+        "dps": 3700816,
+        "duration": 240860,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "7xYvdtfQW9BnkH6G",
+        "fightID": 40
+      }
+    ],
+    "avgDps": 3737006,
+    "maxDps": 3807355
+  },
+  "Crown of the Cosmos": {
+    "encounterId": 3014,
+    "topParses": [
+      {
+        "name": "Kitzuh",
+        "server": "Tarren Mill",
+        "region": "EU",
+        "dps": 4078381,
+        "duration": 266429,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "kDjAXZtdn8Bym7Mp",
+        "fightID": 33
+      },
+      {
+        "name": "Dakd",
+        "server": "Illidan",
+        "region": "US",
+        "dps": 4046420,
+        "duration": 277109,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "pKVd8BF37qNzhGaJ",
+        "fightID": 40
+      },
+      {
+        "name": "드주기",
+        "server": "아즈샤라",
+        "region": "KR",
+        "dps": 4042437,
+        "duration": 277816,
+        "ilvl": 682,
+        "spec": "Balance",
+        "reportCode": "ZxJY1fwKzTQyM973",
+        "fightID": 12
+      },
+      {
+        "name": "Tygra",
+        "server": "Blackrock",
+        "region": "EU",
+        "dps": 4027239,
+        "duration": 323585,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "4PtDfqAv3NKknLW2",
+        "fightID": 35
+      },
+      {
+        "name": "Bdavocado",
+        "server": "Area 52",
+        "region": "US",
+        "dps": 3937649,
+        "duration": 228463,
+        "ilvl": 683,
+        "spec": "Balance",
+        "reportCode": "PqBbCDLtQ6JM9xky",
+        "fightID": 10
+      }
+    ],
+    "avgDps": 4026425,
+    "maxDps": 4078381
+  }
+}
