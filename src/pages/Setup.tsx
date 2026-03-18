@@ -114,7 +114,7 @@ export default function Setup() {
           <Field label="Realm" value={form.realm} onChange={set('realm')} placeholder="zuljin" help="Lowercase, hyphenated. e.g. area-52, zuljin, stormrage" />
 
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-2" style={{ color: 'oklch(60% 0.012 50)', letterSpacing: '0.1em' }}>Region</label>
+            <label className="block text-[10px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.1em' }}>Region</label>
             <select
               value={form.region}
               onChange={set('region')}
@@ -142,13 +142,13 @@ export default function Setup() {
             How do you play?
           </h3>
 
-          <p className="text-[13px]" style={{ color: 'oklch(60% 0.012 50)', lineHeight: 1.7 }}>
+          <p className="text-[13px]" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.7 }}>
             This shapes your optimization page - gear, enchants, talents, and rotation will be tailored to your focus.
           </p>
 
           {/* Primary content */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(60% 0.012 50)', letterSpacing: '0.1em' }}>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.1em' }}>
               What content do you focus on?
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -178,7 +178,7 @@ export default function Setup() {
 
           {/* Hero talent preference */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(60% 0.012 50)', letterSpacing: '0.1em' }}>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.1em' }}>
               Preferred Hero Talent Tree
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -199,7 +199,7 @@ export default function Setup() {
                   <span className="text-[13px] font-bold block mb-0.5" style={{
                     color: form.heroTalent === opt.id ? opt.color : 'oklch(72% 0.01 50)',
                   }}>{opt.label}</span>
-                  <span className="text-[10px]" style={{ color: 'oklch(55% 0.012 50)' }}>{opt.desc}</span>
+                  <span className="text-[10px]" style={{ color: 'oklch(68% 0.01 50)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -207,7 +207,7 @@ export default function Setup() {
 
           {/* AoE vs ST preference */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(60% 0.012 50)', letterSpacing: '0.1em' }}>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.1em' }}>
               Damage Profile
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -228,7 +228,7 @@ export default function Setup() {
                   <span className="text-sm font-bold block mb-0.5" style={{
                     color: form.playstyle === opt.id ? 'oklch(68% 0.16 285)' : 'oklch(72% 0.01 50)',
                   }}>{opt.label}</span>
-                  <span className="text-[11px]" style={{ color: 'oklch(55% 0.012 50)' }}>{opt.desc}</span>
+                  <span className="text-[11px]" style={{ color: 'oklch(68% 0.01 50)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -236,7 +236,7 @@ export default function Setup() {
 
           {/* What matters most */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(60% 0.012 50)', letterSpacing: '0.1em' }}>
+            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.1em' }}>
               What matters most to you? (select all that apply)
             </label>
             <div className="flex flex-wrap gap-2">
@@ -255,7 +255,7 @@ export default function Setup() {
                   onClick={() => togglePriority(p)}
                   className="px-3.5 py-2 rounded-lg text-[12px] font-semibold cursor-pointer transition-all"
                   style={{
-                    color: form.priorities.includes(p) ? 'oklch(90% 0.01 60)' : 'oklch(60% 0.012 50)',
+                    color: form.priorities.includes(p) ? 'oklch(90% 0.01 60)' : 'oklch(72% 0.01 50)',
                     background: form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.12)' : 'oklch(10.5% 0.012 45)',
                     border: `1px solid ${form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.3)' : 'oklch(16% 0.012 45)'}`,
                   }}
@@ -305,7 +305,7 @@ export default function Setup() {
             <p className="text-sm mb-3" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
               <strong style={{ color: 'oklch(78% 0.16 60)' }}>How to get these:</strong>
             </p>
-            <ol className="space-y-2 text-[13px]" style={{ color: 'oklch(58% 0.012 50)', lineHeight: 1.6 }}>
+            <ol className="space-y-2 text-[13px]" style={{ color: 'oklch(70% 0.01 50)', lineHeight: 1.6 }}>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>1.</span> Go to <a href="https://develop.battle.net" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'oklch(68% 0.16 285)' }}>develop.battle.net</a></li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>2.</span> Log in with your Battle.net account</li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>3.</span> Click "API Access" in the top nav</li>
@@ -332,7 +332,7 @@ export default function Setup() {
             <p className="text-sm mb-3" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
               <strong style={{ color: 'oklch(78% 0.16 60)' }}>How to get these:</strong>
             </p>
-            <ol className="space-y-2 text-[13px]" style={{ color: 'oklch(58% 0.012 50)', lineHeight: 1.6 }}>
+            <ol className="space-y-2 text-[13px]" style={{ color: 'oklch(70% 0.01 50)', lineHeight: 1.6 }}>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>1.</span> Go to <a href="https://www.warcraftlogs.com/api/clients/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'oklch(68% 0.16 285)' }}>warcraftlogs.com/api/clients</a></li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>2.</span> Click "Create Client"</li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>3.</span> Name it anything, set redirect URI to <code style={{ color: 'oklch(68% 0.16 285)', background: 'oklch(12% 0.012 45)', padding: '1px 6px', borderRadius: 4, fontSize: 12 }}>http://localhost</code></li>
@@ -384,7 +384,7 @@ EOF`} />
 
             <CodeBlock label="7. Enable GitHub Pages" code={`gh api repos/${form.githubUsername || 'your-username'}/${form.repoName || 'my-druid-dossier'}/pages -X POST -f build_type=workflow`} />
 
-            <p className="text-sm mt-4" style={{ color: 'oklch(60% 0.012 50)' }}>
+            <p className="text-sm mt-4" style={{ color: 'oklch(72% 0.01 50)' }}>
               Your dossier will be live at: <strong style={{ color: 'oklch(78% 0.16 60)' }}>
                 https://{form.githubUsername || 'your-username'}.github.io/{form.repoName || 'my-druid-dossier'}/
               </strong>
@@ -558,7 +558,7 @@ function FaithStoryStep({ form, setForm, onBack, onNext }: {
       <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
         Your Character's Faith Story
       </h3>
-      <p className="text-[13px]" style={{ color: 'oklch(60% 0.012 50)', lineHeight: 1.7 }}>
+      <p className="text-[13px]" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.7 }}>
         Every character carries the soul of their player. Answer these questions and a personal "Light Within"
         meditation will be generated, mapping your faith journey onto your character's story in Azeroth.
         Each combination produces unique prose. 6 x 6 x 6 x 6 = 1,296 possible stories.
@@ -630,7 +630,7 @@ function Field({ label, value, onChange, placeholder, help, type = 'text' }: {
 }) {
   return (
     <div>
-      <label className="block text-[10px] uppercase font-bold mb-2" style={{ color: 'oklch(60% 0.012 50)', letterSpacing: '0.1em' }}>
+      <label className="block text-[10px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.1em' }}>
         {label}
       </label>
       <input
@@ -646,7 +646,7 @@ function Field({ label, value, onChange, placeholder, help, type = 'text' }: {
           outline: 'none',
         }}
       />
-      {help && <p className="text-[11px] mt-1.5" style={{ color: 'oklch(55% 0.012 50)' }}>{help}</p>}
+      {help && <p className="text-[11px] mt-1.5" style={{ color: 'oklch(68% 0.01 50)' }}>{help}</p>}
     </div>
   );
 }
@@ -671,9 +671,9 @@ function CodeBlock({ label, code }: { label: string; code: string }) {
   return (
     <div className="mb-4">
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[11px] font-semibold" style={{ color: 'oklch(58% 0.012 50)' }}>{label}</span>
+        <span className="text-[11px] font-semibold" style={{ color: 'oklch(70% 0.01 50)' }}>{label}</span>
         <button onClick={copy} className="text-[10px] font-semibold px-2 py-0.5 rounded cursor-pointer"
-          style={{ color: copied ? 'oklch(68% 0.18 155)' : 'oklch(60% 0.012 50)', background: 'oklch(14% 0.012 45)' }}>
+          style={{ color: copied ? 'oklch(68% 0.18 155)' : 'oklch(72% 0.01 50)', background: 'oklch(14% 0.012 45)' }}>
           {copied ? 'Copied!' : 'Copy'}
         </button>
       </div>
@@ -697,7 +697,7 @@ function NavButtons({ onBack, onNext }: { onBack?: () => void; onNext?: () => vo
     <div className="flex gap-3 pt-4">
       {onBack && (
         <button onClick={onBack} className="px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer"
-          style={{ color: 'oklch(58% 0.012 50)', background: 'oklch(12% 0.012 45)', border: '1px solid oklch(18% 0.012 45)' }}>
+          style={{ color: 'oklch(70% 0.01 50)', background: 'oklch(12% 0.012 45)', border: '1px solid oklch(18% 0.012 45)' }}>
           Back
         </button>
       )}

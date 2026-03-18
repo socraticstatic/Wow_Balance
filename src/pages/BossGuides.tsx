@@ -248,7 +248,7 @@ export default function BossGuides() {
 
       {/* Overview: which fights Balance excels at */}
       <div className="reveal mb-8">
-        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>
+        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.12em' }}>
           Balance Druid Effectiveness
         </div>
         <div className="flex flex-wrap gap-2">
@@ -274,7 +274,7 @@ export default function BossGuides() {
           <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
             Boomkin Excels
           </div>
-          <ul className="space-y-1.5 text-[13px]" style={{ color: 'oklch(70% 0.012 270)', lineHeight: 1.7 }}>
+          <ul className="space-y-1.5 text-[13px]" style={{ color: 'oklch(78% 0.01 270)', lineHeight: 1.7 }}>
             <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Lightblinded Vanguard</strong> - Council, 3 targets, Starfall god mode</li>
             <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Vaelgor & Ezzorak</strong> - Dual boss cleave, multi-DoT</li>
             <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Fallen-King Salhadaar</strong> - ST + burst AoE on orbs</li>
@@ -284,7 +284,7 @@ export default function BossGuides() {
           <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.12em' }}>
             Hardest for Boomkin
           </div>
-          <ul className="space-y-1.5 text-[13px]" style={{ color: 'oklch(70% 0.012 270)', lineHeight: 1.7 }}>
+          <ul className="space-y-1.5 text-[13px]" style={{ color: 'oklch(78% 0.01 270)', lineHeight: 1.7 }}>
             <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Crown of the Cosmos</strong> - Heavy movement, intermittent adds</li>
             <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Midnight Falls</strong> - Tight enrage, shrinking arena</li>
             <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Imperator Averzian</strong> - Quick add swaps punish ramp</li>
@@ -317,7 +317,7 @@ function BossCard({ boss }: { boss: BossGuide }) {
         <div className="px-6 py-4 flex items-center justify-between flex-wrap gap-3"
           style={{ borderBottom: '1px solid oklch(16% 0.012 45)' }}>
           <div className="flex items-baseline gap-3">
-            <span className="font-mono text-sm font-bold" style={{ color: 'oklch(50% 0.01 50)', fontVariantNumeric: 'tabular-nums' }}>
+            <span className="font-mono text-sm font-bold" style={{ color: 'oklch(58% 0.01 50)', fontVariantNumeric: 'tabular-nums' }}>
               {String(boss.order).padStart(2, '0')}
             </span>
             <h3 className="font-display text-xl font-bold" style={{ color: 'oklch(92% 0.008 60)', fontStyle: 'italic' }}>
@@ -344,13 +344,13 @@ function BossCard({ boss }: { boss: BossGuide }) {
 
         <div className="px-6 py-5 grid md:grid-cols-2 gap-8">
           <div>
-            <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>
+            <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.12em' }}>
               Key Mechanics
             </div>
             <ul className="space-y-2 mb-6">
               {boss.keyMechanics.map((m, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(68% 0.012 270)', lineHeight: 1.7 }}>
-                  <span className="w-1 h-1 rounded-full shrink-0 mt-2.5" style={{ background: 'oklch(50% 0.01 50)' }} />
+                <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(76% 0.01 270)', lineHeight: 1.7 }}>
+                  <span className="w-1 h-1 rounded-full shrink-0 mt-2.5" style={{ background: 'oklch(58% 0.01 50)' }} />
                   {m}
                 </li>
               ))}
@@ -361,7 +361,7 @@ function BossCard({ boss }: { boss: BossGuide }) {
             </div>
             <ul className="space-y-2">
               {boss.balanceTips.map((t, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(72% 0.012 270)', lineHeight: 1.7 }}>
+                <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(78% 0.01 270)', lineHeight: 1.7 }}>
                   <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-2" style={{ background: 'oklch(72% 0.18 270)' }} />
                   {t}
                 </li>
@@ -374,7 +374,7 @@ function BossCard({ boss }: { boss: BossGuide }) {
               <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
                 Cooldown Timing
               </div>
-              <p className="text-[13px]" style={{ color: 'oklch(70% 0.012 270)', lineHeight: 1.7 }}>
+              <p className="text-[13px]" style={{ color: 'oklch(78% 0.01 270)', lineHeight: 1.7 }}>
                 {boss.cdTiming}
               </p>
             </div>
@@ -383,7 +383,7 @@ function BossCard({ boss }: { boss: BossGuide }) {
               <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
                 Positioning
               </div>
-              <p className="text-[13px]" style={{ color: 'oklch(70% 0.012 270)', lineHeight: 1.7 }}>
+              <p className="text-[13px]" style={{ color: 'oklch(78% 0.01 270)', lineHeight: 1.7 }}>
                 {boss.positioning}
               </p>
             </div>

@@ -44,7 +44,7 @@ function ChangelogEntry({ entry, color }: { entry: { patch: string; date: string
       </div>
       <ul className="space-y-1">
         {entry.changes.map((c, i) => (
-          <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(66% 0.012 270)', lineHeight: 1.65 }}>
+          <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(74% 0.01 270)', lineHeight: 1.65 }}>
             <span className="w-1 h-1 rounded-full shrink-0 mt-2" style={{ background: 'oklch(28% 0.012 270)' }} />
             {c}
           </li>

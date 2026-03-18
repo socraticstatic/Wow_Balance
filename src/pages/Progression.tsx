@@ -355,7 +355,7 @@ export default function Progression() {
           <h3 className="text-lg font-bold" style={{ color: phaseInfo.color }}>
             {phaseInfo.name}
           </h3>
-          <p className="text-sm" style={{ color: 'oklch(58% 0.012 50)' }}>{phaseInfo.sub}</p>
+          <p className="text-sm" style={{ color: 'oklch(70% 0.01 50)' }}>{phaseInfo.sub}</p>
         </div>
 
         {/* Milestone timeline */}
@@ -422,7 +422,7 @@ export default function Progression() {
                 <h3 className="text-sm font-bold mb-1.5" style={{ color: 'oklch(88% 0.01 270)' }}>
                   {rec.title}
                 </h3>
-                <p className="text-[13px] mb-3" style={{ color: 'oklch(58% 0.012 50)', lineHeight: 1.65 }}>
+                <p className="text-[13px] mb-3" style={{ color: 'oklch(70% 0.01 50)', lineHeight: 1.65 }}>
                   {rec.detail}
                 </p>
 
@@ -450,7 +450,7 @@ export default function Progression() {
         </div>
         <div className="grid grid-cols-5 gap-1.5">
           {[
-            { name: 'Adventurer', range: '220-237', color: 'oklch(58% 0.02 270)' },
+            { name: 'Adventurer', range: '220-237', color: 'oklch(68% 0.015 270)' },
             { name: 'Veteran', range: '233-250', color: 'oklch(62% 0.14 240)' },
             { name: 'Champion', range: '246-263', color: 'oklch(68% 0.22 300)' },
             { name: 'Hero', range: '259-276', color: 'oklch(80% 0.18 80)' },
@@ -458,14 +458,14 @@ export default function Progression() {
           ].map(track => (
             <div key={track.name} className="glass p-2.5 rounded text-center">
               <div className="text-[9px] font-bold mb-0.5" style={{ color: track.color }}>{track.name}</div>
-              <div className="text-[11px] font-mono" style={{ color: 'oklch(55% 0.012 50)', fontVariantNumeric: 'tabular-nums' }}>{track.range}</div>
+              <div className="text-[11px] font-mono" style={{ color: 'oklch(68% 0.01 50)', fontVariantNumeric: 'tabular-nums' }}>{track.range}</div>
             </div>
           ))}
         </div>
       </div>
 
       <div className="text-center">
-        <p className="text-[11px] italic" style={{ color: 'oklch(50% 0.01 50)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[11px] italic" style={{ color: 'oklch(58% 0.01 50)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           Recommendations update automatically as your character progresses.
         </p>
       </div>

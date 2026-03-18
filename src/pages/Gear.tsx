@@ -19,11 +19,11 @@ export default function Gear() {
         <h4 className="text-sm font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)' }}>
           {bisGear.tierSet.name}
         </h4>
-        <p className="text-[13px] mb-1.5" style={{ color: 'oklch(66% 0.012 270)', lineHeight: 1.7 }}>
-          <strong style={{ color: 'oklch(70% 0.012 270)' }}>2pc</strong> {bisGear.tierSet.twoPiece}
+        <p className="text-[13px] mb-1.5" style={{ color: 'oklch(74% 0.01 270)', lineHeight: 1.7 }}>
+          <strong style={{ color: 'oklch(78% 0.01 270)' }}>2pc</strong> {bisGear.tierSet.twoPiece}
         </p>
-        <p className="text-[13px]" style={{ color: 'oklch(66% 0.012 270)', lineHeight: 1.7 }}>
-          <strong style={{ color: 'oklch(70% 0.012 270)' }}>4pc</strong> {bisGear.tierSet.fourPiece}
+        <p className="text-[13px]" style={{ color: 'oklch(74% 0.01 270)', lineHeight: 1.7 }}>
+          <strong style={{ color: 'oklch(78% 0.01 270)' }}>4pc</strong> {bisGear.tierSet.fourPiece}
         </p>
       </div>
 
@@ -58,7 +58,7 @@ export default function Gear() {
               borderTop: i === 0 ? 'none' : '1px solid oklch(13% 0.008 270)',
               ...(item.isTier ? { borderLeft: '2px solid oklch(80% 0.18 80)' } : {}),
             }}>
-            <div className="col-span-2 text-[12px]" style={{ color: 'oklch(64% 0.012 50)' }}>{item.slot}</div>
+            <div className="col-span-2 text-[12px]" style={{ color: 'oklch(72% 0.01 50)' }}>{item.slot}</div>
             <div className="col-span-6 text-[13px] font-semibold" style={{ color: item.isTier ? 'oklch(80% 0.18 80)' : 'oklch(88% 0.006 270)' }}>
               {item.name}
             </div>
@@ -105,14 +105,14 @@ export default function Gear() {
           <div>
             <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(52% 0.012 270)', letterSpacing: '0.12em' }}>Weapon</div>
             <p className="text-sm font-semibold mb-1" style={{ color: 'oklch(88% 0.006 270)' }}>{bisGear.weapon.best}</p>
-            <p className="text-[12px]" style={{ color: 'oklch(64% 0.012 50)', lineHeight: 1.6 }}>{bisGear.weapon.notes}</p>
+            <p className="text-[12px]" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.6 }}>{bisGear.weapon.notes}</p>
           </div>
           <div>
             <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(52% 0.012 270)', letterSpacing: '0.12em' }}>Embellishments</div>
             <p className="text-sm font-semibold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>{bisGear.embellishments.first.name}</p>
-            <p className="text-[12px] mb-3" style={{ color: 'oklch(64% 0.012 50)', lineHeight: 1.6 }}>{bisGear.embellishments.first.notes}</p>
+            <p className="text-[12px] mb-3" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.6 }}>{bisGear.embellishments.first.notes}</p>
             <p className="text-sm font-semibold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>{bisGear.embellishments.second.name}</p>
-            <p className="text-[12px]" style={{ color: 'oklch(64% 0.012 50)', lineHeight: 1.6 }}>{bisGear.embellishments.second.notes}</p>
+            <p className="text-[12px]" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.6 }}>{bisGear.embellishments.second.notes}</p>
           </div>
         </div>
       </div>

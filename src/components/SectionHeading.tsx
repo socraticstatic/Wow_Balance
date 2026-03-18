@@ -29,7 +29,7 @@ export default function SectionHeading({ title, sub, accent = 'lunar' }: Props) 
         {title}
       </h2>
       {sub && (
-        <p className="mt-3 max-w-lg" style={{ color: 'oklch(60% 0.012 50)', fontSize: '0.9rem', lineHeight: 1.75 }}>
+        <p className="mt-3 max-w-lg" style={{ color: 'oklch(72% 0.01 50)', fontSize: '0.9rem', lineHeight: 1.75 }}>
           {sub}
         </p>
       )}

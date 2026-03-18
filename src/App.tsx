@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import Hero from './pages/Hero';
 import CelestialBg from './components/CelestialBg';
 import CursorTrail from './components/CursorTrail';
+import SectionArt from './components/SectionArt';
 import { meta } from './data';
 
 // Lazy load below-fold sections for faster initial paint
@@ -99,19 +100,37 @@ export default function App() {
           <Divider />
           <div id="faith" ref={ref('faith')}><Faith /></div>
           <Divider />
-          <div id="aoe" ref={ref('aoe')}><AoeOptimization /></div>
+          <div id="aoe" ref={ref('aoe')} className="relative">
+            <SectionArt variant="eclipse" />
+            <AoeOptimization />
+          </div>
           <Divider />
-          <div id="builds" ref={ref('builds')}><Builds /></div>
+          <div id="builds" ref={ref('builds')} className="relative">
+            <SectionArt variant="lunar" />
+            <Builds />
+          </div>
           <Divider />
-          <div id="gear" ref={ref('gear')}><Gear /></div>
+          <div id="gear" ref={ref('gear')} className="relative">
+            <SectionArt variant="solar" />
+            <Gear />
+          </div>
           <Divider />
           <div id="geardelta" ref={ref('geardelta')}><GearDelta /></div>
           <Divider />
-          <div id="consumables" ref={ref('consumables')}><Consumables /></div>
+          <div id="consumables" ref={ref('consumables')} className="relative">
+            <SectionArt variant="nature" />
+            <Consumables />
+          </div>
           <Divider />
-          <div id="raid" ref={ref('raid')}><BossGuides /></div>
+          <div id="raid" ref={ref('raid')} className="relative">
+            <SectionArt variant="solar" />
+            <BossGuides />
+          </div>
           <Divider />
-          <div id="dungeons" ref={ref('dungeons')}><DungeonGuides /></div>
+          <div id="dungeons" ref={ref('dungeons')} className="relative">
+            <SectionArt variant="void" />
+            <DungeonGuides />
+          </div>
           <Divider />
           <div id="rankings" ref={ref('rankings')}><Rankings /></div>
           <Divider />
