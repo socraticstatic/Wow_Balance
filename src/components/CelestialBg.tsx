@@ -1,27 +1,42 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * CelestialBg - Parallax background with moon, constellations, and floating motes.
- * Three layers at different depths for parallax on scroll.
- * All GPU-composited (transform + opacity only).
+ * CelestialBg - Parallax background with moon, constellations, floating motes, and mouse reactivity.
  */
 export default function CelestialBg() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const mouseRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const onScroll = () => {
+    let raf: number;
+    const update = () => {
       if (!containerRef.current) return;
       const scrollY = window.scrollY;
+      const mx = mouseRef.current.x;
+      const my = mouseRef.current.y;
       const layers = containerRef.current.children;
-      // Layer 0: moon (slowest)
-      (layers[0] as HTMLElement).style.transform = `translateY(${scrollY * 0.08}px)`;
-      // Layer 1: constellations
-      (layers[1] as HTMLElement).style.transform = `translateY(${scrollY * 0.15}px)`;
-      // Layer 2: motes (fastest)
-      (layers[2] as HTMLElement).style.transform = `translateY(${scrollY * 0.25}px)`;
+      // Layer 0: moon (slowest, slight mouse drift)
+      (layers[0] as HTMLElement).style.transform = `translateY(${scrollY * 0.08}px) translate(${mx * 0.01}px, ${my * 0.01}px)`;
+      // Layer 1: constellations (medium scroll, slight mouse)
+      (layers[1] as HTMLElement).style.transform = `translateY(${scrollY * 0.15}px) translate(${mx * 0.02}px, ${my * 0.02}px)`;
+      // Layer 2: motes (faster scroll, more mouse reactivity)
+      (layers[2] as HTMLElement).style.transform = `translateY(${scrollY * 0.25}px) translate(${mx * 0.04}px, ${my * 0.04}px)`;
     };
+
+    const onScroll = () => { raf = requestAnimationFrame(update); };
+    const onMouse = (e: MouseEvent) => {
+      mouseRef.current.x = (e.clientX / window.innerWidth - 0.5) * 20;
+      mouseRef.current.y = (e.clientY / window.innerHeight - 0.5) * 20;
+      raf = requestAnimationFrame(update);
+    };
+
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('mousemove', onMouse, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('mousemove', onMouse);
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (

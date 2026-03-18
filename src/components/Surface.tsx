@@ -21,14 +21,15 @@ interface Props {
   tint?: Tint;
   className?: string;
   pad?: 'sm' | 'md' | 'lg';
+  hover?: boolean;
 }
 
 const padMap = { sm: '12px 16px', md: '20px 24px', lg: '28px 32px' };
 
-export default function Surface({ children, tint = 'neutral', className = '', pad = 'md' }: Props) {
+export default function Surface({ children, tint = 'neutral', className = '', pad = 'md', hover = true }: Props) {
   return (
     <div
-      className={`transition-colors duration-150 ${className}`}
+      className={`${hover ? 'card-hover' : ''} ${className}`}
       style={{
         background: bg[tint],
         border: `1px solid ${border[tint]}`,

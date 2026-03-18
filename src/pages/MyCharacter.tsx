@@ -1,5 +1,6 @@
 import { useReveal } from '../hooks/useReveal';
-import CharacterModel from '../components/CharacterModel';
+import { useMouseParallax } from '../hooks/useMouseParallax';
+import { useCountUp } from '../hooks/useCountUp';
 import characterData from '@data/my-character-clean.json';
 
 const qualityColors: Record<number, string> = {
@@ -27,23 +28,40 @@ export default function MyCharacter() {
     ['back', 'chest', 'wrist', 'legs', 'feet', 'finger1', 'finger2'].includes(g.slot) && !g.enchant
   );
 
+  const { ref: parallaxRef, offset } = useMouseParallax(15);
+  const ilvlCount = useCountUp(c.ilvl, 1000);
+  const achieveCount = useCountUp(c.achievementPoints, 1500);
+
   return (
     <section className="relative px-6 sm:px-10 py-28 max-w-6xl mx-auto">
 
       {/* ── Hero block: identity left, character render right ── */}
       <div ref={r1} className="reveal grid md:grid-cols-[1fr_380px] gap-8 items-center mb-20 min-h-[480px]">
 
-        {/* Character render - right side, full height */}
-        <div className="relative order-2 md:order-2 flex justify-center md:justify-end">
-          {/* Ambient glow */}
+        {/* Character render - right side, mouse parallax */}
+        <div ref={parallaxRef} className="relative order-2 md:order-2 flex justify-center md:justify-end">
+          {/* Ambient glow - tracks mouse */}
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[480px] blur-[80px] rounded-full"
+            className="absolute top-1/2 left-1/2 w-[360px] h-[480px] blur-[80px] rounded-full"
             style={{
               background: 'radial-gradient(ellipse, oklch(40% 0.18 270), transparent 70%)',
               animation: 'glowPulse 6s ease-in-out infinite',
+              transform: `translate(calc(-50% + ${offset.x * 0.5}px), calc(-50% + ${offset.y * 0.5}px))`,
+              transition: 'transform 0.3s ease-out',
             }}
           />
-          <CharacterModel height={520} className="relative z-10 w-full h-[520px]" />
+          {/* Character with mouse parallax + idle float */}
+          <img
+            src={`${import.meta.env.BASE_URL}spiracle-cropped.png`}
+            alt="Spiracle - Night Elf Balance Druid"
+            className="relative z-10 h-[520px] w-auto object-contain"
+            style={{
+              filter: 'drop-shadow(0 4px 40px oklch(25% 0.15 270 / 0.3))',
+              animation: 'characterIdle 6s ease-in-out infinite',
+              transform: `translate(${offset.x}px, ${offset.y}px)`,
+              transition: 'transform 0.15s ease-out',
+            }}
+          />
         </div>
 
         {/* Identity - left side */}
@@ -71,8 +89,8 @@ export default function MyCharacter() {
               <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
                 Item Level
               </div>
-              <span className="text-5xl font-extrabold font-mono" style={{ color: 'oklch(94% 0.006 270)', fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.03em' }}>
-                {c.ilvl}
+              <span ref={ilvlCount.ref} className="text-5xl font-extrabold font-mono" style={{ color: 'oklch(94% 0.006 270)', fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.03em' }}>
+                {ilvlCount.value}
               </span>
             </div>
             <div>
@@ -87,8 +105,8 @@ export default function MyCharacter() {
               <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(57% 0.012 50)', letterSpacing: '0.12em' }}>
                 Achievements
               </div>
-              <span className="text-2xl font-extrabold font-mono" style={{ color: 'oklch(72% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
-                {c.achievementPoints.toLocaleString()}
+              <span ref={achieveCount.ref} className="text-2xl font-extrabold font-mono" style={{ color: 'oklch(72% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
+                {achieveCount.value.toLocaleString()}
               </span>
             </div>
           </div>
