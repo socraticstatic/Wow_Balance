@@ -15,8 +15,15 @@ In-game tracking addon for the Balance Druid Dossier web app.
 ## Install
 
 1. Copy the `BalanceDossier` folder to your WoW addons directory:
+
+   **Windows:**
    ```
-   ~/Library/Application Support/Blizzard/World of Warcraft/_retail_/Interface/AddOns/
+   C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns\
+   ```
+
+   **macOS:**
+   ```
+   /Applications/World of Warcraft/_retail_/Interface/AddOns/
    ```
 
 2. Restart WoW or type `/reload` in-game.

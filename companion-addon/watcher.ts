@@ -11,20 +11,32 @@
  * Data flows: WoW -> SavedVariables -> watcher -> app data -> live page
  */
 
-import { watch, readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// WoW SavedVariables paths (macOS)
-const WOW_PATHS = [
-  // Retail
-  join(process.env.HOME || '', 'Library/Application Support/Blizzard/World of Warcraft/_retail_/WTF/Account'),
-  // Classic (just in case)
-  join(process.env.HOME || '', 'Library/Application Support/Blizzard/World of Warcraft/_classic_/WTF/Account'),
-];
+// Detect platform and set WoW paths
+const isWindows = process.platform === 'win32';
+
+const WOW_PATHS = isWindows
+  ? [
+    // Windows - standard install locations
+    'C:\\Program Files (x86)\\World of Warcraft\\_retail_\\WTF\\Account',
+    'C:\\Program Files\\World of Warcraft\\_retail_\\WTF\\Account',
+    'D:\\World of Warcraft\\_retail_\\WTF\\Account',
+    'D:\\Games\\World of Warcraft\\_retail_\\WTF\\Account',
+    'E:\\World of Warcraft\\_retail_\\WTF\\Account',
+    // Battle.net default
+    join(process.env.PROGRAMFILES || 'C:\\Program Files', 'World of Warcraft', '_retail_', 'WTF', 'Account'),
+    join(process.env['PROGRAMFILES(X86)'] || 'C:\\Program Files (x86)', 'World of Warcraft', '_retail_', 'WTF', 'Account'),
+  ]
+  : [
+    // macOS
+    join(process.env.HOME || '', 'Library/Application Support/Blizzard/World of Warcraft/_retail_/WTF/Account'),
+    '/Applications/World of Warcraft/_retail_/WTF/Account',
+  ];
 
 const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'live-session.json');
 const ADDON_SV_FILE = 'BalanceDossier.lua';
@@ -34,11 +46,15 @@ function findSavedVariables(): string | null {
   for (const basePath of WOW_PATHS) {
     if (!existsSync(basePath)) continue;
 
-    // Scan account folders
+    // Scan account folders (cross-platform)
     try {
-      const accounts = execSync(`ls "${basePath}"`, { encoding: 'utf-8' }).trim().split('\n');
-      for (const account of accounts) {
-        const svPath = join(basePath, account, 'SavedVariables', ADDON_SV_FILE);
+      const entries = readdirSync(basePath);
+      for (const account of entries) {
+        const accountPath = join(basePath, account);
+        try {
+          if (!statSync(accountPath).isDirectory()) continue;
+        } catch { continue; }
+        const svPath = join(accountPath, 'SavedVariables', ADDON_SV_FILE);
         if (existsSync(svPath)) {
           return svPath;
         }
@@ -208,7 +224,7 @@ function startWatching(svPath: string) {
 
   setInterval(() => {
     try {
-      const stat = require('fs').statSync(svPath);
+      const stat = statSync(svPath);
       const mtime = stat.mtimeMs;
       if (mtime > lastModified) {
         lastModified = mtime;
