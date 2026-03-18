@@ -1,4 +1,5 @@
 import { useReveal } from '../hooks/useReveal';
+import CharacterModel from '../components/CharacterModel';
 import characterData from '@data/my-character-clean.json';
 
 const qualityColors: Record<number, string> = {
@@ -34,7 +35,7 @@ export default function MyCharacter() {
 
         {/* Character render - right side, full height */}
         <div className="relative order-2 md:order-2 flex justify-center md:justify-end">
-          {/* Ambient glow - pulses gently */}
+          {/* Ambient glow */}
           <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[480px] blur-[80px] rounded-full"
             style={{
@@ -42,15 +43,7 @@ export default function MyCharacter() {
               animation: 'glowPulse 6s ease-in-out infinite',
             }}
           />
-          <img
-            src={`${import.meta.env.BASE_URL}spiracle-cropped.png`}
-            alt="Spiracle - Night Elf Balance Druid"
-            className="relative z-10 h-[520px] w-auto object-contain"
-            style={{
-              filter: 'drop-shadow(0 4px 40px oklch(25% 0.15 270 / 0.3))',
-              animation: 'characterIdle 6s ease-in-out infinite',
-            }}
-          />
+          <CharacterModel height={520} className="relative z-10 w-full h-[520px]" />
         </div>
 
         {/* Identity - left side */}

@@ -4,12 +4,12 @@ import { Moon, Menu, X } from 'lucide-react';
 const items = [
   { id: 'hero', label: 'Overview' },
   { id: 'spiracle', label: 'Spiracle' },
+  { id: 'faith', label: 'The Light' },
   { id: 'aoe', label: 'AoE DPS' },
   { id: 'builds', label: 'Builds' },
   { id: 'gear', label: 'Gear' },
   { id: 'rankings', label: 'Rankings' },
   { id: 'changelog', label: 'Changelog' },
-  { id: 'faith', label: 'The Light' },
   { id: 'setup', label: 'Make Yours' },
 ];
 
