@@ -9,6 +9,7 @@ const items = [
   { id: 'gear', label: 'Gear' },
   { id: 'rankings', label: 'Rankings' },
   { id: 'changelog', label: 'Changelog' },
+  { id: 'setup', label: 'Make Yours' },
 ];
 
 interface Props { active: string; onNav: (id: string) => void }

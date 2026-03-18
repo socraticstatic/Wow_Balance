@@ -8,9 +8,10 @@ import Changelog from './pages/Changelog';
 import MyCharacter from './pages/MyCharacter';
 import AoeOptimization from './pages/AoeOptimization';
 import CelestialBg from './components/CelestialBg';
+import Setup from './pages/Setup';
 import { meta } from './data';
 
-const sectionIds = ['hero', 'spiracle', 'aoe', 'builds', 'gear', 'rankings', 'changelog'] as const;
+const sectionIds = ['hero', 'spiracle', 'aoe', 'builds', 'gear', 'rankings', 'changelog', 'setup'] as const;
 
 export default function App() {
   const [active, setActive] = useState('hero');
@@ -63,6 +64,8 @@ export default function App() {
         <div id="rankings" ref={ref('rankings')}><Rankings /></div>
         <Divider />
         <div id="changelog" ref={ref('changelog')}><Changelog /></div>
+        <Divider />
+        <div id="setup" ref={ref('setup')}><Setup /></div>
 
         <footer className="px-6 py-20 text-center">
           <p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'oklch(28% 0.015 270)', letterSpacing: '0.14em' }}>
