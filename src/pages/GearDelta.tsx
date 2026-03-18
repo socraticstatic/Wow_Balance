@@ -91,7 +91,7 @@ export default function GearDelta() {
 
       {/* Tier set visual tracker */}
       <div ref={r3} className="reveal mb-16">
-        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           {bisGear.tierSet.name} Set Progress
         </div>
         <div className="flex gap-2 mb-3">
@@ -103,10 +103,10 @@ export default function GearDelta() {
                 className="glass p-3 rounded-lg flex-1 text-center"
                 style={{ borderTop: `2px solid ${has ? 'oklch(80% 0.18 80)' : 'oklch(20% 0.01 270)'}` }}
               >
-                <div className="text-[9px] uppercase font-bold mb-1 capitalize" style={{ color: has ? 'oklch(80% 0.18 80)' : 'oklch(38% 0.01 50)' }}>
+                <div className="text-[11px] uppercase font-bold mb-1 capitalize" style={{ color: has ? 'oklch(80% 0.18 80)' : 'oklch(38% 0.01 50)' }}>
                   {slot}
                 </div>
-                <div className="text-[11px]" style={{ color: has ? 'oklch(82% 0.008 55)' : 'oklch(30% 0.01 50)' }}>
+                <div className="text-[13px]" style={{ color: has ? 'oklch(90% 0.005 55)' : 'oklch(30% 0.01 50)' }}>
                   {has ? has.name : 'Missing'}
                 </div>
               </div>
@@ -114,10 +114,10 @@ export default function GearDelta() {
           })}
         </div>
         <div className="glass p-3 rounded-lg">
-          <div className="text-[11px] mb-1" style={{ color: 'oklch(82% 0.008 55)' }}>
+          <div className="text-[13px] mb-1" style={{ color: 'oklch(90% 0.005 55)' }}>
             <strong style={{ color: 'oklch(80% 0.18 80)' }}>2pc:</strong> {bisGear.tierSet.twoPiece}
           </div>
-          <div className="text-[11px]" style={{ color: 'oklch(82% 0.008 55)' }}>
+          <div className="text-[13px]" style={{ color: 'oklch(90% 0.005 55)' }}>
             <strong style={{ color: 'oklch(80% 0.18 80)' }}>4pc:</strong> {bisGear.tierSet.fourPiece}
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function GearDelta() {
 
       {/* Gear comparison table */}
       <div ref={r4} className="reveal">
-        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
           Per-Slot Comparison (sorted by upgrade priority)
         </div>
 
@@ -140,34 +140,34 @@ export default function GearDelta() {
               }}
             >
               {/* Slot */}
-              <div className="col-span-2 text-[11px] capitalize font-medium" style={{ color: 'oklch(82% 0.008 55)' }}>
+              <div className="col-span-2 text-[13px] capitalize font-medium" style={{ color: 'oklch(90% 0.005 55)' }}>
                 {d.slot.replace(/(\d)/, ' $1')}
-                {d.isTierSlot && <span className="ml-1 text-[8px]" style={{ color: 'oklch(80% 0.18 80)' }}>T</span>}
+                {d.isTierSlot && <span className="ml-1 text-[10px]" style={{ color: 'oklch(80% 0.18 80)' }}>T</span>}
               </div>
 
               {/* Current item */}
               <div className="col-span-3">
-                <div className="text-[12px] font-semibold" style={{ color: 'oklch(75% 0.015 270)' }}>
+                <div className="text-[14px] font-semibold" style={{ color: 'oklch(75% 0.015 270)' }}>
                   {d.current.name}
                 </div>
-                <div className="text-[10px] font-mono" style={{ color: 'oklch(72% 0.008 55)', fontVariantNumeric: 'tabular-nums' }}>
+                <div className="text-[12px] font-mono" style={{ color: 'oklch(82% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>
                   ilvl {d.current.ilvl}
                 </div>
               </div>
 
               {/* Arrow + gap */}
               <div className="col-span-1 text-center">
-                <span className="text-[10px] font-mono font-bold" style={{ color: gapColor(d.gap), fontVariantNumeric: 'tabular-nums' }}>
+                <span className="text-[12px] font-mono font-bold" style={{ color: gapColor(d.gap), fontVariantNumeric: 'tabular-nums' }}>
                   +{d.gap}
                 </span>
               </div>
 
               {/* BiS target */}
               <div className="col-span-3">
-                <div className="text-[12px] font-semibold" style={{ color: d.bisTier ? 'oklch(80% 0.18 80)' : 'oklch(82% 0.008 55)' }}>
+                <div className="text-[14px] font-semibold" style={{ color: d.bisTier ? 'oklch(80% 0.18 80)' : 'oklch(90% 0.005 55)' }}>
                   {d.bisName}
                 </div>
-                <div className="text-[10px]" style={{ color: 'oklch(72% 0.008 55)' }}>
+                <div className="text-[12px]" style={{ color: 'oklch(82% 0.005 55)' }}>
                   {d.bisSource}
                 </div>
               </div>
@@ -182,12 +182,12 @@ export default function GearDelta() {
               {/* Enchant status */}
               <div className="col-span-1 text-right">
                 {d.missingEnchant && (
-                  <span className="text-[8px] font-bold px-1.5 py-0.5 rounded" style={{ color: 'oklch(72% 0.18 30)', background: 'oklch(72% 0.18 30 / 0.1)' }}>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: 'oklch(72% 0.18 30)', background: 'oklch(72% 0.18 30 / 0.1)' }}>
                     NO ENCHANT
                   </span>
                 )}
                 {d.isEnchantable && d.current.enchant && (
-                  <span className="text-[8px] px-1.5 py-0.5 rounded" style={{ color: 'oklch(58% 0.14 155)', background: 'oklch(58% 0.14 155 / 0.08)' }}>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ color: 'oklch(58% 0.14 155)', background: 'oklch(58% 0.14 155 / 0.08)' }}>
                     OK
                   </span>
                 )}
@@ -200,21 +200,21 @@ export default function GearDelta() {
       {/* Missing enchants detail */}
       {missingEnchants.length > 0 && (
         <div className="mt-12">
-          <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(72% 0.18 30)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(72% 0.18 30)', letterSpacing: '0.12em' }}>
             Missing Enchants - Priority Fix
           </div>
           <div className="space-y-1.5">
             {missingEnchants.map(d => (
               <div key={d.slot} className="flex items-center justify-between glass p-3 rounded-lg">
                 <div>
-                  <span className="text-[12px] font-semibold capitalize" style={{ color: 'oklch(75% 0.015 270)' }}>
+                  <span className="text-[14px] font-semibold capitalize" style={{ color: 'oklch(75% 0.015 270)' }}>
                     {d.slot.replace(/(\d)/, ' $1')}
                   </span>
-                  <span className="text-[11px] ml-2" style={{ color: 'oklch(48% 0.01 50)' }}>
+                  <span className="text-[13px] ml-2" style={{ color: 'oklch(48% 0.01 50)' }}>
                     {d.current.name}
                   </span>
                 </div>
-                <div className="text-[11px] font-medium" style={{ color: 'oklch(68% 0.18 155)' }}>
+                <div className="text-[13px] font-medium" style={{ color: 'oklch(68% 0.18 155)' }}>
                   {d.recommendedEnchant || 'Sim dependent'}
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function GearDelta() {
       )}
 
       <div className="mt-12 text-center">
-        <p className="text-[11px] italic" style={{ color: 'oklch(72% 0.008 55)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[13px] italic" style={{ color: 'oklch(82% 0.005 55)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           BiS targets are for Mythic raid. Gear delta updates when character data syncs.
         </p>
       </div>
@@ -235,9 +235,9 @@ export default function GearDelta() {
 function StatCard({ label, value, sub, color }: { label: string; value: string; sub: string; color: string }) {
   return (
     <div className="glass p-4 rounded-lg">
-      <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>{label}</div>
+      <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>{label}</div>
       <div className="text-lg font-extrabold font-mono mb-0.5" style={{ color, fontVariantNumeric: 'tabular-nums' }}>{value}</div>
-      <div className="text-[10px]" style={{ color: 'oklch(45% 0.01 50)' }}>{sub}</div>
+      <div className="text-[12px]" style={{ color: 'oklch(45% 0.01 50)' }}>{sub}</div>
     </div>
   );
 }

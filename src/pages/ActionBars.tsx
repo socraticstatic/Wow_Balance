@@ -108,7 +108,7 @@ export default function ActionBars() {
 
       {/* Main bar: 1 through = */}
       <div ref={r2} className="reveal mb-16">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           Main Bar (1 through =)
         </div>
         <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-4">
@@ -118,15 +118,15 @@ export default function ActionBars() {
         </div>
         <div className="space-y-1.5">
           {mainBar.map(kb => (
-            <div key={kb.key} className="flex items-start gap-3 text-xs">
-              <kbd className="shrink-0 w-7 h-7 flex items-center justify-center rounded font-mono font-bold text-[11px]"
+            <div key={kb.key} className="flex items-start gap-3 text-sm">
+              <kbd className="shrink-0 w-7 h-7 flex items-center justify-center rounded font-mono font-bold text-[13px]"
                 style={{ background: 'oklch(14% 0.012 45)', border: '1px solid oklch(22% 0.015 45)', color: kb.color }}>
                 {kb.key}
               </kbd>
               <div>
                 <span className="font-bold" style={{ color: kb.color }}>{kb.spell}</span>
-                <span style={{ color: 'oklch(68% 0.008 55)' }}> - {kb.role}</span>
-                <span style={{ color: 'oklch(82% 0.006 55)' }}> - {kb.note}</span>
+                <span style={{ color: 'oklch(78% 0.005 55)' }}> - {kb.role}</span>
+                <span style={{ color: 'oklch(90% 0.004 55)' }}> - {kb.note}</span>
               </div>
             </div>
           ))}
@@ -135,7 +135,7 @@ export default function ActionBars() {
 
       {/* Shift bar */}
       <div ref={r3} className="reveal mb-20">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
           Shift Bar (Shift + 1 through =)
         </div>
         <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-4">
@@ -145,15 +145,15 @@ export default function ActionBars() {
         </div>
         <div className="space-y-1.5">
           {shiftBar.map(kb => (
-            <div key={kb.key} className="flex items-start gap-3 text-xs">
-              <kbd className="shrink-0 px-1.5 h-7 flex items-center justify-center rounded font-mono font-bold text-[10px]"
+            <div key={kb.key} className="flex items-start gap-3 text-sm">
+              <kbd className="shrink-0 px-1.5 h-7 flex items-center justify-center rounded font-mono font-bold text-[12px]"
                 style={{ background: 'oklch(14% 0.012 45)', border: '1px solid oklch(22% 0.015 45)', color: kb.color }}>
                 {kb.key}
               </kbd>
               <div>
                 <span className="font-bold" style={{ color: kb.color }}>{kb.spell}</span>
-                <span style={{ color: 'oklch(68% 0.008 55)' }}> - {kb.role}</span>
-                <span style={{ color: 'oklch(82% 0.006 55)' }}> - {kb.note}</span>
+                <span style={{ color: 'oklch(78% 0.005 55)' }}> - {kb.role}</span>
+                <span style={{ color: 'oklch(90% 0.004 55)' }}> - {kb.note}</span>
               </div>
             </div>
           ))}
@@ -162,7 +162,7 @@ export default function ActionBars() {
 
       {/* ── Rotation Sequences ── */}
       <div ref={r4} className="reveal">
-        <div className="text-[9px] uppercase font-bold mb-8" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-8" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           Rotation Sequences - Press These Keys in Order
         </div>
 
@@ -172,7 +172,7 @@ export default function ActionBars() {
             <h3 className="text-base font-bold mb-1" style={{ color: 'oklch(72% 0.18 270)' }}>
               AoE Opener (3+ Targets)
             </h3>
-            <p className="text-xs mb-5" style={{ color: 'oklch(72% 0.008 55)' }}>
+            <p className="text-sm mb-5" style={{ color: 'oklch(82% 0.005 55)' }}>
               Pool to 100 AP before the tank pulls. Then press:
             </p>
             <div className="space-y-2">
@@ -187,7 +187,7 @@ export default function ActionBars() {
             <h3 className="text-base font-bold mb-1" style={{ color: 'oklch(80% 0.18 80)' }}>
               Single Target Opener (1-2 Targets)
             </h3>
-            <p className="text-xs mb-5" style={{ color: 'oklch(72% 0.008 55)' }}>
+            <p className="text-sm mb-5" style={{ color: 'oklch(82% 0.005 55)' }}>
               Boss fights. Pool AP. Pre-cast Wrath 2 seconds before pull.
             </p>
             <div className="space-y-2">
@@ -203,7 +203,7 @@ export default function ActionBars() {
           <h3 className="text-base font-bold mb-1" style={{ color: 'oklch(95% 0.005 60)' }}>
             AoE Priority (Ongoing - What to Press Next)
           </h3>
-          <p className="text-xs mb-5" style={{ color: 'oklch(72% 0.008 55)' }}>
+          <p className="text-sm mb-5" style={{ color: 'oklch(82% 0.005 55)' }}>
             After the opener, follow this priority. #1 is always first. Only go to #2 if #1 isn't available.
           </p>
           <div className="space-y-2">
@@ -215,7 +215,7 @@ export default function ActionBars() {
 
         {/* Quick reference strip */}
         <div className="mt-12 p-5 rounded-lg gilt-border" style={{ background: 'oklch(10% 0.015 60 / 0.3)' }}>
-          <div className="text-xs font-bold mb-3" style={{ color: 'oklch(80% 0.18 80)' }}>
+          <div className="text-sm font-bold mb-3" style={{ color: 'oklch(80% 0.18 80)' }}>
             AoE Cheat Sheet - Tape This to Your Monitor
           </div>
           <div className="font-mono text-sm font-bold" style={{ color: 'oklch(90% 0.006 60)', lineHeight: 2 }}>
@@ -238,7 +238,7 @@ export default function ActionBars() {
             <span style={{ color: 'oklch(72% 0.2 270)' }}>4</span>
             {' \u2192 repeat'}
           </div>
-          <p className="text-[11px] mt-2" style={{ color: 'oklch(68% 0.008 55)' }}>
+          <p className="text-[13px] mt-2" style={{ color: 'oklch(78% 0.005 55)' }}>
             Sunfire \u2192 Starfall \u2192 Moonfire \u2192 CDs \u2192 Starfire Starfire \u2192 Starfall \u2192 Starfire loop
           </p>
         </div>
@@ -259,9 +259,9 @@ function KeyCap({ kb, shift }: { kb: KeyBind; shift?: boolean }) {
         }}
       >
         <SpellIcon name={kb.spell} px={shift ? 18 : 22} />
-        <span className="text-[8px] font-bold" style={{ color: kb.color }}>{shift ? kb.key.replace('S-', '') : kb.key}</span>
+        <span className="text-[10px] font-bold" style={{ color: kb.color }}>{shift ? kb.key.replace('S-', '') : kb.key}</span>
       </div>
-      <span className="text-[8px] font-medium text-center leading-tight" style={{ color: 'oklch(68% 0.008 55)' }}>
+      <span className="text-[10px] font-medium text-center leading-tight" style={{ color: 'oklch(78% 0.005 55)' }}>
         {kb.spell.split(' ')[0]}
       </span>
     </div>
@@ -270,26 +270,26 @@ function KeyCap({ kb, shift }: { kb: KeyBind; shift?: boolean }) {
 
 function RotationRow({ step, index, priority }: { step: RotationStep; index: number; priority?: boolean }) {
   const kb = [...mainBar, ...shiftBar].find(k => k.key === step.key || k.key === `S-${step.key}`);
-  const color = kb?.color || 'oklch(82% 0.008 55)';
+  const color = kb?.color || 'oklch(90% 0.005 55)';
 
   return (
     <div className="flex items-center gap-3" style={{ opacity: step.critical ? 1 : 0.85 }}>
-      <span className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px] font-mono font-bold"
+      <span className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[12px] font-mono font-bold"
         style={{
-          color: step.critical ? 'oklch(95% 0.005 60)' : 'oklch(72% 0.008 55)',
+          color: step.critical ? 'oklch(95% 0.005 60)' : 'oklch(82% 0.005 55)',
           background: step.critical ? `${color}20` : 'oklch(14% 0.012 45)',
           border: step.critical ? `1px solid ${color}40` : '1px solid oklch(18% 0.012 45)',
         }}>
         {priority ? `${index + 1}` : `${index + 1}`}
       </span>
-      <kbd className="shrink-0 w-7 h-7 flex items-center justify-center rounded font-mono font-bold text-[12px]"
+      <kbd className="shrink-0 w-7 h-7 flex items-center justify-center rounded font-mono font-bold text-[14px]"
         style={{ background: 'oklch(14% 0.012 45)', border: `1px solid ${color}40`, color }}>
         {step.key}
       </kbd>
       <div className="flex-1 min-w-0">
-        <span className="text-[13px] font-bold" style={{ color }}>{step.spell}</span>
+        <span className="text-[15px] font-bold" style={{ color }}>{step.spell}</span>
         {step.condition && (
-          <span className="text-[12px] ml-2" style={{ color: 'oklch(78% 0.006 55)' }}>
+          <span className="text-[14px] ml-2" style={{ color: 'oklch(88% 0.004 55)' }}>
             {step.condition}
           </span>
         )}

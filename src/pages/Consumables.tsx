@@ -41,9 +41,9 @@ export default function Consumables() {
             <button
               key={ct}
               onClick={() => setContentType(ct)}
-              className="px-4 py-2 rounded text-[13px] font-semibold cursor-pointer transition-all"
+              className="px-4 py-2 rounded text-[15px] font-semibold cursor-pointer transition-all"
               style={{
-                color: on ? 'oklch(96% 0.005 270)' : 'oklch(84% 0.008 55)',
+                color: on ? 'oklch(96% 0.005 270)' : 'oklch(90% 0.005 55)',
                 background: on ? 'oklch(16% 0.02 270)' : 'transparent',
                 border: `1px solid ${on ? 'oklch(24% 0.025 270)' : 'oklch(14% 0.01 270)'}`,
               }}
@@ -56,7 +56,7 @@ export default function Consumables() {
 
       {/* Shopping checklist */}
       <div ref={r2} className="reveal glass-solar p-5 rounded-lg mb-16">
-        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           {contentType === 'raid' ? 'Raid Night' : 'M+ Session'} Checklist
         </div>
         <div className="grid sm:grid-cols-2 gap-1.5">
@@ -66,7 +66,7 @@ export default function Consumables() {
                 style={{ borderColor: 'oklch(30% 0.02 50)' }}>
                 <div className="w-1.5 h-1.5 rounded-sm" style={{ background: 'oklch(80% 0.18 80 / 0.3)' }} />
               </div>
-              <span className="text-[12px]" style={{ color: 'oklch(65% 0.012 50)' }}>{item}</span>
+              <span className="text-[14px]" style={{ color: 'oklch(65% 0.012 50)' }}>{item}</span>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ export default function Consumables() {
       <div ref={r3} className="reveal space-y-10">
         {sections.map(section => (
           <div key={section.key}>
-            <div className="text-[9px] uppercase font-bold mb-4" style={{ color: section.accent, letterSpacing: '0.12em' }}>
+            <div className="text-[11px] uppercase font-bold mb-4" style={{ color: section.accent, letterSpacing: '0.12em' }}>
               {section.label}
             </div>
             <div className="space-y-2">
@@ -87,19 +87,19 @@ export default function Consumables() {
                   style={{ borderLeft: `2px solid ${i === 0 ? section.accent : 'oklch(18% 0.01 270)'}` }}
                 >
                   <div className="flex items-baseline justify-between mb-1">
-                    <h4 className="text-[13px] font-bold" style={{ color: i === 0 ? section.accent : 'oklch(78% 0.015 270)' }}>
+                    <h4 className="text-[15px] font-bold" style={{ color: i === 0 ? section.accent : 'oklch(78% 0.015 270)' }}>
                       {item.name}
                     </h4>
-                    <span className="text-[10px] font-mono" style={{ color: 'oklch(48% 0.01 50)', fontVariantNumeric: 'tabular-nums' }}>
+                    <span className="text-[12px] font-mono" style={{ color: 'oklch(48% 0.01 50)', fontVariantNumeric: 'tabular-nums' }}>
                       {item.goldEstimate}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 mb-1.5 text-[11px]" style={{ color: 'oklch(82% 0.008 55)' }}>
+                  <div className="flex items-center gap-3 mb-1.5 text-[13px]" style={{ color: 'oklch(90% 0.005 55)' }}>
                     <span style={{ color: section.accent }}>{item.value}</span>
                     <span className="w-1 h-1 rounded-full" style={{ background: 'oklch(22% 0.01 50)' }} />
                     <span>{item.source}</span>
                   </div>
-                  <p className="text-[11px]" style={{ color: 'oklch(48% 0.01 50)', lineHeight: 1.6 }}>
+                  <p className="text-[13px]" style={{ color: 'oklch(48% 0.01 50)', lineHeight: 1.6 }}>
                     {item.notes}
                   </p>
                 </div>

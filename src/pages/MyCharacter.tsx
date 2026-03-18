@@ -81,14 +81,14 @@ export default function MyCharacter() {
           >
             Spiracle
           </h2>
-          <p className="text-base mb-8" style={{ color: 'oklch(84% 0.008 55)' }}>
+          <p className="text-base mb-8" style={{ color: 'oklch(90% 0.005 55)' }}>
             {c.race} {c.spec} {c.class} - {c.realm} ({c.region.toUpperCase()})
           </p>
 
           {/* Key stats row */}
           <div className="flex items-end gap-8 mb-8">
             <div>
-              <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+              <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
                 Item Level
               </div>
               <span ref={ilvlCount.ref} className="text-5xl font-extrabold font-mono" style={{ color: 'oklch(94% 0.006 270)', fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.03em' }}>
@@ -96,7 +96,7 @@ export default function MyCharacter() {
               </span>
             </div>
             <div>
-              <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+              <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
                 Tier
               </div>
               <span className="text-2xl font-extrabold font-mono" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
@@ -104,10 +104,10 @@ export default function MyCharacter() {
               </span>
             </div>
             <div>
-              <div className="text-[9px] uppercase font-bold mb-1" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
+              <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
                 Achievements
               </div>
-              <span ref={achieveCount.ref} className="text-2xl font-extrabold font-mono" style={{ color: 'oklch(86% 0.008 270)', fontVariantNumeric: 'tabular-nums' }}>
+              <span ref={achieveCount.ref} className="text-2xl font-extrabold font-mono" style={{ color: 'oklch(92% 0.004 270)', fontVariantNumeric: 'tabular-nums' }}>
                 {achieveCount.value.toLocaleString()}
               </span>
             </div>
@@ -123,12 +123,12 @@ export default function MyCharacter() {
 
       {/* ── Gear table ── */}
       <div ref={r2} className="reveal mb-16">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
           Equipped Gear
         </div>
 
         <div className="rounded-lg overflow-hidden" style={{ border: '1px solid oklch(14% 0.008 270)' }}>
-          <div className="hidden sm:grid grid-cols-12 gap-3 px-5 py-2.5 text-[9px] uppercase font-bold"
+          <div className="hidden sm:grid grid-cols-12 gap-3 px-5 py-2.5 text-[11px] uppercase font-bold"
             style={{ background: 'oklch(9.5% 0.01 270)', color: 'oklch(68% 0.008 270)', letterSpacing: '0.12em' }}>
             <div className="col-span-2">Slot</div>
             <div className="col-span-4">Item</div>
@@ -145,19 +145,19 @@ export default function MyCharacter() {
                 borderTop: i === 0 ? 'none' : '1px solid oklch(12% 0.006 270)',
                 ...(item.tier ? { borderLeft: '2px solid oklch(80% 0.18 80)' } : {}),
               }}>
-              <div className="col-span-2 text-[12px] capitalize" style={{ color: 'oklch(84% 0.008 55)' }}>
+              <div className="col-span-2 text-[14px] capitalize" style={{ color: 'oklch(90% 0.005 55)' }}>
                 {item.slot.replace(/(\d)/, ' $1')}
               </div>
-              <div className="col-span-4 text-[13px] font-semibold" style={{ color: qualityColors[item.quality] || 'oklch(82% 0.006 270)' }}>
+              <div className="col-span-4 text-[15px] font-semibold" style={{ color: qualityColors[item.quality] || 'oklch(82% 0.006 270)' }}>
                 {item.name}
               </div>
-              <div className="col-span-1 font-mono text-[12px]" style={{ color: 'oklch(65% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
+              <div className="col-span-1 font-mono text-[14px]" style={{ color: 'oklch(65% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
                 {item.ilvl}
               </div>
-              <div className="col-span-2 text-[11px] hidden sm:block" style={{ color: item.enchant ? 'oklch(68% 0.18 155)' : 'oklch(35% 0.008 50)' }}>
+              <div className="col-span-2 text-[13px] hidden sm:block" style={{ color: item.enchant ? 'oklch(68% 0.18 155)' : 'oklch(35% 0.008 50)' }}>
                 {item.enchant || '-'}
               </div>
-              <div className="col-span-3 text-[11px] hidden sm:flex flex-wrap gap-1">
+              <div className="col-span-3 text-[13px] hidden sm:flex flex-wrap gap-1">
                 {item.gems.length > 0 ? item.gems.map((g, gi) => (
                   <span key={gi} style={{ color: 'oklch(62% 0.14 270)' }}>{g}</span>
                 )) : <span style={{ color: 'oklch(35% 0.008 50)' }}>-</span>}
@@ -169,7 +169,7 @@ export default function MyCharacter() {
 
       {/* ── iLvl Gap Visualization ── */}
       <div className="reveal mb-16">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
           Gear Progress (Current vs Myth Track)
         </div>
         <div className="space-y-1.5">
@@ -179,7 +179,7 @@ export default function MyCharacter() {
             const gap = mythTarget - item.ilvl;
             return (
               <div key={item.slot} className="flex items-center gap-3 group">
-                <span className="text-[11px] w-16 capitalize shrink-0" style={{ color: 'oklch(82% 0.008 55)' }}>
+                <span className="text-[13px] w-16 capitalize shrink-0" style={{ color: 'oklch(90% 0.005 55)' }}>
                   {item.slot.replace(/(\d)/, ' $1')}
                 </span>
                 <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.012 45)' }}>
@@ -192,8 +192,8 @@ export default function MyCharacter() {
                     }}
                   />
                 </div>
-                <span className="font-mono text-[10px] w-8 text-right" style={{
-                  color: gap <= 10 ? 'oklch(68% 0.18 155)' : 'oklch(84% 0.008 55)',
+                <span className="font-mono text-[12px] w-8 text-right" style={{
+                  color: gap <= 10 ? 'oklch(68% 0.18 155)' : 'oklch(90% 0.005 55)',
                   fontVariantNumeric: 'tabular-nums',
                 }}>
                   {item.ilvl}
@@ -202,7 +202,7 @@ export default function MyCharacter() {
             );
           })}
         </div>
-        <div className="flex items-center gap-4 mt-3 text-[10px]" style={{ color: 'oklch(68% 0.008 55)' }}>
+        <div className="flex items-center gap-4 mt-3 text-[12px]" style={{ color: 'oklch(78% 0.005 55)' }}>
           <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'oklch(68% 0.18 155)' }} /> Near cap</span>
           <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'oklch(78% 0.16 60)' }} /> Upgradeable</span>
           <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ background: 'oklch(60% 0.14 30)' }} /> Priority upgrade</span>
@@ -214,7 +214,7 @@ export default function MyCharacter() {
         {/* Tier progress */}
         <div className="p-5 rounded-lg glass-solar">
           <div className="flex items-baseline justify-between mb-4">
-            <span className="text-[9px] uppercase font-bold" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+            <span className="text-[11px] uppercase font-bold" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
               Tier Pieces
             </span>
             <span className="font-mono text-sm font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
@@ -227,15 +227,15 @@ export default function MyCharacter() {
           </div>
           <ul className="space-y-1">
             {tierPieces.map(t => (
-              <li key={t.slot} className="text-[12px]" style={{ color: 'oklch(62% 0.012 270)' }}>
+              <li key={t.slot} className="text-[14px]" style={{ color: 'oklch(62% 0.012 270)' }}>
                 <span className="capitalize">{t.slot}</span> - <span style={{ color: 'oklch(80% 0.18 80)' }}>{t.name}</span>
               </li>
             ))}
           </ul>
           {tierPieces.length >= 4 ? (
-            <p className="text-[11px] mt-3 font-semibold" style={{ color: 'oklch(80% 0.18 80)' }}>4pc bonus active.</p>
+            <p className="text-[13px] mt-3 font-semibold" style={{ color: 'oklch(80% 0.18 80)' }}>4pc bonus active.</p>
           ) : (
-            <p className="text-[11px] mt-3" style={{ color: 'oklch(84% 0.008 55)' }}>
+            <p className="text-[13px] mt-3" style={{ color: 'oklch(90% 0.005 55)' }}>
               {4 - tierPieces.length} more for 4pc bonus.
             </p>
           )}
@@ -244,7 +244,7 @@ export default function MyCharacter() {
         {/* Missing enchants */}
         <div className={`p-5 rounded-lg ${missingEnchants.length > 0 ? 'glass' : 'glass-nature'}`}>
           <div className="flex items-baseline justify-between mb-4">
-            <span className="text-[9px] uppercase font-bold" style={{
+            <span className="text-[11px] uppercase font-bold" style={{
               color: missingEnchants.length > 0 ? 'oklch(72% 0.16 30)' : 'oklch(68% 0.18 155)',
               letterSpacing: '0.12em',
             }}>
@@ -259,20 +259,20 @@ export default function MyCharacter() {
           {missingEnchants.length > 0 ? (
             <ul className="space-y-1">
               {missingEnchants.map(m => (
-                <li key={m.slot} className="text-[12px] capitalize" style={{ color: 'oklch(84% 0.008 270)' }}>
+                <li key={m.slot} className="text-[14px] capitalize" style={{ color: 'oklch(90% 0.005 270)' }}>
                   {m.slot} - {m.name}
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-[12px]" style={{ color: 'oklch(84% 0.008 270)' }}>All enchantable slots covered.</p>
+            <p className="text-[14px]" style={{ color: 'oklch(90% 0.005 270)' }}>All enchantable slots covered.</p>
           )}
         </div>
       </div>
 
       {/* ── Raid progression ── */}
       <div ref={r4} className="reveal">
-        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
           Midnight Season 1 Raid
         </div>
         <div className="flex gap-6 text-sm">
@@ -290,8 +290,8 @@ function ProgStat({ label, value, total }: { label: string; value: number; total
   return (
     <div className="min-w-[100px]">
       <div className="flex items-baseline justify-between mb-1">
-        <span className="text-[12px] font-medium" style={{ color: 'oklch(84% 0.008 270)' }}>{label}</span>
-        <span className="font-mono text-[12px] font-bold" style={{ color: value > 0 ? 'oklch(80% 0.006 270)' : 'oklch(34% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
+        <span className="text-[14px] font-medium" style={{ color: 'oklch(90% 0.005 270)' }}>{label}</span>
+        <span className="font-mono text-[14px] font-bold" style={{ color: value > 0 ? 'oklch(80% 0.006 270)' : 'oklch(34% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
           {value}/{total}
         </span>
       </div>
@@ -305,8 +305,8 @@ function ProgStat({ label, value, total }: { label: string; value: number; total
 function ExtLink({ href, label }: { href: string; label: string }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer"
-      className="glass text-[12px] font-semibold px-3.5 py-2 rounded-lg transition-all inline-flex items-center gap-1.5 hover:scale-105"
-      style={{ color: 'oklch(82% 0.008 55)' }}>
+      className="glass text-[14px] font-semibold px-3.5 py-2 rounded-lg transition-all inline-flex items-center gap-1.5 hover:scale-105"
+      style={{ color: 'oklch(90% 0.005 55)' }}>
       {label}
       <span style={{ fontSize: '10px' }}>&#8599;</span>
     </a>

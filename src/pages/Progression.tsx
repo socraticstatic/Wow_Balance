@@ -322,10 +322,10 @@ export default function Progression() {
           return (
             <div className="glass p-4 rounded-lg flex items-center justify-between" style={{ borderLeft: `2px solid ${uc}` }}>
               <div>
-                <span className="text-[9px] uppercase font-bold" style={{ color: uc, letterSpacing: '0.1em' }}>
+                <span className="text-[11px] uppercase font-bold" style={{ color: uc, letterSpacing: '0.1em' }}>
                   Weekly Reset
                 </span>
-                <span className="text-[11px] ml-2" style={{ color: 'oklch(52% 0.01 50)' }}>
+                <span className="text-[13px] ml-2" style={{ color: 'oklch(52% 0.01 50)' }}>
                   {reset.dayOfWeek} - {reset.isResetDay ? 'Reset day!' : `${reset.timeString} until reset`}
                 </span>
               </div>
@@ -333,7 +333,7 @@ export default function Progression() {
                 <div className="w-16 h-1 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.008 45)' }}>
                   <div className="h-full rounded-full" style={{ width: `${reset.weekProgress * 100}%`, background: uc }} />
                 </div>
-                <span className="text-[10px] font-mono font-bold" style={{ color: uc, fontVariantNumeric: 'tabular-nums' }}>
+                <span className="text-[12px] font-mono font-bold" style={{ color: uc, fontVariantNumeric: 'tabular-nums' }}>
                   {reset.timeString}
                 </span>
               </div>
@@ -347,7 +347,7 @@ export default function Progression() {
           style={{ borderLeft: `3px solid ${phaseInfo.color}` }}
         >
           <div className="flex items-center gap-3 mb-1">
-            <span className="text-[9px] uppercase font-bold px-2 py-0.5 rounded"
+            <span className="text-[11px] uppercase font-bold px-2 py-0.5 rounded"
               style={{ color: phaseInfo.color, background: `${phaseInfo.color}15`, letterSpacing: '0.1em' }}>
               Current Phase
             </span>
@@ -355,7 +355,7 @@ export default function Progression() {
           <h3 className="text-lg font-bold" style={{ color: phaseInfo.color }}>
             {phaseInfo.name}
           </h3>
-          <p className="text-sm" style={{ color: 'oklch(82% 0.008 55)' }}>{phaseInfo.sub}</p>
+          <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)' }}>{phaseInfo.sub}</p>
         </div>
 
         {/* Milestone timeline */}
@@ -389,7 +389,7 @@ export default function Progression() {
 
       {/* Recommendations */}
       <div ref={r3} className="reveal">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
           Recommendations
         </div>
 
@@ -407,14 +407,14 @@ export default function Progression() {
                 }}
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-[9px] font-bold px-2 py-0.5 rounded" style={{
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded" style={{
                     color: p.color,
                     background: `${p.color}15`,
                     letterSpacing: '0.1em',
                   }}>
                     {p.label}
                   </span>
-                  <span className="text-[10px] font-semibold" style={{ color: 'oklch(48% 0.01 50)' }}>
+                  <span className="text-[12px] font-semibold" style={{ color: 'oklch(48% 0.01 50)' }}>
                     {rec.category}
                   </span>
                 </div>
@@ -422,12 +422,12 @@ export default function Progression() {
                 <h3 className="text-sm font-bold mb-1.5" style={{ color: 'oklch(88% 0.01 270)' }}>
                   {rec.title}
                 </h3>
-                <p className="text-[13px] mb-3" style={{ color: 'oklch(82% 0.008 55)', lineHeight: 1.65 }}>
+                <p className="text-[15px] mb-3" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.65 }}>
                   {rec.detail}
                 </p>
 
                 <div
-                  className="text-[12px] p-3 rounded-md"
+                  className="text-[14px] p-3 rounded-md"
                   style={{
                     background: 'oklch(8% 0.008 45 / 0.5)',
                     color: 'oklch(65% 0.012 50)',
@@ -445,7 +445,7 @@ export default function Progression() {
 
       {/* Gear track reference */}
       <div className="mt-16 mb-8">
-        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>
           Midnight Season 1 Gear Tracks
         </div>
         <div className="grid grid-cols-5 gap-1.5">
@@ -457,15 +457,15 @@ export default function Progression() {
             { name: 'Myth', range: '272-289', color: 'oklch(72% 0.18 30)' },
           ].map(track => (
             <div key={track.name} className="glass p-2.5 rounded text-center">
-              <div className="text-[9px] font-bold mb-0.5" style={{ color: track.color }}>{track.name}</div>
-              <div className="text-[11px] font-mono" style={{ color: 'oklch(82% 0.008 55)', fontVariantNumeric: 'tabular-nums' }}>{track.range}</div>
+              <div className="text-[11px] font-bold mb-0.5" style={{ color: track.color }}>{track.name}</div>
+              <div className="text-[13px] font-mono" style={{ color: 'oklch(90% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>{track.range}</div>
             </div>
           ))}
         </div>
       </div>
 
       <div className="text-center">
-        <p className="text-[11px] italic" style={{ color: 'oklch(72% 0.008 55)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[13px] italic" style={{ color: 'oklch(82% 0.005 55)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           Recommendations update automatically as your character progresses.
         </p>
       </div>
@@ -476,13 +476,13 @@ export default function Progression() {
 function OverviewCard({ label, value, sub, color }: { label: string; value: string; sub: string; color: string }) {
   return (
     <div className="glass p-4 rounded-lg">
-      <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>
+      <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>
         {label}
       </div>
       <div className="text-lg font-extrabold font-mono mb-0.5" style={{ color, fontVariantNumeric: 'tabular-nums' }}>
         {value}
       </div>
-      <div className="text-[10px]" style={{ color: 'oklch(45% 0.01 50)' }}>{sub}</div>
+      <div className="text-[12px]" style={{ color: 'oklch(45% 0.01 50)' }}>{sub}</div>
     </div>
   );
 }

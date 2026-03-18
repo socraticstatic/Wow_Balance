@@ -151,15 +151,15 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
 
   return (
     <div className="relative">
-      <div className="text-[9px] uppercase font-bold mb-4 flex items-center gap-3 flex-wrap" style={{ color: 'oklch(68% 0.16 285)', letterSpacing: '0.12em' }}>
+      <div className="text-[11px] uppercase font-bold mb-4 flex items-center gap-3 flex-wrap" style={{ color: 'oklch(68% 0.16 285)', letterSpacing: '0.12em' }}>
         <span>Balance Spec Tree</span>
         <span className="px-2 py-0.5 rounded" style={{ color: 'oklch(80% 0.18 80)', background: 'oklch(80% 0.18 80 / 0.1)' }}>
           {buildName}
         </span>
-        <span style={{ color: 'oklch(72% 0.008 55)' }}>
+        <span style={{ color: 'oklch(82% 0.005 55)' }}>
           {activeCount}/{specTalents.length} highlighted
         </span>
-        <span style={{ color: 'oklch(68% 0.008 55)' }}>
+        <span style={{ color: 'oklch(78% 0.005 55)' }}>
           Midnight 12.0.1
         </span>
       </div>
@@ -308,15 +308,15 @@ export default function TalentTree({ activeKeystones, buildName }: Props) {
               <img src={getSpellIcon(iconName, 'medium')} alt="" className="w-6 h-6 rounded"
                 style={{ border: active ? '1px solid oklch(78% 0.16 60 / 0.3)' : '1px solid oklch(18% 0.01 270)' }} />
               <div>
-                <div className="text-[13px] font-bold" style={{ color: active ? 'oklch(80% 0.18 80)' : 'oklch(75% 0.015 270)' }}>
+                <div className="text-[15px] font-bold" style={{ color: active ? 'oklch(80% 0.18 80)' : 'oklch(75% 0.015 270)' }}>
                   {displayName}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[9px]" style={{ color: 'oklch(72% 0.008 55)' }}>
+                  <span className="text-[11px]" style={{ color: 'oklch(82% 0.005 55)' }}>
                     {t.type === 'choice' ? 'Choice' : t.type === 'active' ? 'Active' : 'Passive'} - Row {t.row + 1}
                   </span>
                   {active && (
-                    <span className="text-[8px] font-bold px-1.5 py-0.5 rounded"
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded"
                       style={{ color: 'oklch(78% 0.16 60)', background: 'oklch(78% 0.16 60 / 0.1)' }}>
                       IN BUILD
                     </span>

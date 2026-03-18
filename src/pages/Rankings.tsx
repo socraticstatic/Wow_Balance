@@ -20,12 +20,12 @@ export default function Rankings() {
       {/* Affixes - inline pills */}
       {topPlayers.currentAffixes && (
         <div className="flex flex-wrap items-center gap-2 mb-14">
-          <span className="text-[9px] uppercase font-bold mr-1" style={{ color: 'oklch(68% 0.008 270)', letterSpacing: '0.12em' }}>
+          <span className="text-[11px] uppercase font-bold mr-1" style={{ color: 'oklch(68% 0.008 270)', letterSpacing: '0.12em' }}>
             Affixes
           </span>
           {topPlayers.currentAffixes.affixes.map(a => (
-            <span key={a.name} className="px-2.5 py-1 rounded text-[11px] font-medium"
-              style={{ color: 'oklch(84% 0.008 270)', background: 'oklch(12% 0.012 270)', border: '1px solid oklch(18% 0.012 270)' }}>
+            <span key={a.name} className="px-2.5 py-1 rounded text-[13px] font-medium"
+              style={{ color: 'oklch(90% 0.005 270)', background: 'oklch(12% 0.012 270)', border: '1px solid oklch(18% 0.012 270)' }}>
               {a.name}
             </span>
           ))}
@@ -35,7 +35,7 @@ export default function Rankings() {
       {/* Raid leaderboard - clean table, no card wrapper */}
       {hasRaid && (
         <div ref={r2} className="reveal mb-20">
-          <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
             Raid DPS
           </div>
 
@@ -45,13 +45,13 @@ export default function Rankings() {
               <div key={p.name} className={`py-4 px-5 rounded-lg card-hover ${i === 0 ? 'glass-solar' : 'glass'}`}
                 style={{ borderTopWidth: 2, borderTopStyle: 'solid', borderTopColor: podiumColors[i] }}>
                 <div className="flex items-baseline justify-between mb-1">
-                  <span className="font-mono text-xs font-bold" style={{ color: podiumColors[i] }}>#{p.rank}</span>
-                  <span className="font-mono text-xs font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
+                  <span className="font-mono text-sm font-bold" style={{ color: podiumColors[i] }}>#{p.rank}</span>
+                  <span className="font-mono text-sm font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
                     {p.dps ? `${(p.dps / 1e6).toFixed(2)}M` : '-'}
                   </span>
                 </div>
                 <div className="text-sm font-bold" style={{ color: 'oklch(90% 0.006 270)' }}>{p.name}</div>
-                <div className="text-[11px]" style={{ color: 'oklch(68% 0.008 270)' }}>{p.realm} - {p.region}</div>
+                <div className="text-[13px]" style={{ color: 'oklch(68% 0.008 270)' }}>{p.realm} - {p.region}</div>
               </div>
             ))}
           </div>
@@ -65,13 +65,13 @@ export default function Rankings() {
                   borderTop: i > 0 ? '1px solid oklch(12% 0.006 270)' : 'none',
                 }}>
                 <div className="flex items-center gap-4">
-                  <span className="font-mono text-[11px] font-bold w-5" style={{ color: 'oklch(38% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
+                  <span className="font-mono text-[13px] font-bold w-5" style={{ color: 'oklch(38% 0.012 270)', fontVariantNumeric: 'tabular-nums' }}>
                     {p.rank}
                   </span>
-                  <span className="text-[13px] font-semibold" style={{ color: 'oklch(82% 0.006 270)' }}>{p.name}</span>
-                  {p.region && <span className="text-[10px]" style={{ color: 'oklch(48% 0.012 270)' }}>{p.region}</span>}
+                  <span className="text-[15px] font-semibold" style={{ color: 'oklch(82% 0.006 270)' }}>{p.name}</span>
+                  {p.region && <span className="text-[12px]" style={{ color: 'oklch(48% 0.012 270)' }}>{p.region}</span>}
                 </div>
-                <span className="font-mono text-[12px] font-bold" style={{ color: 'oklch(72% 0.12 80)', fontVariantNumeric: 'tabular-nums' }}>
+                <span className="font-mono text-[14px] font-bold" style={{ color: 'oklch(72% 0.12 80)', fontVariantNumeric: 'tabular-nums' }}>
                   {p.dps ? `${(p.dps / 1e6).toFixed(2)}M` : '-'}
                 </span>
               </div>
@@ -82,7 +82,7 @@ export default function Rankings() {
 
       {/* Community figures - horizontal, no cards */}
       <div ref={r3} className="reveal">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
           Community
         </div>
         <div className="space-y-4">
@@ -90,12 +90,12 @@ export default function Rankings() {
             <div key={f.name} className="flex items-start gap-4">
               <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
                 style={{ background: 'oklch(14% 0.02 270)', border: '1px solid oklch(20% 0.025 270)' }}>
-                <span className="text-[11px] font-bold" style={{ color: 'oklch(72% 0.18 270)' }}>{f.name[0]}</span>
+                <span className="text-[13px] font-bold" style={{ color: 'oklch(72% 0.18 270)' }}>{f.name[0]}</span>
               </div>
               <div>
                 <span className="text-sm font-bold" style={{ color: 'oklch(86% 0.006 270)' }}>{f.name}</span>
-                <span className="text-[11px] ml-2" style={{ color: 'oklch(68% 0.008 270)' }}>{f.role}</span>
-                <p className="text-[12px] mt-0.5" style={{ color: 'oklch(58% 0.012 270)' }}>{f.notes}</p>
+                <span className="text-[13px] ml-2" style={{ color: 'oklch(68% 0.008 270)' }}>{f.role}</span>
+                <p className="text-[14px] mt-0.5" style={{ color: 'oklch(58% 0.012 270)' }}>{f.notes}</p>
               </div>
             </div>
           ))}

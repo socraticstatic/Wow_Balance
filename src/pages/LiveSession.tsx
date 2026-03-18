@@ -10,7 +10,7 @@ const gradeColors: Record<string, string> = {
   A: 'oklch(72% 0.18 270)',
   B: 'oklch(72% 0.14 240)',
   C: 'oklch(68% 0.18 155)',
-  D: 'oklch(82% 0.008 55)',
+  D: 'oklch(90% 0.005 55)',
   F: 'oklch(72% 0.16 30)',
 };
 
@@ -35,30 +35,30 @@ export default function LiveSession() {
             <h3 className="text-lg font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)' }}>
               Setup Required
             </h3>
-            <ol className="space-y-4 text-sm" style={{ color: 'oklch(84% 0.008 55)' }}>
+            <ol className="space-y-4 text-sm" style={{ color: 'oklch(90% 0.005 55)' }}>
               <li className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold"
+                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-sm font-bold"
                   style={{ color: 'oklch(80% 0.18 80)', background: 'oklch(80% 0.18 80 / 0.1)' }}>1</span>
                 <div>
-                  <strong>Install the addon.</strong> Copy <code className="text-xs px-1.5 py-0.5 rounded" style={{ background: 'oklch(14% 0.012 45)', color: 'oklch(80% 0.18 80)' }}>companion-addon/BalanceDossier/</code> to your WoW AddOns folder.
+                  <strong>Install the addon.</strong> Copy <code className="text-sm px-1.5 py-0.5 rounded" style={{ background: 'oklch(14% 0.012 45)', color: 'oklch(80% 0.18 80)' }}>companion-addon/BalanceDossier/</code> to your WoW AddOns folder.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold"
+                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-sm font-bold"
                   style={{ color: 'oklch(80% 0.18 80)', background: 'oklch(80% 0.18 80 / 0.1)' }}>2</span>
                 <div>
-                  <strong>Start the watcher.</strong> Run <code className="text-xs px-1.5 py-0.5 rounded" style={{ background: 'oklch(14% 0.012 45)', color: 'oklch(80% 0.18 80)' }}>npx tsx companion-addon/watcher.ts</code> in a terminal.
+                  <strong>Start the watcher.</strong> Run <code className="text-sm px-1.5 py-0.5 rounded" style={{ background: 'oklch(14% 0.012 45)', color: 'oklch(80% 0.18 80)' }}>npx tsx companion-addon/watcher.ts</code> in a terminal.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold"
+                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-sm font-bold"
                   style={{ color: 'oklch(80% 0.18 80)', background: 'oklch(80% 0.18 80 / 0.1)' }}>3</span>
                 <div>
-                  <strong>Play and /reload.</strong> The addon tracks every fight. Type <code className="text-xs px-1.5 py-0.5 rounded" style={{ background: 'oklch(14% 0.012 45)', color: 'oklch(80% 0.18 80)' }}>/reload</code> in-game to sync data.
+                  <strong>Play and /reload.</strong> The addon tracks every fight. Type <code className="text-sm px-1.5 py-0.5 rounded" style={{ background: 'oklch(14% 0.012 45)', color: 'oklch(80% 0.18 80)' }}>/reload</code> in-game to sync data.
                 </div>
               </li>
             </ol>
-            <p className="mt-6 text-xs" style={{ color: 'oklch(68% 0.008 55)' }}>
+            <p className="mt-6 text-sm" style={{ color: 'oklch(78% 0.005 55)' }}>
               Once connected, this page shows your live combat data: Starfall uptime, AP waste, Eclipse distribution, and a grade for every fight.
             </p>
           </div>
@@ -97,22 +97,22 @@ export default function LiveSession() {
           <div className="grid sm:grid-cols-3 gap-3 mb-8">
             {/* Last Played */}
             <div className="p-5 rounded-lg glass">
-              <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.1em' }}>Last Played</div>
+              <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.1em' }}>Last Played</div>
               <div className="text-base font-bold mb-1" style={{ color: 'oklch(95% 0.005 60)' }}>
                 {presence.lastPlayed ? new Date(presence.lastPlayed).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' }) : 'Unknown'}
               </div>
-              <div className="text-xs" style={{ color: 'oklch(72% 0.008 55)' }}>
+              <div className="text-sm" style={{ color: 'oklch(82% 0.005 55)' }}>
                 {presence.lastPlayed ? new Date(presence.lastPlayed).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' }) : ''}
               </div>
             </div>
 
             {/* Location */}
             <div className="p-5 rounded-lg glass">
-              <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.1em' }}>Location</div>
+              <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.1em' }}>Location</div>
               <div className="text-base font-bold mb-1" style={{ color: 'oklch(95% 0.005 60)' }}>
                 {presence.zone || 'Unknown'}
               </div>
-              <div className="text-xs" style={{ color: 'oklch(72% 0.008 55)' }}>
+              <div className="text-sm" style={{ color: 'oklch(82% 0.005 55)' }}>
                 {presence.subZone ? `${presence.subZone} ` : ''}
                 {presence.x && presence.y ? `(${presence.x}, ${presence.y})` : ''}
               </div>
@@ -120,15 +120,15 @@ export default function LiveSession() {
 
             {/* Level / iLvl */}
             <div className="p-5 rounded-lg glass">
-              <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.1em' }}>Character</div>
+              <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.1em' }}>Character</div>
               <div className="flex items-baseline gap-4">
                 <div>
                   <div className="text-2xl font-bold font-mono" style={{ color: 'oklch(95% 0.005 60)', fontVariantNumeric: 'tabular-nums' }}>{presence.level}</div>
-                  <div className="text-[9px] uppercase" style={{ color: 'oklch(68% 0.008 55)' }}>Level</div>
+                  <div className="text-[11px] uppercase" style={{ color: 'oklch(78% 0.005 55)' }}>Level</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold font-mono" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>{presence.ilvl}</div>
-                  <div className="text-[9px] uppercase" style={{ color: 'oklch(68% 0.008 55)' }}>iLvl</div>
+                  <div className="text-[11px] uppercase" style={{ color: 'oklch(78% 0.005 55)' }}>iLvl</div>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function LiveSession() {
           {/* Quest Log */}
           {presence.quests && presence.quests.length > 0 && (
             <div>
-              <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+              <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
                 Active Quests ({presence.questCount})
               </div>
               <div className="rounded-lg overflow-hidden glass">
@@ -154,7 +154,7 @@ export default function LiveSession() {
                           {q.isComplete ? '\u2713 ' : ''}{q.title}
                         </span>
                         {q.frequency !== 'normal' && (
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded"
+                          <span className="text-[11px] font-bold px-1.5 py-0.5 rounded"
                             style={{
                               color: q.frequency === 'daily' ? 'oklch(72% 0.18 270)' : 'oklch(80% 0.18 80)',
                               background: q.frequency === 'daily' ? 'oklch(72% 0.18 270 / 0.1)' : 'oklch(80% 0.18 80 / 0.1)',
@@ -166,8 +166,8 @@ export default function LiveSession() {
                       {q.objectives && q.objectives.length > 0 && (
                         <div className="mt-1 space-y-0.5">
                           {q.objectives.map((obj: any, j: number) => (
-                            <div key={j} className="text-xs flex items-center gap-1.5" style={{
-                              color: obj.finished ? 'oklch(60% 0.12 155)' : 'oklch(72% 0.008 55)',
+                            <div key={j} className="text-sm flex items-center gap-1.5" style={{
+                              color: obj.finished ? 'oklch(60% 0.12 155)' : 'oklch(82% 0.005 55)',
                             }}>
                               <span className="w-1 h-1 rounded-full" style={{
                                 background: obj.finished ? 'oklch(60% 0.12 155)' : 'oklch(40% 0.006 45)',
@@ -179,7 +179,7 @@ export default function LiveSession() {
                       )}
                     </div>
                     {q.level > 0 && (
-                      <span className="text-[10px] font-mono shrink-0" style={{ color: 'oklch(60% 0.008 55)', fontVariantNumeric: 'tabular-nums' }}>
+                      <span className="text-[12px] font-mono shrink-0" style={{ color: 'oklch(60% 0.008 55)', fontVariantNumeric: 'tabular-nums' }}>
                         Lv{q.level}
                       </span>
                     )}
@@ -193,54 +193,54 @@ export default function LiveSession() {
 
       {/* Fight timeline */}
       <div className="reveal mb-16">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.008 55)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(82% 0.005 55)', letterSpacing: '0.12em' }}>
           Recent Fights
         </div>
         <div className="space-y-2">
           {fights.map((f: any, i: number) => (
-            <div key={i} className="rounded-lg glass row-hover px-5 py-3 grid grid-cols-8 gap-3 items-center text-xs">
-              <div className="font-mono text-lg font-bold" style={{ color: gradeColors[f.grade] || 'oklch(82% 0.008 55)' }}>
+            <div key={i} className="rounded-lg glass row-hover px-5 py-3 grid grid-cols-8 gap-3 items-center text-sm">
+              <div className="font-mono text-lg font-bold" style={{ color: gradeColors[f.grade] || 'oklch(90% 0.005 55)' }}>
                 {f.grade}
               </div>
               <div>
-                <div style={{ color: 'oklch(68% 0.008 55)' }}>DPS</div>
+                <div style={{ color: 'oklch(78% 0.005 55)' }}>DPS</div>
                 <div className="font-mono font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
                   {(f.dps / 1000).toFixed(1)}k
                 </div>
               </div>
               <div>
-                <div style={{ color: 'oklch(68% 0.008 55)' }}>Starfall</div>
+                <div style={{ color: 'oklch(78% 0.005 55)' }}>Starfall</div>
                 <div className="font-mono font-bold" style={{ color: 'oklch(72% 0.18 270)', fontVariantNumeric: 'tabular-nums' }}>
                   {f.starfallUptime}%
                 </div>
               </div>
               <div>
-                <div style={{ color: 'oklch(68% 0.008 55)' }}>Lunar</div>
+                <div style={{ color: 'oklch(78% 0.005 55)' }}>Lunar</div>
                 <div className="font-mono font-bold" style={{ color: 'oklch(72% 0.14 240)', fontVariantNumeric: 'tabular-nums' }}>
                   {f.lunarPct}%
                 </div>
               </div>
               <div>
-                <div style={{ color: 'oklch(68% 0.008 55)' }}>Targets</div>
-                <div className="font-mono font-bold" style={{ fontVariantNumeric: 'tabular-nums', color: 'oklch(84% 0.008 55)' }}>
+                <div style={{ color: 'oklch(78% 0.005 55)' }}>Targets</div>
+                <div className="font-mono font-bold" style={{ fontVariantNumeric: 'tabular-nums', color: 'oklch(90% 0.005 55)' }}>
                   {f.targets}
                 </div>
               </div>
               <div>
-                <div style={{ color: 'oklch(68% 0.008 55)' }}>SF Dmg</div>
-                <div className="font-mono font-bold" style={{ fontVariantNumeric: 'tabular-nums', color: 'oklch(84% 0.008 55)' }}>
+                <div style={{ color: 'oklch(78% 0.005 55)' }}>SF Dmg</div>
+                <div className="font-mono font-bold" style={{ fontVariantNumeric: 'tabular-nums', color: 'oklch(90% 0.005 55)' }}>
                   {f.starfallDamagePct}%
                 </div>
               </div>
               <div>
-                <div style={{ color: 'oklch(68% 0.008 55)' }}>AP Cap</div>
+                <div style={{ color: 'oklch(78% 0.005 55)' }}>AP Cap</div>
                 <div className="font-mono font-bold" style={{ color: f.apCapped > 0 ? 'oklch(72% 0.16 30)' : 'oklch(68% 0.18 155)', fontVariantNumeric: 'tabular-nums' }}>
                   {f.apCapped}
                 </div>
               </div>
               <div>
-                <div style={{ color: 'oklch(68% 0.008 55)' }}>Time</div>
-                <div className="font-mono" style={{ fontVariantNumeric: 'tabular-nums', color: 'oklch(84% 0.008 55)' }}>
+                <div style={{ color: 'oklch(78% 0.005 55)' }}>Time</div>
+                <div className="font-mono" style={{ fontVariantNumeric: 'tabular-nums', color: 'oklch(90% 0.005 55)' }}>
                   {f.duration}s
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function LiveSession() {
 
       {/* ── Coaching Analysis ── */}
       <div className="reveal mb-16">
-        <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           Session Coaching
         </div>
         <CoachingAnalysis summary={summary} fights={fights} />
@@ -260,14 +260,14 @@ export default function LiveSession() {
       {/* Personal bests */}
       {bests && (
         <div className="reveal">
-          <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
             Personal Bests
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             <StatCard label="Highest DPS" value={bests.highestDps.toLocaleString()} color="oklch(80% 0.18 80)" />
-            <StatCard label="Best Grade" value={bests.bestGrade} color={gradeColors[bests.bestGrade] || 'oklch(82% 0.008 55)'} />
+            <StatCard label="Best Grade" value={bests.bestGrade} color={gradeColors[bests.bestGrade] || 'oklch(90% 0.005 55)'} />
             <StatCard label="Best SF Uptime" value={`${bests.bestStarfallUptime}%`} color="oklch(72% 0.18 270)" />
-            <StatCard label="Longest Fight" value={`${bests.longestFight}s`} color="oklch(84% 0.008 55)" />
+            <StatCard label="Longest Fight" value={`${bests.longestFight}s`} color="oklch(90% 0.005 55)" />
           </div>
         </div>
       )}
@@ -278,7 +278,7 @@ export default function LiveSession() {
 function StatCard({ label, value, color }: { label: string; value: string; color: string }) {
   return (
     <div className="p-4 rounded-lg glass">
-      <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(68% 0.008 55)', letterSpacing: '0.1em' }}>{label}</div>
+      <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(78% 0.005 55)', letterSpacing: '0.1em' }}>{label}</div>
       <div className="text-2xl font-bold font-mono" style={{ color, fontVariantNumeric: 'tabular-nums' }}>{value}</div>
     </div>
   );
@@ -503,7 +503,7 @@ function CoachingAnalysis({ summary, fights }: { summary: any; fights: any[] }) 
   if (advice.length === 0) {
     return (
       <div className="p-6 rounded-lg glass">
-        <p className="text-sm" style={{ color: 'oklch(72% 0.008 55)' }}>
+        <p className="text-sm" style={{ color: 'oklch(82% 0.005 55)' }}>
           No fights recorded yet. Play some combat encounters and /reload to see coaching advice.
         </p>
       </div>
@@ -522,7 +522,7 @@ function CoachingAnalysis({ summary, fights }: { summary: any; fights: any[] }) 
           <div key={i} className="rounded-lg overflow-hidden" style={{ background: s.bg, borderLeft: `3px solid ${s.border}` }}>
             <div className="px-5 py-4">
               <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold mt-0.5"
+                <span className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-sm font-bold mt-0.5"
                   style={{ color: s.iconColor, background: `${s.iconColor}15`, border: `1px solid ${s.iconColor}30` }}>
                   {s.icon}
                 </span>
@@ -532,12 +532,12 @@ function CoachingAnalysis({ summary, fights }: { summary: any; fights: any[] }) 
                       {a.title}
                     </h4>
                     {a.metric && (
-                      <span className="text-xs font-mono font-bold shrink-0" style={{ color: s.iconColor, fontVariantNumeric: 'tabular-nums' }}>
+                      <span className="text-sm font-mono font-bold shrink-0" style={{ color: s.iconColor, fontVariantNumeric: 'tabular-nums' }}>
                         {a.metric}
                       </span>
                     )}
                   </div>
-                  <p className="text-[13px]" style={{ color: 'oklch(84% 0.006 55)', lineHeight: 1.75 }}>
+                  <p className="text-[15px]" style={{ color: 'oklch(84% 0.006 55)', lineHeight: 1.75 }}>
                     {a.detail}
                   </p>
                 </div>

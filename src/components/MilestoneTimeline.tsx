@@ -43,11 +43,11 @@ export default function MilestoneTimeline({ level, ilvl }: Props) {
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <div className="text-[9px] uppercase font-bold" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
           {isLeveling ? 'Level Progress' : 'Gear Progress'}
         </div>
         {nextMilestone && (
-          <div className="text-[10px]" style={{ color: 'oklch(48% 0.01 50)' }}>
+          <div className="text-[12px]" style={{ color: 'oklch(48% 0.01 50)' }}>
             Next: <span style={{ color: nextMilestone.color }}>{nextMilestone.label}</span> - {nextMilestone.unlocks}
           </div>
         )}
@@ -112,7 +112,7 @@ export default function MilestoneTimeline({ level, ilvl }: Props) {
           return (
             <div
               key={m.label}
-              className="absolute -translate-x-1/2 text-[9px] font-mono font-bold"
+              className="absolute -translate-x-1/2 text-[11px] font-mono font-bold"
               style={{
                 left: `${mPct}%`,
                 color: reached ? m.color : 'oklch(35% 0.01 50)',

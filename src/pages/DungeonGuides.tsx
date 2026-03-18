@@ -247,27 +247,27 @@ export default function DungeonGuides() {
 
       {/* Affix system */}
       <div ref={r2} className="reveal mb-16">
-        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
           Season 1 Affix System
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 mb-6">
           {affixTiers.map(a => (
             <div key={a.level} className="p-3 rounded-lg glass">
-              <div className="text-[10px] font-bold mb-1" style={{ color: 'oklch(80% 0.18 80)' }}>+{a.level}</div>
-              <div className="text-[12px] font-semibold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>{a.name}</div>
-              <div className="text-[11px]" style={{ color: 'oklch(82% 0.008 270)' }}>{a.desc}</div>
+              <div className="text-[12px] font-bold mb-1" style={{ color: 'oklch(80% 0.18 80)' }}>+{a.level}</div>
+              <div className="text-[14px] font-semibold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>{a.name}</div>
+              <div className="text-[13px]" style={{ color: 'oklch(90% 0.005 270)' }}>{a.desc}</div>
             </div>
           ))}
         </div>
 
-        <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
           Bargain Affix Tips (Balance Druid)
         </div>
         <div className="grid sm:grid-cols-2 gap-2">
           {bargainTips.map(b => (
             <div key={b.name} className="flex items-start gap-2 p-3 rounded-lg" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
-              <span className="text-[11px] font-bold shrink-0 w-20" style={{ color: 'oklch(72% 0.18 270)' }}>{b.name}</span>
-              <span className="text-[12px]" style={{ color: 'oklch(84% 0.008 270)' }}>{b.tip}</span>
+              <span className="text-[13px] font-bold shrink-0 w-20" style={{ color: 'oklch(72% 0.18 270)' }}>{b.name}</span>
+              <span className="text-[14px]" style={{ color: 'oklch(90% 0.005 270)' }}>{b.tip}</span>
             </div>
           ))}
         </div>
@@ -285,7 +285,7 @@ export default function DungeonGuides() {
               borderLeft: expanded === d.shortName ? '2px solid oklch(72% 0.18 270)' : '2px solid transparent',
             }}
           >
-            <div className="text-[11px] font-bold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>
+            <div className="text-[13px] font-bold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>
               {d.shortName}
             </div>
             <div className="flex items-center gap-0.5 mb-0.5">
@@ -294,7 +294,7 @@ export default function DungeonGuides() {
                   style={{ background: i < d.balanceRating ? 'oklch(72% 0.18 270)' : 'oklch(16% 0.01 270)' }} />
               ))}
             </div>
-            <div className="text-[9px]" style={{ color: 'oklch(72% 0.008 55)' }}>{d.timer}</div>
+            <div className="text-[11px]" style={{ color: 'oklch(82% 0.005 55)' }}>{d.timer}</div>
           </button>
         ))}
       </div>
@@ -331,8 +331,8 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
             <span className="text-xl font-display font-bold" style={{ color: 'oklch(92% 0.008 60)', fontStyle: 'italic' }}>
               {dungeon.name}
             </span>
-            <span className="text-[10px] font-medium" style={{ color: 'oklch(72% 0.008 55)' }}>{dungeon.expansion}</span>
-            <span className="font-mono text-[10px]" style={{ color: 'oklch(68% 0.008 55)', fontVariantNumeric: 'tabular-nums' }}>{dungeon.timer}</span>
+            <span className="text-[12px] font-medium" style={{ color: 'oklch(82% 0.005 55)' }}>{dungeon.expansion}</span>
+            <span className="font-mono text-[12px]" style={{ color: 'oklch(78% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>{dungeon.timer}</span>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex gap-0.5">
@@ -341,7 +341,7 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
                   style={{ background: i < dungeon.balanceRating ? 'oklch(72% 0.18 270)' : 'oklch(16% 0.01 270)' }} />
               ))}
             </div>
-            <span style={{ color: 'oklch(72% 0.008 55)', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s ease', display: 'inline-block' }}>
+            <span style={{ color: 'oklch(82% 0.005 55)', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s ease', display: 'inline-block' }}>
               &#8963;
             </span>
           </div>
@@ -351,33 +351,33 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
           <div className="px-6 py-5">
             <div className="grid md:grid-cols-2 gap-8 mb-6">
               <div>
-                <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+                <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
                   Key Trash
                 </div>
                 <ul className="space-y-2 mb-6">
                   {dungeon.keyTrash.map((t, i) => (
-                    <li key={i} className="text-[13px]" style={{ color: 'oklch(84% 0.008 270)', lineHeight: 1.7 }}>{t}</li>
+                    <li key={i} className="text-[15px]" style={{ color: 'oklch(90% 0.005 270)', lineHeight: 1.7 }}>{t}</li>
                   ))}
                 </ul>
 
-                <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+                <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
                   Boss Notes
                 </div>
                 <ul className="space-y-2">
                   {dungeon.bossNotes.map((b, i) => (
-                    <li key={i} className="text-[13px]" style={{ color: 'oklch(84% 0.008 270)', lineHeight: 1.7 }}>{b}</li>
+                    <li key={i} className="text-[15px]" style={{ color: 'oklch(90% 0.005 270)', lineHeight: 1.7 }}>{b}</li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
+                <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
                   Balance Druid Tips
                 </div>
                 <ul className="space-y-2 mb-6">
                   {dungeon.balanceTips.map((t, i) => (
-                    <li key={i} className="text-[13px] pl-3" style={{
-                      color: 'oklch(86% 0.008 270)',
+                    <li key={i} className="text-[15px] pl-3" style={{
+                      color: 'oklch(92% 0.004 270)',
                       lineHeight: 1.7,
                       borderLeft: '2px solid oklch(68% 0.18 155 / 0.3)',
                     }}>
@@ -387,12 +387,12 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
                 </ul>
 
                 <div className="p-4 rounded-lg mb-4" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
-                  <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.12em' }}>
+                  <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.12em' }}>
                     Solar Beam Targets
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {dungeon.solarBeamTargets.map(t => (
-                      <span key={t} className="text-[11px] font-medium px-2 py-0.5 rounded"
+                      <span key={t} className="text-[13px] font-medium px-2 py-0.5 rounded"
                         style={{ color: 'oklch(72% 0.16 30)', background: 'oklch(72% 0.16 30 / 0.08)' }}>
                         {t}
                       </span>
@@ -401,12 +401,12 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
                 </div>
 
                 <div className="p-4 rounded-lg" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
-                  <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
+                  <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
                     Utility Checklist
                   </div>
                   <ul className="space-y-1">
                     {dungeon.utility.map(u => (
-                      <li key={u} className="flex items-center gap-2 text-[12px]" style={{ color: 'oklch(84% 0.008 270)' }}>
+                      <li key={u} className="flex items-center gap-2 text-[14px]" style={{ color: 'oklch(90% 0.005 270)' }}>
                         <span className="w-1 h-1 rounded-full" style={{ background: 'oklch(80% 0.18 80)' }} />
                         {u}
                       </li>

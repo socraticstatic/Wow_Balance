@@ -107,15 +107,15 @@ export default function Nav({ active, onNav }: Props) {
                   onClick={() => { onNav(item.id); setOpen(false); }}
                   className="w-full flex items-center gap-3 px-4 py-2.5 cursor-pointer transition-colors"
                   style={{
-                    color: isActive ? 'oklch(92% 0.01 60)' : 'oklch(82% 0.008 55)',
+                    color: isActive ? 'oklch(92% 0.01 60)' : 'oklch(90% 0.005 55)',
                     background: isActive ? 'oklch(16% 0.02 45)' : 'transparent',
                     transitionDelay: open ? `${i * 20}ms` : '0ms',
                   }}
                   onMouseEnter={e => { if (!isActive) (e.target as HTMLElement).style.background = 'oklch(13% 0.015 45)'; }}
                   onMouseLeave={e => { if (!isActive) (e.target as HTMLElement).style.background = 'transparent'; }}
                 >
-                  <Icon size={14} style={{ color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(72% 0.008 55)' }} />
-                  <span className="text-[12px] font-semibold">{item.label}</span>
+                  <Icon size={14} style={{ color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(82% 0.005 55)' }} />
+                  <span className="text-[14px] font-semibold">{item.label}</span>
                   {isActive && (
                     <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: 'oklch(78% 0.16 60)' }} />
                   )}

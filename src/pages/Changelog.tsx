@@ -36,15 +36,15 @@ function ChangelogEntry({ entry, color }: { entry: { patch: string; date: string
     <div ref={ref} className="reveal pl-5" style={{ borderLeft: `2px solid ${color}` }}>
       <div className="flex items-baseline gap-3 mb-3">
         <span className="text-base font-extrabold" style={{ color }}>{entry.patch}</span>
-        <span className="text-[11px]" style={{ color: 'oklch(48% 0.012 270)' }}>{entry.date}</span>
-        <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded"
+        <span className="text-[13px]" style={{ color: 'oklch(48% 0.012 270)' }}>{entry.date}</span>
+        <span className="text-[11px] font-bold uppercase px-1.5 py-0.5 rounded"
           style={{ color, background: `${color}0C`, letterSpacing: '0.08em' }}>
           {entry.type.replace('_', ' ')}
         </span>
       </div>
       <ul className="space-y-1">
         {entry.changes.map((c, i) => (
-          <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(84% 0.008 270)', lineHeight: 1.65 }}>
+          <li key={i} className="flex items-start gap-2 text-[15px]" style={{ color: 'oklch(90% 0.005 270)', lineHeight: 1.65 }}>
             <span className="w-1 h-1 rounded-full shrink-0 mt-2" style={{ background: 'oklch(28% 0.012 270)' }} />
             {c}
           </li>

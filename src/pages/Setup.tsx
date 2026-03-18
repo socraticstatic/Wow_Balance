@@ -91,9 +91,9 @@ export default function Setup() {
               border: `1px solid ${step === i ? 'oklch(22% 0.02 45)' : 'oklch(14% 0.01 45)'}`,
             }}
           >
-            <span className="w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center"
+            <span className="w-5 h-5 rounded-full text-[12px] font-bold flex items-center justify-center"
               style={{
-                color: step >= i ? 'oklch(78% 0.16 60)' : 'oklch(68% 0.008 55)',
+                color: step >= i ? 'oklch(78% 0.16 60)' : 'oklch(78% 0.005 55)',
                 background: step >= i ? 'oklch(78% 0.16 60 / 0.1)' : 'oklch(14% 0.01 45)',
               }}>
               {s.icon}
@@ -114,7 +114,7 @@ export default function Setup() {
           <Field label="Realm" value={form.realm} onChange={set('realm')} placeholder="zuljin" help="Lowercase, hyphenated. e.g. area-52, zuljin, stormrage" />
 
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-2" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.1em' }}>Region</label>
+            <label className="block text-[12px] uppercase font-bold mb-2" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>Region</label>
             <select
               value={form.region}
               onChange={set('region')}
@@ -142,13 +142,13 @@ export default function Setup() {
             How do you play?
           </h3>
 
-          <p className="text-[13px]" style={{ color: 'oklch(84% 0.008 55)', lineHeight: 1.7 }}>
+          <p className="text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>
             This shapes your optimization page - gear, enchants, talents, and rotation will be tailored to your focus.
           </p>
 
           {/* Primary content */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
               What content do you focus on?
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -170,7 +170,7 @@ export default function Setup() {
                   <span className="text-sm font-bold block mb-0.5" style={{
                     color: form.primaryContent === opt.id ? 'oklch(78% 0.16 60)' : 'oklch(78% 0.01 50)',
                   }}>{opt.label}</span>
-                  <span className="text-[11px]" style={{ color: 'oklch(56% 0.012 50)' }}>{opt.desc}</span>
+                  <span className="text-[13px]" style={{ color: 'oklch(56% 0.012 50)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -178,7 +178,7 @@ export default function Setup() {
 
           {/* Hero talent preference */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
               Preferred Hero Talent Tree
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -196,10 +196,10 @@ export default function Setup() {
                     border: `1px solid ${form.heroTalent === opt.id ? `${opt.color}60` : 'oklch(16% 0.012 45)'}`,
                   }}
                 >
-                  <span className="text-[13px] font-bold block mb-0.5" style={{
-                    color: form.heroTalent === opt.id ? opt.color : 'oklch(84% 0.008 55)',
+                  <span className="text-[15px] font-bold block mb-0.5" style={{
+                    color: form.heroTalent === opt.id ? opt.color : 'oklch(90% 0.005 55)',
                   }}>{opt.label}</span>
-                  <span className="text-[10px]" style={{ color: 'oklch(82% 0.008 55)' }}>{opt.desc}</span>
+                  <span className="text-[12px]" style={{ color: 'oklch(90% 0.005 55)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -207,7 +207,7 @@ export default function Setup() {
 
           {/* AoE vs ST preference */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
               Damage Profile
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -226,9 +226,9 @@ export default function Setup() {
                   }}
                 >
                   <span className="text-sm font-bold block mb-0.5" style={{
-                    color: form.playstyle === opt.id ? 'oklch(68% 0.16 285)' : 'oklch(84% 0.008 55)',
+                    color: form.playstyle === opt.id ? 'oklch(68% 0.16 285)' : 'oklch(90% 0.005 55)',
                   }}>{opt.label}</span>
-                  <span className="text-[11px]" style={{ color: 'oklch(82% 0.008 55)' }}>{opt.desc}</span>
+                  <span className="text-[13px]" style={{ color: 'oklch(90% 0.005 55)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -236,7 +236,7 @@ export default function Setup() {
 
           {/* What matters most */}
           <div>
-            <label className="block text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
               What matters most to you? (select all that apply)
             </label>
             <div className="flex flex-wrap gap-2">
@@ -253,9 +253,9 @@ export default function Setup() {
                 <button
                   key={p}
                   onClick={() => togglePriority(p)}
-                  className="px-3.5 py-2 rounded-lg text-[12px] font-semibold cursor-pointer transition-all"
+                  className="px-3.5 py-2 rounded-lg text-[14px] font-semibold cursor-pointer transition-all"
                   style={{
-                    color: form.priorities.includes(p) ? 'oklch(90% 0.01 60)' : 'oklch(84% 0.008 55)',
+                    color: form.priorities.includes(p) ? 'oklch(90% 0.01 60)' : 'oklch(90% 0.005 55)',
                     background: form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.12)' : 'oklch(10.5% 0.012 45)',
                     border: `1px solid ${form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.3)' : 'oklch(16% 0.012 45)'}`,
                   }}
@@ -269,10 +269,10 @@ export default function Setup() {
           {/* Summary of their profile */}
           {(form.primaryContent || form.heroTalent || form.playstyle) && (
             <div className="p-5 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(16% 0.015 45)' }}>
-              <div className="text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+              <div className="text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
                 Your Optimization Profile
               </div>
-              <p className="text-[13px]" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
+              <p className="text-[15px]" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
                 {form.primaryContent === 'mythic-plus' && 'Your dossier will prioritize M+ builds, AoE rotation, dungeon tips, and Haste-focused gearing.'}
                 {form.primaryContent === 'raid' && 'Your dossier will prioritize raid builds, boss-specific tips, ST rotation, and Mastery-focused gearing.'}
                 {form.primaryContent === 'pvp' && 'Your dossier will prioritize PvP builds, arena strategy, burst windows, and Versatility-focused gearing.'}
@@ -305,7 +305,7 @@ export default function Setup() {
             <p className="text-sm mb-3" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
               <strong style={{ color: 'oklch(78% 0.16 60)' }}>How to get these:</strong>
             </p>
-            <ol className="space-y-2 text-[13px]" style={{ color: 'oklch(82% 0.008 55)', lineHeight: 1.6 }}>
+            <ol className="space-y-2 text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.6 }}>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>1.</span> Go to <a href="https://develop.battle.net" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'oklch(68% 0.16 285)' }}>develop.battle.net</a></li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>2.</span> Log in with your Battle.net account</li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>3.</span> Click "API Access" in the top nav</li>
@@ -332,7 +332,7 @@ export default function Setup() {
             <p className="text-sm mb-3" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
               <strong style={{ color: 'oklch(78% 0.16 60)' }}>How to get these:</strong>
             </p>
-            <ol className="space-y-2 text-[13px]" style={{ color: 'oklch(82% 0.008 55)', lineHeight: 1.6 }}>
+            <ol className="space-y-2 text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.6 }}>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>1.</span> Go to <a href="https://www.warcraftlogs.com/api/clients/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'oklch(68% 0.16 285)' }}>warcraftlogs.com/api/clients</a></li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>2.</span> Click "Create Client"</li>
               <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>3.</span> Name it anything, set redirect URI to <code style={{ color: 'oklch(68% 0.16 285)', background: 'oklch(12% 0.012 45)', padding: '1px 6px', borderRadius: 4, fontSize: 12 }}>http://localhost</code></li>
@@ -384,7 +384,7 @@ EOF`} />
 
             <CodeBlock label="7. Enable GitHub Pages" code={`gh api repos/${form.githubUsername || 'your-username'}/${form.repoName || 'my-druid-dossier'}/pages -X POST -f build_type=workflow`} />
 
-            <p className="text-sm mt-4" style={{ color: 'oklch(84% 0.008 55)' }}>
+            <p className="text-sm mt-4" style={{ color: 'oklch(90% 0.005 55)' }}>
               Your dossier will be live at: <strong style={{ color: 'oklch(78% 0.16 60)' }}>
                 https://{form.githubUsername || 'your-username'}.github.io/{form.repoName || 'my-druid-dossier'}/
               </strong>
@@ -558,7 +558,7 @@ function FaithStoryStep({ form, setForm, onBack, onNext }: {
       <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
         Your Character's Faith Story
       </h3>
-      <p className="text-[13px]" style={{ color: 'oklch(84% 0.008 55)', lineHeight: 1.7 }}>
+      <p className="text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>
         Every character carries the soul of their player. Answer these questions and a personal "Light Within"
         meditation will be generated, mapping your faith journey onto your character's story in Azeroth.
         Each combination produces unique prose. 6 x 6 x 6 x 6 = 1,296 possible stories.
@@ -572,7 +572,7 @@ function FaithStoryStep({ form, setForm, onBack, onNext }: {
       {/* Generated story preview */}
       {(form.faithOrigin || form.faithStruggle || form.faithVirtue || form.faithCalling) && (
         <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(78% 0.16 60 / 0.15)' }}>
-          <div className="text-[10px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+          <div className="text-[12px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
             {form.characterName ? `${form.characterName}'s Story` : 'Your Story Preview'}
           </div>
           {generateStory(form).split('\n\n').map((para, i) => (
@@ -601,7 +601,7 @@ function FaithQuestion({ label, color, options, selected, onSelect }: {
 }) {
   return (
     <div>
-      <label className="block text-[10px] uppercase font-bold mb-3" style={{ color, letterSpacing: '0.1em' }}>{label}</label>
+      <label className="block text-[12px] uppercase font-bold mb-3" style={{ color, letterSpacing: '0.1em' }}>{label}</label>
       <div className="grid grid-cols-2 gap-2">
         {options.map(opt => (
           <button
@@ -613,10 +613,10 @@ function FaithQuestion({ label, color, options, selected, onSelect }: {
               border: `1px solid ${selected === opt.id ? `${color}60` : 'oklch(16% 0.012 45)'}`,
             }}
           >
-            <span className="text-[13px] font-bold block mb-1" style={{ color: selected === opt.id ? color : 'oklch(84% 0.008 55)' }}>
+            <span className="text-[15px] font-bold block mb-1" style={{ color: selected === opt.id ? color : 'oklch(90% 0.005 55)' }}>
               {opt.label}
             </span>
-            <span className="text-[11px]" style={{ color: 'oklch(56% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
+            <span className="text-[13px]" style={{ color: 'oklch(56% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
           </button>
         ))}
       </div>
@@ -630,7 +630,7 @@ function Field({ label, value, onChange, placeholder, help, type = 'text' }: {
 }) {
   return (
     <div>
-      <label className="block text-[10px] uppercase font-bold mb-2" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.1em' }}>
+      <label className="block text-[12px] uppercase font-bold mb-2" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
         {label}
       </label>
       <input
@@ -646,7 +646,7 @@ function Field({ label, value, onChange, placeholder, help, type = 'text' }: {
           outline: 'none',
         }}
       />
-      {help && <p className="text-[11px] mt-1.5" style={{ color: 'oklch(82% 0.008 55)' }}>{help}</p>}
+      {help && <p className="text-[13px] mt-1.5" style={{ color: 'oklch(90% 0.005 55)' }}>{help}</p>}
     </div>
   );
 }
@@ -671,13 +671,13 @@ function CodeBlock({ label, code }: { label: string; code: string }) {
   return (
     <div className="mb-4">
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[11px] font-semibold" style={{ color: 'oklch(82% 0.008 55)' }}>{label}</span>
-        <button onClick={copy} className="text-[10px] font-semibold px-2 py-0.5 rounded cursor-pointer"
-          style={{ color: copied ? 'oklch(68% 0.18 155)' : 'oklch(84% 0.008 55)', background: 'oklch(14% 0.012 45)' }}>
+        <span className="text-[13px] font-semibold" style={{ color: 'oklch(90% 0.005 55)' }}>{label}</span>
+        <button onClick={copy} className="text-[12px] font-semibold px-2 py-0.5 rounded cursor-pointer"
+          style={{ color: copied ? 'oklch(68% 0.18 155)' : 'oklch(90% 0.005 55)', background: 'oklch(14% 0.012 45)' }}>
           {copied ? 'Copied!' : 'Copy'}
         </button>
       </div>
-      <pre className="p-3 rounded text-[12px] overflow-x-auto" style={{
+      <pre className="p-3 rounded text-[14px] overflow-x-auto" style={{
         fontFamily: '"JetBrains Mono", monospace',
         background: 'oklch(8% 0.008 45)',
         border: '1px solid oklch(14% 0.01 45)',
@@ -697,7 +697,7 @@ function NavButtons({ onBack, onNext }: { onBack?: () => void; onNext?: () => vo
     <div className="flex gap-3 pt-4">
       {onBack && (
         <button onClick={onBack} className="px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer"
-          style={{ color: 'oklch(82% 0.008 55)', background: 'oklch(12% 0.012 45)', border: '1px solid oklch(18% 0.012 45)' }}>
+          style={{ color: 'oklch(90% 0.005 55)', background: 'oklch(12% 0.012 45)', border: '1px solid oklch(18% 0.012 45)' }}>
           Back
         </button>
       )}

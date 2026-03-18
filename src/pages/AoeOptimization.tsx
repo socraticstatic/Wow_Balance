@@ -82,7 +82,7 @@ export default function AoeOptimization() {
 
       {/* ── Talent Tree Visualization ── */}
       <div ref={r2} className="reveal mb-20">
-        <div className="text-[9px] uppercase font-bold mb-6" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-6" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
           Talent Build: {aoeBuild.name}
         </div>
 
@@ -93,14 +93,14 @@ export default function AoeOptimization() {
         </div>
 
         {/* Stat priority note */}
-        <p className="mt-6 text-[12px] max-w-xl" style={{ color: 'oklch(52% 0.012 270)' }}>
+        <p className="mt-6 text-[14px] max-w-xl" style={{ color: 'oklch(52% 0.012 270)' }}>
           {aoeBuild.notes}
         </p>
       </div>
 
       {/* ── AoE Stat Priority ── */}
       <div ref={r3} className="reveal mb-20">
-        <div className="text-[9px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           AoE Stat Priority
         </div>
 
@@ -111,8 +111,8 @@ export default function AoeOptimization() {
                 <span className="text-sm font-bold" style={{ color: i === 0 ? 'oklch(94% 0.006 270)' : 'oklch(80% 0.008 270)' }}>
                   {s.stat}
                 </span>
-                <span className="font-mono text-[12px] font-bold" style={{
-                  color: i === 0 ? 'oklch(80% 0.18 80)' : 'oklch(84% 0.008 270)',
+                <span className="font-mono text-[14px] font-bold" style={{
+                  color: i === 0 ? 'oklch(80% 0.18 80)' : 'oklch(90% 0.005 270)',
                   fontVariantNumeric: 'tabular-nums',
                 }}>
                   {s.weight}
@@ -127,7 +127,7 @@ export default function AoeOptimization() {
                   }}
                 />
               </div>
-              <p className="text-[11px]" style={{ color: 'oklch(84% 0.008 55)' }}>{s.note}</p>
+              <p className="text-[13px]" style={{ color: 'oklch(90% 0.005 55)' }}>{s.note}</p>
             </div>
           ))}
         </div>
@@ -135,7 +135,7 @@ export default function AoeOptimization() {
 
       {/* ── AoE Rotation ── */}
       <div ref={r4} className="reveal mb-20">
-        <div className="text-[9px] uppercase font-bold mb-6" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-6" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
           AoE Rotation
         </div>
 
@@ -145,8 +145,8 @@ export default function AoeOptimization() {
             <h4 className="text-sm font-bold mb-4" style={{ color: 'oklch(72% 0.18 270)' }}>Pull Sequence</h4>
             <ol className="space-y-2">
               {aoeBuild.rotation.opener.map((step, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-[13px]" style={{ color: 'oklch(62% 0.012 270)', lineHeight: 1.6 }}>
-                  <span className="w-4 h-4 rounded-full text-[9px] flex items-center justify-center shrink-0 mt-0.5 font-mono font-bold"
+                <li key={i} className="flex items-start gap-2.5 text-[15px]" style={{ color: 'oklch(62% 0.012 270)', lineHeight: 1.6 }}>
+                  <span className="w-4 h-4 rounded-full text-[11px] flex items-center justify-center shrink-0 mt-0.5 font-mono font-bold"
                     style={{ color: 'oklch(72% 0.18 270)', background: 'oklch(72% 0.18 270 / 0.08)' }}>
                     {i + 1}
                   </span>
@@ -161,7 +161,7 @@ export default function AoeOptimization() {
             <h4 className="text-sm font-bold mb-4" style={{ color: 'oklch(68% 0.18 155)' }}>Sustained Priority</h4>
             <ul className="space-y-2">
               {aoeBuild.rotation.priority.map((step, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-[13px]" style={{ color: 'oklch(62% 0.012 270)', lineHeight: 1.6 }}>
+                <li key={i} className="flex items-start gap-2.5 text-[15px]" style={{ color: 'oklch(62% 0.012 270)', lineHeight: 1.6 }}>
                   <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-2" style={{ background: 'oklch(68% 0.18 155 / 0.5)' }} />
                   {step}
                 </li>
@@ -172,10 +172,10 @@ export default function AoeOptimization() {
 
         {/* Target count thresholds */}
         <div className="mt-6 p-5 rounded-lg max-w-xl glass">
-          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
             Target Count Rules
           </div>
-          <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(62% 0.012 270)' }}>
+          <div className="space-y-1.5 text-[15px]" style={{ color: 'oklch(62% 0.012 270)' }}>
             <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>1 target:</strong> Starsurge only. Wrath/Starfire filler.</p>
             <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>2+ targets:</strong> Starfall &gt; Starsurge. Starfire filler (hits all nearby).</p>
             <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>3+ targets:</strong> Moonfire all. Sunfire. Starfall on cooldown. Starfire spam.</p>
@@ -186,7 +186,7 @@ export default function AoeOptimization() {
 
       {/* ── AoE Damage Scaling Calculator ── */}
       <div className="reveal mb-20">
-        <div className="text-[9px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           AoE Damage Scaling
         </div>
         <AoeDamageCalculator />
@@ -194,7 +194,7 @@ export default function AoeOptimization() {
 
       {/* ── AoE Gear & Enhancements ── */}
       <div ref={r5} className="reveal">
-        <div className="text-[9px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-6" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
           AoE Gear & Enhancements
         </div>
 
@@ -202,7 +202,7 @@ export default function AoeOptimization() {
           {/* Key gear differences for AoE */}
           <div>
             <h4 className="text-sm font-bold mb-4" style={{ color: 'oklch(88% 0.006 270)' }}>Gear Notes</h4>
-            <ul className="space-y-3 text-[13px]" style={{ color: 'oklch(84% 0.008 270)', lineHeight: 1.7 }}>
+            <ul className="space-y-3 text-[15px]" style={{ color: 'oklch(90% 0.005 270)', lineHeight: 1.7 }}>
               <li className="pl-4" style={{ borderLeft: '2px solid oklch(80% 0.18 80)' }}>
                 <strong style={{ color: 'oklch(80% 0.18 80)' }}>Tier set is critical.</strong> 4pc Luminous Bloom procs exploding Shooting Stars on Starfall casts. More targets = more procs = more damage.
               </li>
@@ -212,7 +212,7 @@ export default function AoeOptimization() {
               <li className="pl-4" style={{ borderLeft: '2px solid oklch(68% 0.18 155)' }}>
                 <strong style={{ color: 'oklch(68% 0.18 155)' }}>Weapon:</strong> {bisGear.weapon.best}. If no raid weapon, craft {bisGear.weapon.craftedAlternative}.
               </li>
-              <li className="pl-4" style={{ borderLeft: '2px solid oklch(84% 0.008 270)' }}>
+              <li className="pl-4" style={{ borderLeft: '2px solid oklch(90% 0.005 270)' }}>
                 <strong style={{ color: 'oklch(80% 0.008 270)' }}>Embellishments:</strong> {bisGear.embellishments.first.name} (weapon) + {bisGear.embellishments.second.name} (wrist/waist).
               </li>
             </ul>
@@ -233,20 +233,20 @@ export default function AoeOptimization() {
             </div>
 
             <div className="mt-6">
-              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
+              <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
                 Gems
               </div>
-              <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(84% 0.008 270)' }}>
+              <div className="space-y-1.5 text-[15px]" style={{ color: 'oklch(90% 0.005 270)' }}>
                 <p><strong style={{ color: 'oklch(72% 0.18 270)' }}>1x</strong> Indecipherable Eversong Diamond (unique)</p>
                 <p><strong style={{ color: 'oklch(62% 0.012 270)' }}>All others:</strong> Haste gems (AoE priority) or sim yourself</p>
               </div>
             </div>
 
             <div className="mt-6">
-              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
+              <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
                 Consumables
               </div>
-              <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(84% 0.008 270)' }}>
+              <div className="space-y-1.5 text-[15px]" style={{ color: 'oklch(90% 0.005 270)' }}>
                 <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>Flask:</strong> Flask of the Magisters</p>
                 <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>Food:</strong> Harandar Celebration (feast) or Royal Roast</p>
                 <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>Potion:</strong> Potion of Recklessness (on big pulls)</p>
@@ -263,7 +263,7 @@ export default function AoeOptimization() {
 function TalentGroup({ group }: { group: { label: string; color: string; talents: Array<{ name: string; desc: string }> } }) {
   return (
     <div className="p-5 rounded-lg glass card-hover">
-      <div className="text-[10px] uppercase font-bold mb-4" style={{ color: group.color, letterSpacing: '0.1em' }}>
+      <div className="text-[12px] uppercase font-bold mb-4" style={{ color: group.color, letterSpacing: '0.1em' }}>
         {group.label}
       </div>
       <div className="space-y-3">
@@ -271,8 +271,8 @@ function TalentGroup({ group }: { group: { label: string; color: string; talents
           <div key={t.name} className="flex items-start gap-3">
             <SpellIcon name={t.name} size="small" className="shrink-0 mt-0.5 rounded" />
             <div>
-              <span className="text-[13px] font-bold" style={{ color: 'oklch(86% 0.006 270)' }}>{t.name}</span>
-              <p className="text-[11px] mt-0.5" style={{ color: 'oklch(58% 0.012 270)', lineHeight: 1.5 }}>{t.desc}</p>
+              <span className="text-[15px] font-bold" style={{ color: 'oklch(86% 0.006 270)' }}>{t.name}</span>
+              <p className="text-[13px] mt-0.5" style={{ color: 'oklch(58% 0.012 270)', lineHeight: 1.5 }}>{t.desc}</p>
             </div>
           </div>
         ))}
@@ -308,7 +308,7 @@ function AoeDamageCalculator() {
   return (
     <div className="max-w-xl">
       <div className="flex items-center gap-4 mb-6">
-        <label className="text-[13px] font-semibold" style={{ color: 'oklch(86% 0.008 270)' }}>
+        <label className="text-[15px] font-semibold" style={{ color: 'oklch(92% 0.004 270)' }}>
           Targets:
         </label>
         <input
@@ -329,8 +329,8 @@ function AoeDamageCalculator() {
         {bars.map(b => (
           <div key={b.label}>
             <div className="flex items-baseline justify-between mb-1">
-              <span className="text-[12px] font-medium" style={{ color: 'oklch(84% 0.008 270)' }}>{b.label}</span>
-              <span className="font-mono text-[11px]" style={{ color: b.color, fontVariantNumeric: 'tabular-nums' }}>
+              <span className="text-[14px] font-medium" style={{ color: 'oklch(90% 0.005 270)' }}>{b.label}</span>
+              <span className="font-mono text-[13px]" style={{ color: b.color, fontVariantNumeric: 'tabular-nums' }}>
                 {b.value.toFixed(1)}x
               </span>
             </div>
@@ -346,14 +346,14 @@ function AoeDamageCalculator() {
 
       <div className="p-4 rounded-lg glass-solar">
         <div className="flex items-baseline justify-between">
-          <span className="text-[13px] font-bold" style={{ color: 'oklch(88% 0.006 270)' }}>
+          <span className="text-[15px] font-bold" style={{ color: 'oklch(88% 0.006 270)' }}>
             Relative DPS vs Single Target
           </span>
           <span className="font-mono text-xl font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
             {stMultiplier}x
           </span>
         </div>
-        <p className="text-[11px] mt-1" style={{ color: 'oklch(58% 0.012 270)' }}>
+        <p className="text-[13px] mt-1" style={{ color: 'oklch(58% 0.012 270)' }}>
           {targets === 1 ? 'Single target baseline' :
            targets <= 3 ? 'Starfall becomes efficient. Starfire cleaves worth it.' :
            targets <= 6 ? 'Sweet spot for Balance. All abilities scale well.' :
@@ -369,10 +369,10 @@ function EnchantRow({ slot, value, note }: { slot: string; value: string; note: 
   return (
     <div className="flex items-baseline justify-between gap-3 py-1.5" style={{ borderBottom: '1px solid oklch(12% 0.008 270)' }}>
       <div className="flex items-baseline gap-2">
-        <span className="text-[12px] font-medium w-14" style={{ color: 'oklch(84% 0.008 55)' }}>{slot}</span>
-        <span className="text-[13px] font-semibold" style={{ color: 'oklch(68% 0.18 155)' }}>{value}</span>
+        <span className="text-[14px] font-medium w-14" style={{ color: 'oklch(90% 0.005 55)' }}>{slot}</span>
+        <span className="text-[15px] font-semibold" style={{ color: 'oklch(68% 0.18 155)' }}>{value}</span>
       </div>
-      <span className="text-[10px]" style={{ color: 'oklch(48% 0.012 270)' }}>{note}</span>
+      <span className="text-[12px]" style={{ color: 'oklch(48% 0.012 270)' }}>{note}</span>
     </div>
   );
 }
