@@ -20,12 +20,12 @@ export default function Rankings() {
       {/* Affixes - inline pills */}
       {topPlayers.currentAffixes && (
         <div className="flex flex-wrap items-center gap-2 mb-14">
-          <span className="text-[9px] uppercase font-bold mr-1" style={{ color: 'oklch(50% 0.012 270)', letterSpacing: '0.12em' }}>
+          <span className="text-[9px] uppercase font-bold mr-1" style={{ color: 'oklch(68% 0.008 270)', letterSpacing: '0.12em' }}>
             Affixes
           </span>
           {topPlayers.currentAffixes.affixes.map(a => (
             <span key={a.name} className="px-2.5 py-1 rounded text-[11px] font-medium"
-              style={{ color: 'oklch(74% 0.01 270)', background: 'oklch(12% 0.012 270)', border: '1px solid oklch(18% 0.012 270)' }}>
+              style={{ color: 'oklch(84% 0.008 270)', background: 'oklch(12% 0.012 270)', border: '1px solid oklch(18% 0.012 270)' }}>
               {a.name}
             </span>
           ))}
@@ -51,7 +51,7 @@ export default function Rankings() {
                   </span>
                 </div>
                 <div className="text-sm font-bold" style={{ color: 'oklch(90% 0.006 270)' }}>{p.name}</div>
-                <div className="text-[11px]" style={{ color: 'oklch(50% 0.012 270)' }}>{p.realm} - {p.region}</div>
+                <div className="text-[11px]" style={{ color: 'oklch(68% 0.008 270)' }}>{p.realm} - {p.region}</div>
               </div>
             ))}
           </div>
@@ -94,7 +94,7 @@ export default function Rankings() {
               </div>
               <div>
                 <span className="text-sm font-bold" style={{ color: 'oklch(86% 0.006 270)' }}>{f.name}</span>
-                <span className="text-[11px] ml-2" style={{ color: 'oklch(50% 0.012 270)' }}>{f.role}</span>
+                <span className="text-[11px] ml-2" style={{ color: 'oklch(68% 0.008 270)' }}>{f.role}</span>
                 <p className="text-[12px] mt-0.5" style={{ color: 'oklch(58% 0.012 270)' }}>{f.notes}</p>
               </div>
             </div>

@@ -108,7 +108,7 @@ export default function CharacterModel({ height = 500, className = '' }: Props) 
       />
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-[11px] font-medium" style={{ color: 'oklch(50% 0.012 50)' }}>
+          <div className="text-[11px] font-medium" style={{ color: 'oklch(68% 0.008 55)' }}>
             Loading 3D model...
           </div>
         </div>

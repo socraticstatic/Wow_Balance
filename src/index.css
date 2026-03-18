@@ -13,11 +13,11 @@
   --color-nature: oklch(52% 0.14 155);
   --color-burgundy: oklch(50% 0.14 20);
 
-  /* ── Text (warm-tinted, aggressively boosted for dark bg readability) ── */
-  --color-text-1: oklch(94% 0.006 60);
-  --color-text-2: oklch(80% 0.01 55);
-  --color-text-3: oklch(65% 0.01 50);
-  --color-text-4: oklch(48% 0.008 45);
+  /* ── Text (WCAG compliant on 7% bg - minimum 80% for body) ── */
+  --color-text-1: oklch(95% 0.005 60);
+  --color-text-2: oklch(85% 0.008 55);
+  --color-text-3: oklch(72% 0.008 50);
+  --color-text-4: oklch(58% 0.006 45);
 
   /* ── Borders ── */
   --color-border: oklch(16% 0.012 45);

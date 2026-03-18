@@ -106,7 +106,7 @@ export default function GearDelta() {
                 <div className="text-[9px] uppercase font-bold mb-1 capitalize" style={{ color: has ? 'oklch(80% 0.18 80)' : 'oklch(38% 0.01 50)' }}>
                   {slot}
                 </div>
-                <div className="text-[11px]" style={{ color: has ? 'oklch(68% 0.012 50)' : 'oklch(30% 0.01 50)' }}>
+                <div className="text-[11px]" style={{ color: has ? 'oklch(82% 0.008 55)' : 'oklch(30% 0.01 50)' }}>
                   {has ? has.name : 'Missing'}
                 </div>
               </div>
@@ -114,10 +114,10 @@ export default function GearDelta() {
           })}
         </div>
         <div className="glass p-3 rounded-lg">
-          <div className="text-[11px] mb-1" style={{ color: 'oklch(68% 0.01 50)' }}>
+          <div className="text-[11px] mb-1" style={{ color: 'oklch(82% 0.008 55)' }}>
             <strong style={{ color: 'oklch(80% 0.18 80)' }}>2pc:</strong> {bisGear.tierSet.twoPiece}
           </div>
-          <div className="text-[11px]" style={{ color: 'oklch(68% 0.01 50)' }}>
+          <div className="text-[11px]" style={{ color: 'oklch(82% 0.008 55)' }}>
             <strong style={{ color: 'oklch(80% 0.18 80)' }}>4pc:</strong> {bisGear.tierSet.fourPiece}
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function GearDelta() {
               }}
             >
               {/* Slot */}
-              <div className="col-span-2 text-[11px] capitalize font-medium" style={{ color: 'oklch(68% 0.01 50)' }}>
+              <div className="col-span-2 text-[11px] capitalize font-medium" style={{ color: 'oklch(82% 0.008 55)' }}>
                 {d.slot.replace(/(\d)/, ' $1')}
                 {d.isTierSlot && <span className="ml-1 text-[8px]" style={{ color: 'oklch(80% 0.18 80)' }}>T</span>}
               </div>
@@ -150,7 +150,7 @@ export default function GearDelta() {
                 <div className="text-[12px] font-semibold" style={{ color: 'oklch(75% 0.015 270)' }}>
                   {d.current.name}
                 </div>
-                <div className="text-[10px] font-mono" style={{ color: 'oklch(58% 0.01 50)', fontVariantNumeric: 'tabular-nums' }}>
+                <div className="text-[10px] font-mono" style={{ color: 'oklch(72% 0.008 55)', fontVariantNumeric: 'tabular-nums' }}>
                   ilvl {d.current.ilvl}
                 </div>
               </div>
@@ -164,10 +164,10 @@ export default function GearDelta() {
 
               {/* BiS target */}
               <div className="col-span-3">
-                <div className="text-[12px] font-semibold" style={{ color: d.bisTier ? 'oklch(80% 0.18 80)' : 'oklch(68% 0.012 50)' }}>
+                <div className="text-[12px] font-semibold" style={{ color: d.bisTier ? 'oklch(80% 0.18 80)' : 'oklch(82% 0.008 55)' }}>
                   {d.bisName}
                 </div>
-                <div className="text-[10px]" style={{ color: 'oklch(58% 0.01 50)' }}>
+                <div className="text-[10px]" style={{ color: 'oklch(72% 0.008 55)' }}>
                   {d.bisSource}
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function GearDelta() {
       )}
 
       <div className="mt-12 text-center">
-        <p className="text-[11px] italic" style={{ color: 'oklch(58% 0.01 50)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[11px] italic" style={{ color: 'oklch(72% 0.008 55)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           BiS targets are for Mythic raid. Gear delta updates when character data syncs.
         </p>
       </div>

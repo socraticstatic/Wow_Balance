@@ -112,7 +112,7 @@ export default function AoeOptimization() {
                   {s.stat}
                 </span>
                 <span className="font-mono text-[12px] font-bold" style={{
-                  color: i === 0 ? 'oklch(80% 0.18 80)' : 'oklch(74% 0.01 270)',
+                  color: i === 0 ? 'oklch(80% 0.18 80)' : 'oklch(84% 0.008 270)',
                   fontVariantNumeric: 'tabular-nums',
                 }}>
                   {s.weight}
@@ -127,7 +127,7 @@ export default function AoeOptimization() {
                   }}
                 />
               </div>
-              <p className="text-[11px]" style={{ color: 'oklch(72% 0.01 50)' }}>{s.note}</p>
+              <p className="text-[11px]" style={{ color: 'oklch(84% 0.008 55)' }}>{s.note}</p>
             </div>
           ))}
         </div>
@@ -172,7 +172,7 @@ export default function AoeOptimization() {
 
         {/* Target count thresholds */}
         <div className="mt-6 p-5 rounded-lg max-w-xl glass">
-          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.12em' }}>
+          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
             Target Count Rules
           </div>
           <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(62% 0.012 270)' }}>
@@ -202,7 +202,7 @@ export default function AoeOptimization() {
           {/* Key gear differences for AoE */}
           <div>
             <h4 className="text-sm font-bold mb-4" style={{ color: 'oklch(88% 0.006 270)' }}>Gear Notes</h4>
-            <ul className="space-y-3 text-[13px]" style={{ color: 'oklch(74% 0.01 270)', lineHeight: 1.7 }}>
+            <ul className="space-y-3 text-[13px]" style={{ color: 'oklch(84% 0.008 270)', lineHeight: 1.7 }}>
               <li className="pl-4" style={{ borderLeft: '2px solid oklch(80% 0.18 80)' }}>
                 <strong style={{ color: 'oklch(80% 0.18 80)' }}>Tier set is critical.</strong> 4pc Luminous Bloom procs exploding Shooting Stars on Starfall casts. More targets = more procs = more damage.
               </li>
@@ -212,7 +212,7 @@ export default function AoeOptimization() {
               <li className="pl-4" style={{ borderLeft: '2px solid oklch(68% 0.18 155)' }}>
                 <strong style={{ color: 'oklch(68% 0.18 155)' }}>Weapon:</strong> {bisGear.weapon.best}. If no raid weapon, craft {bisGear.weapon.craftedAlternative}.
               </li>
-              <li className="pl-4" style={{ borderLeft: '2px solid oklch(74% 0.01 270)' }}>
+              <li className="pl-4" style={{ borderLeft: '2px solid oklch(84% 0.008 270)' }}>
                 <strong style={{ color: 'oklch(80% 0.008 270)' }}>Embellishments:</strong> {bisGear.embellishments.first.name} (weapon) + {bisGear.embellishments.second.name} (wrist/waist).
               </li>
             </ul>
@@ -233,20 +233,20 @@ export default function AoeOptimization() {
             </div>
 
             <div className="mt-6">
-              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.12em' }}>
+              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
                 Gems
               </div>
-              <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(74% 0.01 270)' }}>
+              <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(84% 0.008 270)' }}>
                 <p><strong style={{ color: 'oklch(72% 0.18 270)' }}>1x</strong> Indecipherable Eversong Diamond (unique)</p>
                 <p><strong style={{ color: 'oklch(62% 0.012 270)' }}>All others:</strong> Haste gems (AoE priority) or sim yourself</p>
               </div>
             </div>
 
             <div className="mt-6">
-              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.12em' }}>
+              <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.12em' }}>
                 Consumables
               </div>
-              <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(74% 0.01 270)' }}>
+              <div className="space-y-1.5 text-[13px]" style={{ color: 'oklch(84% 0.008 270)' }}>
                 <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>Flask:</strong> Flask of the Magisters</p>
                 <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>Food:</strong> Harandar Celebration (feast) or Royal Roast</p>
                 <p><strong style={{ color: 'oklch(80% 0.008 270)' }}>Potion:</strong> Potion of Recklessness (on big pulls)</p>
@@ -308,7 +308,7 @@ function AoeDamageCalculator() {
   return (
     <div className="max-w-xl">
       <div className="flex items-center gap-4 mb-6">
-        <label className="text-[13px] font-semibold" style={{ color: 'oklch(78% 0.01 270)' }}>
+        <label className="text-[13px] font-semibold" style={{ color: 'oklch(86% 0.008 270)' }}>
           Targets:
         </label>
         <input
@@ -329,7 +329,7 @@ function AoeDamageCalculator() {
         {bars.map(b => (
           <div key={b.label}>
             <div className="flex items-baseline justify-between mb-1">
-              <span className="text-[12px] font-medium" style={{ color: 'oklch(76% 0.01 270)' }}>{b.label}</span>
+              <span className="text-[12px] font-medium" style={{ color: 'oklch(84% 0.008 270)' }}>{b.label}</span>
               <span className="font-mono text-[11px]" style={{ color: b.color, fontVariantNumeric: 'tabular-nums' }}>
                 {b.value.toFixed(1)}x
               </span>
@@ -369,7 +369,7 @@ function EnchantRow({ slot, value, note }: { slot: string; value: string; note: 
   return (
     <div className="flex items-baseline justify-between gap-3 py-1.5" style={{ borderBottom: '1px solid oklch(12% 0.008 270)' }}>
       <div className="flex items-baseline gap-2">
-        <span className="text-[12px] font-medium w-14" style={{ color: 'oklch(72% 0.01 50)' }}>{slot}</span>
+        <span className="text-[12px] font-medium w-14" style={{ color: 'oklch(84% 0.008 55)' }}>{slot}</span>
         <span className="text-[13px] font-semibold" style={{ color: 'oklch(68% 0.18 155)' }}>{value}</span>
       </div>
       <span className="text-[10px]" style={{ color: 'oklch(48% 0.012 270)' }}>{note}</span>

@@ -43,7 +43,7 @@ export default function Consumables() {
               onClick={() => setContentType(ct)}
               className="px-4 py-2 rounded text-[13px] font-semibold cursor-pointer transition-all"
               style={{
-                color: on ? 'oklch(96% 0.005 270)' : 'oklch(72% 0.01 50)',
+                color: on ? 'oklch(96% 0.005 270)' : 'oklch(84% 0.008 55)',
                 background: on ? 'oklch(16% 0.02 270)' : 'transparent',
                 border: `1px solid ${on ? 'oklch(24% 0.025 270)' : 'oklch(14% 0.01 270)'}`,
               }}
@@ -94,7 +94,7 @@ export default function Consumables() {
                       {item.goldEstimate}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 mb-1.5 text-[11px]" style={{ color: 'oklch(68% 0.01 50)' }}>
+                  <div className="flex items-center gap-3 mb-1.5 text-[11px]" style={{ color: 'oklch(82% 0.008 55)' }}>
                     <span style={{ color: section.accent }}>{item.value}</span>
                     <span className="w-1 h-1 rounded-full" style={{ background: 'oklch(22% 0.01 50)' }} />
                     <span>{item.source}</span>

@@ -19,11 +19,11 @@ export default function Gear() {
         <h4 className="text-sm font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)' }}>
           {bisGear.tierSet.name}
         </h4>
-        <p className="text-[13px] mb-1.5" style={{ color: 'oklch(74% 0.01 270)', lineHeight: 1.7 }}>
-          <strong style={{ color: 'oklch(78% 0.01 270)' }}>2pc</strong> {bisGear.tierSet.twoPiece}
+        <p className="text-[13px] mb-1.5" style={{ color: 'oklch(84% 0.008 270)', lineHeight: 1.7 }}>
+          <strong style={{ color: 'oklch(86% 0.008 270)' }}>2pc</strong> {bisGear.tierSet.twoPiece}
         </p>
-        <p className="text-[13px]" style={{ color: 'oklch(74% 0.01 270)', lineHeight: 1.7 }}>
-          <strong style={{ color: 'oklch(78% 0.01 270)' }}>4pc</strong> {bisGear.tierSet.fourPiece}
+        <p className="text-[13px]" style={{ color: 'oklch(84% 0.008 270)', lineHeight: 1.7 }}>
+          <strong style={{ color: 'oklch(86% 0.008 270)' }}>4pc</strong> {bisGear.tierSet.fourPiece}
         </p>
       </div>
 
@@ -44,7 +44,7 @@ export default function Gear() {
       <div ref={r3} className="reveal rounded-lg overflow-hidden mb-16" style={{ border: '1px solid oklch(14% 0.01 270)' }}>
         {/* Header row - desktop only */}
         <div className="hidden sm:grid grid-cols-12 gap-3 px-5 py-2.5 text-[9px] uppercase font-bold"
-          style={{ background: 'oklch(9.5% 0.01 270)', color: 'oklch(50% 0.012 270)', letterSpacing: '0.12em' }}>
+          style={{ background: 'oklch(9.5% 0.01 270)', color: 'oklch(68% 0.008 270)', letterSpacing: '0.12em' }}>
           <div className="col-span-2">Slot</div>
           <div className="col-span-6">Item</div>
           <div className="col-span-4">Source</div>
@@ -58,7 +58,7 @@ export default function Gear() {
               borderTop: i === 0 ? 'none' : '1px solid oklch(13% 0.008 270)',
               ...(item.isTier ? { borderLeft: '2px solid oklch(80% 0.18 80)' } : {}),
             }}>
-            <div className="col-span-2 text-[12px]" style={{ color: 'oklch(72% 0.01 50)' }}>{item.slot}</div>
+            <div className="col-span-2 text-[12px]" style={{ color: 'oklch(84% 0.008 55)' }}>{item.slot}</div>
             <div className="col-span-6 text-[13px] font-semibold" style={{ color: item.isTier ? 'oklch(80% 0.18 80)' : 'oklch(88% 0.006 270)' }}>
               {item.name}
             </div>
@@ -105,14 +105,14 @@ export default function Gear() {
           <div>
             <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(52% 0.012 270)', letterSpacing: '0.12em' }}>Weapon</div>
             <p className="text-sm font-semibold mb-1" style={{ color: 'oklch(88% 0.006 270)' }}>{bisGear.weapon.best}</p>
-            <p className="text-[12px]" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.6 }}>{bisGear.weapon.notes}</p>
+            <p className="text-[12px]" style={{ color: 'oklch(84% 0.008 55)', lineHeight: 1.6 }}>{bisGear.weapon.notes}</p>
           </div>
           <div>
             <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(52% 0.012 270)', letterSpacing: '0.12em' }}>Embellishments</div>
             <p className="text-sm font-semibold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>{bisGear.embellishments.first.name}</p>
-            <p className="text-[12px] mb-3" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.6 }}>{bisGear.embellishments.first.notes}</p>
+            <p className="text-[12px] mb-3" style={{ color: 'oklch(84% 0.008 55)', lineHeight: 1.6 }}>{bisGear.embellishments.first.notes}</p>
             <p className="text-sm font-semibold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>{bisGear.embellishments.second.name}</p>
-            <p className="text-[12px]" style={{ color: 'oklch(72% 0.01 50)', lineHeight: 1.6 }}>{bisGear.embellishments.second.notes}</p>
+            <p className="text-[12px]" style={{ color: 'oklch(84% 0.008 55)', lineHeight: 1.6 }}>{bisGear.embellishments.second.notes}</p>
           </div>
         </div>
       </div>

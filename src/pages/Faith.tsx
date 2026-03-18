@@ -81,7 +81,7 @@ export default function Faith() {
           fontFamily: '"Cormorant", Georgia, serif',
           fontWeight: 500,
           fontSize: '1rem',
-          color: 'oklch(72% 0.01 50)',
+          color: 'oklch(84% 0.008 55)',
           lineHeight: 1.8,
         }}>
           The dossier tracks gear and parses and tier sets. But the player behind the character carries
@@ -99,10 +99,10 @@ function Parallel({ wow, faith, text, accent }: { wow: string; faith: string; te
       <div className="flex items-baseline gap-2 mb-1">
         <span className="text-[13px] font-bold" style={{ color: accent }}>{wow}</span>
       </div>
-      <div className="text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.01 50)', letterSpacing: '0.1em' }}>
+      <div className="text-[10px] uppercase font-bold mb-3" style={{ color: 'oklch(84% 0.008 55)', letterSpacing: '0.1em' }}>
         {faith}
       </div>
-      <p className="text-[13px]" style={{ color: 'oklch(70% 0.01 50)', lineHeight: 1.75 }}>
+      <p className="text-[13px]" style={{ color: 'oklch(82% 0.008 55)', lineHeight: 1.75 }}>
         {text}
       </p>
     </div>
