@@ -3,200 +3,220 @@ import { useReveal } from '../hooks/useReveal';
 
 interface BossGuide {
   name: string;
+  raid: string;
   order: number;
-  type: 'Single Target' | 'Cleave' | 'Council' | 'Add Waves' | 'Intermission';
+  type: 'Single Target' | 'Cleave' | 'Council' | 'Add Waves' | 'Multi-Phase';
   difficulty: 'Easy' | 'Medium' | 'Hard';
-  balanceRating: number; // 1-5 stars, how good Balance is on this fight
+  balanceRating: number;
   keyMechanics: string[];
   balanceTips: string[];
   cdTiming: string;
   positioning: string;
 }
 
-const raidName = 'Manaforge Omega';
-const raidTier = 'Midnight Season 1';
-
-// Boss data from Midnight 12.0.1
 const bosses: BossGuide[] = [
   {
     name: 'Imperator Averzian',
+    raid: 'The Voidspire',
     order: 1,
     type: 'Single Target',
-    difficulty: 'Easy',
+    difficulty: 'Medium',
     balanceRating: 3,
     keyMechanics: [
-      'Mana Overload - raid-wide AoE, spread to reduce damage',
-      'Arcane Barrage - dodge swirlies on the ground',
-      'Shield Phase - burn shield before mana detonation',
+      '3x3 grid arena. Servants spawn on tiles and claim them.',
+      'If 3 claimed tiles align in a row, instant wipe.',
+      'Kill servants before they finish claiming. Interrupt Pitch Bulwark.',
     ],
     balanceTips: [
-      'Pure ST fight. Use Keeper of the Grove for maximum single target.',
-      'Save Incarnation for shield phases when burn matters most.',
-      'Starfall is wasted here. Starsurge only.',
+      'Primarily ST on boss. Save an Eclipse charge for servant spawns.',
+      'Starfall is wasted - adds die fast and are spread across the grid.',
+      'Interrupt Pitch Bulwark (gives absorb shields to nearby enemies).',
+      'Ramp time works against you on quick add swaps. Pre-DoT as servants spawn.',
     ],
-    cdTiming: 'Incarnation on pull, then align with shield phases (every ~90s).',
-    positioning: 'Max range. Spread for Mana Overload. Stack for healer CDs during Detonation.',
+    cdTiming: 'CDs on pull for boss burn. Hold second set for servant spawns if your guild needs DPS there.',
+    positioning: 'Max range from boss. Watch the grid - never stand on a tile about to complete a row.',
   },
   {
     name: 'Vorasius',
+    raid: 'The Voidspire',
     order: 2,
-    type: 'Cleave',
-    difficulty: 'Medium',
+    type: 'Single Target',
+    difficulty: 'Easy',
     balanceRating: 4,
     keyMechanics: [
-      'Devour Essence - tank buster, position boss away from raid',
-      'Spawns Void Tendrils (adds) that must be cleaved down',
-      'Shadow Crash - targeted circles, move out quickly',
+      'Stationary boss creates crystal walls dividing the arena.',
+      'Blistercreep adds must be pulled into walls (2 explosions each) to destroy walls.',
+      'Void Breath fires in a direction - dodge. Primordial Roar is stacking raid damage.',
     ],
     balanceTips: [
-      'Elune\'s Chosen shines here. Starfall hits boss + tendrils simultaneously.',
-      'Maintain Moonfire on all tendrils for Shooting Stars procs.',
-      'Fury of Elune on tendril spawns for maximum value.',
+      'Turret-friendly fight. High uptime on boss. Mostly ST.',
+      'Assist damage on Blistercreeps but let tank position them into walls.',
+      'Bear Form + Heart of the Wild for late Primordial Roar stacks.',
+      'One of your best pure ST logs. Plant and cast.',
     ],
-    cdTiming: 'Incarnation when tendrils spawn. Fury of Elune every tendril wave.',
-    positioning: 'Stack on boss for cleave. Move out for Shadow Crash, then return immediately.',
-  },
-  {
-    name: 'Vaelgor & Ezzorak',
-    order: 3,
-    type: 'Council',
-    difficulty: 'Hard',
-    balanceRating: 5,
-    keyMechanics: [
-      'Two bosses share health - multidot is king',
-      'Vaelgor casts Fel Blast (interrupt or die)',
-      'Ezzorak charges random players - dodge',
-      'Shared abilities intensify at 30%',
-    ],
-    balanceTips: [
-      'This is YOUR fight. Balance excels at 2-target sustained cleave.',
-      'Moonfire both bosses at all times. Sunfire hits both if close enough.',
-      'Starfall hits both. Never Starsurge unless one boss needs burst.',
-      'Solar Beam the Fel Blast casts on Vaelgor.',
-    ],
-    cdTiming: 'Incarnation on pull. Force of Nature/Fury of Elune on cooldown - always worth it with 2 targets.',
-    positioning: 'Stay between both bosses for Starfall/Starfire to hit both. Max range from melee.',
+    cdTiming: 'Align with Heroism on pull. Use CDs on cooldown - no hold needed.',
+    positioning: 'Max range. Stay clear of crystal wall paths. Don\'t stand in Void Breath cone.',
   },
   {
     name: 'Fallen-King Salhadaar',
-    order: 4,
-    type: 'Intermission',
+    raid: 'The Voidspire',
+    order: 3,
+    type: 'Add Waves',
     difficulty: 'Medium',
-    balanceRating: 3,
+    balanceRating: 5,
     keyMechanics: [
-      'P1: Single target boss, dodge shadow patches',
-      'Intermission: Add spawns from all sides, must AoE',
-      'P2: Boss empowered, increased damage taken by raid',
+      'Kill Void Orbs that spawn periodically.',
+      'Manage puddle placement - don\'t paint yourself into a corner.',
+      'Survive arena-wide beam phases with movement.',
     ],
     balanceTips: [
-      'Go Elune\'s Chosen. The intermission AoE more than compensates for slightly less ST.',
-      'Pool AP to 80+ before intermission. Dump Starfall immediately on add spawn.',
-      'Fury of Elune the add wave. They die fast with proper AoE.',
+      'Boomkin excels here. ST boss + burst AoE on grouped orbs is your exact profile.',
+      'Hold CDs for orb spawn windows to maximize cleave.',
+      'Bank instant-cast procs for beam movement phases.',
+      'Puddle placement: always move toward open space, never toward walls.',
     ],
-    cdTiming: 'Save Incarnation for intermission. The add phase is the DPS check, not the boss.',
-    positioning: 'Center of room for P1. Edge of room facing add spawns for intermission.',
+    cdTiming: 'Hold Incarnation/CA for orb spawns. Fury of Elune on orb groups.',
+    positioning: 'Center of room. Move puddles to edges. Face open space for beam dodges.',
   },
   {
-    name: 'Lightblinded Vanguard',
-    order: 5,
-    type: 'Add Waves',
+    name: 'Vaelgor & Ezzorak',
+    raid: 'The Voidspire',
+    order: 4,
+    type: 'Cleave',
     difficulty: 'Hard',
     balanceRating: 5,
     keyMechanics: [
-      'Waves of zealot adds charge the raid every 30s',
-      'Boss shield regenerates between waves',
-      'Light Barrier - must break before next wave or wipe',
-      'Adds fixate random ranged players',
+      'Two dragons. Must die within 10% HP of each other or survivor enrages.',
+      'Raid splits in half. Each dragon has different mechanics.',
+      'Intermission at 100 energy: dragons fly, burn Manifestation of Midnight add.',
     ],
     balanceTips: [
-      'Balance DOMINATES this fight. Uncapped Starfall + Starfire on add waves is massive.',
-      'Pool AP between waves. 100 AP dump into Starfall when adds arrive.',
-      'Typhoon adds away from raid when they fixate melee.',
-      'Solar Beam caster zealots every wave.',
+      'THIS IS YOUR FIGHT. Multi-DoT both dragons. Starfall hits both if in range.',
+      'Moonfire + Sunfire both targets at all times. Starfall is always up.',
+      'Starsurge to equalize HP between dragons when one is lower.',
+      'Incarnation for intermission add burn - it\'s the DPS check.',
     ],
-    cdTiming: 'Incarnation every other wave. Fury of Elune every wave. CDs on ADDS, not boss.',
-    positioning: 'Max range from boss. Kite fixated adds toward tank. Starfall radius covers everything.',
+    cdTiming: 'Minor CDs on pull. Save Incarnation/CA for intermission Manifestation add.',
+    positioning: 'Position where Starfall radius covers both dragons. Never tunnel one.',
   },
   {
-    name: 'Crown of the Cosmos',
-    order: 6,
-    type: 'Single Target',
-    difficulty: 'Medium',
-    balanceRating: 3,
-    keyMechanics: [
-      'Cosmic Ray - frontal cone, dodge immediately',
-      'Gravity Well - pulls players to center, resist or die',
-      'Stellar Collapse at 40% and 20% - burn phases',
-    ],
-    balanceTips: [
-      'Keeper is better here. Pure ST with tight burn windows.',
-      'If going Elune\'s, switch to Starsurge only. No Starfall targets.',
-      'Gravity Well lets you keep casting at range - don\'t panic.',
-    ],
-    cdTiming: 'Incarnation at 42% to push through first Stellar Collapse. Second use at 22%.',
-    positioning: 'Max range. Pre-position away from Cosmic Ray direction.',
-  },
-  {
-    name: 'Chimaerus the Undreamt God',
-    order: 7,
-    type: 'Cleave',
-    difficulty: 'Hard',
-    balanceRating: 4,
-    keyMechanics: [
-      'Three heads active at once - each has different abilities',
-      'One head must die first (raid calls priority)',
-      'Heads regenerate health over time',
-      'Dream Phase - avoid nightmare zones',
-    ],
-    balanceTips: [
-      'Elune\'s Chosen. Three targets = Starfall always active.',
-      'Moonfire all three heads. Sunfire hits all if positioned correctly.',
-      'Focus Starfire on priority head while Starfall passively damages all.',
-    ],
-    cdTiming: 'Incarnation when all 3 heads are active. Fury of Elune on cooldown - 3 targets makes it insane.',
-    positioning: 'Center between heads. All three should be in Starfall radius.',
-  },
-  {
-    name: 'Belo\'ren, Child of Al\'ar',
-    order: 8,
-    type: 'Intermission',
-    difficulty: 'Hard',
-    balanceRating: 4,
-    keyMechanics: [
-      'Phoenix boss - rebirths at 1% health',
-      'Fire adds spawn from corpse',
-      'Intermission: raid soaks fire orbs or they explode',
-      'Enrage timer is tight on Mythic',
-    ],
-    balanceTips: [
-      'Elune\'s Chosen for add phase value. Keeper if your raid needs faster boss burn.',
-      'Pool AP before 1% push. Mass AoE the fire adds instantly.',
-      'Stampeding Roar to help raid reach fire orbs during intermission.',
-    ],
-    cdTiming: 'Incarnation on pull for boss burn. Second use during add phase.',
-    positioning: 'Ranged stack point. Spread only for fire soak. Return to stack immediately.',
-  },
-  {
-    name: 'Midnight Falls',
-    order: 9,
+    name: 'Lightblinded Vanguard',
+    raid: 'The Voidspire',
+    order: 5,
     type: 'Council',
     difficulty: 'Hard',
     balanceRating: 5,
     keyMechanics: [
-      'Final boss - Dawnkeeper and Duskwalker fight simultaneously',
-      'Each boss has distinct phase mechanics',
-      'Eclipse mechanic - one boss empowers while other weakens (swap DPS)',
-      'Soft enrage at 8 minutes',
+      'Three bosses: Commander Venel, General Bellamy, War Chaplain Senn.',
+      'Independent energy bars. Must keep HP roughly even.',
+      'Bellamy + Senn bubble for 8s on pull. Start on Venel.',
+      'At 100 energy: each boss drops permanent consecration where standing. Positioning critical.',
     ],
     balanceTips: [
-      'PERFECT fight for Balance. The Eclipse mechanic literally mirrors your spec.',
-      'Moonfire/Sunfire both bosses always. Starfall hits both.',
-      'When boss empowers, shift Starsurge focus to the weakened one.',
-      'Your sustained 2-target cleave is among the best in the game here.',
+      'THE Boomkin fight. Three targets needing even damage = Starfall + multi-DoT heaven.',
+      'Elune\'s Chosen hero talent excels here for sustained multi-target.',
+      'Start on Venel (no bubble). Spread DoTs to Bellamy/Senn after 8s.',
+      'Starfall should be up CONSTANTLY. Never let it drop.',
     ],
-    cdTiming: 'Incarnation on pull. Align subsequent uses with your raid\'s boss swap timing.',
-    positioning: 'Between both bosses. Never be more than 40 yards from either.',
+    cdTiming: 'Pop CDs 8 seconds after pull when all 3 targets are damageable.',
+    positioning: 'Center of all three bosses. Max Starfall coverage. Watch consecration drops.',
   },
+  {
+    name: 'Crown of the Cosmos',
+    raid: 'The Voidspire',
+    order: 6,
+    type: 'Multi-Phase',
+    difficulty: 'Hard',
+    balanceRating: 2,
+    keyMechanics: [
+      'Alleria Windrunner fight. Sentinel adds need tanking in melee.',
+      'Silverstrike Arrow clears Void but cleaves raid if aimed wrong.',
+      'Crushing Singularity intermission: massive healing check.',
+      'Mythic: sequential kick orders on Death\'s Dirge.',
+    ],
+    balanceTips: [
+      'HARDEST fight for Boomkin. Forced movement kills your ramp.',
+      'Bank Eclipse charges for movement phases. Don\'t waste them.',
+      'Bear Form + Heart of the Wild for Singularity intermission survival.',
+      'Typhoon for add repositioning. Solar Beam the Sentinels.',
+      'Expect to parse below melee. This is a survival fight, not a DPS parse.',
+    ],
+    cdTiming: 'Save CDs for burn windows on Sentinels and post-intermission. Don\'t waste during movement.',
+    positioning: 'Ranged stack. Move as a group. Never be isolated during Singularity.',
+  },
+  {
+    name: 'Chimaerus, the Undreamt God',
+    raid: 'The Dreamrift',
+    order: 7,
+    type: 'Add Waves',
+    difficulty: 'Hard',
+    balanceRating: 4,
+    keyMechanics: [
+      'Raid splits into two groups. One enters Aln realm.',
+      'Aln group disables Manifestation shields, sending adds to normal realm.',
+      'Normal realm kills adds before boss consumes them (Cannibalized Essence stacks).',
+      'Phase 2: boss flies, Corrupted Devastation raid damage, Ravenous Dive.',
+    ],
+    balanceTips: [
+      'Normal realm assignment: Starfall the grouped Manifestation adds. Your value is here.',
+      'Aln realm: more ST focused on priority targets. Less ideal for Boomkin.',
+      'Interrupt Haunting Essence adds: Fearsome Cry and Essence Bolt.',
+      'Save raid CDs for Phase 2 Corrupted Devastation.',
+    ],
+    cdTiming: 'Hold major CDs for Phase 2 or heavy Manifestation waves. Don\'t blow everything in Phase 1.',
+    positioning: 'Group with your realm assignment. Stack on add spawn points in normal realm.',
+  },
+  {
+    name: 'Belo\'ren, Child of Al\'ar',
+    raid: 'March on Quel\'Danas',
+    order: 8,
+    type: 'Multi-Phase',
+    difficulty: 'Hard',
+    balanceRating: 3,
+    keyMechanics: [
+      'Light/Void feather assignments swap throughout fight.',
+      'Tank color cones must match assignments. Miss twice = wipe.',
+      'Phoenix rebirth: boss becomes egg for 30s. Burn HARD.',
+      'Expect 2-3 rebirth cycles.',
+    ],
+    balanceTips: [
+      'Egg burn phases are where you dump everything. Classic "save and dump" fight.',
+      'Bank Eclipse charges and CDs for egg phases.',
+      'Feather mechanic is positioning, not DPS. Stay disciplined.',
+      'ST-focused. Keeper is better than Elune\'s here.',
+    ],
+    cdTiming: 'Hold Incarnation/CA for egg phases. 30s burn windows.',
+    positioning: 'Assigned feather position. Move with your group during color swaps.',
+  },
+  {
+    name: 'Midnight Falls (L\'ura)',
+    raid: 'March on Quel\'Danas',
+    order: 9,
+    type: 'Single Target',
+    difficulty: 'Hard',
+    balanceRating: 2,
+    keyMechanics: [
+      'Final boss of tier. Death\'s Dirge shows Dark Runes to memorize.',
+      'Heaven\'s Glaives tear through arena. Dodge patterns.',
+      'Midnight Crystals must die before Cosmic Fracture.',
+      'Arena shrinks progressively. Tight enrage (40k+ team DPS).',
+    ],
+    balanceTips: [
+      'Tightest fight for Boomkin. Shrinking arena + constant movement = caster nightmare.',
+      'Maintain Eclipse uptime while moving. Bank instant-cast procs.',
+      'Bear Form for emergency survival. Don\'t be greedy with casts.',
+      'Stampeding Roar helps raid reposition during Glaive patterns.',
+      'Use CDs on cooldown. This is a burn race. Don\'t hold anything.',
+    ],
+    cdTiming: 'CDs on cooldown with Heroism. Burn race. No holds.',
+    positioning: 'Center of remaining safe space. Move early, not late. Anticipate Glaive paths.',
+  },
+];
+
+const raidGroups = [
+  { name: 'The Voidspire', bosses: bosses.filter(b => b.raid === 'The Voidspire') },
+  { name: 'The Dreamrift', bosses: bosses.filter(b => b.raid === 'The Dreamrift') },
+  { name: 'March on Quel\'Danas', bosses: bosses.filter(b => b.raid === 'March on Quel\'Danas') },
 ];
 
 const typeColors: Record<string, string> = {
@@ -204,7 +224,7 @@ const typeColors: Record<string, string> = {
   'Cleave': 'oklch(72% 0.18 270)',
   'Council': 'oklch(68% 0.18 155)',
   'Add Waves': 'oklch(72% 0.16 30)',
-  'Intermission': 'oklch(65% 0.14 300)',
+  'Multi-Phase': 'oklch(65% 0.14 300)',
 };
 
 const diffColors: Record<string, string> = {
@@ -221,45 +241,70 @@ export default function BossGuides() {
       <div ref={r1} className="reveal">
         <SectionHeading
           title="Raid Guide"
-          sub={`${raidName} - ${raidTier}. Balance Druid encounter strategies for every boss.`}
+          sub="Midnight Season 1. Three raids, nine bosses. Balance Druid strategies for every encounter."
           accent="solar"
         />
       </div>
 
       {/* Overview: which fights Balance excels at */}
-      <div className="reveal mb-16 flex flex-wrap gap-2">
-        {bosses.map(b => (
-          <div
-            key={b.name}
-            className="px-3 py-2 rounded-lg glass card-hover text-center"
-            style={{ minWidth: 90 }}
-          >
-            <div className="text-[10px] font-bold mb-1" style={{ color: typeColors[b.type] }}>
-              {b.order}. {b.name.split(' ')[0]}
+      <div className="reveal mb-8">
+        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>
+          Balance Druid Effectiveness
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {bosses.map(b => (
+            <div key={b.name} className="px-3 py-2 rounded-lg glass card-hover text-center" style={{ minWidth: 90 }}>
+              <div className="text-[10px] font-bold mb-1" style={{ color: typeColors[b.type] }}>
+                {b.name.split(' ')[0]}
+              </div>
+              <div className="flex items-center justify-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <div key={i} className="w-1.5 h-1.5 rounded-full"
+                    style={{ background: i < b.balanceRating ? 'oklch(80% 0.18 80)' : 'oklch(16% 0.01 270)' }} />
+                ))}
+              </div>
             </div>
-            <div className="flex items-center justify-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="w-1.5 h-1.5 rounded-full"
-                  style={{
-                    background: i < b.balanceRating
-                      ? 'oklch(80% 0.18 80)'
-                      : 'oklch(16% 0.01 270)',
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Per-boss guides */}
-      <div className="space-y-6">
-        {bosses.map((boss) => (
-          <BossCard key={boss.name} boss={boss} />
-        ))}
+      {/* Excels / Struggles summary */}
+      <div className="reveal grid sm:grid-cols-2 gap-4 mb-16">
+        <div className="p-5 rounded-lg glass-nature">
+          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
+            Boomkin Excels
+          </div>
+          <ul className="space-y-1.5 text-[13px]" style={{ color: 'oklch(70% 0.012 270)', lineHeight: 1.7 }}>
+            <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Lightblinded Vanguard</strong> - Council, 3 targets, Starfall god mode</li>
+            <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Vaelgor & Ezzorak</strong> - Dual boss cleave, multi-DoT</li>
+            <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Fallen-King Salhadaar</strong> - ST + burst AoE on orbs</li>
+          </ul>
+        </div>
+        <div className="p-5 rounded-lg glass">
+          <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.12em' }}>
+            Hardest for Boomkin
+          </div>
+          <ul className="space-y-1.5 text-[13px]" style={{ color: 'oklch(70% 0.012 270)', lineHeight: 1.7 }}>
+            <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Crown of the Cosmos</strong> - Heavy movement, intermittent adds</li>
+            <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Midnight Falls</strong> - Tight enrage, shrinking arena</li>
+            <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Imperator Averzian</strong> - Quick add swaps punish ramp</li>
+          </ul>
+        </div>
       </div>
+
+      {/* Per-raid groups */}
+      {raidGroups.map(group => (
+        <div key={group.name} className="mb-12">
+          <div className="text-[9px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+            {group.name}
+          </div>
+          <div className="space-y-4">
+            {group.bosses.map((boss) => (
+              <BossCard key={boss.name} boss={boss} />
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
   );
 }
@@ -269,7 +314,6 @@ function BossCard({ boss }: { boss: BossGuide }) {
   return (
     <div ref={r} className="reveal">
       <div className="rounded-lg overflow-hidden glass card-hover">
-        {/* Header bar */}
         <div className="px-6 py-4 flex items-center justify-between flex-wrap gap-3"
           style={{ borderBottom: '1px solid oklch(16% 0.012 45)' }}>
           <div className="flex items-baseline gap-3">
@@ -298,16 +342,14 @@ function BossCard({ boss }: { boss: BossGuide }) {
           </div>
         </div>
 
-        {/* Body */}
         <div className="px-6 py-5 grid md:grid-cols-2 gap-8">
-          {/* Left: Mechanics + Balance tips */}
           <div>
             <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>
               Key Mechanics
             </div>
             <ul className="space-y-2 mb-6">
               {boss.keyMechanics.map((m, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(66% 0.012 270)', lineHeight: 1.7 }}>
+                <li key={i} className="flex items-start gap-2 text-[13px]" style={{ color: 'oklch(68% 0.012 270)', lineHeight: 1.7 }}>
                   <span className="w-1 h-1 rounded-full shrink-0 mt-2.5" style={{ background: 'oklch(50% 0.01 50)' }} />
                   {m}
                 </li>
@@ -327,7 +369,6 @@ function BossCard({ boss }: { boss: BossGuide }) {
             </ul>
           </div>
 
-          {/* Right: CD timing + positioning */}
           <div>
             <div className="p-4 rounded-lg mb-4" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
               <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>

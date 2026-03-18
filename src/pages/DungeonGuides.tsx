@@ -6,7 +6,8 @@ interface DungeonGuide {
   name: string;
   shortName: string;
   expansion: string;
-  balanceRating: number; // 1-5
+  timer: string;
+  balanceRating: number;
   keyTrash: string[];
   bossNotes: string[];
   balanceTips: string[];
@@ -16,203 +17,260 @@ interface DungeonGuide {
 
 const dungeons: DungeonGuide[] = [
   {
-    name: 'Priory of the Sacred Flame',
-    shortName: 'Priory',
+    name: 'Magisters\' Terrace',
+    shortName: 'MgT',
     expansion: 'Midnight',
+    timer: '34:00',
     balanceRating: 5,
     keyTrash: [
-      'Hallway packs are massive - 8-12 mobs. Starfall paradise.',
-      'Sacred Flamecasters channel dangerous AoE. Solar Beam priority.',
-      'Pull the courtyard wide - 3 packs at once on Fortified. Your Starfall covers all of it.',
+      'Heavy caster trash. Solar Beam is extremely valuable on grouped caster packs.',
+      'Hallway pulls are large and grouped. Starfall paradise.',
+      'Tight corridors mean Typhoon can knock melee mobs into the healer - be careful with aim.',
     ],
     bossNotes: [
-      'Baron Braunpyke: ST check. Dodge charges. Starsurge focus.',
-      'Captain Dailcry: Cleave fight. Keep Starfall up for adds. Solar Beam the healer add.',
-      'Prioress Murrpray: Burn boss. Typhoon adds away. Incarnation on pull.',
+      'Selin Fireheart: Interrupt Fel Explosion. Drain crystals. ST check.',
+      'Vexallus: Pure Energy adds need fast cleave. Starfall value.',
+      'Priestess Delrissa: Council mini-boss. Multi-DoT. Solar Beam the healer add.',
+      'Kael\'thas: Gravity Lapse phase - bank instants. Pyroblast interrupt critical.',
     ],
     balanceTips: [
-      'The mega-pull before Boss 2 is where you shine. Pool 100 AP, Incarnation, Fury of Elune, Starfall, Starfire spam.',
-      'Stampeding Roar on the long hallway runs between bosses.',
-      'Entangling Roots the Zealot mobs to stop their charge.',
+      'The caster density makes this your best Solar Beam dungeon.',
+      'Stampeding Roar between 2nd and 3rd boss (long corridor).',
+      'Priestess Delrissa is a mini-council - Starfall hits all targets.',
     ],
-    solarBeamTargets: ['Sacred Flamecaster', 'Devout Healer', 'Holy Sentinel'],
-    utility: ['Solar Beam every caster pack', 'Typhoon adds in courtyard', 'Stampeding Roar hallways', 'Entangling Roots zealots'],
+    solarBeamTargets: ['Sunblade Mage Guard', 'Wretched Firebringer', 'Priestess Delrissa healer add'],
+    utility: ['Solar Beam every caster pack', 'Typhoon corridors', 'Stampeding Roar long runs', 'Remove Corruption'],
   },
   {
-    name: 'The Rookery',
-    shortName: 'Rookery',
+    name: 'Maisara Caverns',
+    shortName: 'MC',
     expansion: 'Midnight',
-    balanceRating: 4,
-    keyTrash: [
-      'Bird packs are spread out - use Sunfire to pull, then group with Typhoon.',
-      'Stormcaller casts chain lightning. Interrupt or die in high keys.',
-      'The gauntlet before last boss: constant add spawns. Never stop casting Starfire.',
-    ],
-    bossNotes: [
-      'Kyrioss: Wind mechanics. Keep casting through the pushback. Starfire is your friend.',
-      'Stormguard Gorren: Dodge lightning. ST burn with cleave on sparks.',
-      'Voidstone Monstrosity: Big AoE check on void zones. Starfall the spawns.',
-    ],
-    balanceTips: [
-      'The gauntlet is your chance to top meters. Non-stop Starfall + Starfire.',
-      'Moonfire spread on bird packs for passive damage during movement.',
-      'Use Dash (cat form) to quickly reposition for wind mechanics.',
-    ],
-    solarBeamTargets: ['Stormcaller', 'Thunderspeaker', 'Lightning Channeler'],
-    utility: ['Solar Beam stormcallers', 'Typhoon birds into group', 'Stampeding Roar wind phases', 'Soothe enraged mobs'],
-  },
-  {
-    name: 'Cinderbrew Meadery',
-    shortName: 'Cinderbrew',
-    expansion: 'Midnight',
+    timer: '33:00',
     balanceRating: 5,
     keyTrash: [
-      'Brew elemental packs are HUGE. 10+ mobs. Starfall + Fury of Elune = massive damage.',
-      'Brewmasters throw barrels - dodge or take massive damage.',
-      'The bar room can be pulled wall-to-wall if your tank is brave.',
+      'Community consensus: HARDEST dungeon in the pool. Extremely interrupt-heavy.',
+      'Large cave packs with 6-8 mobs. AoE heaven for Balance.',
+      'Environmental hazards in cave areas. Watch your feet.',
     ],
     bossNotes: [
-      'Brew Master Aldryr: Dodge brew puddles. ST focus with cleave on oozes.',
-      'I\'pa: Interrupt priority. Solar Beam the Ferment cast. Movement heavy.',
-      'Benk Buzzbee: DPS race. Burn hard. Incarnation immediately.',
+      'All bosses have casts that must be interrupted. Solar Beam every boss.',
+      'Add spawns on every boss. Starfall always has value.',
+      'Final boss has a stacking enrage. Burn hard.',
     ],
     balanceTips: [
-      'Wall-to-wall the bar room. Pool AP, Incarnation, dump everything. You will top the meters.',
-      'The elemental packs at the start are your biggest Starfall windows.',
-      'Soothe the enraged brew elementals to reduce tank damage.',
+      'Take Light of the Sun talent for reduced Solar Beam CD. This dungeon demands it.',
+      'More casts to stop here than any other dungeon.',
+      'Go full AoE build. Sustained multi-target damage is rewarded heavily.',
+      'Typhoon mobs out of hazardous ground effects in cave areas.',
     ],
-    solarBeamTargets: ['Flavor Scientist', 'Brewmaster Apprentice', 'I\'pa (boss)'],
-    utility: ['Solar Beam flavor scientists', 'Soothe enraged elementals', 'Typhoon oozes', 'Stampeding Roar dodge phases'],
+    solarBeamTargets: ['Cave Channeler', 'Shadowcaster', 'Crystal Weaver', 'Every boss'],
+    utility: ['Solar Beam (reduced CD mandatory)', 'Typhoon out of ground effects', 'Stampeding Roar cave navigation', 'Soothe enraged adds'],
   },
   {
-    name: 'Darkflame Cleft',
-    shortName: 'Darkflame',
+    name: 'Nexus-Point Xenas',
+    shortName: 'NPX',
     expansion: 'Midnight',
+    timer: '30:00',
     balanceRating: 3,
     keyTrash: [
-      'Tight corridors limit Starfall value. Many packs are 3-4 mobs.',
-      'Candle mobs explode on death - stay at range.',
-      'Shadow casters need priority interrupts.',
+      'Shortest timer (30:00). Fast-paced, tight routes. No room for wipes.',
+      'Mix of ST boss checks and AoE trash. Stay flexible.',
+      'Void caster mobs need interrupts.',
     ],
     bossNotes: [
-      'Ol\' Waxbeard: Dodge flame waves. ST burn. Kite when needed.',
-      'Blazikon: Fire puddles reduce space. Stay mobile. DoT while moving.',
-      'The Candle King: Add priority. Solar Beam the add healers.',
+      'Bosses are ST checks. Keeper may outperform Elune\'s here.',
+      'Movement-heavy boss mechanics. Bank Eclipse charges.',
+      'Timer is the real enemy. Every second counts.',
     ],
     balanceTips: [
-      'Worst dungeon for Balance. Tight spaces, small packs, lots of movement.',
-      'Go single target talents if possible. Starfall value is limited.',
-      'Your utility (Solar Beam, Typhoon) is more valuable than your DPS here.',
+      'Consider hybrid build. Bosses are tight ST checks, trash is AoE.',
+      'Stampeding Roar helps the group stay on pace for the tight timer.',
+      'Starfall on larger pulls between bosses. Starsurge on bosses.',
     ],
-    solarBeamTargets: ['Shadow Channeler', 'Wax Priest', 'Dark Ritualist'],
-    utility: ['Solar Beam shadow casters', 'Typhoon melee adds', 'Bear form for emergencies', 'Stampeding Roar flame dodges'],
+    solarBeamTargets: ['Void Channeler', 'Nexus Arcanist', 'Rift Weaver'],
+    utility: ['Solar Beam void casters', 'Stampeding Roar for pace', 'Typhoon repositioning', 'Bear Form for emergencies'],
   },
   {
-    name: 'Ara-Kara, City of Echoes',
-    shortName: 'Ara-Kara',
-    expansion: 'TWW',
+    name: 'Windrunner Spire',
+    shortName: 'WS',
+    expansion: 'Midnight',
+    timer: '33:30',
     balanceRating: 4,
     keyTrash: [
-      'Spider packs come in waves of 6-8. Solid Starfall targets.',
-      'Web Spinners root players - break with damage or shapeshift.',
-      'The poison area before Boss 2 ticks hard. Move through quickly.',
+      'Vertical dungeon with multiple floors. Caster-heavy undead and void trash.',
+      'Solar Beam targets on every floor.',
+      'Floor-clearing pulls are large and reward Starfall.',
     ],
     bossNotes: [
-      'Avanoxx: Spider adds. Starfall value. Moonfire all spiderlings.',
-      'Anub\'zekt: Burrow phases. Pool AP during downtime. Dump when boss surfaces.',
-      'Ki\'katal: Shadowcaster. Interrupt and burn. Save CDs for execute.',
+      'Boss transitions between floors. Pool AP between phases.',
+      'Add spawns during boss transitions. Starfall value.',
+      'Final boss has void zones that shrink arena - move early.',
     ],
     balanceTips: [
-      'Shapeshift to break web roots instantly. Cat Form -> back to Moonkin.',
-      'The spider gauntlet before Avanoxx is great for Starfall.',
-      'Entangling Roots the Skitterer adds to control packs.',
+      'Typhoon mobs off elevated platforms for environmental kills.',
+      'Stampeding Roar between floors and during boss transitions.',
+      'Remove Corruption useful for void debuffs.',
     ],
-    solarBeamTargets: ['Web Spinner', 'Shadow Weaver', 'Venomous Caster'],
-    utility: ['Shapeshift breaks webs', 'Entangling Roots skitterers', 'Solar Beam casters', 'Remove Corruption on poison'],
+    solarBeamTargets: ['Shadow Priest', 'Void Channeler', 'Undead Arcanist'],
+    utility: ['Solar Beam casters', 'Typhoon off platforms', 'Stampeding Roar between floors', 'Remove Corruption'],
   },
   {
-    name: 'City of Threads',
-    shortName: 'CoT',
-    expansion: 'TWW',
+    name: 'Algeth\'ar Academy',
+    shortName: 'AA',
+    expansion: 'Dragonflight',
+    timer: '29:00',
     balanceRating: 4,
     keyTrash: [
-      'Nerubian packs are dense. 5-8 mobs per pull. Good Starfall value.',
-      'Eye Stalkers cast fear - Solar Beam or Typhoon them.',
-      'Silk wraps on players need fast damage to break.',
+      'Returning from Dragonflight S1/S2. Familiar if you played DF.',
+      'Arcane Constructs and Unruly Textbook casters. Solar Beam the Textbook packs.',
+      'Large open courtyard pulls are excellent for Starfall.',
     ],
     bossNotes: [
-      'Orator Krix\'vizk: Move out of sonic waves. Cleave the echoes.',
-      'Fangs of the Queen: Council-style. Maintain DoTs on both.',
-      'The Coaglamation: Big add spawns. Your moment. Starfall everything.',
+      'Vexamus: ST burn. Kill orbs fast before they reach boss. Interrupt.',
+      'Overgrown Ancient: Add cleave. Starfall on lashers.',
+      'Echo of Doragosa: Dodge swirlies. ST focus. Movement-heavy.',
     ],
     balanceTips: [
-      'The Coaglamation fight is pure Balance territory. Massive add spawns.',
-      'Maintain Moonfire on all Eye Stalkers for Shooting Stars value.',
-      'Typhoon is clutch for knocking back the charging adds.',
+      'Mix of AoE and ST. Boss fights lean single target (especially Vexamus).',
+      'Typhoon Vexamus orbs or reposition trash.',
+      'Courtyard pulls are your biggest Starfall windows.',
     ],
-    solarBeamTargets: ['Eye Stalker', 'Thread Weaver', 'Silk Enchanter'],
-    utility: ['Solar Beam eye stalkers', 'Typhoon charging adds', 'Remove Corruption', 'Stampeding Roar fear phases'],
+    solarBeamTargets: ['Unruly Textbook', 'Arcane Construct', 'Spelltouched Scribe'],
+    utility: ['Solar Beam textbooks', 'Typhoon orbs on Vexamus', 'Soothe constructs', 'Stampeding Roar courtyard'],
   },
   {
-    name: 'The Stonevault',
-    shortName: 'Stonevault',
-    expansion: 'TWW',
+    name: 'Seat of the Triumvirate',
+    shortName: 'SotT',
+    expansion: 'Legion',
+    timer: '34:00',
     balanceRating: 4,
     keyTrash: [
-      'Machine packs hit hard but die fast. Good burst AoE value.',
-      'Earth Shapers cast dangerous ground effects - Solar Beam.',
-      'The conveyor belt section: constant small adds. Never stop casting.',
+      'Void-themed circular layout. Heavy interrupt dungeon.',
+      'Dire Voidbenders cast Abyssal Enhancement (must interrupt or purge).',
+      'Dark Conjurers summon Void Callers. Shadowguard Subjugators heal with Shadowmend.',
     ],
     bossNotes: [
-      'E.D.N.A.: Dodge drill. ST burn. Simple.',
-      'Skarmorak: Crystal adds need fast AoE. Starfall + Fury of Elune.',
-      'Master Machinists: Council fight. DoTs on both. Starfall covers both.',
+      'Zuraal: Void zones. Stay out. ST focus.',
+      'Saprish: Interrupt Shadewing\'s Dread Screech. Purge Darkfang\'s Abyssal Enhancement.',
+      'Viceroy Nezhar: Interrupt Mind Blast. Kill Umbral Tentacles before Collapsing Void.',
+      'L\'ura: Final boss. Burn Void adds. Movement for void puddles.',
     ],
     balanceTips: [
-      'The Skarmorak crystal phase is a DPS check. Save Incarnation for it.',
-      'Conveyor belt: pool AP between sections, dump on machine packs.',
-      'Bear Form briefly if you get targeted by the rock throw.',
+      'Solar Beam + Light of the Sun talent mandatory. Interrupt-dense dungeon.',
+      'Nezhar wing trash packs are great for Starfall.',
+      'Remove Corruption useful for dispelling party members.',
     ],
-    solarBeamTargets: ['Earth Shaper', 'Stone Channeler', 'Ore Enchanter'],
-    utility: ['Solar Beam earth shapers', 'Typhoon crystal adds', 'Bear form for tank death', 'Soothe enraged machines'],
+    solarBeamTargets: ['Dire Voidbender', 'Dark Conjurer', 'Shadowguard Subjugator', 'Umbral Tentacle'],
+    utility: ['Solar Beam (mandatory)', 'Remove Corruption dispels', 'Typhoon void adds', 'Bear Form for survival'],
   },
   {
-    name: 'The Dawnbreaker',
-    shortName: 'Dawnbreaker',
-    expansion: 'TWW',
+    name: 'Skyreach',
+    shortName: 'SR',
+    expansion: 'WoD',
+    timer: '28:00',
+    balanceRating: 3,
+    keyTrash: [
+      'Shortest timer in pool (28:00). Vertical, movement-heavy.',
+      'Solar Barrier casters (purge or interrupt). Blinding Light casters (always interrupt).',
+      'Use stone columns near Ranjit to LoS Gale-Callers into melee for easier interrupts.',
+    ],
+    bossNotes: [
+      'Ranjit: Wind mechanics. Keep casting through pushback.',
+      'Araknath: Add priority. Solar Beam adds.',
+      'Rukhran: Dodge feathers. ST burn.',
+      'High Sage Viryx: Interrupt Solar Blast. Kill Shield Construct IMMEDIATELY (gives 99% DR).',
+    ],
+    balanceTips: [
+      'Typhoon near ledges for environmental kills (counts for enemy forces!).',
+      'Shield Construct on Viryx is the key mechanic. Focus it instantly.',
+      'Stampeding Roar helps navigate vertical transitions.',
+    ],
+    solarBeamTargets: ['Solar Barrier caster', 'Blinding Light caster', 'Solar Bolt caster', 'Gale-Caller'],
+    utility: ['Solar Beam casters', 'Typhoon for ledge kills', 'Stampeding Roar verticals', 'Soothe enraged'],
+  },
+  {
+    name: 'Pit of Saron',
+    shortName: 'PoS',
+    expansion: 'WotLK',
+    timer: '30:00',
     balanceRating: 5,
     keyTrash: [
-      'The airship trash is MASSIVE. 10-15 mobs. Biggest Starfall windows in the game.',
-      'Dark Ritualists must be interrupted. Solar Beam every pack.',
-      'The ground section has tighter packs but still solid AoE.',
+      'Open quarry layout. 6 prisoner camps to liberate. Path decisions matter.',
+      'Arcanist Cadaver casts Netherburst (full group AoE nuke - MUST interrupt every cast).',
+      'Dreadpulse Lich: Icy Blast on tank, Torrent of Misery channel. Very dangerous on Fortified.',
     ],
     bossNotes: [
-      'Speaker Shadowcrown: Interrupt priority. ST with minor adds.',
-      'Anub\'ikkaj: Shadow orbs. Dodge and DPS. Pool AP for orb phases.',
-      'Rashanan: Final boss. Big AoE check. Starfall the web adds. This is your fight.',
+      'Forgemaster Garfrost: LoS behind Ore Chunks during Glacial Overload.',
+      'Krick & Ick: Dodge poison. Kite boss. Movement-heavy.',
+      'Scourgelord Tyrannus: Overlord\'s Brand debuff. Stop DPS when applied to tank.',
     ],
     balanceTips: [
-      'THE best M+ dungeon for Balance Druid. The airship mega-pulls are absurd Starfall value.',
-      'On the airship, pool 100 AP, Incarnation, Fury of Elune, Starfall, Starfire. Watch the meters explode.',
-      'Stampeding Roar for the jump between airship sections.',
+      'Quarry prisoner camp pulls are MASSIVE. Starfall + Fury of Elune = insane damage.',
+      'Stampeding Roar critical for Glacial Overload repositioning behind Ore Chunks.',
+      'Typhoon undead mobs charging the group during camp liberations.',
+      'On Fortified, Dreadpulse Lich and Ymirjar Graveblade are extremely dangerous. Prioritize interrupts.',
     ],
-    solarBeamTargets: ['Dark Ritualist', 'Shadow Channeler', 'Riftmender'],
-    utility: ['Solar Beam every ritualist', 'Typhoon shadow adds', 'Stampeding Roar jump sections', 'Innervate healer on big pulls'],
+    solarBeamTargets: ['Arcanist Cadaver (Netherburst - MUST interrupt)', 'Dreadpulse Lich', 'Gloombound Shadebringer'],
+    utility: ['Solar Beam Arcanist Cadaver (critical)', 'Stampeding Roar Glacial Overload', 'Typhoon camp mobs', 'Soothe undead'],
   },
+];
+
+// Affix info
+const affixTiers = [
+  { level: '2-4', name: 'Lindormi\'s Guidance', desc: 'Marks enemies, reduces HP/damage by 5%. No death timer penalty.' },
+  { level: '5-11', name: 'Xal\'atath\'s Bargain', desc: 'Rotating weekly: Ascendant, Voidbound, Pulsar, Devour.' },
+  { level: '7+', name: 'Tyrannical / Fortified', desc: 'Alternates weekly. Boss HP vs trash HP.' },
+  { level: '12+', name: 'Xal\'atath\'s Guile', desc: 'Each death costs 15s. BOTH Tyrannical and Fortified active.' },
+];
+
+const bargainTips = [
+  { name: 'Ascendant', tip: 'Use Incapacitating Roar to stop all orbs at once. Typhoon risks knocking mobs.' },
+  { name: 'Voidbound', tip: 'Burn the Emissary fast. Interrupt every Dark Prayer cast.' },
+  { name: 'Pulsar', tip: 'Stack with group. Pulsars clear instantly when players overlap.' },
+  { name: 'Devour', tip: 'You have Remove Corruption. Use it. Handle your own dispel.' },
 ];
 
 export default function DungeonGuides() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const r1 = useReveal();
+  const r2 = useReveal();
 
   return (
     <section className="px-6 sm:px-10 py-32 max-w-6xl mx-auto">
       <div ref={r1} className="reveal">
         <SectionHeading
           title="M+ Dungeon Guide"
-          sub="Balance Druid strategies for every Midnight Season 1 dungeon. Solar Beam targets, utility, and AoE opportunities."
+          sub="Midnight Season 1. Eight dungeons. Balance Druid strategies, Solar Beam targets, utility tips."
           accent="lunar"
         />
+      </div>
+
+      {/* Affix system */}
+      <div ref={r2} className="reveal mb-16">
+        <div className="text-[9px] uppercase font-bold mb-4" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>
+          Season 1 Affix System
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 mb-6">
+          {affixTiers.map(a => (
+            <div key={a.level} className="p-3 rounded-lg glass">
+              <div className="text-[10px] font-bold mb-1" style={{ color: 'oklch(80% 0.18 80)' }}>+{a.level}</div>
+              <div className="text-[12px] font-semibold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>{a.name}</div>
+              <div className="text-[11px]" style={{ color: 'oklch(60% 0.012 270)' }}>{a.desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+          Bargain Affix Tips (Balance Druid)
+        </div>
+        <div className="grid sm:grid-cols-2 gap-2">
+          {bargainTips.map(b => (
+            <div key={b.name} className="flex items-start gap-2 p-3 rounded-lg" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
+              <span className="text-[11px] font-bold shrink-0 w-20" style={{ color: 'oklch(72% 0.18 270)' }}>{b.name}</span>
+              <span className="text-[12px]" style={{ color: 'oklch(66% 0.012 270)' }}>{b.tip}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Dungeon tier list */}
@@ -230,13 +288,13 @@ export default function DungeonGuides() {
             <div className="text-[11px] font-bold mb-0.5" style={{ color: 'oklch(88% 0.006 270)' }}>
               {d.shortName}
             </div>
-            <div className="flex items-center gap-0.5">
+            <div className="flex items-center gap-0.5 mb-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
                 <div key={i} className="w-1.5 h-1.5 rounded-full"
                   style={{ background: i < d.balanceRating ? 'oklch(72% 0.18 270)' : 'oklch(16% 0.01 270)' }} />
               ))}
             </div>
-            <div className="text-[9px] mt-0.5" style={{ color: 'oklch(50% 0.01 50)' }}>{d.expansion}</div>
+            <div className="text-[9px]" style={{ color: 'oklch(50% 0.01 50)' }}>{d.timer}</div>
           </button>
         ))}
       </div>
@@ -264,7 +322,6 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
   return (
     <div ref={r} className="reveal">
       <div className="rounded-lg overflow-hidden glass">
-        {/* Clickable header */}
         <button
           onClick={onToggle}
           className="w-full px-6 py-4 flex items-center justify-between cursor-pointer text-left"
@@ -275,6 +332,7 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
               {dungeon.name}
             </span>
             <span className="text-[10px] font-medium" style={{ color: 'oklch(50% 0.01 50)' }}>{dungeon.expansion}</span>
+            <span className="font-mono text-[10px]" style={{ color: 'oklch(44% 0.01 50)', fontVariantNumeric: 'tabular-nums' }}>{dungeon.timer}</span>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex gap-0.5">
@@ -283,17 +341,15 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
                   style={{ background: i < dungeon.balanceRating ? 'oklch(72% 0.18 270)' : 'oklch(16% 0.01 270)' }} />
               ))}
             </div>
-            <span className="text-lg" style={{ color: 'oklch(50% 0.01 50)', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s ease' }}>
+            <span style={{ color: 'oklch(50% 0.01 50)', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s ease', display: 'inline-block' }}>
               &#8963;
             </span>
           </div>
         </button>
 
-        {/* Expanded content */}
         {isExpanded && (
           <div className="px-6 py-5">
             <div className="grid md:grid-cols-2 gap-8 mb-6">
-              {/* Trash + bosses */}
               <div>
                 <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
                   Key Trash
@@ -309,14 +365,11 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
                 </div>
                 <ul className="space-y-2">
                   {dungeon.bossNotes.map((b, i) => (
-                    <li key={i} className="text-[13px]" style={{ color: 'oklch(68% 0.012 270)', lineHeight: 1.7 }}>
-                      {b}
-                    </li>
+                    <li key={i} className="text-[13px]" style={{ color: 'oklch(68% 0.012 270)', lineHeight: 1.7 }}>{b}</li>
                   ))}
                 </ul>
               </div>
 
-              {/* Balance tips + utility */}
               <div>
                 <div className="text-[9px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
                   Balance Druid Tips
@@ -333,7 +386,6 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
                   ))}
                 </ul>
 
-                {/* Solar Beam targets */}
                 <div className="p-4 rounded-lg mb-4" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
                   <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.12em' }}>
                     Solar Beam Targets
@@ -348,7 +400,6 @@ function DungeonCard({ dungeon, isExpanded, onToggle }: {
                   </div>
                 </div>
 
-                {/* Utility checklist */}
                 <div className="p-4 rounded-lg" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
                   <div className="text-[9px] uppercase font-bold mb-2" style={{ color: 'oklch(64% 0.012 50)', letterSpacing: '0.12em' }}>
                     Utility Checklist
