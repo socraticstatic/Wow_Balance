@@ -9,6 +9,8 @@ const items = [
   { id: 'aoe', label: 'AoE DPS' },
   { id: 'builds', label: 'Builds' },
   { id: 'gear', label: 'Gear' },
+  { id: 'geardelta', label: 'Delta' },
+  { id: 'consumables', label: 'Consumables' },
   { id: 'rankings', label: 'Rankings' },
   { id: 'changelog', label: 'Changelog' },
   { id: 'setup', label: 'Make Yours' },

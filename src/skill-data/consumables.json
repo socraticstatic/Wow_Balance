@@ -1,0 +1,103 @@
+{
+  "patchVersion": "12.0.1",
+  "season": "Midnight Season 1",
+  "lastUpdated": "2026-03-18",
+  "flasks": [
+    {
+      "name": "Flask of Alchemical Chaos",
+      "stat": "Primary Stat (Intellect)",
+      "value": "+420 Intellect for 30 min",
+      "source": "Alchemy / Auction House",
+      "goldEstimate": "200-400g",
+      "notes": "Standard flask. Always use before any group content."
+    },
+    {
+      "name": "Flask of Tempered Aggression",
+      "stat": "Primary Stat (Intellect)",
+      "value": "+350 Intellect for 30 min",
+      "source": "Alchemy / Auction House",
+      "goldEstimate": "100-200g",
+      "notes": "Budget option. Slightly weaker but much cheaper."
+    }
+  ],
+  "food": [
+    {
+      "name": "Feast of the Midnight Masquerade",
+      "stat": "Primary Stat",
+      "value": "+120 Intellect",
+      "source": "Cooking (group feast)",
+      "goldEstimate": "Free if someone drops one",
+      "notes": "Best option. Wait for feast in raids. Bring your own for M+."
+    },
+    {
+      "name": "Seared Silvermoon Steak",
+      "stat": "Haste",
+      "value": "+90 Haste",
+      "source": "Cooking / Auction House",
+      "goldEstimate": "30-80g",
+      "notes": "Personal food. Haste is our best secondary. Use in M+."
+    },
+    {
+      "name": "Moonlight Glazed Ribs",
+      "stat": "Mastery",
+      "value": "+90 Mastery",
+      "source": "Cooking / Auction House",
+      "goldEstimate": "30-80g",
+      "notes": "Alternative if you need Mastery over Haste for your build."
+    }
+  ],
+  "potions": [
+    {
+      "name": "Potion of Unwavering Focus",
+      "stat": "Intellect burst",
+      "value": "+1,200 Intellect for 25 sec",
+      "source": "Alchemy / Auction House",
+      "goldEstimate": "80-150g each",
+      "notes": "Use during Incarnation/CA window. Pre-pot 1 sec before pull, second pot during second Incarnation."
+    },
+    {
+      "name": "Algari Healing Potion",
+      "stat": "Health",
+      "value": "Restores 50% HP",
+      "source": "Alchemy / Auction House",
+      "goldEstimate": "15-30g each",
+      "notes": "Emergency heal. Separate cooldown from combat potions."
+    }
+  ],
+  "weaponEnhancement": [
+    {
+      "name": "Thalassian Phoenix Oil",
+      "stat": "Intellect proc",
+      "value": "Chance to deal fire damage and grant Intellect",
+      "source": "Alchemy / Auction House",
+      "goldEstimate": "50-120g",
+      "notes": "Best weapon oil for Balance. Apply before every session. Lasts 1 hour."
+    }
+  ],
+  "augmentRune": [
+    {
+      "name": "Crystallized Augment Rune",
+      "stat": "Primary Stat",
+      "value": "+50 Intellect",
+      "source": "Reputation vendor / Auction House",
+      "goldEstimate": "Free (rep) or 200-400g (AH)",
+      "notes": "Persists through death. Always active. Buy the reusable one from rep vendor."
+    }
+  ],
+  "raidNightChecklist": [
+    "Flask of Alchemical Chaos (1)",
+    "Seared Silvermoon Steak (20 for the night)",
+    "Potion of Unwavering Focus (2 per boss = ~20)",
+    "Algari Healing Potion (10)",
+    "Thalassian Phoenix Oil (1, lasts 1 hour)",
+    "Crystallized Augment Rune (reusable)",
+    "Repair gold (1000g buffer)"
+  ],
+  "mythicPlusChecklist": [
+    "Flask of Alchemical Chaos (1)",
+    "Seared Silvermoon Steak (5-10)",
+    "Potion of Unwavering Focus (2-3 per key)",
+    "Thalassian Phoenix Oil (1)",
+    "Repair before starting"
+  ]
+}

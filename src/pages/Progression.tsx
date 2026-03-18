@@ -1,5 +1,7 @@
 import SectionHeading from '../components/SectionHeading';
+import MilestoneTimeline from '../components/MilestoneTimeline';
 import { useReveal } from '../hooks/useReveal';
+import { getResetInfo } from '../utils/weeklyReset';
 import { bisGear, builds, enchantsGems } from '../data';
 import characterData from '@data/my-character-clean.json';
 
@@ -305,8 +307,41 @@ export default function Progression() {
         />
       </div>
 
-      {/* Current phase banner */}
-      <div ref={r2} className="reveal mb-10">
+      {/* Weekly reset banner + phase */}
+      <div ref={r2} className="reveal mb-10 space-y-4">
+        {/* Weekly reset */}
+        {(() => {
+          const reset = getResetInfo();
+          const urgencyColors = {
+            fresh: 'oklch(68% 0.18 155)',
+            midweek: 'oklch(68% 0.16 285)',
+            urgent: 'oklch(80% 0.18 80)',
+            critical: 'oklch(72% 0.18 30)',
+          };
+          const uc = urgencyColors[reset.urgency];
+          return (
+            <div className="glass p-4 rounded-lg flex items-center justify-between" style={{ borderLeft: `2px solid ${uc}` }}>
+              <div>
+                <span className="text-[9px] uppercase font-bold" style={{ color: uc, letterSpacing: '0.1em' }}>
+                  Weekly Reset
+                </span>
+                <span className="text-[11px] ml-2" style={{ color: 'oklch(52% 0.01 50)' }}>
+                  {reset.dayOfWeek} - {reset.isResetDay ? 'Reset day!' : `${reset.timeString} until reset`}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-16 h-1 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.008 45)' }}>
+                  <div className="h-full rounded-full" style={{ width: `${reset.weekProgress * 100}%`, background: uc }} />
+                </div>
+                <span className="text-[10px] font-mono font-bold" style={{ color: uc, fontVariantNumeric: 'tabular-nums' }}>
+                  {reset.timeString}
+                </span>
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* Current phase */}
         <div
           className="glass p-5 rounded-lg"
           style={{ borderLeft: `3px solid ${phaseInfo.color}` }}
@@ -321,6 +356,11 @@ export default function Progression() {
             {phaseInfo.name}
           </h3>
           <p className="text-sm" style={{ color: 'oklch(58% 0.012 50)' }}>{phaseInfo.sub}</p>
+        </div>
+
+        {/* Milestone timeline */}
+        <div className="glass p-4 rounded-lg">
+          <MilestoneTimeline level={charLevel} ilvl={avgIlvl} />
         </div>
       </div>
 

@@ -118,3 +118,25 @@ export interface MetaData {
   mythicPlusUnlock: string;
   notes: string;
 }
+
+export interface ConsumableItem {
+  name: string;
+  stat: string;
+  value: string;
+  source: string;
+  goldEstimate: string;
+  notes: string;
+}
+
+export interface ConsumablesData {
+  patchVersion: string;
+  season: string;
+  lastUpdated: string;
+  flasks: ConsumableItem[];
+  food: ConsumableItem[];
+  potions: ConsumableItem[];
+  weaponEnhancement: ConsumableItem[];
+  augmentRune: ConsumableItem[];
+  raidNightChecklist: string[];
+  mythicPlusChecklist: string[];
+}

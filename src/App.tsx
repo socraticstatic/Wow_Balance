@@ -12,9 +12,11 @@ import CursorTrail from './components/CursorTrail';
 import Setup from './pages/Setup';
 import Faith from './pages/Faith';
 import Progression from './pages/Progression';
+import GearDelta from './pages/GearDelta';
+import Consumables from './pages/Consumables';
 import { meta } from './data';
 
-const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'builds', 'gear', 'rankings', 'changelog', 'setup'] as const;
+const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'builds', 'gear', 'geardelta', 'consumables', 'rankings', 'changelog', 'setup'] as const;
 
 export default function App() {
   const [active, setActive] = useState('hero');
@@ -68,6 +70,10 @@ export default function App() {
         <div id="builds" ref={ref('builds')}><Builds /></div>
         <Divider />
         <div id="gear" ref={ref('gear')}><Gear /></div>
+        <Divider />
+        <div id="geardelta" ref={ref('geardelta')}><GearDelta /></div>
+        <Divider />
+        <div id="consumables" ref={ref('consumables')}><Consumables /></div>
         <Divider />
         <div id="rankings" ref={ref('rankings')}><Rankings /></div>
         <Divider />
