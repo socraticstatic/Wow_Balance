@@ -1,15 +1,9 @@
 import SectionHeading from '../components/SectionHeading';
 import { useReveal } from '../hooks/useReveal';
 
-// Live session data - may not exist if watcher hasn't run yet
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-let liveData: any = null;
-try {
-  // This will fail at build time if the file doesn't exist, which is fine
-  liveData = null; // Will be populated when watcher creates live-session.json
-} catch {
-  // No live data yet
-}
+// Live session data - pushed from PC watcher via GitHub API
+import liveSessionJson from '../data/live-session.json';
+const liveData: any = liveSessionJson;
 
 const gradeColors: Record<string, string> = {
   S: 'oklch(80% 0.18 80)',
