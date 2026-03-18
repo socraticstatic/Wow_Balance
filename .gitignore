@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 companion-addon/dist/.env
+companion-addon/BalanceDossier-Windows.zip
+companion-addon/dist/.env
+*.env
