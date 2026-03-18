@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, ChevronUp, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio } from 'lucide-react';
+import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, ChevronUp, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard } from 'lucide-react';
 
 const items = [
   { id: 'hero', label: 'Overview', icon: Moon },
@@ -8,6 +8,7 @@ const items = [
   { id: 'faith', label: 'The Light', icon: BookOpen },
   { id: 'aoe', label: 'AoE DPS', icon: Zap },
   { id: 'breakpoints', label: 'Breakpoints', icon: Target },
+  { id: 'keybinds', label: 'Keybinds', icon: Keyboard },
   { id: 'builds', label: 'Builds', icon: Sparkles },
   { id: 'gear', label: 'Gear', icon: Shield },
   { id: 'geardelta', label: 'Delta', icon: Swords },
