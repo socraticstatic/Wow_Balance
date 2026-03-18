@@ -178,7 +178,27 @@ function transformForApp(db) {
       bestGrade: fights.find((f) => f.grade === "S") ? "S" : fights.find((f) => f.grade === "A") ? "A" : "B",
       bestStarfallUptime: Math.max(...fights.map((f) => f.starfallUptime || 0), 0),
       longestFight: Math.max(...fights.map((f) => f.duration || 0), 0)
-    }
+    },
+    // Presence data from the addon
+    presence: db.presence ? {
+      lastPlayed: db.presence.lastPlayed ? new Date(db.presence.lastPlayed * 1e3).toISOString() : null,
+      zone: db.presence.zone || "Unknown",
+      subZone: db.presence.subZone || "",
+      mapName: db.presence.mapName || "",
+      level: db.presence.level || 0,
+      ilvl: db.presence.ilvl || 0,
+      x: db.presence.x || 0,
+      y: db.presence.y || 0,
+      questCount: db.presence.questCount || 0,
+      quests: (db.presence.quests || []).map((q) => ({
+        id: q.id,
+        title: q.title,
+        level: q.level,
+        isComplete: q.isComplete,
+        objectives: q.objectives || [],
+        frequency: q.frequency === 1 ? "daily" : q.frequency === 2 ? "weekly" : "normal"
+      }))
+    } : null
   };
 }
 async function main() {
