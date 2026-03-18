@@ -2,7 +2,8 @@ import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { useReveal } from '../hooks/useReveal';
 
-const IMPORT_STRING = 'CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgZZmlZWMzMWYZmlxMjxGGAMW2mZwY2GBmAAAAswMzMD2MmxYAAYmBGA';
+// Wowhead's recommended Elune's Chosen M+ build - verified 2026-03-18
+const IMPORT_STRING = 'CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgxMLzsYmZmlxyMLjZGshBAjltZGMmtRgJAAAALMzMzgNjZMGAAmZgB';
 
 interface TalentRow {
   name: string;
