@@ -46,7 +46,7 @@ const classTree: TalentRow[] = [
 ];
 
 const specTree: TalentRow[] = [
-  { name: 'Eclipse', points: 1, why: 'Core mechanic. Active button.', category: 'core' },
+  { name: 'Eclipse', points: 1, why: 'Passive. Triggers automatically from Starfire/Wrath casts. Grants Lunar or Solar Eclipse.', category: 'core' },
   { name: 'Shooting Stars', points: 1, why: 'DoTs proc bonus damage + AP. Feeds entire AoE engine.', category: 'aoe' },
   { name: 'Solar Beam', points: 1, why: '8s AoE silence. Best interrupt in M+.', category: 'utility' },
   { name: 'Twin Moons', points: 1, why: 'Moonfire hits 2 targets. Free cleave.', category: 'aoe' },

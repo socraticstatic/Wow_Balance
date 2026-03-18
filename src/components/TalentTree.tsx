@@ -21,7 +21,7 @@ interface TalentNode {
 // pick = which side of a choice node to take.
 const specTalents: TalentNode[] = [
   // Row 0 - Entry
-  { name: 'Eclipse', row: 0, col: 3, type: 'active', selected: true },
+  { name: 'Eclipse', row: 0, col: 3, type: 'passive', selected: true },
   // Row 1
   { name: 'Shooting Stars', row: 1, col: 2, type: 'passive', selected: true },
   { name: 'Solar Beam', row: 1, col: 4, type: 'active', selected: true },

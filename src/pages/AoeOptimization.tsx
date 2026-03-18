@@ -13,7 +13,7 @@ const talentTree = {
     label: 'Core (Always Take)',
     color: 'oklch(94% 0.006 270)',
     talents: [
-      { name: 'Eclipse', desc: 'Active button. 2 charges. Your rotation engine.' },
+      { name: 'Eclipse', desc: 'Passive. Triggers from casting builders. With Lunar Calling, always Lunar.' },
       { name: 'Total Eclipse', desc: '2 charges + chance to proc opposite Eclipse.' },
       { name: 'Soul of the Forest', desc: 'Starsurge buffs next builder 50%. Starfall generates AP/tick.' },
       { name: 'Starlord', desc: '1% Haste per spender, stacks to 3. 20s duration.' },
