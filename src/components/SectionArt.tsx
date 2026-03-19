@@ -7,12 +7,13 @@ interface Props {
   variant: 'lunar' | 'solar' | 'nature' | 'void' | 'eclipse';
 }
 
+const BASE = import.meta.env.BASE_URL;
 const images: Record<string, string> = {
-  lunar: '/art/lunar-nebula.jpg',
-  solar: '/art/solar-golden.jpg',
-  nature: '/art/nature-forest.jpg',
-  void: '/art/void-space.jpg',
-  eclipse: '/art/hero-cosmic.jpg',
+  lunar: `${BASE}art/lunar-nebula.jpg`,
+  solar: `${BASE}art/solar-golden.jpg`,
+  nature: `${BASE}art/nature-forest.jpg`,
+  void: `${BASE}art/void-space.jpg`,
+  eclipse: `${BASE}art/hero-cosmic.jpg`,
 };
 
 // Each variant gets a tinted overlay that blends with the site's warm dark palette

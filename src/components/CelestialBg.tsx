@@ -29,7 +29,7 @@ export default function CelestialBg() {
       {/* Real cosmic photograph */}
       <img
         ref={imgRef}
-        src="/art/hero-cosmic.jpg"
+        src={`${import.meta.env.BASE_URL}art/hero-cosmic.jpg`}
         alt=""
         className="absolute inset-0 w-full h-full object-cover will-change-transform"
         style={{
