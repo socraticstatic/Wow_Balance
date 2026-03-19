@@ -1,9 +1,33 @@
+import { useState, useEffect } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import MilestoneTimeline from '../components/MilestoneTimeline';
 import { useReveal } from '../hooks/useReveal';
 import { getResetInfo } from '../utils/weeklyReset';
 import { bisGear, enchantsGems } from '../data';
 import characterData from '@data/my-character-clean.json';
+
+const LIVE_URL = 'https://raw.githubusercontent.com/socraticstatic/Wow_Balance/main/src/data/live-session.json';
+
+function useLiveLevel() {
+  const [liveLevel, setLiveLevel] = useState<number | null>(null);
+  const [liveIlvl, setLiveIlvl] = useState<number | null>(null);
+  useEffect(() => {
+    const check = async () => {
+      try {
+        const res = await fetch(LIVE_URL + '?t=' + Date.now(), { cache: 'no-store' });
+        if (res.ok) {
+          const d = await res.json();
+          if (d.presence?.level) setLiveLevel(d.presence.level);
+          if (d.presence?.ilvl) setLiveIlvl(d.presence.ilvl);
+        }
+      } catch { /* use static */ }
+    };
+    check();
+    const id = setInterval(check, 60_000);
+    return () => clearInterval(id);
+  }, []);
+  return { liveLevel, liveIlvl };
+}
 
 /*
  * Midnight Season 1 Gear Track System:
@@ -30,15 +54,15 @@ type Rec = {
   actionable: string;
 };
 
-function analyzeProgression() {
+function analyzeProgression(overrideLevel?: number | null, overrideIlvl?: number | null) {
   const c = characterData;
   const gear = c.gear as Array<{
     slot: string; name: string; ilvl: number; quality: number;
     tier: string | null; enchant: string | null; gems: string[];
   }>;
 
-  const avgIlvl = c.ilvl;
-  const charLevel = (c as any).level || null;
+  const avgIlvl = overrideIlvl || c.ilvl;
+  const charLevel = overrideLevel || (c as any).level || null;
   const tierPieces = gear.filter(g => g.tier);
   const missingEnchants = gear.filter(g =>
     ['back', 'chest', 'wrist', 'legs', 'feet', 'finger1', 'finger2'].includes(g.slot) && !g.enchant
@@ -290,7 +314,8 @@ export default function Progression() {
   const r1 = useReveal();
   const r2 = useReveal();
   const r3 = useReveal();
-  const { recs, avgIlvl, charLevel, phase } = analyzeProgression();
+  const { liveLevel, liveIlvl } = useLiveLevel();
+  const { recs, avgIlvl, charLevel, phase } = analyzeProgression(liveLevel, liveIlvl);
 
   const phaseInfo = phaseLabels[phase] || phaseLabels.leveling;
   const criticalCount = recs.filter(r => r.priority === 'critical').length;

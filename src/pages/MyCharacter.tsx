@@ -82,11 +82,19 @@ export default function MyCharacter() {
             Spiracle
           </h2>
           <p className="text-base mb-8" style={{ color: 'oklch(90% 0.005 55)' }}>
-            {c.race} {c.spec} {c.class} - {c.realm} ({c.region.toUpperCase()})
+            Level {c.level} {c.race} {c.spec} {c.class} - {c.realm} ({c.region.toUpperCase()})
           </p>
 
           {/* Key stats row */}
           <div className="flex items-end gap-8 mb-8">
+            <div>
+              <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
+                Level
+              </div>
+              <span className="text-5xl font-extrabold font-mono" style={{ color: 'oklch(94% 0.006 270)', fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.03em' }}>
+                {c.level}
+              </span>
+            </div>
             <div>
               <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
                 Item Level
