@@ -73,6 +73,14 @@ export default function LiveSession() {
   const bests = data.bests;
   const presence = data.presence;
 
+  // Check staleness
+  const lastUpdate = new Date(data.lastUpdate);
+  const ageMs = Date.now() - lastUpdate.getTime();
+  const ageHours = Math.floor(ageMs / (1000 * 60 * 60));
+  const ageMins = Math.floor(ageMs / (1000 * 60));
+  const isStale = ageMins > 30;
+  const isTestData = data.test === 'full-pipeline-test' || (presence?.zone === 'Eversong Woods' && summary?.totalFights === 0);
+
   return (
     <section className="px-6 sm:px-10 py-32 max-w-6xl mx-auto relative z-10">
       <div ref={r1} className="reveal">
@@ -82,6 +90,27 @@ export default function LiveSession() {
           accent="lunar"
         />
       </div>
+
+      {/* Staleness / troubleshooting banner */}
+      {(isStale || isTestData) && (
+        <div className="reveal mb-8 p-5 rounded-lg" style={{ background: 'oklch(14% 0.02 30 / 0.4)', border: '1px solid oklch(20% 0.03 30)' }}>
+          <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.1em' }}>
+            {isTestData ? 'Test Data' : `Data is ${ageHours > 0 ? ageHours + 'h' : ageMins + 'm'} old`}
+          </div>
+          <p className="text-[14px] mb-3" style={{ color: 'oklch(88% 0.005 55)' }}>
+            {isTestData
+              ? 'This is test data, not from a real play session. Play WoW with the addon installed, then /reload to sync.'
+              : 'The data below is from your last session. To update:'
+            }
+          </p>
+          <ol className="text-[13px] space-y-1" style={{ color: 'oklch(82% 0.005 55)' }}>
+            <li>1. Make sure <strong>BalanceDossier.bat</strong> is running on your PC</li>
+            <li>2. Type <strong>/reload</strong> in WoW (saves addon data to disk)</li>
+            <li>3. Wait ~30 seconds for GitHub Pages to rebuild</li>
+            <li>4. Hard refresh this page (<strong>Ctrl+Shift+R</strong>)</li>
+          </ol>
+        </div>
+      )}
 
       {/* Summary cards */}
       <div ref={r2} className="reveal grid grid-cols-2 lg:grid-cols-4 gap-3 mb-16">

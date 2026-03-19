@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, ChevronUp, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard, TreePine } from 'lucide-react';
+import { useState } from 'react';
+import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard, TreePine } from 'lucide-react';
 
 const items = [
   { id: 'hero', label: 'Overview', icon: Moon },
@@ -17,36 +17,19 @@ const items = [
   { id: 'raid', label: 'Raid', icon: Users },
   { id: 'dungeons', label: 'M+', icon: Gem },
   { id: 'rankings', label: 'Rankings', icon: Trophy },
-  { id: 'live', label: 'Live Session', icon: Radio },
-  { id: 'changelog', label: 'Changelog', icon: ScrollText },
-  { id: 'setup', label: 'Make Yours', icon: Settings },
+  { id: 'live', label: 'Live', icon: Radio },
+  { id: 'changelog', label: 'Log', icon: ScrollText },
+  { id: 'setup', label: 'Setup', icon: Settings },
 ];
 
 interface Props { active: string; onNav: (id: string) => void }
 
 export default function Nav({ active, onNav }: Props) {
-  const [open, setOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  // Close on click outside
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
-    };
-    if (open) document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, [open]);
-
-  // Close on Escape
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, []);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
     <>
-      {/* Minimal top bar - just the logo */}
+      {/* Top left logo */}
       <div className="fixed top-0 inset-x-0 z-40 pointer-events-none">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center">
           <button
@@ -75,87 +58,138 @@ export default function Nav({ active, onNav }: Props) {
         </div>
       </div>
 
-      {/* FAB + radial menu */}
-      <div ref={menuRef} className="fixed bottom-6 right-6 z-50">
-        {/* Menu items - arc upward */}
-        <div style={{
-          opacity: open ? 1 : 0,
-          transform: open ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.9)',
-          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-          pointerEvents: open ? 'auto' : 'none',
-          position: 'absolute',
-          bottom: '64px',
-          right: 0,
-          width: '200px',
-        }}>
-          <div
-            className="rounded-xl overflow-hidden py-2"
-            style={{
-              background: 'oklch(9% 0.012 45 / 0.95)',
-              backdropFilter: 'blur(24px) saturate(1.3)',
-              border: '1px solid oklch(78% 0.16 60 / 0.12)',
-              boxShadow: '0 20px 60px oklch(0% 0 0 / 0.5), 0 0 40px oklch(78% 0.16 60 / 0.05)',
-              maxHeight: '70vh',
-              overflowY: 'auto',
-            }}
-          >
-            {items.map((item, i) => {
-              const Icon = item.icon;
-              const isActive = active === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => { onNav(item.id); setOpen(false); }}
-                  className="w-full flex items-center gap-3 px-4 py-2.5 cursor-pointer transition-colors"
-                  style={{
-                    color: isActive ? 'oklch(92% 0.01 60)' : 'oklch(90% 0.005 55)',
-                    background: isActive ? 'oklch(16% 0.02 45)' : 'transparent',
-                    transitionDelay: open ? `${i * 20}ms` : '0ms',
-                  }}
-                  onMouseEnter={e => { if (!isActive) (e.target as HTMLElement).style.background = 'oklch(13% 0.015 45)'; }}
-                  onMouseLeave={e => { if (!isActive) (e.target as HTMLElement).style.background = 'transparent'; }}
-                >
-                  <Icon size={14} style={{ color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(82% 0.005 55)' }} />
-                  <span className="text-[14px] font-semibold">{item.label}</span>
-                  {isActive && (
-                    <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: 'oklch(78% 0.16 60)' }} />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* The FAB itself */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="cursor-pointer"
+      {/* Floating side rail - right edge, vertically centered */}
+      <nav
+        className="fixed right-0 top-1/2 z-50 hidden lg:flex flex-col items-end"
+        style={{ transform: 'translateY(-50%)' }}
+      >
+        <div
+          className="flex flex-col gap-0.5 py-3 px-1.5 rounded-l-lg"
           style={{
-            width: 52,
-            height: 52,
-            borderRadius: '50%',
-            background: open
-              ? 'linear-gradient(135deg, oklch(78% 0.16 60), oklch(65% 0.14 50))'
-              : 'oklch(10% 0.015 45 / 0.9)',
-            border: `1px solid ${open ? 'oklch(78% 0.16 60 / 0.4)' : 'oklch(78% 0.16 60 / 0.2)'}`,
+            background: 'oklch(7% 0.01 45 / 0.85)',
             backdropFilter: 'blur(16px)',
-            boxShadow: open
-              ? '0 8px 40px oklch(78% 0.16 60 / 0.3), 0 0 20px oklch(78% 0.16 60 / 0.1)'
-              : '0 4px 20px oklch(0% 0 0 / 0.4)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-            transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
+            border: '1px solid oklch(16% 0.012 45)',
+            borderRight: 'none',
           }}
         >
-          {open
-            ? <ChevronUp size={20} style={{ color: 'oklch(10% 0.01 45)' }} />
-            : <Moon size={20} style={{ color: 'oklch(78% 0.16 60)' }} />
-          }
-        </button>
-      </div>
+          {items.map((item) => {
+            const Icon = item.icon;
+            const isActive = active === item.id;
+            const isHovered = hovered === item.id;
+            const showLabel = isHovered || isActive;
 
+            return (
+              <button
+                key={item.id}
+                onClick={() => onNav(item.id)}
+                onMouseEnter={() => setHovered(item.id)}
+                onMouseLeave={() => setHovered(null)}
+                className="relative flex items-center justify-end cursor-pointer"
+                style={{
+                  padding: '5px 6px',
+                  borderRadius: '6px',
+                  background: isActive ? 'oklch(16% 0.02 45)' : 'transparent',
+                  transition: 'background 0.15s ease',
+                }}
+              >
+                {/* Tooltip label - appears to the left on hover */}
+                {showLabel && (
+                  <span
+                    className="absolute right-full mr-2 whitespace-nowrap px-2.5 py-1 rounded-md"
+                    style={{
+                      background: 'oklch(10% 0.012 45 / 0.95)',
+                      border: '1px solid oklch(20% 0.015 45)',
+                      color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(88% 0.006 55)',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      letterSpacing: '0.02em',
+                      boxShadow: '0 4px 12px oklch(0% 0 0 / 0.4)',
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                )}
+
+                {/* Icon dot */}
+                <Icon
+                  size={13}
+                  style={{
+                    color: isActive
+                      ? 'oklch(78% 0.16 60)'
+                      : isHovered
+                      ? 'oklch(88% 0.006 55)'
+                      : 'oklch(50% 0.01 50)',
+                    transition: 'color 0.15s ease',
+                  }}
+                />
+
+                {/* Active indicator bar */}
+                {isActive && (
+                  <div
+                    className="absolute right-0 top-1/2"
+                    style={{
+                      width: '2px',
+                      height: '14px',
+                      background: 'oklch(78% 0.16 60)',
+                      borderRadius: '1px',
+                      transform: 'translateY(-50%) translateX(4px)',
+                    }}
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </nav>
+
+      {/* Mobile: horizontal bottom bar with just icons */}
+      <nav
+        className="fixed bottom-0 inset-x-0 z-50 lg:hidden"
+        style={{
+          background: 'oklch(7% 0.01 45 / 0.92)',
+          backdropFilter: 'blur(16px)',
+          borderTop: '1px solid oklch(16% 0.012 45)',
+        }}
+      >
+        <div className="flex items-center justify-start gap-0 overflow-x-auto px-2 py-1.5" style={{ scrollbarWidth: 'none' }}>
+          {items.map((item) => {
+            const Icon = item.icon;
+            const isActive = active === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => onNav(item.id)}
+                className="flex flex-col items-center gap-0.5 px-2.5 py-1 cursor-pointer shrink-0"
+                style={{ minWidth: '44px' }}
+              >
+                <Icon
+                  size={14}
+                  style={{
+                    color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(50% 0.01 50)',
+                  }}
+                />
+                <span
+                  className="text-[8px] font-semibold"
+                  style={{
+                    color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(42% 0.01 50)',
+                  }}
+                >
+                  {item.label}
+                </span>
+                {isActive && (
+                  <div style={{
+                    width: '12px',
+                    height: '2px',
+                    background: 'oklch(78% 0.16 60)',
+                    borderRadius: '1px',
+                    marginTop: '-1px',
+                  }} />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </nav>
     </>
   );
 }
