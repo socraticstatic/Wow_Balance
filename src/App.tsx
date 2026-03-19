@@ -21,11 +21,15 @@ const Consumables = lazy(() => import('./pages/Consumables'));
 const Rankings = lazy(() => import('./pages/Rankings'));
 const BossGuides = lazy(() => import('./pages/BossGuides'));
 const DungeonGuides = lazy(() => import('./pages/DungeonGuides'));
+const Macros = lazy(() => import('./pages/Macros'));
+const WeeklyChecklist = lazy(() => import('./pages/WeeklyChecklist'));
+const GearPriority = lazy(() => import('./pages/GearPriority'));
+const MplusCdPlanner = lazy(() => import('./pages/MplusCdPlanner'));
 const Changelog = lazy(() => import('./pages/Changelog'));
 const LiveSession = lazy(() => import('./pages/LiveSession'));
 const Setup = lazy(() => import('./pages/Setup'));
 
-const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'talentbuild', 'breakpoints', 'keybinds', 'builds', 'gear', 'geardelta', 'consumables', 'raid', 'dungeons', 'rankings', 'live', 'changelog', 'setup'] as const;
+const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'talentbuild', 'breakpoints', 'keybinds', 'macros', 'builds', 'gear', 'geardelta', 'gearpriority', 'consumables', 'weekly', 'raid', 'dungeons', 'cdplanner', 'rankings', 'live', 'changelog', 'setup'] as const;
 
 function SectionFallback() {
   return (
@@ -159,6 +163,8 @@ export default function App() {
             <ActionBars />
           </div>
           <Divider />
+          <div id="macros" ref={ref('macros')}><Macros /></div>
+          <Divider />
           <div id="builds" ref={ref('builds')} className="relative">
             <SectionArt variant="lunar" />
             <Builds />
@@ -171,10 +177,14 @@ export default function App() {
           <Divider />
           <div id="geardelta" ref={ref('geardelta')}><GearDelta /></div>
           <Divider />
+          <div id="gearpriority" ref={ref('gearpriority')}><GearPriority /></div>
+          <Divider />
           <div id="consumables" ref={ref('consumables')} className="relative">
             <SectionArt variant="nature" />
             <Consumables />
           </div>
+          <Divider />
+          <div id="weekly" ref={ref('weekly')}><WeeklyChecklist /></div>
           <Divider />
           <div id="raid" ref={ref('raid')} className="relative">
             <SectionArt variant="solar" />
@@ -184,6 +194,11 @@ export default function App() {
           <div id="dungeons" ref={ref('dungeons')} className="relative">
             <SectionArt variant="void" />
             <DungeonGuides />
+          </div>
+          <Divider />
+          <div id="cdplanner" ref={ref('cdplanner')} className="relative">
+            <SectionArt variant="lunar" />
+            <MplusCdPlanner />
           </div>
           <Divider />
           <div id="rankings" ref={ref('rankings')}><Rankings /></div>

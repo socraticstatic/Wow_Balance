@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard, TreePine } from 'lucide-react';
+import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard, TreePine, Terminal, CalendarCheck, ArrowUpCircle, Map } from 'lucide-react';
 
 const items = [
   { id: 'hero', label: 'Overview', icon: Moon },
@@ -10,12 +10,16 @@ const items = [
   { id: 'talentbuild', label: 'Talents', icon: TreePine },
   { id: 'breakpoints', label: 'Breakpoints', icon: Target },
   { id: 'keybinds', label: 'Keybinds', icon: Keyboard },
+  { id: 'macros', label: 'Macros', icon: Terminal },
   { id: 'builds', label: 'Builds', icon: Sparkles },
   { id: 'gear', label: 'Gear', icon: Shield },
   { id: 'geardelta', label: 'Delta', icon: Swords },
+  { id: 'gearpriority', label: 'Upgrades', icon: ArrowUpCircle },
   { id: 'consumables', label: 'Consumables', icon: FlaskConical },
+  { id: 'weekly', label: 'Weekly', icon: CalendarCheck },
   { id: 'raid', label: 'Raid', icon: Users },
   { id: 'dungeons', label: 'M+', icon: Gem },
+  { id: 'cdplanner', label: 'CD Plan', icon: Map },
   { id: 'rankings', label: 'Rankings', icon: Trophy },
   { id: 'live', label: 'Live', icon: Radio },
   { id: 'changelog', label: 'Log', icon: ScrollText },
