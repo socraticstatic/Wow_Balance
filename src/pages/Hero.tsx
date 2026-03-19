@@ -24,7 +24,7 @@ export default function Hero() {
   const letters = 'Balance'.split('');
 
   return (
-    <section className="px-6 sm:px-10 pt-32 pb-28 max-w-6xl mx-auto">
+    <section className="px-6 sm:px-10 pt-20 sm:pt-32 pb-28 max-w-6xl mx-auto">
       {/* Context breadcrumb */}
       <div ref={r1} className="reveal flex items-center gap-2.5 mb-14">
         {[meta.expansion, `Patch ${meta.patch}`, meta.season].map((t, i) => (

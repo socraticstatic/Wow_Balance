@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard, TreePine, Terminal, CalendarCheck, ArrowUpCircle, Map, Menu, X } from 'lucide-react';
+import { Moon, Sun, Star, Swords, Shield, Sparkles, BookOpen, Compass, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard, TreePine, Terminal, CalendarCheck, ArrowUpCircle, Map, Menu, X } from 'lucide-react';
 
 const items = [
   { id: 'hero', label: 'Overview', icon: Moon },
@@ -78,10 +78,28 @@ export default function Nav({ active, onNav }: Props) {
             </span>
           </button>
 
-          {/* Mobile hamburger - only shows below lg */}
+          <div className="flex items-center gap-2 pointer-events-auto">
+            {/* Light/Dark toggle */}
+            <button
+              onClick={() => document.documentElement.classList.toggle('light')}
+              className="cursor-pointer"
+              title="Toggle light/dark mode"
+              style={{
+                background: 'oklch(7% 0.01 45 / 0.8)',
+                backdropFilter: 'blur(12px)',
+                padding: '8px',
+                borderRadius: '8px',
+                border: '1px solid oklch(16% 0.012 45)',
+                color: 'oklch(78% 0.16 60)',
+              }}
+            >
+              <Sun size={14} />
+            </button>
+
+          {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="pointer-events-auto lg:hidden cursor-pointer"
+            className="md:hidden cursor-pointer"
             style={{
               background: 'oklch(7% 0.01 45 / 0.8)',
               backdropFilter: 'blur(12px)',
@@ -93,12 +111,13 @@ export default function Nav({ active, onNav }: Props) {
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
+          </div>
         </div>
       </div>
 
       {/* Desktop: Floating side rail - right edge, vertically centered */}
       <nav
-        className="fixed right-0 top-1/2 z-50 hidden lg:flex flex-col items-end"
+        className="fixed right-0 top-1/2 z-50 hidden md:flex flex-col items-end"
         style={{ transform: 'translateY(-50%)' }}
       >
         <div
@@ -183,7 +202,7 @@ export default function Nav({ active, onNav }: Props) {
       {/* Mobile: Full-screen overlay nav */}
       {mobileOpen && (
         <nav
-          className="fixed inset-0 z-40 lg:hidden"
+          className="fixed inset-0 z-40 md:hidden"
           style={{
             background: 'oklch(7% 0.01 45 / 0.95)',
             backdropFilter: 'blur(20px)',

@@ -40,7 +40,9 @@ export default function GearDelta() {
     const pct = Math.min((item.ilvl / mythIlvl) * 100, 100);
     const isEnchantable = enchantableSlots.includes(item.slot);
     const isTierSlot = tierSlots.includes(item.slot);
-    const recommendedEnchant = enchantsGems.enchants[item.slot === 'mainhand' ? 'weapon' : item.slot === 'finger1' || item.slot === 'finger2' ? 'rings' : item.slot];
+    const enchantSlotMap: Record<string, string> = { mainhand: 'weapon', finger1: 'rings', finger2: 'rings', feet: 'boots', back: 'cloak' };
+    const enchantKey = enchantSlotMap[item.slot] || item.slot;
+    const recommendedEnchant = (enchantsGems as any)?.enchants?.[enchantKey];
 
     return {
       slot: item.slot,

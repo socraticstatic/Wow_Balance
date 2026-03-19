@@ -239,7 +239,7 @@ export default function App() {
 
 function Divider() {
   return (
-    <div className="py-8">
+    <div className="py-4">
       <div className="ornament">
         <span className="ornament-diamond relative" />
       </div>

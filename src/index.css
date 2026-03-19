@@ -17,7 +17,7 @@
   --color-text-1: oklch(97% 0.003 60);
   --color-text-2: oklch(88% 0.006 55);
   --color-text-3: oklch(76% 0.006 50);
-  --color-text-4: oklch(62% 0.005 45);
+  --color-text-4: oklch(70% 0.005 45);
 
   /* ── Borders ── */
   --color-border: oklch(16% 0.012 45);
@@ -254,6 +254,38 @@ body::after {
   from { transform: rotate(0deg) translateX(3px) rotate(0deg); }
   to { transform: rotate(360deg) translateX(3px) rotate(-360deg); }
 }
+
+/* ── Light mode ── */
+html.light body {
+  --color-void: oklch(96% 0.008 60);
+  --color-surface-1: oklch(93% 0.01 55);
+  --color-surface-2: oklch(90% 0.012 50);
+  --color-surface-3: oklch(86% 0.014 48);
+  --color-text-1: oklch(15% 0.01 45);
+  --color-text-2: oklch(28% 0.008 50);
+  --color-text-3: oklch(40% 0.006 50);
+  --color-text-4: oklch(50% 0.005 45);
+  --color-border: oklch(82% 0.01 55);
+  background: var(--color-void);
+  color: var(--color-text-1);
+}
+html.light body::before { opacity: 0.02; }
+html.light body::after { background: radial-gradient(ellipse at 30% 20%, transparent 30%, oklch(96% 0.008 60 / 0.3) 100%); }
+html.light .glass { background: oklch(97% 0.005 55 / 0.7); border-color: oklch(78% 0.12 60 / 0.15); }
+html.light .glass-solar { background: oklch(95% 0.015 60 / 0.6); border-color: oklch(78% 0.12 60 / 0.2); }
+html.light .glass-lunar { background: oklch(94% 0.01 285 / 0.6); border-color: oklch(68% 0.12 285 / 0.2); }
+html.light .glass-nature { background: oklch(95% 0.01 155 / 0.6); border-color: oklch(52% 0.1 155 / 0.2); }
+html.light .gold-shimmer {
+  background: linear-gradient(105deg, oklch(45% 0.12 55) 0%, oklch(55% 0.1 60) 25%, oklch(40% 0.14 55) 50%, oklch(55% 0.1 60) 75%, oklch(45% 0.12 55) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+html.light .scroll-bar { background: linear-gradient(90deg, oklch(50% 0.14 55), oklch(60% 0.1 60), oklch(50% 0.14 55)); }
+html.light .ornament::before, html.light .ornament::after { background: linear-gradient(90deg, transparent, oklch(50% 0.14 55 / 0.3), transparent); }
+html.light .ornament-diamond { background: oklch(50% 0.14 55 / 0.4); }
+html.light .card-hover:hover { box-shadow: 0 8px 30px oklch(50% 0.14 55 / 0.06); }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
