@@ -45,26 +45,34 @@ export default function App() {
   const [scrollPct, setScrollPct] = useState(0);
   const refs = useRef<Record<string, HTMLDivElement | null>>({});
 
-  // Section observer
+  // Section observer - uses scroll position as primary, IO as fallback
   useEffect(() => {
-    const obs = new IntersectionObserver(
-      entries => {
-        // Pick the entry with the largest intersection ratio
-        let best: IntersectionObserverEntry | null = null;
-        for (const e of entries) {
-          if (e.isIntersecting && (!best || e.intersectionRatio > best.intersectionRatio)) {
-            best = e;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const viewportCenter = window.scrollY + window.innerHeight * 0.35;
+        let closest: string = sectionIds[0];
+        let closestDist = Infinity;
+        for (const id of sectionIds) {
+          const el = refs.current[id];
+          if (!el) continue;
+          const rect = el.getBoundingClientRect();
+          const elTop = rect.top + window.scrollY;
+          const dist = Math.abs(elTop - viewportCenter);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closest = id;
           }
         }
-        if (best) setActive(best.target.id);
-      },
-      { threshold: [0, 0.1, 0.25, 0.5], rootMargin: '-10% 0px -40% 0px' },
-    );
-    for (const id of sectionIds) {
-      const el = refs.current[id];
-      if (el) obs.observe(el);
-    }
-    return () => obs.disconnect();
+        setActive(closest);
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // Run once on mount
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   // Global reveal observer - catches ALL .reveal elements including those without useReveal hook

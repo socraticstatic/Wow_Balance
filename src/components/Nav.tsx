@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Moon, Star, Swords, Shield, Sparkles, BookOpen, Compass, Users, Gem, FlaskConical, Trophy, Settings, ScrollText, Zap, Target, Radio, Keyboard, TreePine, Terminal, CalendarCheck, ArrowUpCircle, Map } from 'lucide-react';
 
 const items = [
@@ -30,6 +30,17 @@ interface Props { active: string; onNav: (id: string) => void }
 
 export default function Nav({ active, onNav }: Props) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll mobile nav to show active item
+  useEffect(() => {
+    const container = mobileScrollRef.current;
+    if (!container) return;
+    const activeBtn = container.querySelector(`[data-nav-id="${active}"]`) as HTMLElement;
+    if (activeBtn) {
+      activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+  }, [active]);
 
   return (
     <>
@@ -155,13 +166,14 @@ export default function Nav({ active, onNav }: Props) {
           borderTop: '1px solid oklch(16% 0.012 45)',
         }}
       >
-        <div className="flex items-center justify-start gap-0 overflow-x-auto px-2 py-1.5" style={{ scrollbarWidth: 'none' }}>
+        <div ref={mobileScrollRef} className="flex items-center justify-start gap-0 overflow-x-auto px-2 py-1.5" style={{ scrollbarWidth: 'none' }}>
           {items.map((item) => {
             const Icon = item.icon;
             const isActive = active === item.id;
             return (
               <button
                 key={item.id}
+                data-nav-id={item.id}
                 onClick={() => onNav(item.id)}
                 className="flex flex-col items-center gap-0.5 px-2.5 py-1 cursor-pointer shrink-0"
                 style={{ minWidth: '44px' }}
