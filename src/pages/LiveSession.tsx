@@ -1,9 +1,43 @@
+import { useState, useEffect, useCallback } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { useReveal } from '../hooks/useReveal';
 
-// Live session data - pushed from PC watcher via GitHub API
+// Build-time fallback
 import liveSessionJson from '../data/live-session.json';
-const liveData: any = liveSessionJson;
+
+const LIVE_URL = 'https://raw.githubusercontent.com/socraticstatic/Wow_Balance/main/src/data/live-session.json';
+const POLL_INTERVAL = 60_000; // 60 seconds
+
+function useLiveData() {
+  const [data, setData] = useState<any>(liveSessionJson);
+  const [lastCheck, setLastCheck] = useState(Date.now());
+  const [polling, setPolling] = useState(true);
+
+  const fetchLive = useCallback(async () => {
+    try {
+      const res = await fetch(LIVE_URL + '?t=' + Date.now(), { cache: 'no-store' });
+      if (res.ok) {
+        const json = await res.json();
+        // Only update if newer
+        if (json.lastUpdate && (!data?.lastUpdate || json.lastUpdate > data.lastUpdate)) {
+          setData(json);
+        }
+      }
+    } catch { /* silently fail, use cached */ }
+    setLastCheck(Date.now());
+  }, [data?.lastUpdate]);
+
+  useEffect(() => {
+    if (!polling) return;
+    fetchLive(); // immediate first fetch
+    const id = setInterval(fetchLive, POLL_INTERVAL);
+    return () => clearInterval(id);
+  }, [fetchLive, polling]);
+
+  return { data, lastCheck, polling, setPolling };
+}
+
+const liveData: any = liveSessionJson; // kept for initial render
 
 const gradeColors: Record<string, string> = {
   S: 'oklch(80% 0.18 80)',
@@ -15,11 +49,15 @@ const gradeColors: Record<string, string> = {
 };
 
 export default function LiveSession() {
+  const { data: livePolled, lastCheck, polling, setPolling } = useLiveData();
   const r1 = useReveal();
   const r2 = useReveal();
 
+  // Use polled data if available, fall back to build-time import
+  const activeLiveData = livePolled || liveData;
+
   // If no live data, show setup instructions
-  if (!liveData) {
+  if (!activeLiveData) {
     return (
       <section className="px-6 sm:px-10 py-32 max-w-6xl mx-auto relative z-10">
         <div ref={r1} className="reveal">
@@ -67,7 +105,7 @@ export default function LiveSession() {
     );
   }
 
-  const data = liveData.default || liveData;
+  const data = activeLiveData.default || activeLiveData;
   const summary = data.summary;
   const fights = data.recentFights || [];
   const bests = data.bests;
@@ -89,6 +127,33 @@ export default function LiveSession() {
           sub={`${summary.totalFights} fights tracked. Last update: ${new Date(data.lastUpdate).toLocaleTimeString()}`}
           accent="lunar"
         />
+      </div>
+
+      {/* Auto-poll status */}
+      <div className="reveal flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full" style={{
+            background: polling ? 'oklch(68% 0.18 155)' : 'oklch(50% 0.01 50)',
+            animation: polling ? 'breathe 3s ease-in-out infinite' : 'none',
+          }} />
+          <span className="text-[12px] font-semibold" style={{ color: 'oklch(72% 0.005 55)' }}>
+            {polling ? 'Auto-refreshing every 60s' : 'Paused'}
+          </span>
+        </div>
+        <span className="text-[11px]" style={{ color: 'oklch(55% 0.005 50)' }}>
+          Last checked: {new Date(lastCheck).toLocaleTimeString()}
+        </span>
+        <button
+          onClick={() => setPolling(!polling)}
+          className="text-[11px] px-2 py-0.5 rounded cursor-pointer"
+          style={{
+            color: 'oklch(78% 0.16 60)',
+            background: 'oklch(78% 0.16 60 / 0.08)',
+            border: '1px solid oklch(78% 0.16 60 / 0.15)',
+          }}
+        >
+          {polling ? 'Pause' : 'Resume'}
+        </button>
       </div>
 
       {/* Staleness / troubleshooting banner */}

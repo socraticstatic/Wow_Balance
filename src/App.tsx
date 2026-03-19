@@ -43,8 +43,17 @@ export default function App() {
   // Section observer
   useEffect(() => {
     const obs = new IntersectionObserver(
-      entries => { for (const e of entries) if (e.isIntersecting) setActive(e.target.id); },
-      { threshold: 0.25 },
+      entries => {
+        // Pick the entry with the largest intersection ratio
+        let best: IntersectionObserverEntry | null = null;
+        for (const e of entries) {
+          if (e.isIntersecting && (!best || e.intersectionRatio > best.intersectionRatio)) {
+            best = e;
+          }
+        }
+        if (best) setActive(best.target.id);
+      },
+      { threshold: [0, 0.1, 0.25, 0.5], rootMargin: '-10% 0px -40% 0px' },
     );
     for (const id of sectionIds) {
       const el = refs.current[id];
