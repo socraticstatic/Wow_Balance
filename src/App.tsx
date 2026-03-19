@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
 import Nav from './components/Nav';
 import Hero from './pages/Hero';
 import CelestialBg from './components/CelestialBg';
@@ -136,6 +137,7 @@ export default function App() {
       <main className="relative z-10">
         <div id="hero" ref={ref('hero')}><Hero /></div>
         <Divider />
+        <ErrorBoundary>
         <Suspense fallback={<SectionFallback />}>
           <div id="spiracle" ref={ref('spiracle')}><MyCharacter /></div>
           <Divider />
@@ -209,6 +211,7 @@ export default function App() {
           <Divider />
           <div id="setup" ref={ref('setup')}><Setup /></div>
         </Suspense>
+        </ErrorBoundary>
 
         <footer className="px-6 py-20 text-center">
           <p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'oklch(28% 0.015 270)', letterSpacing: '0.14em' }}>

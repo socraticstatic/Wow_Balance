@@ -12,38 +12,48 @@ interface SlotUpgrade {
 }
 
 function analyzeGearPriority(): SlotUpgrade[] {
-  const c = characterData;
-  const gear = c.gear as Array<{
-    slot: string; name: string; ilvl: number; quality: number;
-    tier: string | null; enchant: string | null; gems: string[];
-  }>;
+  try {
+    const c = characterData as any;
+    const gear = (c?.gear || []) as Array<{
+      slot: string; name: string; ilvl: number; quality: number;
+      tier: string | null; enchant: string | null; gems: string[];
+    }>;
 
-  const bis = (bisGear as unknown) as Array<{
-    slot: string; name: string; ilvl: number; source: string;
-    tier: boolean; stats: string; enchant: string; gem: string;
-  }>;
+    const bisObj = bisGear as any;
+    const bis: Array<any> =
+      Array.isArray(bisObj) ? bisObj :
+      Array.isArray(bisObj?.raidMythic) ? bisObj.raidMythic :
+      [];
 
-  const upgrades: SlotUpgrade[] = [];
+    const upgrades: SlotUpgrade[] = [];
+    const MYTH_ILVL = 289;
 
-  for (const item of gear) {
-    const bisItem = bis.find(b => b.slot.toLowerCase() === item.slot.toLowerCase());
-    if (!bisItem) continue;
+    for (const item of gear) {
+      if (!item?.slot || !item?.name) continue;
+      const bisItem = bis.find((b: any) => b?.slot?.toLowerCase() === item.slot.toLowerCase());
+      const targetIlvl = bisItem?.ilvl || MYTH_ILVL;
+      const targetName = bisItem?.name || `Mythic ${item.slot}`;
+      const targetSource = bisItem?.source || 'Mythic Raid / M+ Vault';
 
-    const gap = bisItem.ilvl - item.ilvl;
-    if (gap <= 0) continue;
+      const gap = targetIlvl - item.ilvl;
+      if (gap <= 0) continue;
 
-    const sources = getUpgradeSources(item.slot, item.ilvl, (characterData as any).level);
+      const sources = getUpgradeSources(item.slot, item.ilvl, c?.level || 86);
 
-    upgrades.push({
-      slot: item.slot,
-      current: { name: item.name, ilvl: item.ilvl, quality: item.quality },
-      target: { name: bisItem.name, ilvl: bisItem.ilvl, source: bisItem.source },
-      gap,
-      sources,
-    });
+      upgrades.push({
+        slot: item.slot,
+        current: { name: item.name, ilvl: item.ilvl, quality: item.quality },
+        target: { name: targetName, ilvl: targetIlvl, source: targetSource },
+        gap,
+        sources,
+      });
+    }
+
+    return upgrades.sort((a, b) => b.gap - a.gap);
+  } catch (e) {
+    console.error('GearPriority analysis failed:', e);
+    return [];
   }
-
-  return upgrades.sort((a, b) => b.gap - a.gap);
 }
 
 function getUpgradeSources(slot: string, currentIlvl: number, level: number): SlotUpgrade['sources'] {
