@@ -190,7 +190,7 @@ export default function MyCharacter() {
                 <span className="text-[13px] w-16 capitalize shrink-0" style={{ color: 'oklch(90% 0.005 55)' }}>
                   {item.slot.replace(/(\d)/, ' $1')}
                 </span>
-                <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.012 45)' }}>
+                <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'oklch(10% 0.012 45 / 0.7)' }}>
                   <div
                     className="h-full rounded-full"
                     style={{

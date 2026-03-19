@@ -266,7 +266,7 @@ function KeyCap({ kb, shift }: { kb: KeyBind; shift?: boolean }) {
       <div
         className="w-full aspect-square rounded-lg flex flex-col items-center justify-center gap-0.5 card-hover"
         style={{
-          background: 'oklch(12% 0.012 45)',
+          background: 'oklch(10% 0.012 45 / 0.7)',
           border: `1px solid ${kb.color}30`,
           boxShadow: `0 2px 8px ${kb.color}10`,
         }}
