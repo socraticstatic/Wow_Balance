@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { useReveal } from '../hooks/useReveal';
 
@@ -235,6 +236,7 @@ const diffColors: Record<string, string> = {
 
 export default function BossGuides() {
   const r1 = useReveal();
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   return (
     <section className="px-6 sm:px-10 py-28 max-w-6xl mx-auto">
@@ -300,7 +302,12 @@ export default function BossGuides() {
           </div>
           <div className="space-y-4">
             {group.bosses.map((boss) => (
-              <BossCard key={boss.name} boss={boss} />
+              <BossCard
+                key={boss.name}
+                boss={boss}
+                isExpanded={expanded === boss.name}
+                onToggle={() => setExpanded(expanded === boss.name ? null : boss.name)}
+              />
             ))}
           </div>
         </div>
@@ -309,13 +316,15 @@ export default function BossGuides() {
   );
 }
 
-function BossCard({ boss }: { boss: BossGuide }) {
+function BossCard({ boss, isExpanded, onToggle }: { boss: BossGuide; isExpanded: boolean; onToggle: () => void }) {
   const r = useReveal();
   return (
     <div ref={r} className="reveal">
       <div className="rounded-lg overflow-hidden glass card-hover">
-        <div className="px-6 py-4 flex items-center justify-between flex-wrap gap-3"
-          style={{ borderBottom: '1px solid oklch(16% 0.012 45)' }}>
+        <button
+          onClick={onToggle}
+          className="w-full px-6 py-4 flex items-center justify-between flex-wrap gap-3 cursor-pointer text-left"
+          style={{ borderBottom: isExpanded ? '1px solid oklch(16% 0.012 45)' : 'none' }}>
           <div className="flex items-baseline gap-3">
             <span className="font-mono text-sm font-bold" style={{ color: 'oklch(82% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>
               {String(boss.order).padStart(2, '0')}
@@ -339,10 +348,13 @@ function BossCard({ boss }: { boss: BossGuide }) {
                   style={{ background: i < boss.balanceRating ? 'oklch(80% 0.18 80)' : 'oklch(16% 0.01 270)' }} />
               ))}
             </div>
+            <span style={{ color: 'oklch(82% 0.005 55)', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s ease', display: 'inline-block' }}>
+              &#8963;
+            </span>
           </div>
-        </div>
+        </button>
 
-        <div className="px-6 py-5 grid md:grid-cols-2 gap-8">
+        {isExpanded && <div className="px-6 py-5 grid md:grid-cols-2 gap-8">
           <div>
             <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
               Key Mechanics
@@ -388,7 +400,7 @@ function BossCard({ boss }: { boss: BossGuide }) {
               </p>
             </div>
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   );

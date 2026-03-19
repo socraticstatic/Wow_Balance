@@ -86,7 +86,7 @@ export default function App() {
           }
         }
       },
-      { threshold: 0.01, rootMargin: '50px 0px 0px 0px' },
+      { threshold: 0.01, rootMargin: '200px 0px 200px 0px' },
     );
 
     // Observe existing and watch for new .reveal elements via MutationObserver
@@ -132,7 +132,18 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey);
   }, [active]);
 
-  const nav = (id: string) => refs.current[id]?.scrollIntoView({ behavior: 'smooth' });
+  const nav = (id: string) => {
+    const el = refs.current[id];
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth' });
+    // Force-reveal all elements in the target section after scroll
+    setTimeout(() => {
+      el.querySelectorAll('.reveal:not(.visible)').forEach(r => r.classList.add('visible'));
+    }, 100);
+    setTimeout(() => {
+      el.querySelectorAll('.reveal:not(.visible)').forEach(r => r.classList.add('visible'));
+    }, 600);
+  };
   const ref = (id: string) => (el: HTMLDivElement | null) => { refs.current[id] = el; };
 
   return (
@@ -141,6 +152,28 @@ export default function App() {
       <CursorTrail />
       <div className="scroll-bar" style={{ width: `${scrollPct}%` }} />
       <Nav active={active} onNav={nav} />
+
+      {/* Scroll to top */}
+      {scrollPct > 5 && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-6 left-6 z-50 cursor-pointer"
+          style={{
+            width: 40, height: 40, borderRadius: '50%',
+            background: 'oklch(10% 0.012 45 / 0.85)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid oklch(78% 0.16 60 / 0.2)',
+            color: 'oklch(78% 0.16 60)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: '18px', lineHeight: 1,
+            boxShadow: '0 4px 16px oklch(0% 0 0 / 0.3)',
+            transition: 'opacity 0.2s ease, transform 0.2s ease',
+          }}
+          title="Scroll to top"
+        >
+          &#8593;
+        </button>
+      )}
 
       <main className="relative z-10">
         <div id="hero" ref={ref('hero')}><Hero /></div>
