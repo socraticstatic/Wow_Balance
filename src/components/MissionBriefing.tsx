@@ -120,7 +120,7 @@ function MidSession({ data }: { data: LiveSessionData | null }) {
   );
 }
 
-function PostSession({ data, coaching }: { data: LiveSessionData | null; coaching: CoachingOutput }) {
+function PostSession({ coaching }: { data: LiveSessionData | null; coaching: CoachingOutput }) {
   const report = coaching.sessionReport;
 
   return (
