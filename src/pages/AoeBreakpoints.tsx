@@ -62,7 +62,7 @@ export default function AoeBreakpoints() {
 
       {/* Interactive target calculator */}
       <div ref={r2} className="reveal mb-20">
-        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-lunar)', letterSpacing: '0.12em' }}>
           Target Count Calculator
         </div>
 
@@ -76,18 +76,18 @@ export default function AoeBreakpoints() {
                 className="flex-1 accent-[oklch(72%_0.18_270)]"
                 style={{ height: 6 }}
               />
-              <div className="text-4xl font-bold font-mono" style={{ color: 'oklch(95% 0.005 60)', fontVariantNumeric: 'tabular-nums', minWidth: '3ch', textAlign: 'right' }}>
+              <div className="text-4xl font-bold font-mono" style={{ color: 'var(--color-text-1)', fontVariantNumeric: 'tabular-nums', minWidth: '3ch', textAlign: 'right' }}>
                 {targetCount}
               </div>
             </div>
 
             <div className="p-5 rounded-lg glass mb-4">
               <div className="text-lg font-bold mb-1" style={{
-                color: current.starfallWins ? 'oklch(72% 0.18 270)' : 'oklch(80% 0.18 80)',
+                color: current.starfallWins ? 'var(--color-lunar)' : 'var(--color-solar)',
               }}>
                 {current.starfallWins ? 'STARFALL' : 'STARSURGE'} wins at {targetCount} target{targetCount > 1 ? 's' : ''}
               </div>
-              <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)' }}>
+              <p className="text-sm" style={{ color: 'var(--color-text-1)' }}>
                 {current.starfallWins
                   ? current.apPositive
                     ? `Starfall is AP-POSITIVE here. You spend 50 AP but Soul of the Forest refunds ${current.sotfRefund} AP. It costs you nothing.`
@@ -98,11 +98,11 @@ export default function AoeBreakpoints() {
             </div>
 
             {current.apPositive && (
-              <div className="p-4 rounded-lg gilt-border" style={{ background: 'oklch(12% 0.02 285 / 0.3)' }}>
-                <div className="text-sm font-bold mb-1" style={{ color: 'oklch(72% 0.18 270)' }}>
+              <div className="p-4 rounded-lg gilt-border" style={{ background: 'color-mix(in oklch, var(--color-surface-1) 30%, transparent)' }}>
+                <div className="text-sm font-bold mb-1" style={{ color: 'var(--color-lunar)' }}>
                   AP-Positive Loop Active
                 </div>
-                <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)' }}>
+                <p className="text-sm" style={{ color: 'var(--color-text-1)' }}>
                   At {targetCount} targets, SotF refunds {current.sotfRefund} AP per Starfall (cost: 50).
                   You GAIN {current.sotfRefund - STARFALL_COST} AP per cast. Spam Starfall. Your AP bar will never empty.
                 </p>
@@ -113,7 +113,7 @@ export default function AoeBreakpoints() {
           {/* Breakpoint table */}
           <div className="rounded-lg overflow-hidden glass">
             <div className="grid grid-cols-4 gap-2 px-4 py-2.5 text-[11px] uppercase font-bold"
-              style={{ color: 'oklch(82% 0.005 55)', letterSpacing: '0.1em', borderBottom: '1px solid oklch(16% 0.012 45)' }}>
+              style={{ color: 'var(--color-text-2)', letterSpacing: '0.1em', borderBottom: '1px solid var(--color-border)' }}>
               <div>#</div>
               <div>Starsurge</div>
               <div>Starfall</div>
@@ -123,24 +123,24 @@ export default function AoeBreakpoints() {
               <div key={bp.targets}
                 className="grid grid-cols-4 gap-2 px-4 py-2 text-sm row-hover"
                 style={{
-                  background: bp.targets === targetCount ? 'oklch(16% 0.02 270 / 0.3)' : 'transparent',
-                  borderLeft: bp.targets === targetCount ? '2px solid oklch(72% 0.18 270)' : '2px solid transparent',
+                  background: bp.targets === targetCount ? 'color-mix(in oklch, var(--color-surface-active) 30%, transparent)' : 'transparent',
+                  borderLeft: bp.targets === targetCount ? '2px solid var(--color-lunar)' : '2px solid transparent',
                 }}
               >
                 <div className="font-mono font-bold" style={{
-                  color: bp.apPositive ? 'oklch(72% 0.18 270)' : 'oklch(90% 0.005 55)',
+                  color: bp.apPositive ? 'var(--color-lunar)' : 'var(--color-text-1)',
                   fontVariantNumeric: 'tabular-nums',
                 }}>
                   {bp.targets}
                 </div>
-                <div className="font-mono" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
+                <div className="font-mono" style={{ color: 'var(--color-solar)', fontVariantNumeric: 'tabular-nums' }}>
                   {bp.starsurgeDpap.toLocaleString()}
                 </div>
-                <div className="font-mono" style={{ color: 'oklch(72% 0.18 270)', fontVariantNumeric: 'tabular-nums' }}>
+                <div className="font-mono" style={{ color: 'var(--color-lunar)', fontVariantNumeric: 'tabular-nums' }}>
                   {typeof bp.starfallDpap === 'number' ? bp.starfallDpap.toLocaleString() : bp.starfallDpap}
                 </div>
                 <div className="font-bold" style={{
-                  color: bp.starfallWins ? 'oklch(72% 0.18 270)' : 'oklch(80% 0.18 80)',
+                  color: bp.starfallWins ? 'var(--color-lunar)' : 'var(--color-solar)',
                 }}>
                   {bp.apPositive ? 'FREE' : bp.starfallWins ? 'Starfall' : 'Starsurge'}
                 </div>
@@ -152,29 +152,29 @@ export default function AoeBreakpoints() {
 
       {/* AP Economy */}
       <div ref={r3} className="reveal mb-20">
-        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
           Astral Power Economy
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4 mb-8">
           <div className="p-5 rounded-lg glass">
-            <div className="text-2xl font-bold font-mono mb-1" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>80+</div>
-            <div className="text-sm font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)' }}>Pool Before Starfall</div>
-            <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>
+            <div className="text-2xl font-bold font-mono mb-1" style={{ color: 'var(--color-solar)', fontVariantNumeric: 'tabular-nums' }}>80+</div>
+            <div className="text-sm font-bold mb-2" style={{ color: 'var(--color-solar)' }}>Pool Before Starfall</div>
+            <p className="text-sm" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
               Never Starfall below 80 AP. You need buffer for the immediate follow-up cast and Starweaver procs.
             </p>
           </div>
           <div className="p-5 rounded-lg glass">
-            <div className="text-2xl font-bold font-mono mb-1" style={{ color: 'oklch(72% 0.18 270)', fontVariantNumeric: 'tabular-nums' }}>100</div>
-            <div className="text-sm font-bold mb-2" style={{ color: 'oklch(72% 0.18 270)' }}>Pool Before M+ Pulls</div>
-            <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>
+            <div className="text-2xl font-bold font-mono mb-1" style={{ color: 'var(--color-lunar)', fontVariantNumeric: 'tabular-nums' }}>100</div>
+            <div className="text-sm font-bold mb-2" style={{ color: 'var(--color-lunar)' }}>Pool Before M+ Pulls</div>
+            <p className="text-sm" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
               Enter every pull at max AP. Sunfire (instant AoE) into Starfall immediately. The pull starts at maximum damage.
             </p>
           </div>
           <div className="p-5 rounded-lg glass-nature">
-            <div className="text-2xl font-bold font-mono mb-1" style={{ color: 'oklch(52% 0.14 155)', fontVariantNumeric: 'tabular-nums' }}>0</div>
-            <div className="text-sm font-bold mb-2" style={{ color: 'oklch(52% 0.14 155)' }}>AP Wasted = DPS Lost</div>
-            <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>
+            <div className="text-2xl font-bold font-mono mb-1" style={{ color: 'var(--color-nature)', fontVariantNumeric: 'tabular-nums' }}>0</div>
+            <div className="text-sm font-bold mb-2" style={{ color: 'var(--color-nature)' }}>AP Wasted = DPS Lost</div>
+            <p className="text-sm" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
               Capping at 100 AP while casting builders = wasted generation. In AoE this shouldn't happen since Starfall is always available.
             </p>
           </div>
@@ -182,7 +182,7 @@ export default function AoeBreakpoints() {
 
         {/* Pull sequence */}
         <div className="p-5 rounded-lg glass-lunar">
-          <div className="text-sm font-bold mb-3" style={{ color: 'oklch(72% 0.18 270)' }}>
+          <div className="text-sm font-bold mb-3" style={{ color: 'var(--color-lunar)' }}>
             Optimal AoE Pull Sequence
           </div>
           <ol className="space-y-2">
@@ -197,9 +197,9 @@ export default function AoeBreakpoints() {
               'Fury of Elune on cooldown (massive AP generation)',
               'Repeat: Starfall > Starfire > Starfall > Starfire',
             ].map((step, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm" style={{ color: 'oklch(92% 0.004 270)' }}>
+              <li key={i} className="flex items-start gap-3 text-sm" style={{ color: 'var(--color-text-1)' }}>
                 <span className="w-5 h-5 rounded-full text-[12px] flex items-center justify-center shrink-0 mt-0.5 font-mono font-bold"
-                  style={{ color: 'oklch(72% 0.18 270)', background: 'oklch(72% 0.18 270 / 0.1)' }}>
+                  style={{ color: 'var(--color-lunar)', background: 'color-mix(in oklch, var(--color-lunar) 10%, transparent)' }}>
                   {i + 1}
                 </span>
                 {step}
@@ -211,7 +211,7 @@ export default function AoeBreakpoints() {
 
       {/* Live parse data */}
       <div className="reveal mb-16">
-        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
           Live Parse Data - Top Balance Druids (Mythic)
         </div>
 
@@ -219,18 +219,18 @@ export default function AoeBreakpoints() {
           {parseEntries.filter(e => e.topParses?.length > 0).map(encounter => (
             <div key={encounter.name} className="rounded-lg overflow-hidden glass">
               <div className="px-5 py-3 flex items-center justify-between"
-                style={{ borderBottom: '1px solid oklch(16% 0.012 45)' }}>
-                <span className="font-display text-base font-bold" style={{ color: 'oklch(92% 0.008 60)', fontStyle: 'italic' }}>
+                style={{ borderBottom: '1px solid var(--color-border)' }}>
+                <span className="font-display text-base font-bold" style={{ color: 'var(--color-text-1)', fontStyle: 'italic' }}>
                   {encounter.name}
                 </span>
                 <div className="flex items-center gap-4">
-                  <span className="text-sm" style={{ color: 'oklch(82% 0.005 55)' }}>
-                    Avg: <span className="font-mono font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
+                  <span className="text-sm" style={{ color: 'var(--color-text-2)' }}>
+                    Avg: <span className="font-mono font-bold" style={{ color: 'var(--color-solar)', fontVariantNumeric: 'tabular-nums' }}>
                       {encounter.avgDps?.toLocaleString()}
                     </span>
                   </span>
-                  <span className="text-sm" style={{ color: 'oklch(82% 0.005 55)' }}>
-                    Max: <span className="font-mono font-bold" style={{ color: 'oklch(95% 0.005 60)', fontVariantNumeric: 'tabular-nums' }}>
+                  <span className="text-sm" style={{ color: 'var(--color-text-2)' }}>
+                    Max: <span className="font-mono font-bold" style={{ color: 'var(--color-text-1)', fontVariantNumeric: 'tabular-nums' }}>
                       {encounter.maxDps?.toLocaleString()}
                     </span>
                   </span>
@@ -240,13 +240,13 @@ export default function AoeBreakpoints() {
                 {encounter.topParses?.slice(0, 5).map((p: any, i: number) => (
                   <div key={i} className="flex items-baseline gap-2 text-sm">
                     <span className="font-mono font-bold" style={{
-                      color: i === 0 ? 'oklch(80% 0.18 80)' : 'oklch(90% 0.005 55)',
+                      color: i === 0 ? 'var(--color-solar)' : 'var(--color-text-1)',
                       fontVariantNumeric: 'tabular-nums',
                     }}>
                       #{i + 1}
                     </span>
-                    <span style={{ color: 'oklch(92% 0.004 270)' }}>{p.name}</span>
-                    <span className="font-mono" style={{ color: 'oklch(82% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>
+                    <span style={{ color: 'var(--color-text-1)' }}>{p.name}</span>
+                    <span className="font-mono" style={{ color: 'var(--color-text-2)', fontVariantNumeric: 'tabular-nums' }}>
                       {Math.round(p.dps).toLocaleString()}
                     </span>
                   </div>
@@ -259,20 +259,20 @@ export default function AoeBreakpoints() {
 
       {/* Starfall overlap guide */}
       <div className="reveal">
-        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-lunar)', letterSpacing: '0.12em' }}>
           Starfall Overlap Windows
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4">
           {[
-            { title: 'Incarnation Window', desc: '30s of +10% Haste + 10% Arcane damage. Starfall every 3-4 GCDs. Stack overlapping Starfalls. Your biggest AoE window.', color: 'oklch(80% 0.18 80)' },
-            { title: 'Fury of Elune', desc: 'AoE beam + 6% damage amp (Atmospheric Exposure). Massive AP gen. Lunation brings it back every 20-25s in AoE.', color: 'oklch(72% 0.18 270)' },
-            { title: 'Ascendant Eclipse', desc: 'First 3 spenders after Eclipse entry deal +20% damage. First Starfire is instant. Eclipse bolts always crit, triggering DoT cascade.', color: 'oklch(68% 0.18 155)' },
-            { title: 'Two Starfalls on 6 Targets', desc: '1.73M total damage over 8 seconds. 216K DPS from Starfall alone. Plus DoTs, Shooting Stars, Orbit Breaker Full Moons.', color: 'oklch(95% 0.005 60)' },
+            { title: 'Incarnation Window', desc: '30s of +10% Haste + 10% Arcane damage. Starfall every 3-4 GCDs. Stack overlapping Starfalls. Your biggest AoE window.', color: 'var(--color-solar)' },
+            { title: 'Fury of Elune', desc: 'AoE beam + 6% damage amp (Atmospheric Exposure). Massive AP gen. Lunation brings it back every 20-25s in AoE.', color: 'var(--color-lunar)' },
+            { title: 'Ascendant Eclipse', desc: 'First 3 spenders after Eclipse entry deal +20% damage. First Starfire is instant. Eclipse bolts always crit, triggering DoT cascade.', color: 'var(--color-nature)' },
+            { title: 'Two Starfalls on 6 Targets', desc: '1.73M total damage over 8 seconds. 216K DPS from Starfall alone. Plus DoTs, Shooting Stars, Orbit Breaker Full Moons.', color: 'var(--color-text-1)' },
           ].map(item => (
             <div key={item.title} className="p-5 rounded-lg glass card-hover">
               <div className="text-sm font-bold mb-2" style={{ color: item.color }}>{item.title}</div>
-              <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>{item.desc}</p>
+              <p className="text-sm" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>{item.desc}</p>
             </div>
           ))}
         </div>

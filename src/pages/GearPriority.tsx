@@ -113,9 +113,9 @@ function getUpgradeSources(slot: string, currentIlvl: number, level: number): Sl
 }
 
 const diffColors = {
-  easy: 'oklch(68% 0.18 155)',
-  medium: 'oklch(80% 0.18 80)',
-  hard: 'oklch(72% 0.16 30)',
+  easy: 'var(--color-nature)',
+  medium: 'var(--color-solar)',
+  hard: 'var(--color-error)',
 };
 
 export default function GearPriority() {
@@ -136,7 +136,7 @@ export default function GearPriority() {
 
       {upgrades.length === 0 ? (
         <div className="reveal p-6 rounded-lg glass">
-          <p className="text-[15px]" style={{ color: 'oklch(88% 0.005 55)' }}>
+          <p className="text-[15px]" style={{ color: 'var(--color-text-1)' }}>
             All gear is at or above BiS ilvl. You're done. Focus on tier set completion and optimal secondary stats.
           </p>
         </div>
@@ -153,29 +153,29 @@ export default function GearPriority() {
 
 function UpgradeCard({ upgrade: u, rank }: { upgrade: SlotUpgrade; rank: number }) {
   const r = useReveal();
-  const urgency = u.gap >= 80 ? 'oklch(72% 0.16 30)' : u.gap >= 40 ? 'oklch(80% 0.18 80)' : 'oklch(72% 0.18 270)';
+  const urgency = u.gap >= 80 ? 'var(--color-error)' : u.gap >= 40 ? 'var(--color-solar)' : 'var(--color-lunar)';
 
   return (
     <div ref={r} className="reveal rounded-lg glass overflow-hidden" style={{ borderLeft: `3px solid ${urgency}` }}>
       <div className="px-6 py-4 flex items-center justify-between flex-wrap gap-3"
-        style={{ borderBottom: '1px solid oklch(16% 0.012 45)' }}>
+        style={{ borderBottom: '1px solid var(--color-border)' }}>
         <div className="flex items-baseline gap-3">
           <span className="font-mono text-sm font-bold" style={{ color: urgency, fontVariantNumeric: 'tabular-nums' }}>
             #{rank}
           </span>
-          <span className="text-[11px] uppercase font-bold" style={{ color: 'oklch(78% 0.005 55)', letterSpacing: '0.08em' }}>
+          <span className="text-[11px] uppercase font-bold" style={{ color: 'var(--color-text-2)', letterSpacing: '0.08em' }}>
             {u.slot}
           </span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="font-mono text-sm" style={{ color: 'oklch(72% 0.16 30)', fontVariantNumeric: 'tabular-nums' }}>
+          <span className="font-mono text-sm" style={{ color: 'var(--color-error)', fontVariantNumeric: 'tabular-nums' }}>
             {u.current.ilvl}
           </span>
-          <span style={{ color: 'oklch(50% 0.005 50)' }}>→</span>
-          <span className="font-mono text-sm font-bold" style={{ color: 'oklch(68% 0.18 155)', fontVariantNumeric: 'tabular-nums' }}>
+          <span style={{ color: 'var(--color-text-muted)' }}>{'\u2192'}</span>
+          <span className="font-mono text-sm font-bold" style={{ color: 'var(--color-nature)', fontVariantNumeric: 'tabular-nums' }}>
             {u.target.ilvl}
           </span>
-          <span className="text-[11px] font-bold px-2 py-0.5 rounded" style={{ color: urgency, background: `${urgency}12` }}>
+          <span className="text-[11px] font-bold px-2 py-0.5 rounded" style={{ color: urgency, background: `color-mix(in oklch, ${urgency} 7%, transparent)` }}>
             +{u.gap} ilvl
           </span>
         </div>
@@ -184,30 +184,30 @@ function UpgradeCard({ upgrade: u, rank }: { upgrade: SlotUpgrade; rank: number 
       <div className="px-6 py-4">
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <div>
-            <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.1em' }}>Current</div>
-            <div className="text-[14px] font-semibold" style={{ color: 'oklch(82% 0.005 55)' }}>{u.current.name}</div>
-            <div className="text-[12px] font-mono" style={{ color: 'oklch(60% 0.005 50)', fontVariantNumeric: 'tabular-nums' }}>ilvl {u.current.ilvl}</div>
+            <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'var(--color-error)', letterSpacing: '0.1em' }}>Current</div>
+            <div className="text-[14px] font-semibold" style={{ color: 'var(--color-text-2)' }}>{u.current.name}</div>
+            <div className="text-[12px] font-mono" style={{ color: 'var(--color-text-muted)', fontVariantNumeric: 'tabular-nums' }}>ilvl {u.current.ilvl}</div>
           </div>
           <div>
-            <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.1em' }}>Target</div>
-            <div className="text-[14px] font-semibold" style={{ color: 'oklch(92% 0.006 60)' }}>{u.target.name}</div>
-            <div className="text-[12px]" style={{ color: 'oklch(70% 0.005 55)' }}>{u.target.source}</div>
+            <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'var(--color-nature)', letterSpacing: '0.1em' }}>Target</div>
+            <div className="text-[14px] font-semibold" style={{ color: 'var(--color-text-1)' }}>{u.target.name}</div>
+            <div className="text-[12px]" style={{ color: 'var(--color-text-4)' }}>{u.target.source}</div>
           </div>
         </div>
 
-        <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.1em' }}>
+        <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'var(--color-solar)', letterSpacing: '0.1em' }}>
           How to Upgrade This Week
         </div>
         <div className="space-y-2">
           {u.sources.slice(0, 4).map((s, i) => (
             <div key={i} className="flex items-start gap-3 text-[13px]">
               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 mt-0.5"
-                style={{ color: diffColors[s.difficulty], background: `${diffColors[s.difficulty]}12` }}>
+                style={{ color: diffColors[s.difficulty], background: `color-mix(in oklch, ${diffColors[s.difficulty]} 7%, transparent)` }}>
                 {s.difficulty}
               </span>
               <div>
-                <span className="font-semibold" style={{ color: 'oklch(90% 0.005 55)' }}>{s.method}: </span>
-                <span style={{ color: 'oklch(80% 0.005 55)' }}>{s.detail}</span>
+                <span className="font-semibold" style={{ color: 'var(--color-text-1)' }}>{s.method}: </span>
+                <span style={{ color: 'var(--color-text-2)' }}>{s.detail}</span>
               </div>
             </div>
           ))}

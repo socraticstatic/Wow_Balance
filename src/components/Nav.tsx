@@ -58,20 +58,20 @@ export default function Nav({ active, onNav }: Props) {
             onClick={() => handleNav('hero')}
             className="pointer-events-auto flex items-center gap-2 cursor-pointer"
             style={{
-              background: 'oklch(7% 0.01 45 / 0.8)',
+              background: 'color-mix(in oklch, var(--color-void) 80%, transparent)',
               backdropFilter: 'blur(12px)',
               padding: '6px 14px',
               borderRadius: '8px',
-              border: '1px solid oklch(16% 0.012 45)',
+              border: '1px solid var(--color-border)',
             }}
           >
-            <Moon size={14} style={{ color: 'oklch(78% 0.16 60)' }} />
+            <Moon size={14} style={{ color: 'var(--color-solar)' }} />
             <span style={{
               fontFamily: '"Cormorant", Georgia, serif',
               fontSize: '14px',
               fontWeight: 600,
               fontStyle: 'italic',
-              color: 'oklch(82% 0.02 55)',
+              color: 'var(--color-text-2)',
               letterSpacing: '0.04em',
             }}>
               Balance Dossier
@@ -85,12 +85,12 @@ export default function Nav({ active, onNav }: Props) {
               className="cursor-pointer"
               title="Toggle light/dark mode"
               style={{
-                background: 'oklch(7% 0.01 45 / 0.8)',
+                background: 'color-mix(in oklch, var(--color-void) 80%, transparent)',
                 backdropFilter: 'blur(12px)',
                 padding: '8px',
                 borderRadius: '8px',
-                border: '1px solid oklch(16% 0.012 45)',
-                color: 'oklch(78% 0.16 60)',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-solar)',
               }}
             >
               <Sun size={14} />
@@ -101,12 +101,12 @@ export default function Nav({ active, onNav }: Props) {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden cursor-pointer"
             style={{
-              background: 'oklch(7% 0.01 45 / 0.8)',
+              background: 'color-mix(in oklch, var(--color-void) 80%, transparent)',
               backdropFilter: 'blur(12px)',
               padding: '8px',
               borderRadius: '8px',
-              border: '1px solid oklch(16% 0.012 45)',
-              color: 'oklch(78% 0.16 60)',
+              border: '1px solid var(--color-border)',
+              color: 'var(--color-solar)',
             }}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -124,9 +124,9 @@ export default function Nav({ active, onNav }: Props) {
           ref={railRef}
           className="flex flex-col gap-0.5 py-3 px-1.5 rounded-l-lg overflow-y-auto"
           style={{
-            background: 'oklch(7% 0.01 45 / 0.85)',
+            background: 'color-mix(in oklch, var(--color-void) 85%, transparent)',
             backdropFilter: 'blur(16px)',
-            border: '1px solid oklch(16% 0.012 45)',
+            border: '1px solid var(--color-border)',
             borderRight: 'none',
             maxHeight: '85vh',
           }}
@@ -148,7 +148,7 @@ export default function Nav({ active, onNav }: Props) {
                 style={{
                   padding: '5px 6px',
                   borderRadius: '6px',
-                  background: isActive ? 'oklch(16% 0.02 45)' : 'transparent',
+                  background: isActive ? 'var(--color-surface-active)' : 'transparent',
                   transition: 'background 0.15s ease',
                 }}
               >
@@ -156,9 +156,9 @@ export default function Nav({ active, onNav }: Props) {
                   <span
                     className="absolute right-full mr-2 whitespace-nowrap px-2.5 py-1 rounded-md"
                     style={{
-                      background: 'oklch(10% 0.012 45 / 0.95)',
-                      border: '1px solid oklch(20% 0.015 45)',
-                      color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(88% 0.006 55)',
+                      background: 'color-mix(in oklch, var(--color-surface-1) 95%, transparent)',
+                      border: '1px solid var(--color-border-light)',
+                      color: isActive ? 'var(--color-solar)' : 'var(--color-text-1)',
                       fontSize: '12px',
                       fontWeight: 600,
                       letterSpacing: '0.02em',
@@ -173,10 +173,10 @@ export default function Nav({ active, onNav }: Props) {
                   size={13}
                   style={{
                     color: isActive
-                      ? 'oklch(78% 0.16 60)'
+                      ? 'var(--color-solar)'
                       : isHovered
-                      ? 'oklch(88% 0.006 55)'
-                      : 'oklch(50% 0.01 50)',
+                      ? 'var(--color-text-1)'
+                      : 'var(--color-text-muted)',
                     transition: 'color 0.15s ease',
                   }}
                 />
@@ -187,7 +187,7 @@ export default function Nav({ active, onNav }: Props) {
                     style={{
                       width: '2px',
                       height: '14px',
-                      background: 'oklch(78% 0.16 60)',
+                      background: 'var(--color-solar)',
                       borderRadius: '1px',
                       transform: 'translateY(-50%) translateX(4px)',
                     }}
@@ -204,7 +204,7 @@ export default function Nav({ active, onNav }: Props) {
         <nav
           className="fixed inset-0 z-40 md:hidden"
           style={{
-            background: 'oklch(7% 0.01 45 / 0.95)',
+            background: 'color-mix(in oklch, var(--color-void) 95%, transparent)',
             backdropFilter: 'blur(20px)',
           }}
         >
@@ -219,17 +219,17 @@ export default function Nav({ active, onNav }: Props) {
                     onClick={() => handleNav(item.id)}
                     className="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer text-left"
                     style={{
-                      background: isActive ? 'oklch(16% 0.02 45)' : 'oklch(10% 0.012 45)',
-                      border: `1px solid ${isActive ? 'oklch(78% 0.16 60 / 0.3)' : 'oklch(16% 0.012 45)'}`,
+                      background: isActive ? 'var(--color-surface-active)' : 'var(--color-surface-1)',
+                      border: `1px solid ${isActive ? 'color-mix(in oklch, var(--color-solar) 30%, transparent)' : 'var(--color-border)'}`,
                     }}
                   >
                     <Icon
                       size={16}
-                      style={{ color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(55% 0.01 50)' }}
+                      style={{ color: isActive ? 'var(--color-solar)' : 'var(--color-text-muted)' }}
                     />
                     <span
                       className="text-sm font-semibold"
-                      style={{ color: isActive ? 'oklch(78% 0.16 60)' : 'oklch(82% 0.006 55)' }}
+                      style={{ color: isActive ? 'var(--color-solar)' : 'var(--color-text-2)' }}
                     >
                       {item.label}
                     </span>

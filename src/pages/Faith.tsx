@@ -18,12 +18,12 @@ export default function Faith() {
 
       {/* Opening meditation */}
       <div ref={r2} className="reveal max-w-2xl mb-16">
-        <div className="pl-6 py-1" style={{ borderLeft: '2px solid oklch(78% 0.16 60)' }}>
+        <div className="pl-6 py-1" style={{ borderLeft: '2px solid var(--color-solar)' }}>
           <p className="drop-cap" style={{
             fontFamily: '"Cormorant", Georgia, serif',
             fontStyle: 'italic',
             fontSize: '1.1rem',
-            color: 'oklch(68% 0.015 55)',
+            color: 'var(--color-text-3)',
             lineHeight: 1.85,
           }}>
             Elune is not God. But the impulse to look up at the night sky and feel watched over, known, held in place
@@ -41,37 +41,37 @@ export default function Faith() {
           wow="Eclipse: Solar and Lunar"
           faith="Grace and Law"
           text="Balance Druids live in the tension between two states. Neither is complete without the other. Solar burns bright and fast. Lunar is deep and sustained. The Christian life oscillates the same way: seasons of fiery certainty and seasons of quiet endurance. The mastery is not choosing one. It's learning to inhabit both."
-          accent="oklch(78% 0.16 60)"
+          accent="var(--color-solar)"
         />
         <Parallel
           wow="Astral Power: Generated, then Spent"
           faith="Spiritual Disciplines"
           text="You don't burst without building. Every Starsurge requires Astral Power earned through faithful casting - Wrath after Wrath, Starfire after Starfire. Prayer, scripture, silence, service: these are the builders. The moments of breakthrough come from the stored-up faithfulness that preceded them."
-          accent="oklch(68% 0.16 285)"
+          accent="var(--color-lunar)"
         />
         <Parallel
           wow="Incarnation: Chosen of Elune"
           faith="Calling and Vocation"
           text="For 30 seconds you become something more than yourself. Your Haste increases. Your damage amplifies. Every ability hits harder. Then it fades, and you return to the patient work of building again. Vocation works the same way: rare, luminous moments of clarity about what you were made for, sustained by long seasons of showing up."
-          accent="oklch(78% 0.16 60)"
+          accent="var(--color-solar)"
         />
         <Parallel
           wow="Barkskin: The Defensive"
           faith="Suffering and Endurance"
           text="20% damage reduction for 8 seconds. Not immunity. Not escape. Just the capacity to absorb what's coming without breaking. James 1:2-4 doesn't promise removal of trials. It promises the completion of something through them. Barkskin is the prayer: 'I can take this.'"
-          accent="oklch(52% 0.14 155)"
+          accent="var(--color-nature)"
         />
         <Parallel
           wow="Stampeding Roar: The Utility"
           faith="Bearing One Another's Burdens"
           text="Your strongest utility isn't damage. It's giving everyone in your raid 60% movement speed when they need to get out of fire. The druid who Roars at the right moment saves lives. Ministry isn't spectacle. It's noticing who's standing in danger and moving them."
-          accent="oklch(52% 0.14 155)"
+          accent="var(--color-nature)"
         />
         <Parallel
           wow="Night Elf: Children of the Stars"
           faith="Imago Dei"
           text="Night Elves were the first to hear the call of the wild, the first to answer with reverence instead of domination. They didn't conquer nature. They joined it. Made in the image of something greater, tasked not with ruling creation but tending it. Shadowmeld isn't hiding. It's listening."
-          accent="oklch(68% 0.16 285)"
+          accent="var(--color-lunar)"
         />
       </div>
 
@@ -81,7 +81,7 @@ export default function Faith() {
           fontFamily: '"Cormorant", Georgia, serif',
           fontWeight: 500,
           fontSize: '1rem',
-          color: 'oklch(90% 0.005 55)',
+          color: 'var(--color-text-1)',
           lineHeight: 1.8,
         }}>
           The dossier tracks gear and parses and tier sets. But the player behind the character carries
@@ -99,10 +99,10 @@ function Parallel({ wow, faith, text, accent }: { wow: string; faith: string; te
       <div className="flex items-baseline gap-2 mb-1">
         <span className="text-[15px] font-bold" style={{ color: accent }}>{wow}</span>
       </div>
-      <div className="text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
+      <div className="text-[12px] uppercase font-bold mb-3" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>
         {faith}
       </div>
-      <p className="text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.75 }}>
+      <p className="text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.75 }}>
         {text}
       </p>
     </div>

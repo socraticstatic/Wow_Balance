@@ -90,14 +90,14 @@ const heroTalents = [
 ];
 
 const catColors: Record<string, string> = {
-  core: 'oklch(97% 0.003 60)',
-  damage: 'oklch(80% 0.18 80)',
-  defensive: 'oklch(68% 0.18 155)',
+  core: 'var(--color-text-1)',
+  damage: 'var(--color-solar)',
+  defensive: 'var(--color-nature)',
   mobility: 'oklch(72% 0.14 240)',
-  utility: 'oklch(72% 0.18 270)',
-  aoe: 'oklch(72% 0.2 270)',
-  throughput: 'oklch(80% 0.18 80)',
-  cd: 'oklch(88% 0.12 65)',
+  utility: 'var(--color-lunar)',
+  aoe: 'var(--color-lunar)',
+  throughput: 'var(--color-solar)',
+  cd: 'var(--color-gold-bright)',
 };
 
 export default function TalentBuild() {
@@ -125,32 +125,32 @@ export default function TalentBuild() {
 
       {/* Import string - the fast path */}
       <div ref={r2} className="reveal mb-20">
-        <div className="p-6 rounded-lg gilt-border" style={{ background: 'oklch(10% 0.02 60 / 0.3)' }}>
+        <div className="p-6 rounded-lg gilt-border" style={{ background: 'color-mix(in oklch, var(--color-surface-1) 30%, transparent)' }}>
           <div className="flex items-center justify-between mb-3">
-            <div className="text-base font-bold" style={{ color: 'oklch(80% 0.18 80)' }}>
+            <div className="text-base font-bold" style={{ color: 'var(--color-solar)' }}>
               Import String - Paste into WoW
             </div>
             <button
               onClick={copyImport}
               className="px-4 py-2 rounded-lg font-bold text-sm cursor-pointer transition-all"
               style={{
-                background: copied ? 'oklch(68% 0.18 155 / 0.2)' : 'oklch(80% 0.18 80 / 0.15)',
-                color: copied ? 'oklch(68% 0.18 155)' : 'oklch(80% 0.18 80)',
-                border: `1px solid ${copied ? 'oklch(68% 0.18 155 / 0.3)' : 'oklch(80% 0.18 80 / 0.3)'}`,
+                background: copied ? 'color-mix(in oklch, var(--color-nature) 20%, transparent)' : 'color-mix(in oklch, var(--color-solar) 15%, transparent)',
+                color: copied ? 'var(--color-nature)' : 'var(--color-solar)',
+                border: `1px solid ${copied ? 'color-mix(in oklch, var(--color-nature) 30%, transparent)' : 'color-mix(in oklch, var(--color-solar) 30%, transparent)'}`,
               }}
             >
               {copied ? 'Copied!' : 'Copy'}
             </button>
           </div>
           <code className="block text-sm font-mono p-3 rounded-lg break-all" style={{
-            background: 'oklch(8% 0.01 45)',
-            color: 'oklch(80% 0.18 80)',
-            border: '1px solid oklch(16% 0.012 45)',
+            background: 'var(--color-void)',
+            color: 'var(--color-solar)',
+            border: '1px solid var(--color-border)',
             lineHeight: 1.6,
           }}>
             {IMPORT_STRING}
           </code>
-          <p className="text-sm mt-3" style={{ color: 'oklch(82% 0.005 55)' }}>
+          <p className="text-sm mt-3" style={{ color: 'var(--color-text-2)' }}>
             Open Talents in WoW. Click the import icon (top right). Paste. Click "Apply". All 3 trees filled.
           </p>
         </div>
@@ -159,24 +159,24 @@ export default function TalentBuild() {
       {/* Hero spec callout */}
       <div className="reveal mb-16">
         <div className="p-5 rounded-lg glass-lunar">
-          <div className="text-base font-bold mb-2" style={{ color: 'oklch(72% 0.18 270)' }}>
+          <div className="text-base font-bold mb-2" style={{ color: 'var(--color-lunar)' }}>
             Hero Spec: Elune's Chosen
           </div>
-          <p className="text-sm mb-4" style={{ color: 'oklch(90% 0.005 55)' }}>
+          <p className="text-sm mb-4" style={{ color: 'var(--color-text-1)' }}>
             79% of top M+ Balance Druids run Elune's Chosen. The key mechanic: Lunar Calling makes Starfire your ONLY builder (no more Solar Eclipse). You permanently stay in Lunar Eclipse. Simpler rotation, stronger AoE.
           </p>
           <div className="space-y-2">
             {heroTalents.map(t => (
               <div key={t.name} className="flex items-start gap-3 text-sm">
                 <span className="shrink-0 text-sm font-bold" style={{
-                  color: t.type === 'PICK THIS' ? 'oklch(80% 0.18 80)' : t.type === 'Keystone' || t.type === 'Capstone' ? 'oklch(72% 0.18 270)' : 'oklch(72% 0.005 55)',
+                  color: t.type === 'PICK THIS' ? 'var(--color-solar)' : t.type === 'Keystone' || t.type === 'Capstone' ? 'var(--color-lunar)' : 'var(--color-text-4)',
                   minWidth: '70px',
                 }}>
                   {t.type === 'PICK THIS' ? '\u2605 PICK' : t.type}
                 </span>
                 <div>
-                  <span className="font-bold" style={{ color: t.type === 'PICK THIS' ? 'oklch(80% 0.18 80)' : 'oklch(92% 0.004 60)' }}>{t.name}</span>
-                  <span style={{ color: 'oklch(85% 0.004 55)' }}> - {t.effect}</span>
+                  <span className="font-bold" style={{ color: t.type === 'PICK THIS' ? 'var(--color-solar)' : 'var(--color-text-1)' }}>{t.name}</span>
+                  <span style={{ color: 'var(--color-text-1)' }}> - {t.effect}</span>
                 </div>
               </div>
             ))}
@@ -186,7 +186,7 @@ export default function TalentBuild() {
 
       {/* Class tree */}
       <div ref={r3} className="reveal mb-16">
-        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-nature)', letterSpacing: '0.12em' }}>
           Druid Class Tree (31 Points)
         </div>
         <TreeTable talents={classTree} />
@@ -194,7 +194,7 @@ export default function TalentBuild() {
 
       {/* Spec tree */}
       <div ref={r4} className="reveal">
-        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-lunar)', letterSpacing: '0.12em' }}>
           Balance Spec Tree (30 Points)
         </div>
         <TreeTable talents={specTree} />
@@ -207,7 +207,7 @@ function TreeTable({ talents }: { talents: TalentRow[] }) {
   return (
     <div className="rounded-lg overflow-hidden glass">
       <div className="grid grid-cols-12 gap-2 px-5 py-3 text-[11px] uppercase font-bold"
-        style={{ color: 'oklch(78% 0.005 55)', letterSpacing: '0.1em', borderBottom: '1px solid oklch(16% 0.012 45)' }}>
+        style={{ color: 'var(--color-text-4)', letterSpacing: '0.1em', borderBottom: '1px solid var(--color-border)' }}>
         <div className="col-span-3">Talent</div>
         <div className="col-span-1 text-center">Pts</div>
         <div className="col-span-1">Type</div>
@@ -216,12 +216,12 @@ function TreeTable({ talents }: { talents: TalentRow[] }) {
       {talents.map((t, i) => (
         <div key={t.name}
           className="grid grid-cols-12 gap-2 px-5 py-2.5 items-center text-sm row-hover"
-          style={{ borderTop: i > 0 ? '1px solid oklch(12% 0.01 45)' : 'none' }}
+          style={{ borderTop: i > 0 ? '1px solid var(--color-surface-1)' : 'none' }}
         >
           <div className="col-span-3 font-bold" style={{ color: catColors[t.category] }}>
             {t.name}
           </div>
-          <div className="col-span-1 text-center font-mono font-bold" style={{ color: 'oklch(90% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>
+          <div className="col-span-1 text-center font-mono font-bold" style={{ color: 'var(--color-text-1)', fontVariantNumeric: 'tabular-nums' }}>
             {t.points}
           </div>
           <div className="col-span-1">
@@ -229,12 +229,12 @@ function TreeTable({ talents }: { talents: TalentRow[] }) {
               {t.category === 'core' ? 'Core' : t.category === 'aoe' ? 'AoE' : t.category === 'cd' ? 'CD' : t.category.charAt(0).toUpperCase() + t.category.slice(1)}
             </span>
           </div>
-          <div className="col-span-7" style={{ color: 'oklch(88% 0.004 55)' }}>
+          <div className="col-span-7" style={{ color: 'var(--color-text-1)' }}>
             {t.why}
           </div>
         </div>
       ))}
-      <div className="px-5 py-3 text-sm font-bold" style={{ color: 'oklch(80% 0.18 80)', borderTop: '1px solid oklch(16% 0.012 45)' }}>
+      <div className="px-5 py-3 text-sm font-bold" style={{ color: 'var(--color-solar)', borderTop: '1px solid var(--color-border)' }}>
         Total: {talents.reduce((s, t) => s + t.points, 0)} points
       </div>
     </div>

@@ -296,18 +296,18 @@ function analyzeProgression(overrideLevel?: number | null, overrideIlvl?: number
 }
 
 const priorityConfig = {
-  critical: { color: 'oklch(72% 0.18 30)', bg: 'oklch(72% 0.18 30 / 0.06)', label: 'CRITICAL', border: 'oklch(72% 0.18 30 / 0.15)' },
-  high:     { color: 'oklch(80% 0.18 80)', bg: 'oklch(80% 0.18 80 / 0.05)', label: 'HIGH', border: 'oklch(80% 0.18 80 / 0.12)' },
-  medium:   { color: 'oklch(68% 0.16 285)', bg: 'oklch(68% 0.16 285 / 0.05)', label: 'MEDIUM', border: 'oklch(68% 0.16 285 / 0.1)' },
-  low:      { color: 'oklch(58% 0.14 155)', bg: 'oklch(58% 0.14 155 / 0.04)', label: 'LOW', border: 'oklch(58% 0.14 155 / 0.08)' },
+  critical: { color: 'var(--color-error)', bg: 'color-mix(in oklch, var(--color-error) 6%, transparent)', label: 'CRITICAL', border: 'color-mix(in oklch, var(--color-error) 15%, transparent)' },
+  high:     { color: 'var(--color-quality-legendary)', bg: 'color-mix(in oklch, oklch(80% 0.18 80) 5%, transparent)', label: 'HIGH', border: 'color-mix(in oklch, oklch(80% 0.18 80) 12%, transparent)' },
+  medium:   { color: 'var(--color-lunar)', bg: 'color-mix(in oklch, var(--color-lunar) 5%, transparent)', label: 'MEDIUM', border: 'color-mix(in oklch, var(--color-lunar) 10%, transparent)' },
+  low:      { color: 'var(--color-nature)', bg: 'color-mix(in oklch, var(--color-nature) 4%, transparent)', label: 'LOW', border: 'color-mix(in oklch, var(--color-nature) 8%, transparent)' },
 };
 
 const phaseLabels: Record<string, { name: string; color: string; sub: string }> = {
-  leveling:     { name: 'Leveling',         color: 'oklch(72% 0.18 30)',  sub: 'Reach level 90 to unlock endgame' },
-  fresh90:      { name: 'Fresh 90',         color: 'oklch(80% 0.18 80)',  sub: 'Campaign, world quests, normal dungeons' },
-  earlyGearing: { name: 'Early Gearing',    color: 'oklch(68% 0.16 285)', sub: 'Heroic dungeons, LFR, renown vendors' },
-  midGearing:   { name: 'Mid Gearing',      color: 'oklch(58% 0.14 155)', sub: 'M+, Normal raid, delves, crafting' },
-  lateGearing:  { name: 'Endgame',          color: 'oklch(80% 0.18 80)',  sub: 'Heroic raid, M+10, myth track' },
+  leveling:     { name: 'Leveling',         color: 'var(--color-error)',  sub: 'Reach level 90 to unlock endgame' },
+  fresh90:      { name: 'Fresh 90',         color: 'var(--color-quality-legendary)',  sub: 'Campaign, world quests, normal dungeons' },
+  earlyGearing: { name: 'Early Gearing',    color: 'var(--color-lunar)', sub: 'Heroic dungeons, LFR, renown vendors' },
+  midGearing:   { name: 'Mid Gearing',      color: 'var(--color-nature)', sub: 'M+, Normal raid, delves, crafting' },
+  lateGearing:  { name: 'Endgame',          color: 'var(--color-quality-legendary)',  sub: 'Heroic raid, M+10, myth track' },
 };
 
 export default function Progression() {
@@ -338,10 +338,10 @@ export default function Progression() {
         {(() => {
           const reset = getResetInfo();
           const urgencyColors = {
-            fresh: 'oklch(68% 0.18 155)',
-            midweek: 'oklch(68% 0.16 285)',
-            urgent: 'oklch(80% 0.18 80)',
-            critical: 'oklch(72% 0.18 30)',
+            fresh: 'var(--color-nature)',
+            midweek: 'var(--color-lunar)',
+            urgent: 'var(--color-quality-legendary)',
+            critical: 'var(--color-error)',
           };
           const uc = urgencyColors[reset.urgency];
           return (
@@ -350,12 +350,12 @@ export default function Progression() {
                 <span className="text-[11px] uppercase font-bold" style={{ color: uc, letterSpacing: '0.1em' }}>
                   Weekly Reset
                 </span>
-                <span className="text-[13px] ml-2" style={{ color: 'oklch(52% 0.01 50)' }}>
+                <span className="text-[13px] ml-2" style={{ color: 'var(--color-text-muted)' }}>
                   {reset.dayOfWeek} - {reset.isResetDay ? 'Reset day!' : `${reset.timeString} until reset`}
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-16 h-1 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.008 45)' }}>
+                <div className="w-16 h-1 rounded-full overflow-hidden" style={{ background: 'var(--color-surface-1)' }}>
                   <div className="h-full rounded-full" style={{ width: `${reset.weekProgress * 100}%`, background: uc }} />
                 </div>
                 <span className="text-[12px] font-mono font-bold" style={{ color: uc, fontVariantNumeric: 'tabular-nums' }}>
@@ -380,7 +380,7 @@ export default function Progression() {
           <h3 className="text-lg font-bold" style={{ color: phaseInfo.color }}>
             {phaseInfo.name}
           </h3>
-          <p className="text-sm" style={{ color: 'oklch(90% 0.005 55)' }}>{phaseInfo.sub}</p>
+          <p className="text-sm" style={{ color: 'var(--color-text-1)' }}>{phaseInfo.sub}</p>
         </div>
 
         {/* Milestone timeline */}
@@ -395,9 +395,9 @@ export default function Progression() {
           label="Level"
           value={charLevel ? String(charLevel) : '??'}
           sub={charLevel ? (charLevel < 90 ? `${90 - charLevel} to max` : 'Max level') : 'Unknown'}
-          color={charLevel && charLevel >= 90 ? 'oklch(58% 0.14 155)' : 'oklch(80% 0.18 80)'}
+          color={charLevel && charLevel >= 90 ? 'var(--color-nature)' : 'var(--color-quality-legendary)'}
         />
-        <OverviewCard label="Item Level" value={String(avgIlvl)} sub="Equipped avg" color="oklch(90% 0.01 270)" />
+        <OverviewCard label="Item Level" value={String(avgIlvl)} sub="Equipped avg" color="var(--color-text-1)" />
         <OverviewCard
           label="Next Unlock"
           value={phase === 'leveling' ? 'Level 90' : avgIlvl < 220 ? 'Heroics' : avgIlvl < 235 ? 'M0 / Raid' : avgIlvl < 255 ? 'Heroic Raid' : 'Myth Track'}
@@ -408,13 +408,13 @@ export default function Progression() {
           label="Issues"
           value={String(criticalCount + highCount)}
           sub={`${criticalCount} critical`}
-          color={criticalCount > 0 ? 'oklch(72% 0.18 30)' : 'oklch(58% 0.14 155)'}
+          color={criticalCount > 0 ? 'var(--color-error)' : 'var(--color-nature)'}
         />
       </div>
 
       {/* Recommendations */}
       <div ref={r3} className="reveal">
-        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
           Recommendations
         </div>
 
@@ -439,23 +439,23 @@ export default function Progression() {
                   }}>
                     {p.label}
                   </span>
-                  <span className="text-[12px] font-semibold" style={{ color: 'oklch(48% 0.01 50)' }}>
+                  <span className="text-[12px] font-semibold" style={{ color: 'var(--color-text-faint)' }}>
                     {rec.category}
                   </span>
                 </div>
 
-                <h3 className="text-sm font-bold mb-1.5" style={{ color: 'oklch(88% 0.01 270)' }}>
+                <h3 className="text-sm font-bold mb-1.5" style={{ color: 'var(--color-text-2)' }}>
                   {rec.title}
                 </h3>
-                <p className="text-[15px] mb-3" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.65 }}>
+                <p className="text-[15px] mb-3" style={{ color: 'var(--color-text-1)', lineHeight: 1.65 }}>
                   {rec.detail}
                 </p>
 
                 <div
                   className="text-[14px] p-3 rounded-md"
                   style={{
-                    background: 'oklch(8% 0.008 45 / 0.5)',
-                    color: 'oklch(65% 0.012 50)',
+                    background: 'color-mix(in oklch, var(--color-void) 50%, transparent)',
+                    color: 'var(--color-text-muted)',
                     lineHeight: 1.6,
                     borderLeft: `2px solid ${p.color}40`,
                   }}
@@ -470,27 +470,27 @@ export default function Progression() {
 
       {/* Gear track reference */}
       <div className="mt-16 mb-8">
-        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'var(--color-text-faint)', letterSpacing: '0.12em' }}>
           Midnight Season 1 Gear Tracks
         </div>
         <div className="grid grid-cols-5 gap-1.5">
           {[
-            { name: 'Adventurer', range: '220-237', color: 'oklch(80% 0.008 270)' },
-            { name: 'Veteran', range: '233-250', color: 'oklch(62% 0.14 240)' },
-            { name: 'Champion', range: '246-263', color: 'oklch(68% 0.22 300)' },
-            { name: 'Hero', range: '259-276', color: 'oklch(80% 0.18 80)' },
-            { name: 'Myth', range: '272-289', color: 'oklch(72% 0.18 30)' },
+            { name: 'Adventurer', range: '220-237', color: 'var(--color-text-2)' },
+            { name: 'Veteran', range: '233-250', color: 'var(--color-quality-rare)' },
+            { name: 'Champion', range: '246-263', color: 'var(--color-quality-epic)' },
+            { name: 'Hero', range: '259-276', color: 'var(--color-quality-legendary)' },
+            { name: 'Myth', range: '272-289', color: 'var(--color-error)' },
           ].map(track => (
             <div key={track.name} className="glass p-2.5 rounded text-center">
               <div className="text-[11px] font-bold mb-0.5" style={{ color: track.color }}>{track.name}</div>
-              <div className="text-[13px] font-mono" style={{ color: 'oklch(90% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>{track.range}</div>
+              <div className="text-[13px] font-mono" style={{ color: 'var(--color-text-1)', fontVariantNumeric: 'tabular-nums' }}>{track.range}</div>
             </div>
           ))}
         </div>
       </div>
 
       <div className="text-center">
-        <p className="text-[13px] italic" style={{ color: 'oklch(82% 0.005 55)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[13px] italic" style={{ color: 'var(--color-text-2)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           Recommendations update automatically as your character progresses.
         </p>
       </div>
@@ -501,13 +501,13 @@ export default function Progression() {
 function OverviewCard({ label, value, sub, color }: { label: string; value: string; sub: string; color: string }) {
   return (
     <div className="glass p-4 rounded-lg">
-      <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>
+      <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'var(--color-text-faint)', letterSpacing: '0.12em' }}>
         {label}
       </div>
       <div className="text-lg font-extrabold font-mono mb-0.5" style={{ color, fontVariantNumeric: 'tabular-nums' }}>
         {value}
       </div>
-      <div className="text-[12px]" style={{ color: 'oklch(45% 0.01 50)' }}>{sub}</div>
+      <div className="text-[12px]" style={{ color: 'var(--color-text-faint)' }}>{sub}</div>
     </div>
   );
 }

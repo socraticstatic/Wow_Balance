@@ -11,17 +11,17 @@ interface Milestone {
 }
 
 const levelMilestones: Milestone[] = [
-  { label: 'Current', threshold: 0, unlocks: '', color: 'oklch(72% 0.18 30)' },
-  { label: 'Lv 90', threshold: 90, unlocks: 'World quests, delves, endgame', color: 'oklch(80% 0.18 80)' },
+  { label: 'Current', threshold: 0, unlocks: '', color: 'var(--color-error)' },
+  { label: 'Lv 90', threshold: 90, unlocks: 'World quests, delves, endgame', color: 'var(--color-solar)' },
 ];
 
 const ilvlMilestones: Milestone[] = [
-  { label: 'Current', threshold: 0, unlocks: '', color: 'oklch(72% 0.18 30)' },
-  { label: '220', threshold: 220, unlocks: 'Heroic dungeons, LFR', color: 'oklch(68% 0.16 285)' },
-  { label: '235', threshold: 235, unlocks: 'M0, Normal raid', color: 'oklch(80% 0.18 80)' },
-  { label: '255', threshold: 255, unlocks: 'Heroic raid', color: 'oklch(68% 0.18 155)' },
-  { label: '272', threshold: 272, unlocks: 'Myth track, Mythic raid', color: 'oklch(72% 0.18 30)' },
-  { label: '289', threshold: 289, unlocks: 'Myth 6/6 cap', color: 'oklch(80% 0.18 80)' },
+  { label: 'Current', threshold: 0, unlocks: '', color: 'var(--color-error)' },
+  { label: '220', threshold: 220, unlocks: 'Heroic dungeons, LFR', color: 'var(--color-lunar)' },
+  { label: '235', threshold: 235, unlocks: 'M0, Normal raid', color: 'var(--color-solar)' },
+  { label: '255', threshold: 255, unlocks: 'Heroic raid', color: 'var(--color-nature)' },
+  { label: '272', threshold: 272, unlocks: 'Myth track, Mythic raid', color: 'var(--color-error)' },
+  { label: '289', threshold: 289, unlocks: 'Myth 6/6 cap', color: 'var(--color-solar)' },
 ];
 
 interface Props {
@@ -43,11 +43,11 @@ export default function MilestoneTimeline({ level, ilvl }: Props) {
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <div className="text-[11px] uppercase font-bold" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
           {isLeveling ? 'Level Progress' : 'Gear Progress'}
         </div>
         {nextMilestone && (
-          <div className="text-[12px]" style={{ color: 'oklch(48% 0.01 50)' }}>
+          <div className="text-[12px]" style={{ color: 'var(--color-text-faint)' }}>
             Next: <span style={{ color: nextMilestone.color }}>{nextMilestone.label}</span> - {nextMilestone.unlocks}
           </div>
         )}
@@ -56,13 +56,13 @@ export default function MilestoneTimeline({ level, ilvl }: Props) {
       {/* Progress bar with milestone markers */}
       <div className="relative h-6 mb-2">
         {/* Track */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-1.5 rounded-full" style={{ background: 'oklch(12% 0.008 45)' }}>
+        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-1.5 rounded-full" style={{ background: 'var(--color-surface-1)' }}>
           {/* Fill */}
           <div
             className="h-full rounded-full"
             style={{
               width: `${pct}%`,
-              background: 'linear-gradient(90deg, oklch(72% 0.18 30), oklch(80% 0.18 80))',
+              background: 'linear-gradient(90deg, var(--color-error), var(--color-solar))',
               transition: 'width 1s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           />
@@ -81,8 +81,8 @@ export default function MilestoneTimeline({ level, ilvl }: Props) {
               <div
                 className="w-2.5 h-2.5 rounded-full border-2"
                 style={{
-                  borderColor: reached ? m.color : 'oklch(25% 0.015 270)',
-                  background: reached ? m.color : 'oklch(8% 0.006 45)',
+                  borderColor: reached ? m.color : 'var(--color-surface-elevated)',
+                  background: reached ? m.color : 'var(--color-void)',
                 }}
               />
             </div>
@@ -97,7 +97,7 @@ export default function MilestoneTimeline({ level, ilvl }: Props) {
           <div
             className="w-3 h-3 rounded-full"
             style={{
-              background: 'oklch(80% 0.18 80)',
+              background: 'var(--color-solar)',
               boxShadow: '0 0 8px oklch(80% 0.18 80 / 0.4)',
             }}
           />
@@ -115,7 +115,7 @@ export default function MilestoneTimeline({ level, ilvl }: Props) {
               className="absolute -translate-x-1/2 text-[11px] font-mono font-bold"
               style={{
                 left: `${mPct}%`,
-                color: reached ? m.color : 'oklch(35% 0.01 50)',
+                color: reached ? m.color : 'var(--color-text-ghost)',
                 fontVariantNumeric: 'tabular-nums',
               }}
             >

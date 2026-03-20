@@ -29,8 +29,8 @@ export default function Hero() {
       <div ref={r1} className="reveal flex items-center gap-2.5 mb-14">
         {[meta.expansion, `Patch ${meta.patch}`, meta.season].map((t, i) => (
           <span key={t} className="flex items-center gap-2.5">
-            {i > 0 && <span className="w-[3px] h-[3px] rounded-full" style={{ background: 'oklch(24% 0.01 270)' }} />}
-            <span className="text-[13px] font-semibold" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
+            {i > 0 && <span className="w-[3px] h-[3px] rounded-full" style={{ background: 'var(--color-text-ghost)' }} />}
+            <span className="text-[13px] font-semibold" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>
               {t.toUpperCase()}
             </span>
           </span>
@@ -72,7 +72,7 @@ export default function Hero() {
           fontSize: 'clamp(1rem, 2.5vw, 1.75rem)',
           lineHeight: 1,
           letterSpacing: '0.12em',
-          color: 'oklch(78% 0.005 55)',
+          color: 'var(--color-text-1)',
           opacity: lettersVisible >= 7 ? 1 : 0,
           transform: lettersVisible >= 7 ? 'translateY(0)' : 'translateY(10px)',
           transition: 'opacity 0.6s ease 0.2s, transform 0.6s var(--ease) 0.2s',
@@ -85,7 +85,7 @@ export default function Hero() {
       <div className="my-16 max-w-xs">
         <div style={{
           height: 1,
-          background: `linear-gradient(90deg, oklch(78% 0.16 60), oklch(78% 0.16 60 / 0.1))`,
+          background: `linear-gradient(90deg, var(--color-solar), color-mix(in oklch, var(--color-solar) 10%, transparent))`,
           transformOrigin: 'left',
           transform: lettersVisible >= 7 ? 'scaleX(1)' : 'scaleX(0)',
           transition: 'transform 1s var(--ease) 0.6s',
@@ -97,7 +97,7 @@ export default function Hero() {
         <p className="drop-cap" style={{
           fontFamily: '"Cormorant", Georgia, serif',
           fontStyle: 'italic',
-          color: 'oklch(90% 0.005 55)',
+          color: 'var(--color-text-1)',
           fontSize: 'clamp(0.95rem, 1.2vw, 1.1rem)',
           lineHeight: 1.85,
           maxWidth: '42ch',
@@ -110,20 +110,20 @@ export default function Hero() {
 
         <div className="grid grid-cols-2 gap-2.5">
           <TiltCard className="glass py-3 px-4 rounded-lg">
-            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>Raid Tier</div>
-            <div className="text-lg font-bold" style={{ color: 'oklch(78% 0.16 60)' }}>S-Tier</div>
+            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>Raid Tier</div>
+            <div className="text-lg font-bold" style={{ color: 'var(--color-solar)' }}>S-Tier</div>
           </TiltCard>
           <TiltCard className="glass py-3 px-4 rounded-lg">
-            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(68% 0.16 285)', letterSpacing: '0.12em' }}>M+ Tier</div>
-            <div className="text-lg font-bold" style={{ color: 'oklch(68% 0.16 285)' }}>A-Tier</div>
+            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-lunar)', letterSpacing: '0.12em' }}>M+ Tier</div>
+            <div className="text-lg font-bold" style={{ color: 'var(--color-lunar)' }}>A-Tier</div>
           </TiltCard>
           <TiltCard className="glass py-3 px-4 rounded-lg">
-            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>Meta</div>
-            <div className="text-base font-bold" style={{ color: 'oklch(90% 0.005 270)' }}>{raidBuild?.heroSpec ?? 'Keeper'}</div>
+            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-text-1)', letterSpacing: '0.12em' }}>Meta</div>
+            <div className="text-base font-bold" style={{ color: 'var(--color-text-1)' }}>{raidBuild?.heroSpec ?? 'Keeper'}</div>
           </TiltCard>
           <TiltCard className="glass py-3 px-4 rounded-lg">
-            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>Raid</div>
-            <div className="text-base font-bold" style={{ color: 'oklch(90% 0.005 270)' }}>{meta.raidTier.split('/')[0].trim()}</div>
+            <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-text-1)', letterSpacing: '0.12em' }}>Raid</div>
+            <div className="text-base font-bold" style={{ color: 'var(--color-text-1)' }}>{meta.raidTier.split('/')[0].trim()}</div>
           </TiltCard>
         </div>
       </div>

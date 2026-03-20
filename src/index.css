@@ -6,21 +6,37 @@
   --color-surface-1: oklch(10.5% 0.012 45);
   --color-surface-2: oklch(14% 0.014 45);
   --color-surface-3: oklch(18% 0.016 45);
+  --color-surface-active: oklch(16% 0.02 45);
+  --color-surface-elevated: oklch(22% 0.02 50);
 
   /* ── Accent palette (medieval jewel tones) ── */
   --color-solar: oklch(78% 0.16 60);
   --color-lunar: oklch(68% 0.16 285);
   --color-nature: oklch(52% 0.14 155);
   --color-burgundy: oklch(50% 0.14 20);
+  --color-error: oklch(72% 0.16 30);
+  --color-gold-dim: oklch(60% 0.12 55);
+  --color-gold-bright: oklch(88% 0.14 65);
+
+  /* ── WoW item quality colors ── */
+  --color-quality-uncommon: oklch(68% 0.18 155);
+  --color-quality-rare: oklch(62% 0.18 240);
+  --color-quality-epic: oklch(68% 0.22 300);
+  --color-quality-legendary: oklch(80% 0.18 80);
+  --color-quality-apex: oklch(65% 0.14 300);
 
   /* ── Text (high contrast for dark bg - optimized for older eyes) ── */
   --color-text-1: oklch(97% 0.003 60);
   --color-text-2: oklch(88% 0.006 55);
   --color-text-3: oklch(76% 0.006 50);
   --color-text-4: oklch(70% 0.005 45);
+  --color-text-muted: oklch(55% 0.005 50);
+  --color-text-faint: oklch(40% 0.005 50);
+  --color-text-ghost: oklch(28% 0.01 50);
 
   /* ── Borders ── */
   --color-border: oklch(16% 0.012 45);
+  --color-border-light: oklch(20% 0.015 45);
 
   /* ── Fonts ── */
   --font-display: "Cormorant", "Georgia", serif;
@@ -76,6 +92,11 @@ body::after {
   --gold: oklch(78% 0.16 60);
   --gold-dim: oklch(60% 0.12 55);
   --gold-bright: oklch(88% 0.14 65);
+}
+html.light {
+  --gold: oklch(48% 0.14 55);
+  --gold-dim: oklch(42% 0.1 55);
+  --gold-bright: oklch(52% 0.12 60);
 }
 
 /* ── Character idle animation ── */
@@ -261,14 +282,35 @@ html.light body {
   --color-surface-1: oklch(93% 0.01 55);
   --color-surface-2: oklch(90% 0.012 50);
   --color-surface-3: oklch(86% 0.014 48);
+  --color-surface-active: oklch(85% 0.012 55);
+  --color-surface-elevated: oklch(82% 0.01 55);
+  --color-solar: oklch(48% 0.14 55);
+  --color-lunar: oklch(42% 0.14 285);
+  --color-nature: oklch(38% 0.12 155);
+  --color-burgundy: oklch(42% 0.12 20);
+  --color-error: oklch(50% 0.16 30);
+  --color-gold-dim: oklch(42% 0.1 55);
+  --color-gold-bright: oklch(52% 0.12 60);
   --color-text-1: oklch(15% 0.01 45);
   --color-text-2: oklch(28% 0.008 50);
   --color-text-3: oklch(40% 0.006 50);
   --color-text-4: oklch(50% 0.005 45);
+  --color-text-muted: oklch(45% 0.005 50);
+  --color-text-faint: oklch(55% 0.005 50);
+  --color-text-ghost: oklch(65% 0.005 50);
   --color-border: oklch(82% 0.01 55);
+  --color-border-light: oklch(78% 0.01 55);
+  --color-quality-uncommon: oklch(42% 0.14 155);
+  --color-quality-rare: oklch(38% 0.16 240);
+  --color-quality-epic: oklch(42% 0.18 300);
+  --color-quality-legendary: oklch(50% 0.16 80);
+  --color-quality-apex: oklch(42% 0.12 300);
   background: var(--color-void);
   color: var(--color-text-1);
 }
+html.light ::-webkit-scrollbar-thumb { background: oklch(78% 0.01 55); }
+html.light ::selection { background: oklch(48% 0.14 55 / 0.3); color: oklch(15% 0.01 45); }
+html.light .row-hover:hover { background: oklch(88% 0.01 55) !important; }
 html.light body::before { opacity: 0.02; }
 html.light body::after { background: radial-gradient(ellipse at 30% 20%, transparent 30%, oklch(96% 0.008 60 / 0.3) 100%); }
 html.light .glass { background: oklch(97% 0.005 55 / 0.7); border-color: oklch(78% 0.12 60 / 0.15); }

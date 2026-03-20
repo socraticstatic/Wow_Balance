@@ -79,10 +79,10 @@ const mc: DungeonRoute = {
 const allRoutes: DungeonRoute[] = [mgt, pos, mc];
 
 const cdColors: Record<string, string> = {
-  'Incarnation': 'oklch(80% 0.18 80)',
-  'Fury of Elune': 'oklch(72% 0.18 270)',
-  'Starfall': 'oklch(72% 0.14 240)',
-  'Solar Beam': 'oklch(72% 0.16 30)',
+  'Incarnation': 'var(--color-solar)',
+  'Fury of Elune': 'var(--color-lunar)',
+  'Starfall': 'var(--color-lunar)',
+  'Solar Beam': 'var(--color-error)',
 };
 
 export default function MplusCdPlanner() {
@@ -112,13 +112,13 @@ export default function MplusCdPlanner() {
             onClick={() => setSelected(r.shortName)}
             className="px-4 py-2.5 rounded-lg text-[13px] font-semibold cursor-pointer transition-all"
             style={{
-              color: selected === r.shortName ? 'oklch(95% 0.005 60)' : 'oklch(70% 0.005 55)',
-              background: selected === r.shortName ? 'oklch(18% 0.02 45)' : 'oklch(10% 0.01 45)',
-              border: `1px solid ${selected === r.shortName ? 'oklch(30% 0.03 45)' : 'oklch(16% 0.012 45)'}`,
+              color: selected === r.shortName ? 'var(--color-text-1)' : 'var(--color-text-4)',
+              background: selected === r.shortName ? 'var(--color-surface-3)' : 'var(--color-surface-1)',
+              border: `1px solid ${selected === r.shortName ? 'var(--color-text-ghost)' : 'var(--color-border)'}`,
             }}
           >
             {r.shortName}
-            <span className="ml-2 text-[11px] font-mono" style={{ color: 'oklch(60% 0.005 50)' }}>{r.timer}</span>
+            <span className="ml-2 text-[11px] font-mono" style={{ color: 'var(--color-text-muted)' }}>{r.timer}</span>
           </button>
         ))}
       </div>
@@ -126,22 +126,22 @@ export default function MplusCdPlanner() {
       {/* CD budget overview */}
       <div className="reveal grid grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
         <div className="p-4 rounded-lg glass">
-          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.1em' }}>Incarnation</div>
-          <div className="text-2xl font-bold font-mono" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>{incarnUsages}x</div>
-          <div className="text-[11px]" style={{ color: 'oklch(65% 0.005 55)' }}>3min CD, 2 charges</div>
+          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-solar)', letterSpacing: '0.1em' }}>Incarnation</div>
+          <div className="text-2xl font-bold font-mono" style={{ color: 'var(--color-solar)', fontVariantNumeric: 'tabular-nums' }}>{incarnUsages}x</div>
+          <div className="text-[11px]" style={{ color: 'var(--color-text-4)' }}>3min CD, 2 charges</div>
         </div>
         <div className="p-4 rounded-lg glass">
-          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.1em' }}>Fury of Elune</div>
-          <div className="text-2xl font-bold font-mono" style={{ color: 'oklch(72% 0.18 270)', fontVariantNumeric: 'tabular-nums' }}>{furyUsages}x</div>
-          <div className="text-[11px]" style={{ color: 'oklch(65% 0.005 55)' }}>60s (reduced by Lunation)</div>
+          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-lunar)', letterSpacing: '0.1em' }}>Fury of Elune</div>
+          <div className="text-2xl font-bold font-mono" style={{ color: 'var(--color-lunar)', fontVariantNumeric: 'tabular-nums' }}>{furyUsages}x</div>
+          <div className="text-[11px]" style={{ color: 'var(--color-text-4)' }}>60s (reduced by Lunation)</div>
         </div>
         <div className="p-4 rounded-lg glass">
-          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>Total Pulls</div>
-          <div className="text-2xl font-bold font-mono" style={{ color: 'oklch(90% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>{route.pulls.length}</div>
+          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>Total Pulls</div>
+          <div className="text-2xl font-bold font-mono" style={{ color: 'var(--color-text-1)', fontVariantNumeric: 'tabular-nums' }}>{route.pulls.length}</div>
         </div>
         <div className="p-4 rounded-lg glass">
-          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>Timer</div>
-          <div className="text-2xl font-bold font-mono" style={{ color: 'oklch(90% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>{route.timer}</div>
+          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>Timer</div>
+          <div className="text-2xl font-bold font-mono" style={{ color: 'var(--color-text-1)', fontVariantNumeric: 'tabular-nums' }}>{route.timer}</div>
         </div>
       </div>
 
@@ -154,7 +154,7 @@ export default function MplusCdPlanner() {
 
       {/* Legend */}
       <div className="reveal mt-12 p-5 rounded-lg glass">
-        <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.005 55)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'var(--color-text-3)', letterSpacing: '0.12em' }}>
           CD Color Legend
         </div>
         <div className="flex flex-wrap gap-4">
@@ -172,26 +172,26 @@ export default function MplusCdPlanner() {
 
 function PullCard({ pull }: { pull: Pull }) {
   const r = useReveal();
-  const typeColor = pull.type === 'boss' ? 'oklch(80% 0.18 80)' : pull.type === 'miniboss' ? 'oklch(72% 0.18 270)' : 'oklch(60% 0.005 55)';
+  const typeColor = pull.type === 'boss' ? 'var(--color-solar)' : pull.type === 'miniboss' ? 'var(--color-lunar)' : 'var(--color-text-muted)';
   const hasMajorCd = pull.cds.includes('Incarnation');
 
   return (
     <div ref={r} className="reveal rounded-lg glass overflow-hidden"
-      style={{ borderLeft: hasMajorCd ? '3px solid oklch(80% 0.18 80)' : pull.dangerous ? '3px solid oklch(72% 0.16 30)' : '3px solid transparent' }}
+      style={{ borderLeft: hasMajorCd ? '3px solid var(--color-solar)' : pull.dangerous ? '3px solid var(--color-error)' : '3px solid transparent' }}
     >
       <div className="px-5 py-3.5 flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-3">
-          <span className="font-mono text-[13px] font-bold" style={{ color: 'oklch(55% 0.005 50)', fontVariantNumeric: 'tabular-nums' }}>
+          <span className="font-mono text-[13px] font-bold" style={{ color: 'var(--color-text-muted)', fontVariantNumeric: 'tabular-nums' }}>
             P{String(pull.id).padStart(2, '0')}
           </span>
-          <span className="text-[14px] font-semibold" style={{ color: 'oklch(92% 0.006 60)' }}>
+          <span className="text-[14px] font-semibold" style={{ color: 'var(--color-text-1)' }}>
             {pull.name}
           </span>
-          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: typeColor, background: `${typeColor}12` }}>
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: typeColor, background: `color-mix(in oklch, ${typeColor} 7%, transparent)` }}>
             {pull.type} {pull.targets > 1 ? `x${pull.targets}` : ''}
           </span>
           {pull.dangerous && (
-            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: 'oklch(72% 0.16 30)', background: 'oklch(72% 0.16 30 / 0.1)' }}>
+            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: 'var(--color-error)', background: 'color-mix(in oklch, var(--color-error) 10%, transparent)' }}>
               ⚠ dangerous
             </span>
           )}
@@ -199,14 +199,14 @@ function PullCard({ pull }: { pull: Pull }) {
         <div className="flex gap-1.5">
           {pull.cds.map(cd => (
             <span key={cd} className="text-[10px] font-bold px-2 py-0.5 rounded"
-              style={{ color: cdColors[cd] || 'oklch(70% 0.005 55)', background: `${cdColors[cd] || 'oklch(70% 0.005 55)'}15` }}>
+              style={{ color: cdColors[cd] || 'var(--color-text-4)', background: `color-mix(in oklch, ${cdColors[cd] || 'var(--color-text-4)'} 8%, transparent)` }}>
               {cd}
             </span>
           ))}
         </div>
       </div>
       <div className="px-5 pb-3.5">
-        <p className="text-[13px]" style={{ color: 'oklch(82% 0.005 55)', lineHeight: 1.7 }}>
+        <p className="text-[13px]" style={{ color: 'var(--color-text-2)', lineHeight: 1.7 }}>
           {pull.notes}
         </p>
       </div>

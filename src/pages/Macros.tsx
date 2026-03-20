@@ -12,7 +12,7 @@ interface Macro {
 }
 
 const macros: Macro[] = [
-  // ── ROTATION ──
+  // -- ROTATION --
   {
     name: 'Mouseover Moonfire',
     category: 'rotation',
@@ -41,7 +41,7 @@ const macros: Macro[] = [
 /cast Starsurge`,
     explanation: 'Cancels your current Starfire cast and immediately fires Starsurge. Use when a priority target appears or you need to dump AP before capping. The /stopcasting means you lose the remaining cast time but gain instant AP spend.',
   },
-  // ── COOLDOWNS ──
+  // -- COOLDOWNS --
   {
     name: 'Incarnation + Trinket + Fury',
     category: 'cooldowns',
@@ -72,7 +72,7 @@ const macros: Macro[] = [
 /cast Lunar Eclipse`,
     explanation: 'Simple Lunar Eclipse cast. With Lunar Calling talented, this is the only Eclipse you ever press. Cast Starfire first to set the type, then press this.',
   },
-  // ── DEFENSIVE ──
+  // -- DEFENSIVE --
   {
     name: 'Bear Form Panic Button',
     category: 'defensive',
@@ -103,7 +103,7 @@ const macros: Macro[] = [
 /cast Bear Form`,
     explanation: 'Last resort. Heart of the Wild in Bear Form gives +30% max HP for 20 seconds. Combined with Bear Form\'s +25% Stamina and Barkskin, you become extremely tanky. Use when the healer is dead or you are the last one standing.',
   },
-  // ── UTILITY ──
+  // -- UTILITY --
   {
     name: 'Solar Beam (Focus)',
     category: 'utility',
@@ -141,7 +141,7 @@ const macros: Macro[] = [
 /cast [@mouseover,help,nodead][@player] Remove Corruption`,
     explanation: 'Dispels curses and poisons on the party member your mouse is hovering over, or yourself if hovering nothing. Critical for the Devour affix. Don\'t tab-target to allies to dispel - mouseover is faster.',
   },
-  // ── TARGETING ──
+  // -- TARGETING --
   {
     name: 'Target Nearest Enemy',
     category: 'targeting',
@@ -163,17 +163,17 @@ const macros: Macro[] = [
 ];
 
 const categoryLabels: Record<string, { label: string; color: string }> = {
-  rotation: { label: 'Rotation', color: 'oklch(72% 0.18 270)' },
-  cooldowns: { label: 'Cooldowns', color: 'oklch(80% 0.18 80)' },
-  defensive: { label: 'Defensive', color: 'oklch(72% 0.16 30)' },
-  utility: { label: 'Utility', color: 'oklch(68% 0.18 155)' },
-  targeting: { label: 'Targeting', color: 'oklch(60% 0.08 270)' },
+  rotation: { label: 'Rotation', color: 'var(--color-lunar)' },
+  cooldowns: { label: 'Cooldowns', color: 'var(--color-solar)' },
+  defensive: { label: 'Defensive', color: 'var(--color-error)' },
+  utility: { label: 'Utility', color: 'var(--color-nature)' },
+  targeting: { label: 'Targeting', color: 'var(--color-text-muted)' },
 };
 
 const priorityColors: Record<string, string> = {
-  essential: 'oklch(80% 0.18 80)',
-  recommended: 'oklch(72% 0.18 270)',
-  optional: 'oklch(60% 0.08 270)',
+  essential: 'var(--color-solar)',
+  recommended: 'var(--color-lunar)',
+  optional: 'var(--color-text-muted)',
 };
 
 export default function Macros() {
@@ -210,9 +210,9 @@ export default function Macros() {
             onClick={() => setFilter(tab.id)}
             className="px-4 py-2 rounded-lg text-[13px] font-semibold cursor-pointer transition-all"
             style={{
-              color: filter === tab.id ? 'oklch(95% 0.005 60)' : 'oklch(70% 0.005 55)',
-              background: filter === tab.id ? 'oklch(18% 0.02 45)' : 'oklch(10% 0.01 45)',
-              border: `1px solid ${filter === tab.id ? 'oklch(30% 0.03 45)' : 'oklch(16% 0.012 45)'}`,
+              color: filter === tab.id ? 'var(--color-text-1)' : 'var(--color-text-4)',
+              background: filter === tab.id ? 'var(--color-surface-3)' : 'var(--color-surface-1)',
+              border: `1px solid ${filter === tab.id ? 'var(--color-surface-elevated)' : 'var(--color-border)'}`,
             }}
           >
             {tab.label}
@@ -222,17 +222,17 @@ export default function Macros() {
 
       {/* Essential */}
       {essentials.length > 0 && (
-        <MacroGroup label="Essential" color="oklch(80% 0.18 80)" macros={essentials} onCopy={copyMacro} copied={copied} />
+        <MacroGroup label="Essential" color="var(--color-solar)" macros={essentials} onCopy={copyMacro} copied={copied} />
       )}
 
       {/* Recommended */}
       {recommended.length > 0 && (
-        <MacroGroup label="Recommended" color="oklch(72% 0.18 270)" macros={recommended} onCopy={copyMacro} copied={copied} />
+        <MacroGroup label="Recommended" color="var(--color-lunar)" macros={recommended} onCopy={copyMacro} copied={copied} />
       )}
 
       {/* Optional */}
       {optional.length > 0 && (
-        <MacroGroup label="Optional" color="oklch(60% 0.08 270)" macros={optional} onCopy={copyMacro} copied={copied} />
+        <MacroGroup label="Optional" color="var(--color-text-muted)" macros={optional} onCopy={copyMacro} copied={copied} />
       )}
     </section>
   );
@@ -260,31 +260,31 @@ function MacroCard({ macro, onCopy, copied }: { macro: Macro; onCopy: (code: str
   return (
     <div className="reveal rounded-lg overflow-hidden glass">
       <div className="px-6 py-4 flex items-center justify-between flex-wrap gap-3"
-        style={{ borderBottom: '1px solid oklch(16% 0.012 45)' }}>
+        style={{ borderBottom: '1px solid var(--color-border)' }}>
         <div className="flex items-baseline gap-3">
-          <h3 className="text-lg font-bold" style={{ color: 'oklch(92% 0.008 60)' }}>
+          <h3 className="text-lg font-bold" style={{ color: 'var(--color-text-1)' }}>
             {macro.name}
           </h3>
           <span className="text-[10px] font-bold px-2 py-0.5 rounded"
-            style={{ color: cat.color, background: `${cat.color}12` }}>
+            style={{ color: cat.color, background: `color-mix(in oklch, ${cat.color} 7%, transparent)` }}>
             {cat.label}
           </span>
           <span className="text-[10px] font-bold px-2 py-0.5 rounded"
-            style={{ color: priorityColors[macro.priority], background: `${priorityColors[macro.priority]}12` }}>
+            style={{ color: priorityColors[macro.priority], background: `color-mix(in oklch, ${priorityColors[macro.priority]} 7%, transparent)` }}>
             {macro.priority}
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-[12px] font-mono" style={{ color: 'oklch(70% 0.005 55)' }}>
+          <span className="text-[12px] font-mono" style={{ color: 'var(--color-text-4)' }}>
             {macro.keybind}
           </span>
           <button
             onClick={() => onCopy(macro.code, macro.name)}
             className="px-3 py-1.5 rounded-md text-[12px] font-bold cursor-pointer transition-all"
             style={{
-              color: copied ? 'oklch(68% 0.18 155)' : 'oklch(80% 0.18 80)',
-              background: copied ? 'oklch(68% 0.18 155 / 0.1)' : 'oklch(80% 0.18 80 / 0.1)',
-              border: `1px solid ${copied ? 'oklch(68% 0.18 155 / 0.2)' : 'oklch(80% 0.18 80 / 0.2)'}`,
+              color: copied ? 'var(--color-nature)' : 'var(--color-solar)',
+              background: copied ? 'color-mix(in oklch, var(--color-nature) 10%, transparent)' : 'color-mix(in oklch, var(--color-solar) 10%, transparent)',
+              border: `1px solid ${copied ? 'color-mix(in oklch, var(--color-nature) 20%, transparent)' : 'color-mix(in oklch, var(--color-solar) 20%, transparent)'}`,
             }}
           >
             {copied ? 'Copied!' : 'Copy'}
@@ -296,15 +296,15 @@ function MacroCard({ macro, onCopy, copied }: { macro: Macro; onCopy: (code: str
         <pre
           className="font-mono text-[13px] p-4 rounded-lg overflow-x-auto whitespace-pre"
           style={{
-            background: 'oklch(7% 0.008 45)',
-            border: '1px solid oklch(14% 0.01 45)',
-            color: 'oklch(85% 0.01 80)',
+            background: 'var(--color-void)',
+            border: '1px solid var(--color-surface-2)',
+            color: 'var(--color-text-1)',
             lineHeight: 1.6,
           }}
         >
           {macro.code}
         </pre>
-        <p className="text-[14px]" style={{ color: 'oklch(88% 0.005 55)', lineHeight: 1.75 }}>
+        <p className="text-[14px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.75 }}>
           {macro.explanation}
         </p>
       </div>

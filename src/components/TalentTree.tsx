@@ -144,20 +144,20 @@ export default function TalentTree({ buildName }: Props) {
 
   return (
     <div className="relative">
-      <div className="text-[11px] uppercase font-bold mb-4 flex items-center gap-3 flex-wrap" style={{ color: 'oklch(68% 0.16 285)', letterSpacing: '0.12em' }}>
+      <div className="text-[11px] uppercase font-bold mb-4 flex items-center gap-3 flex-wrap" style={{ color: 'var(--color-lunar)', letterSpacing: '0.12em' }}>
         <span>Balance Spec Tree</span>
-        <span className="px-2 py-0.5 rounded" style={{ color: 'oklch(80% 0.18 80)', background: 'oklch(80% 0.18 80 / 0.1)' }}>
+        <span className="px-2 py-0.5 rounded" style={{ color: 'var(--color-solar)', background: 'color-mix(in oklch, var(--color-solar) 10%, transparent)' }}>
           {buildName}
         </span>
-        <span style={{ color: 'oklch(82% 0.005 55)' }}>
+        <span style={{ color: 'var(--color-text-2)' }}>
           {activeCount}/{specTalents.length} highlighted
         </span>
-        <span style={{ color: 'oklch(78% 0.005 55)' }}>
+        <span style={{ color: 'var(--color-text-4)' }}>
           Midnight 12.0.1
         </span>
       </div>
 
-      <div className="overflow-x-auto rounded-lg p-3" style={{ background: 'oklch(6% 0.006 45 / 0.6)' }}>
+      <div className="overflow-x-auto rounded-lg p-3" style={{ background: 'color-mix(in oklch, var(--color-void) 60%, transparent)' }}>
         <svg
           width={svgW}
           height={svgH}
@@ -292,25 +292,25 @@ export default function TalentTree({ buildName }: Props) {
           <div
             className="glass rounded-lg p-3 mt-2 max-w-sm"
             style={{
-              borderLeft: `2px solid ${active ? 'oklch(78% 0.16 60)' : 'oklch(25% 0.015 270)'}`,
+              borderLeft: `2px solid ${active ? 'var(--color-solar)' : 'var(--color-text-ghost)'}`,
               animation: 'ttFade 0.12s ease',
             }}
           >
             <style>{`@keyframes ttFade { from { opacity:0; transform:translateY(3px); } to { opacity:1; transform:translateY(0); } }`}</style>
             <div className="flex items-center gap-2 mb-1">
               <img src={getSpellIcon(iconName, 'medium')} alt="" className="w-6 h-6 rounded"
-                style={{ border: active ? '1px solid oklch(78% 0.16 60 / 0.3)' : '1px solid oklch(18% 0.01 270)' }} />
+                style={{ border: active ? '1px solid color-mix(in oklch, var(--color-solar) 30%, transparent)' : '1px solid var(--color-surface-3)' }} />
               <div>
-                <div className="text-[15px] font-bold" style={{ color: active ? 'oklch(80% 0.18 80)' : 'oklch(75% 0.015 270)' }}>
+                <div className="text-[15px] font-bold" style={{ color: active ? 'var(--color-solar)' : 'var(--color-text-4)' }}>
                   {displayName}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px]" style={{ color: 'oklch(82% 0.005 55)' }}>
+                  <span className="text-[11px]" style={{ color: 'var(--color-text-2)' }}>
                     {t.type === 'choice' ? 'Choice' : t.type === 'active' ? 'Active' : 'Passive'} - Row {t.row + 1}
                   </span>
                   {active && (
                     <span className="text-[10px] font-bold px-1.5 py-0.5 rounded"
-                      style={{ color: 'oklch(78% 0.16 60)', background: 'oklch(78% 0.16 60 / 0.1)' }}>
+                      style={{ color: 'var(--color-solar)', background: 'color-mix(in oklch, var(--color-solar) 10%, transparent)' }}>
                       IN BUILD
                     </span>
                   )}

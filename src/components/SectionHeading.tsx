@@ -1,9 +1,9 @@
 type Accent = 'solar' | 'lunar' | 'nature';
 
 const colors: Record<Accent, string> = {
-  solar:  'oklch(78% 0.16 60)',
-  lunar:  'oklch(68% 0.16 285)',
-  nature: 'oklch(58% 0.14 155)',
+  solar:  'var(--color-solar)',
+  lunar:  'var(--color-lunar)',
+  nature: 'var(--color-nature)',
 };
 
 interface Props {
@@ -29,7 +29,7 @@ export default function SectionHeading({ title, sub, accent = 'lunar' }: Props) 
         {title}
       </h2>
       {sub && (
-        <p className="mt-3 max-w-lg" style={{ color: 'oklch(90% 0.005 55)', fontSize: '0.9rem', lineHeight: 1.75 }}>
+        <p className="mt-3 max-w-lg" style={{ color: 'var(--color-text-1)', fontSize: '0.9rem', lineHeight: 1.75 }}>
           {sub}
         </p>
       )}

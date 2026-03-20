@@ -221,17 +221,17 @@ const raidGroups = [
 ];
 
 const typeColors: Record<string, string> = {
-  'Single Target': 'oklch(80% 0.18 80)',
-  'Cleave': 'oklch(72% 0.18 270)',
-  'Council': 'oklch(68% 0.18 155)',
-  'Add Waves': 'oklch(72% 0.16 30)',
-  'Multi-Phase': 'oklch(65% 0.14 300)',
+  'Single Target': 'var(--color-solar)',
+  'Cleave': 'var(--color-lunar)',
+  'Council': 'var(--color-nature)',
+  'Add Waves': 'var(--color-error)',
+  'Multi-Phase': 'var(--color-lunar)',
 };
 
 const diffColors: Record<string, string> = {
-  'Easy': 'oklch(68% 0.18 155)',
-  'Medium': 'oklch(80% 0.18 80)',
-  'Hard': 'oklch(72% 0.16 30)',
+  'Easy': 'var(--color-nature)',
+  'Medium': 'var(--color-solar)',
+  'Hard': 'var(--color-error)',
 };
 
 export default function BossGuides() {
@@ -250,7 +250,7 @@ export default function BossGuides() {
 
       {/* Overview: which fights Balance excels at */}
       <div className="reveal mb-8">
-        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'var(--color-text-1)', letterSpacing: '0.12em' }}>
           Balance Druid Effectiveness
         </div>
         <div className="flex flex-wrap gap-2">
@@ -262,7 +262,7 @@ export default function BossGuides() {
               <div className="flex items-center justify-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <div key={i} className="w-1.5 h-1.5 rounded-full"
-                    style={{ background: i < b.balanceRating ? 'oklch(80% 0.18 80)' : 'oklch(16% 0.01 270)' }} />
+                    style={{ background: i < b.balanceRating ? 'var(--color-solar)' : 'var(--color-surface-active)' }} />
                 ))}
               </div>
             </div>
@@ -273,23 +273,23 @@ export default function BossGuides() {
       {/* Excels / Struggles summary */}
       <div className="reveal grid sm:grid-cols-2 gap-4 mb-16">
         <div className="p-5 rounded-lg glass-nature">
-          <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'var(--color-nature)', letterSpacing: '0.12em' }}>
             Boomkin Excels
           </div>
-          <ul className="space-y-1.5 text-[15px]" style={{ color: 'oklch(92% 0.004 270)', lineHeight: 1.7 }}>
-            <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Lightblinded Vanguard</strong> - Council, 3 targets, Starfall god mode</li>
-            <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Vaelgor & Ezzorak</strong> - Dual boss cleave, multi-DoT</li>
-            <li><strong style={{ color: 'oklch(80% 0.18 80)' }}>Fallen-King Salhadaar</strong> - ST + burst AoE on orbs</li>
+          <ul className="space-y-1.5 text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
+            <li><strong style={{ color: 'var(--color-solar)' }}>Lightblinded Vanguard</strong> - Council, 3 targets, Starfall god mode</li>
+            <li><strong style={{ color: 'var(--color-solar)' }}>Vaelgor & Ezzorak</strong> - Dual boss cleave, multi-DoT</li>
+            <li><strong style={{ color: 'var(--color-solar)' }}>Fallen-King Salhadaar</strong> - ST + burst AoE on orbs</li>
           </ul>
         </div>
         <div className="p-5 rounded-lg glass">
-          <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'var(--color-error)', letterSpacing: '0.12em' }}>
             Hardest for Boomkin
           </div>
-          <ul className="space-y-1.5 text-[15px]" style={{ color: 'oklch(92% 0.004 270)', lineHeight: 1.7 }}>
-            <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Crown of the Cosmos</strong> - Heavy movement, intermittent adds</li>
-            <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Midnight Falls</strong> - Tight enrage, shrinking arena</li>
-            <li><strong style={{ color: 'oklch(72% 0.16 30)' }}>Imperator Averzian</strong> - Quick add swaps punish ramp</li>
+          <ul className="space-y-1.5 text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
+            <li><strong style={{ color: 'var(--color-error)' }}>Crown of the Cosmos</strong> - Heavy movement, intermittent adds</li>
+            <li><strong style={{ color: 'var(--color-error)' }}>Midnight Falls</strong> - Tight enrage, shrinking arena</li>
+            <li><strong style={{ color: 'var(--color-error)' }}>Imperator Averzian</strong> - Quick add swaps punish ramp</li>
           </ul>
         </div>
       </div>
@@ -297,7 +297,7 @@ export default function BossGuides() {
       {/* Per-raid groups */}
       {raidGroups.map(group => (
         <div key={group.name} className="mb-12">
-          <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-5" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
             {group.name}
           </div>
           <div className="space-y-4">
@@ -324,31 +324,31 @@ function BossCard({ boss, isExpanded, onToggle }: { boss: BossGuide; isExpanded:
         <button
           onClick={onToggle}
           className="w-full px-6 py-4 flex items-center justify-between flex-wrap gap-3 cursor-pointer text-left"
-          style={{ borderBottom: isExpanded ? '1px solid oklch(16% 0.012 45)' : 'none' }}>
+          style={{ borderBottom: isExpanded ? '1px solid var(--color-border)' : 'none' }}>
           <div className="flex items-baseline gap-3">
-            <span className="font-mono text-sm font-bold" style={{ color: 'oklch(82% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>
+            <span className="font-mono text-sm font-bold" style={{ color: 'var(--color-text-2)', fontVariantNumeric: 'tabular-nums' }}>
               {String(boss.order).padStart(2, '0')}
             </span>
-            <h3 className="font-display text-xl font-bold" style={{ color: 'oklch(92% 0.008 60)', fontStyle: 'italic' }}>
+            <h3 className="font-display text-xl font-bold" style={{ color: 'var(--color-text-1)', fontStyle: 'italic' }}>
               {boss.name}
             </h3>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-[12px] font-bold px-2 py-0.5 rounded"
-              style={{ color: typeColors[boss.type], background: `${typeColors[boss.type]}12` }}>
+              style={{ color: typeColors[boss.type], background: `color-mix(in oklch, ${typeColors[boss.type]} 7%, transparent)` }}>
               {boss.type}
             </span>
             <span className="text-[12px] font-bold px-2 py-0.5 rounded"
-              style={{ color: diffColors[boss.difficulty], background: `${diffColors[boss.difficulty]}12` }}>
+              style={{ color: diffColors[boss.difficulty], background: `color-mix(in oklch, ${diffColors[boss.difficulty]} 7%, transparent)` }}>
               {boss.difficulty}
             </span>
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
                 <div key={i} className="w-2 h-2 rounded-full"
-                  style={{ background: i < boss.balanceRating ? 'oklch(80% 0.18 80)' : 'oklch(16% 0.01 270)' }} />
+                  style={{ background: i < boss.balanceRating ? 'var(--color-solar)' : 'var(--color-surface-active)' }} />
               ))}
             </div>
-            <span style={{ color: 'oklch(82% 0.005 55)', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s ease', display: 'inline-block' }}>
+            <span style={{ color: 'var(--color-text-2)', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s ease', display: 'inline-block' }}>
               &#8963;
             </span>
           </div>
@@ -356,25 +356,25 @@ function BossCard({ boss, isExpanded, onToggle }: { boss: BossGuide; isExpanded:
 
         {isExpanded && <div className="px-6 py-5 grid md:grid-cols-2 gap-8">
           <div>
-            <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.12em' }}>
+            <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'var(--color-text-1)', letterSpacing: '0.12em' }}>
               Key Mechanics
             </div>
             <ul className="space-y-2 mb-6">
               {boss.keyMechanics.map((m, i) => (
-                <li key={i} className="flex items-start gap-2 text-[15px]" style={{ color: 'oklch(90% 0.005 270)', lineHeight: 1.7 }}>
-                  <span className="w-1 h-1 rounded-full shrink-0 mt-2.5" style={{ background: 'oklch(82% 0.005 55)' }} />
+                <li key={i} className="flex items-start gap-2 text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
+                  <span className="w-1 h-1 rounded-full shrink-0 mt-2.5" style={{ background: 'var(--color-text-2)' }} />
                   {m}
                 </li>
               ))}
             </ul>
 
-            <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'oklch(72% 0.18 270)', letterSpacing: '0.12em' }}>
+            <div className="text-[11px] uppercase font-bold mb-3" style={{ color: 'var(--color-lunar)', letterSpacing: '0.12em' }}>
               Balance Druid Tips
             </div>
             <ul className="space-y-2">
               {boss.balanceTips.map((t, i) => (
-                <li key={i} className="flex items-start gap-2 text-[15px]" style={{ color: 'oklch(92% 0.004 270)', lineHeight: 1.7 }}>
-                  <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-2" style={{ background: 'oklch(72% 0.18 270)' }} />
+                <li key={i} className="flex items-start gap-2 text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-2" style={{ background: 'var(--color-lunar)' }} />
                   {t}
                 </li>
               ))}
@@ -382,20 +382,20 @@ function BossCard({ boss, isExpanded, onToggle }: { boss: BossGuide; isExpanded:
           </div>
 
           <div>
-            <div className="p-4 rounded-lg mb-4" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
-              <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+            <div className="p-4 rounded-lg mb-4" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--color-surface-2)' }}>
+              <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
                 Cooldown Timing
               </div>
-              <p className="text-[15px]" style={{ color: 'oklch(92% 0.004 270)', lineHeight: 1.7 }}>
+              <p className="text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
                 {boss.cdTiming}
               </p>
             </div>
 
-            <div className="p-4 rounded-lg" style={{ background: 'oklch(9% 0.008 45)', border: '1px solid oklch(14% 0.01 45)' }}>
-              <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(68% 0.18 155)', letterSpacing: '0.12em' }}>
+            <div className="p-4 rounded-lg" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--color-surface-2)' }}>
+              <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'var(--color-nature)', letterSpacing: '0.12em' }}>
                 Positioning
               </div>
-              <p className="text-[15px]" style={{ color: 'oklch(92% 0.004 270)', lineHeight: 1.7 }}>
+              <p className="text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
                 {boss.positioning}
               </p>
             </div>

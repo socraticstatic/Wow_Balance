@@ -54,20 +54,20 @@ const allTasks: CheckItem[] = [
 ];
 
 const categoryLabels: Record<string, { label: string; color: string }> = {
-  vault: { label: 'Great Vault', color: 'oklch(72% 0.18 270)' },
-  currency: { label: 'Currency', color: 'oklch(80% 0.18 80)' },
-  gear: { label: 'Gear', color: 'oklch(80% 0.18 80)' },
-  rep: { label: 'Reputation', color: 'oklch(68% 0.18 155)' },
-  weekly: { label: 'Weekly', color: 'oklch(72% 0.16 30)' },
-  daily: { label: 'Daily', color: 'oklch(60% 0.08 270)' },
+  vault: { label: 'Great Vault', color: 'var(--color-lunar)' },
+  currency: { label: 'Currency', color: 'var(--color-solar)' },
+  gear: { label: 'Gear', color: 'var(--color-solar)' },
+  rep: { label: 'Reputation', color: 'var(--color-nature)' },
+  weekly: { label: 'Weekly', color: 'var(--color-error)' },
+  daily: { label: 'Daily', color: 'var(--color-lunar)' },
 };
 
 // Priority colors used in task rendering
 const _priorityColors: Record<string, string> = {
-  critical: 'oklch(72% 0.16 30)',
-  high: 'oklch(80% 0.18 80)',
-  medium: 'oklch(72% 0.18 270)',
-  low: 'oklch(60% 0.08 270)',
+  critical: 'var(--color-error)',
+  high: 'var(--color-solar)',
+  medium: 'var(--color-lunar)',
+  low: 'var(--color-lunar)',
 };
 void _priorityColors;
 
@@ -129,41 +129,41 @@ export default function WeeklyChecklist() {
       {/* Progress bar */}
       <div className="reveal mb-12">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[13px] font-semibold" style={{ color: 'oklch(88% 0.005 55)' }}>
+          <span className="text-[13px] font-semibold" style={{ color: 'var(--color-text-2)' }}>
             {completedCount} / {activeTasks.length} complete
           </span>
-          <span className="text-[13px] font-mono font-bold" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
+          <span className="text-[13px] font-mono font-bold" style={{ color: 'var(--color-solar)', fontVariantNumeric: 'tabular-nums' }}>
             {pct}%
           </span>
         </div>
-        <div className="h-2 rounded-full overflow-hidden" style={{ background: 'oklch(14% 0.012 45)' }}>
-          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, background: pct === 100 ? 'oklch(68% 0.18 155)' : 'oklch(80% 0.18 80)' }} />
+        <div className="h-2 rounded-full overflow-hidden" style={{ background: 'var(--color-surface-2)' }}>
+          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, background: pct === 100 ? 'var(--color-nature)' : 'var(--color-solar)' }} />
         </div>
       </div>
 
       {/* Reset timer */}
       <div className="reveal mb-12 p-4 rounded-lg glass flex items-center justify-between">
         <div>
-          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'oklch(72% 0.16 30)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-1" style={{ color: 'var(--color-error)', letterSpacing: '0.12em' }}>
             Weekly Reset
           </div>
-          <div className="text-[14px] font-semibold" style={{ color: 'oklch(90% 0.005 55)' }}>
+          <div className="text-[14px] font-semibold" style={{ color: 'var(--color-text-1)' }}>
             {resetInfo.timeString}
           </div>
         </div>
         <div className="text-right">
-          <div className="text-xl font-bold font-mono" style={{ color: 'oklch(80% 0.18 80)', fontVariantNumeric: 'tabular-nums' }}>
+          <div className="text-xl font-bold font-mono" style={{ color: 'var(--color-solar)', fontVariantNumeric: 'tabular-nums' }}>
             {resetInfo.hoursUntilReset}h
           </div>
-          <div className="text-[11px]" style={{ color: 'oklch(70% 0.005 55)' }}>until reset</div>
+          <div className="text-[11px]" style={{ color: 'var(--color-text-4)' }}>until reset</div>
         </div>
       </div>
 
       {/* Task groups */}
-      {critical.length > 0 && <TaskGroup label="Must Do" color="oklch(72% 0.16 30)" tasks={critical} checked={checked} onToggle={toggle} />}
-      {high.length > 0 && <TaskGroup label="High Priority" color="oklch(80% 0.18 80)" tasks={high} checked={checked} onToggle={toggle} />}
-      {medium.length > 0 && <TaskGroup label="If You Have Time" color="oklch(72% 0.18 270)" tasks={medium} checked={checked} onToggle={toggle} />}
-      {low.length > 0 && <TaskGroup label="Optional" color="oklch(60% 0.08 270)" tasks={low} checked={checked} onToggle={toggle} />}
+      {critical.length > 0 && <TaskGroup label="Must Do" color="var(--color-error)" tasks={critical} checked={checked} onToggle={toggle} />}
+      {high.length > 0 && <TaskGroup label="High Priority" color="var(--color-solar)" tasks={high} checked={checked} onToggle={toggle} />}
+      {medium.length > 0 && <TaskGroup label="If You Have Time" color="var(--color-lunar)" tasks={medium} checked={checked} onToggle={toggle} />}
+      {low.length > 0 && <TaskGroup label="Optional" color="var(--color-lunar)" tasks={low} checked={checked} onToggle={toggle} />}
     </section>
   );
 }
@@ -190,25 +190,25 @@ function TaskGroup({ label, color, tasks, checked, onToggle }: {
               <div
                 className="w-5 h-5 rounded border-2 shrink-0 mt-0.5 flex items-center justify-center"
                 style={{
-                  borderColor: done ? 'oklch(68% 0.18 155)' : 'oklch(30% 0.02 45)',
-                  background: done ? 'oklch(68% 0.18 155 / 0.15)' : 'transparent',
+                  borderColor: done ? 'var(--color-nature)' : 'var(--color-text-ghost)',
+                  background: done ? 'color-mix(in oklch, var(--color-nature) 15%, transparent)' : 'transparent',
                 }}
               >
-                {done && <span className="text-[11px] font-bold" style={{ color: 'oklch(68% 0.18 155)' }}>✓</span>}
+                {done && <span className="text-[11px] font-bold" style={{ color: 'var(--color-nature)' }}>✓</span>}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-[14px] font-semibold" style={{
-                    color: done ? 'oklch(60% 0.005 55)' : 'oklch(92% 0.006 60)',
+                    color: done ? 'var(--color-text-muted)' : 'var(--color-text-1)',
                     textDecoration: done ? 'line-through' : 'none',
                   }}>
                     {task.label}
                   </span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: cat.color, background: `${cat.color}12` }}>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: cat.color, background: `color-mix(in oklch, ${cat.color} 7%, transparent)` }}>
                     {cat.label}
                   </span>
                 </div>
-                <p className="text-[13px]" style={{ color: done ? 'oklch(50% 0.005 50)' : 'oklch(78% 0.005 55)', lineHeight: 1.65 }}>
+                <p className="text-[13px]" style={{ color: done ? 'var(--color-text-muted)' : 'var(--color-text-3)', lineHeight: 1.65 }}>
                   {task.detail}
                 </p>
               </div>

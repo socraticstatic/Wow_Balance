@@ -86,15 +86,15 @@ export default function Setup() {
             onClick={() => setStep(i)}
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all"
             style={{
-              color: step === i ? 'oklch(90% 0.01 60)' : 'oklch(56% 0.012 50)',
-              background: step === i ? 'oklch(14% 0.015 45)' : 'transparent',
-              border: `1px solid ${step === i ? 'oklch(22% 0.02 45)' : 'oklch(14% 0.01 45)'}`,
+              color: step === i ? 'var(--color-text-1)' : 'var(--color-text-muted)',
+              background: step === i ? 'var(--color-surface-2)' : 'transparent',
+              border: `1px solid ${step === i ? 'var(--color-surface-elevated)' : 'var(--color-surface-2)'}`,
             }}
           >
             <span className="w-5 h-5 rounded-full text-[12px] font-bold flex items-center justify-center"
               style={{
-                color: step >= i ? 'oklch(78% 0.16 60)' : 'oklch(78% 0.005 55)',
-                background: step >= i ? 'oklch(78% 0.16 60 / 0.1)' : 'oklch(14% 0.01 45)',
+                color: step >= i ? 'var(--color-solar)' : 'var(--color-text-3)',
+                background: step >= i ? 'color-mix(in oklch, var(--color-solar) 10%, transparent)' : 'var(--color-surface-2)',
               }}>
               {s.icon}
             </span>
@@ -106,7 +106,7 @@ export default function Setup() {
       {/* Step 0: Character Info */}
       {step === 0 && (
         <div className="space-y-6">
-          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'var(--color-solar)' }}>
             Who is your character?
           </h3>
 
@@ -114,12 +114,12 @@ export default function Setup() {
           <Field label="Realm" value={form.realm} onChange={set('realm')} placeholder="zuljin" help="Lowercase, hyphenated. e.g. area-52, zuljin, stormrage" />
 
           <div>
-            <label className="block text-[12px] uppercase font-bold mb-2" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>Region</label>
+            <label className="block text-[12px] uppercase font-bold mb-2" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>Region</label>
             <select
               value={form.region}
               onChange={set('region')}
               className="w-full px-4 py-2.5 rounded-lg text-sm"
-              style={{ background: 'oklch(11% 0.012 45)', border: '1px solid oklch(18% 0.012 45)', color: 'oklch(85% 0.01 60)', outline: 'none' }}
+              style={{ background: 'var(--color-surface-1)', border: '1px solid var(--color-surface-3)', color: 'var(--color-text-1)', outline: 'none' }}
             >
               <option value="us">US</option>
               <option value="eu">EU</option>
@@ -138,17 +138,17 @@ export default function Setup() {
       {/* Step 1: Playstyle Questionnaire */}
       {step === 1 && (
         <div className="space-y-8">
-          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'var(--color-solar)' }}>
             How do you play?
           </h3>
 
-          <p className="text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>
+          <p className="text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
             This shapes your optimization page - gear, enchants, talents, and rotation will be tailored to your focus.
           </p>
 
           {/* Primary content */}
           <div>
-            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>
               What content do you focus on?
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -163,14 +163,14 @@ export default function Setup() {
                   onClick={() => setForm(prev => ({ ...prev, primaryContent: opt.id }))}
                   className="text-left p-4 rounded-lg cursor-pointer transition-all"
                   style={{
-                    background: form.primaryContent === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.primaryContent === opt.id ? 'oklch(78% 0.16 60 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                    background: form.primaryContent === opt.id ? 'var(--color-surface-2)' : 'var(--color-surface-1)',
+                    border: `1px solid ${form.primaryContent === opt.id ? 'color-mix(in oklch, var(--color-solar) 40%, transparent)' : 'var(--color-border)'}`,
                   }}
                 >
                   <span className="text-sm font-bold block mb-0.5" style={{
-                    color: form.primaryContent === opt.id ? 'oklch(78% 0.16 60)' : 'oklch(78% 0.01 50)',
+                    color: form.primaryContent === opt.id ? 'var(--color-solar)' : 'var(--color-text-3)',
                   }}>{opt.label}</span>
-                  <span className="text-[13px]" style={{ color: 'oklch(56% 0.012 50)' }}>{opt.desc}</span>
+                  <span className="text-[13px]" style={{ color: 'var(--color-text-muted)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -178,28 +178,28 @@ export default function Setup() {
 
           {/* Hero talent preference */}
           <div>
-            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>
               Preferred Hero Talent Tree
             </label>
             <div className="grid grid-cols-3 gap-2">
               {[
-                { id: 'keeper', label: 'Keeper of the Grove', desc: 'Burst windows, Force of Nature, short CD planning', color: 'oklch(78% 0.16 60)' },
-                { id: 'elune', label: "Elune's Chosen", desc: 'Sustained throughput, Starfire spam, Fury of Elune', color: 'oklch(68% 0.16 285)' },
-                { id: 'flexible', label: 'Flexible', desc: 'Show me both, I swap', color: 'oklch(58% 0.14 155)' },
+                { id: 'keeper', label: 'Keeper of the Grove', desc: 'Burst windows, Force of Nature, short CD planning', color: 'var(--color-solar)' },
+                { id: 'elune', label: "Elune's Chosen", desc: 'Sustained throughput, Starfire spam, Fury of Elune', color: 'var(--color-lunar)' },
+                { id: 'flexible', label: 'Flexible', desc: 'Show me both, I swap', color: 'var(--color-nature)' },
               ].map(opt => (
                 <button
                   key={opt.id}
                   onClick={() => setForm(prev => ({ ...prev, heroTalent: opt.id }))}
                   className="text-left p-4 rounded-lg cursor-pointer transition-all"
                   style={{
-                    background: form.heroTalent === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.heroTalent === opt.id ? `${opt.color}60` : 'oklch(16% 0.012 45)'}`,
+                    background: form.heroTalent === opt.id ? 'var(--color-surface-2)' : 'var(--color-surface-1)',
+                    border: `1px solid ${form.heroTalent === opt.id ? `${opt.color}60` : 'var(--color-border)'}`,
                   }}
                 >
                   <span className="text-[15px] font-bold block mb-0.5" style={{
-                    color: form.heroTalent === opt.id ? opt.color : 'oklch(90% 0.005 55)',
+                    color: form.heroTalent === opt.id ? opt.color : 'var(--color-text-1)',
                   }}>{opt.label}</span>
-                  <span className="text-[12px]" style={{ color: 'oklch(90% 0.005 55)' }}>{opt.desc}</span>
+                  <span className="text-[12px]" style={{ color: 'var(--color-text-1)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -207,7 +207,7 @@ export default function Setup() {
 
           {/* AoE vs ST preference */}
           <div>
-            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>
               Damage Profile
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -221,14 +221,14 @@ export default function Setup() {
                   onClick={() => setForm(prev => ({ ...prev, playstyle: opt.id }))}
                   className="text-left p-4 rounded-lg cursor-pointer transition-all"
                   style={{
-                    background: form.playstyle === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.playstyle === opt.id ? 'oklch(68% 0.16 285 / 0.4)' : 'oklch(16% 0.012 45)'}`,
+                    background: form.playstyle === opt.id ? 'var(--color-surface-2)' : 'var(--color-surface-1)',
+                    border: `1px solid ${form.playstyle === opt.id ? 'color-mix(in oklch, var(--color-lunar) 40%, transparent)' : 'var(--color-border)'}`,
                   }}
                 >
                   <span className="text-sm font-bold block mb-0.5" style={{
-                    color: form.playstyle === opt.id ? 'oklch(68% 0.16 285)' : 'oklch(90% 0.005 55)',
+                    color: form.playstyle === opt.id ? 'var(--color-lunar)' : 'var(--color-text-1)',
                   }}>{opt.label}</span>
-                  <span className="text-[13px]" style={{ color: 'oklch(90% 0.005 55)' }}>{opt.desc}</span>
+                  <span className="text-[13px]" style={{ color: 'var(--color-text-1)' }}>{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -236,7 +236,7 @@ export default function Setup() {
 
           {/* What matters most */}
           <div>
-            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
+            <label className="block text-[12px] uppercase font-bold mb-3" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>
               What matters most to you? (select all that apply)
             </label>
             <div className="flex flex-wrap gap-2">
@@ -255,9 +255,9 @@ export default function Setup() {
                   onClick={() => togglePriority(p)}
                   className="px-3.5 py-2 rounded-lg text-[14px] font-semibold cursor-pointer transition-all"
                   style={{
-                    color: form.priorities.includes(p) ? 'oklch(90% 0.01 60)' : 'oklch(90% 0.005 55)',
-                    background: form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.12)' : 'oklch(10.5% 0.012 45)',
-                    border: `1px solid ${form.priorities.includes(p) ? 'oklch(78% 0.16 60 / 0.3)' : 'oklch(16% 0.012 45)'}`,
+                    color: form.priorities.includes(p) ? 'var(--color-text-1)' : 'var(--color-text-1)',
+                    background: form.priorities.includes(p) ? 'color-mix(in oklch, var(--color-solar) 12%, transparent)' : 'var(--color-surface-1)',
+                    border: `1px solid ${form.priorities.includes(p) ? 'color-mix(in oklch, var(--color-solar) 30%, transparent)' : 'var(--color-border)'}`,
                   }}
                 >
                   {p}
@@ -268,11 +268,11 @@ export default function Setup() {
 
           {/* Summary of their profile */}
           {(form.primaryContent || form.heroTalent || form.playstyle) && (
-            <div className="p-5 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(16% 0.015 45)' }}>
-              <div className="text-[12px] uppercase font-bold mb-3" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+            <div className="p-5 rounded-lg" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--color-border)' }}>
+              <div className="text-[12px] uppercase font-bold mb-3" style={{ color: 'var(--color-solar)', letterSpacing: '0.1em' }}>
                 Your Optimization Profile
               </div>
-              <p className="text-[15px]" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
+              <p className="text-[15px]" style={{ color: 'var(--color-text-muted)', lineHeight: 1.7 }}>
                 {form.primaryContent === 'mythic-plus' && 'Your dossier will prioritize M+ builds, AoE rotation, dungeon tips, and Haste-focused gearing.'}
                 {form.primaryContent === 'raid' && 'Your dossier will prioritize raid builds, boss-specific tips, ST rotation, and Mastery-focused gearing.'}
                 {form.primaryContent === 'pvp' && 'Your dossier will prioritize PvP builds, arena strategy, burst windows, and Versatility-focused gearing.'}
@@ -297,20 +297,20 @@ export default function Setup() {
       {/* Step 3: Blizzard API */}
       {step === 3 && (
         <div className="space-y-6">
-          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'var(--color-solar)' }}>
             Blizzard API Credentials
           </h3>
 
           <InfoBox>
-            <p className="text-sm mb-3" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
-              <strong style={{ color: 'oklch(78% 0.16 60)' }}>How to get these:</strong>
+            <p className="text-sm mb-3" style={{ color: 'var(--color-text-muted)', lineHeight: 1.7 }}>
+              <strong style={{ color: 'var(--color-solar)' }}>How to get these:</strong>
             </p>
-            <ol className="space-y-2 text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.6 }}>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>1.</span> Go to <a href="https://develop.battle.net" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'oklch(68% 0.16 285)' }}>develop.battle.net</a></li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>2.</span> Log in with your Battle.net account</li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>3.</span> Click "API Access" in the top nav</li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>4.</span> Create a new client. Set redirect URI to <code style={{ color: 'oklch(68% 0.16 285)', background: 'oklch(12% 0.012 45)', padding: '1px 6px', borderRadius: 4, fontSize: 12 }}>http://localhost</code></li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>5.</span> Copy the Client ID and Client Secret below</li>
+            <ol className="space-y-2 text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.6 }}>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>1.</span> Go to <a href="https://develop.battle.net" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--color-lunar)' }}>develop.battle.net</a></li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>2.</span> Log in with your Battle.net account</li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>3.</span> Click "API Access" in the top nav</li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>4.</span> Create a new client. Set redirect URI to <code style={{ color: 'var(--color-lunar)', background: 'var(--color-surface-1)', padding: '1px 6px', borderRadius: 4, fontSize: 12 }}>http://localhost</code></li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>5.</span> Copy the Client ID and Client Secret below</li>
             </ol>
           </InfoBox>
 
@@ -324,20 +324,20 @@ export default function Setup() {
       {/* Step 4: WarcraftLogs API */}
       {step === 4 && (
         <div className="space-y-6">
-          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'var(--color-solar)' }}>
             WarcraftLogs API Credentials
           </h3>
 
           <InfoBox>
-            <p className="text-sm mb-3" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
-              <strong style={{ color: 'oklch(78% 0.16 60)' }}>How to get these:</strong>
+            <p className="text-sm mb-3" style={{ color: 'var(--color-text-muted)', lineHeight: 1.7 }}>
+              <strong style={{ color: 'var(--color-solar)' }}>How to get these:</strong>
             </p>
-            <ol className="space-y-2 text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.6 }}>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>1.</span> Go to <a href="https://www.warcraftlogs.com/api/clients/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'oklch(68% 0.16 285)' }}>warcraftlogs.com/api/clients</a></li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>2.</span> Click "Create Client"</li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>3.</span> Name it anything, set redirect URI to <code style={{ color: 'oklch(68% 0.16 285)', background: 'oklch(12% 0.012 45)', padding: '1px 6px', borderRadius: 4, fontSize: 12 }}>http://localhost</code></li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>4.</span> Copy the Client ID and Client Secret below</li>
-              <li className="flex gap-2"><span style={{ color: 'oklch(78% 0.16 60)' }}>5.</span> Also copy your v1 API key from the same page (optional)</li>
+            <ol className="space-y-2 text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.6 }}>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>1.</span> Go to <a href="https://www.warcraftlogs.com/api/clients/" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--color-lunar)' }}>warcraftlogs.com/api/clients</a></li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>2.</span> Click "Create Client"</li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>3.</span> Name it anything, set redirect URI to <code style={{ color: 'var(--color-lunar)', background: 'var(--color-surface-1)', padding: '1px 6px', borderRadius: 4, fontSize: 12 }}>http://localhost</code></li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>4.</span> Copy the Client ID and Client Secret below</li>
+              <li className="flex gap-2"><span style={{ color: 'var(--color-solar)' }}>5.</span> Also copy your v1 API key from the same page (optional)</li>
             </ol>
           </InfoBox>
 
@@ -352,7 +352,7 @@ export default function Setup() {
       {/* Step 5: Deploy */}
       {step === 5 && (
         <div className="space-y-6">
-          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+          <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'var(--color-solar)' }}>
             Deploy Your Dossier
           </h3>
 
@@ -360,8 +360,8 @@ export default function Setup() {
           <Field label="Repository Name" value={form.repoName} onChange={set('repoName')} placeholder="my-druid-dossier" />
 
           <InfoBox>
-            <p className="text-sm mb-4" style={{ color: 'oklch(62% 0.012 50)', lineHeight: 1.7 }}>
-              <strong style={{ color: 'oklch(78% 0.16 60)' }}>Run these commands in your terminal:</strong>
+            <p className="text-sm mb-4" style={{ color: 'var(--color-text-muted)', lineHeight: 1.7 }}>
+              <strong style={{ color: 'var(--color-solar)' }}>Run these commands in your terminal:</strong>
             </p>
 
             <CodeBlock label="1. Clone the template" code={`git clone https://github.com/socraticstatic/Wow_Balance.git ${form.repoName || 'my-druid-dossier'}\ncd ${form.repoName || 'my-druid-dossier'}`} />
@@ -384,8 +384,8 @@ EOF`} />
 
             <CodeBlock label="7. Enable GitHub Pages" code={`gh api repos/${form.githubUsername || 'your-username'}/${form.repoName || 'my-druid-dossier'}/pages -X POST -f build_type=workflow`} />
 
-            <p className="text-sm mt-4" style={{ color: 'oklch(90% 0.005 55)' }}>
-              Your dossier will be live at: <strong style={{ color: 'oklch(78% 0.16 60)' }}>
+            <p className="text-sm mt-4" style={{ color: 'var(--color-text-1)' }}>
+              Your dossier will be live at: <strong style={{ color: 'var(--color-solar)' }}>
                 https://{form.githubUsername || 'your-username'}.github.io/{form.repoName || 'my-druid-dossier'}/
               </strong>
             </p>
@@ -555,24 +555,24 @@ function FaithStoryStep({ form, setForm, onBack, onNext }: {
 
   return (
     <div className="space-y-8">
-      <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'oklch(78% 0.16 60)' }}>
+      <h3 className="text-lg font-bold" style={{ fontFamily: '"Cormorant", Georgia, serif', fontStyle: 'italic', color: 'var(--color-solar)' }}>
         Your Character's Faith Story
       </h3>
-      <p className="text-[15px]" style={{ color: 'oklch(90% 0.005 55)', lineHeight: 1.7 }}>
+      <p className="text-[15px]" style={{ color: 'var(--color-text-1)', lineHeight: 1.7 }}>
         Every character carries the soul of their player. Answer these questions and a personal "Light Within"
         meditation will be generated, mapping your faith journey onto your character's story in Azeroth.
         Each combination produces unique prose. 6 x 6 x 6 x 6 = 1,296 possible stories.
       </p>
 
-      <FaithQuestion label="Where did your faith begin?" color="oklch(78% 0.16 60)" options={faithQuestions.origin} selected={form.faithOrigin} onSelect={setField('faithOrigin')} />
-      <FaithQuestion label="What tension do you carry?" color="oklch(68% 0.16 285)" options={faithQuestions.struggle} selected={form.faithStruggle} onSelect={setField('faithStruggle')} />
-      <FaithQuestion label="What virtue defines your play?" color="oklch(52% 0.14 155)" options={faithQuestions.virtue} selected={form.faithVirtue} onSelect={setField('faithVirtue')} />
-      <FaithQuestion label="What does your character serve?" color="oklch(78% 0.16 60)" options={faithQuestions.calling} selected={form.faithCalling} onSelect={setField('faithCalling')} />
+      <FaithQuestion label="Where did your faith begin?" color="var(--color-solar)" options={faithQuestions.origin} selected={form.faithOrigin} onSelect={setField('faithOrigin')} />
+      <FaithQuestion label="What tension do you carry?" color="var(--color-lunar)" options={faithQuestions.struggle} selected={form.faithStruggle} onSelect={setField('faithStruggle')} />
+      <FaithQuestion label="What virtue defines your play?" color="var(--color-nature)" options={faithQuestions.virtue} selected={form.faithVirtue} onSelect={setField('faithVirtue')} />
+      <FaithQuestion label="What does your character serve?" color="var(--color-solar)" options={faithQuestions.calling} selected={form.faithCalling} onSelect={setField('faithCalling')} />
 
       {/* Generated story preview */}
       {(form.faithOrigin || form.faithStruggle || form.faithVirtue || form.faithCalling) && (
-        <div className="p-6 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(78% 0.16 60 / 0.15)' }}>
-          <div className="text-[12px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.1em' }}>
+        <div className="p-6 rounded-lg" style={{ background: 'var(--color-surface-1)', border: '1px solid color-mix(in oklch, var(--color-solar) 15%, transparent)' }}>
+          <div className="text-[12px] uppercase font-bold mb-4" style={{ color: 'var(--color-solar)', letterSpacing: '0.1em' }}>
             {form.characterName ? `${form.characterName}'s Story` : 'Your Story Preview'}
           </div>
           {generateStory(form).split('\n\n').map((para, i) => (
@@ -580,7 +580,7 @@ function FaithStoryStep({ form, setForm, onBack, onNext }: {
               fontFamily: '"Cormorant", Georgia, serif',
               fontStyle: 'italic',
               fontSize: '1rem',
-              color: 'oklch(65% 0.015 55)',
+              color: 'var(--color-text-muted)',
               lineHeight: 1.85,
             }}>
               {para}
@@ -609,14 +609,14 @@ function FaithQuestion({ label, color, options, selected, onSelect }: {
             onClick={() => onSelect(opt.id)}
             className="text-left p-4 rounded-lg cursor-pointer transition-all"
             style={{
-              background: selected === opt.id ? 'oklch(14% 0.02 45)' : 'oklch(10.5% 0.012 45)',
-              border: `1px solid ${selected === opt.id ? `${color}60` : 'oklch(16% 0.012 45)'}`,
+              background: selected === opt.id ? 'var(--color-surface-2)' : 'var(--color-surface-1)',
+              border: `1px solid ${selected === opt.id ? `${color}60` : 'var(--color-border)'}`,
             }}
           >
-            <span className="text-[15px] font-bold block mb-1" style={{ color: selected === opt.id ? color : 'oklch(90% 0.005 55)' }}>
+            <span className="text-[15px] font-bold block mb-1" style={{ color: selected === opt.id ? color : 'var(--color-text-1)' }}>
               {opt.label}
             </span>
-            <span className="text-[13px]" style={{ color: 'oklch(56% 0.012 50)', lineHeight: 1.5 }}>{opt.desc}</span>
+            <span className="text-[13px]" style={{ color: 'var(--color-text-muted)', lineHeight: 1.5 }}>{opt.desc}</span>
           </button>
         ))}
       </div>
@@ -630,7 +630,7 @@ function Field({ label, value, onChange, placeholder, help, type = 'text' }: {
 }) {
   return (
     <div>
-      <label className="block text-[12px] uppercase font-bold mb-2" style={{ color: 'oklch(90% 0.005 55)', letterSpacing: '0.1em' }}>
+      <label className="block text-[12px] uppercase font-bold mb-2" style={{ color: 'var(--color-text-1)', letterSpacing: '0.1em' }}>
         {label}
       </label>
       <input
@@ -640,20 +640,20 @@ function Field({ label, value, onChange, placeholder, help, type = 'text' }: {
         placeholder={placeholder}
         className="w-full px-4 py-2.5 rounded-lg text-sm"
         style={{
-          background: 'oklch(11% 0.012 45)',
-          border: '1px solid oklch(18% 0.012 45)',
-          color: 'oklch(88% 0.01 60)',
+          background: 'var(--color-surface-1)',
+          border: '1px solid var(--color-surface-3)',
+          color: 'var(--color-text-1)',
           outline: 'none',
         }}
       />
-      {help && <p className="text-[13px] mt-1.5" style={{ color: 'oklch(90% 0.005 55)' }}>{help}</p>}
+      {help && <p className="text-[13px] mt-1.5" style={{ color: 'var(--color-text-1)' }}>{help}</p>}
     </div>
   );
 }
 
 function InfoBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="p-5 rounded-lg" style={{ background: 'oklch(10% 0.015 45)', border: '1px solid oklch(16% 0.015 45)' }}>
+    <div className="p-5 rounded-lg" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--color-border)' }}>
       {children}
     </div>
   );
@@ -671,17 +671,17 @@ function CodeBlock({ label, code }: { label: string; code: string }) {
   return (
     <div className="mb-4">
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[13px] font-semibold" style={{ color: 'oklch(90% 0.005 55)' }}>{label}</span>
+        <span className="text-[13px] font-semibold" style={{ color: 'var(--color-text-1)' }}>{label}</span>
         <button onClick={copy} className="text-[12px] font-semibold px-2 py-0.5 rounded cursor-pointer"
-          style={{ color: copied ? 'oklch(68% 0.18 155)' : 'oklch(90% 0.005 55)', background: 'oklch(14% 0.012 45)' }}>
+          style={{ color: copied ? 'var(--color-nature)' : 'var(--color-text-1)', background: 'var(--color-surface-2)' }}>
           {copied ? 'Copied!' : 'Copy'}
         </button>
       </div>
       <pre className="p-3 rounded text-[14px] overflow-x-auto" style={{
         fontFamily: '"JetBrains Mono", monospace',
-        background: 'oklch(8% 0.008 45)',
-        border: '1px solid oklch(14% 0.01 45)',
-        color: 'oklch(68% 0.015 55)',
+        background: 'var(--color-void)',
+        border: '1px solid var(--color-surface-2)',
+        color: 'var(--color-text-4)',
         lineHeight: 1.6,
         whiteSpace: 'pre-wrap',
         wordBreak: 'break-all',
@@ -697,13 +697,13 @@ function NavButtons({ onBack, onNext }: { onBack?: () => void; onNext?: () => vo
     <div className="flex gap-3 pt-4">
       {onBack && (
         <button onClick={onBack} className="px-5 py-2.5 rounded-lg text-sm font-semibold cursor-pointer"
-          style={{ color: 'oklch(90% 0.005 55)', background: 'oklch(12% 0.012 45)', border: '1px solid oklch(18% 0.012 45)' }}>
+          style={{ color: 'var(--color-text-1)', background: 'var(--color-surface-1)', border: '1px solid var(--color-surface-3)' }}>
           Back
         </button>
       )}
       {onNext && (
         <button onClick={onNext} className="px-5 py-2.5 rounded-lg text-sm font-bold cursor-pointer"
-          style={{ color: 'oklch(12% 0.01 45)', background: 'oklch(78% 0.16 60)' }}>
+          style={{ color: 'var(--color-surface-1)', background: 'var(--color-solar)' }}>
           Next
         </button>
       )}

@@ -42,7 +42,7 @@ export default function CelestialBg() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(180deg, oklch(7% 0.01 45 / 0.6) 0%, oklch(7% 0.01 45 / 0.85) 30%, oklch(7% 0.01 45 / 0.95) 60%, oklch(7% 0.01 45) 100%)',
+          background: 'linear-gradient(180deg, color-mix(in oklch, var(--color-void) 60%, transparent) 0%, color-mix(in oklch, var(--color-void) 85%, transparent) 30%, color-mix(in oklch, var(--color-void) 95%, transparent) 60%, var(--color-void) 100%)',
         }}
       />
     </div>

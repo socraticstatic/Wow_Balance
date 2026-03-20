@@ -14,8 +14,8 @@ export default class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return this.props.fallback || (
         <div className="px-6 py-16 text-center">
-          <p className="text-sm font-bold mb-2" style={{ color: 'oklch(72% 0.16 30)' }}>Section failed to load</p>
-          <p className="text-xs font-mono" style={{ color: 'oklch(55% 0.005 50)' }}>{this.state.error}</p>
+          <p className="text-sm font-bold mb-2" style={{ color: 'var(--color-error)' }}>Section failed to load</p>
+          <p className="text-xs font-mono" style={{ color: 'var(--color-text-muted)' }}>{this.state.error}</p>
         </div>
       );
     }

@@ -35,7 +35,7 @@ const sectionIds = ['hero', 'spiracle', 'progression', 'faith', 'aoe', 'talentbu
 function SectionFallback() {
   return (
     <div className="px-6 py-32 flex items-center justify-center">
-      <div className="w-5 h-5 rounded-full animate-pulse" style={{ background: 'oklch(78% 0.16 60 / 0.3)' }} />
+      <div className="w-5 h-5 rounded-full animate-pulse" style={{ background: 'color-mix(in oklch, var(--color-solar) 30%, transparent)' }} />
     </div>
   );
 }
@@ -160,10 +160,10 @@ export default function App() {
           className="fixed bottom-6 left-6 z-50 cursor-pointer"
           style={{
             width: 40, height: 40, borderRadius: '50%',
-            background: 'oklch(10% 0.012 45 / 0.85)',
+            background: 'color-mix(in oklch, var(--color-surface-1) 85%, transparent)',
             backdropFilter: 'blur(12px)',
-            border: '1px solid oklch(78% 0.16 60 / 0.2)',
-            color: 'oklch(78% 0.16 60)',
+            border: '1px solid color-mix(in oklch, var(--color-solar) 20%, transparent)',
+            color: 'var(--color-solar)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: '18px', lineHeight: 1,
             boxShadow: '0 4px 16px oklch(0% 0 0 / 0.3)',
@@ -255,14 +255,14 @@ export default function App() {
         </ErrorBoundary>
 
         <footer className="px-6 py-20 text-center">
-          <p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'oklch(28% 0.015 270)', letterSpacing: '0.14em' }}>
+          <p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'var(--color-text-ghost)', letterSpacing: '0.14em' }}>
             BALANCE DRUID DOSSIER
           </p>
-          <p className="text-[11px] mb-2" style={{ color: 'oklch(22% 0.01 270)' }}>
+          <p className="text-[11px] mb-2" style={{ color: 'var(--color-text-ghost)' }}>
             {meta.expansion} {meta.season}. Not affiliated with Blizzard Entertainment.
           </p>
-          <p className="text-[10px]" style={{ color: 'oklch(18% 0.008 270)' }}>
-            Press <kbd className="px-1.5 py-0.5 rounded text-[9px] font-mono" style={{ background: 'oklch(12% 0.01 270)', border: '1px solid oklch(18% 0.01 270)' }}>j</kbd> / <kbd className="px-1.5 py-0.5 rounded text-[9px] font-mono" style={{ background: 'oklch(12% 0.01 270)', border: '1px solid oklch(18% 0.01 270)' }}>k</kbd> to navigate sections
+          <p className="text-[10px]" style={{ color: 'var(--color-text-ghost)' }}>
+            Press <kbd className="px-1.5 py-0.5 rounded text-[9px] font-mono" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--color-surface-3)' }}>j</kbd> / <kbd className="px-1.5 py-0.5 rounded text-[9px] font-mono" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--color-surface-3)' }}>k</kbd> to navigate sections
           </p>
         </footer>
       </main>

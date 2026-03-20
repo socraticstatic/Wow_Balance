@@ -69,9 +69,9 @@ export default function GearDelta() {
   const sortedDeltas = [...deltas].sort((a, b) => b.gap - a.gap);
 
   const gapColor = (gap: number) =>
-    gap <= 20 ? 'oklch(68% 0.18 155)' :
-    gap <= 80 ? 'oklch(80% 0.18 80)' :
-    'oklch(72% 0.18 30)';
+    gap <= 20 ? 'var(--color-nature)' :
+    gap <= 80 ? 'var(--color-solar)' :
+    'var(--color-error)';
 
   return (
     <section className="px-6 sm:px-10 py-28 max-w-6xl mx-auto">
@@ -85,15 +85,15 @@ export default function GearDelta() {
 
       {/* Overview stats */}
       <div ref={r2} className="reveal grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-16">
-        <StatCard label="Avg Gap" value={`${avgGap} ilvl`} sub={`vs ${mythIlvl} myth cap`} color="oklch(72% 0.18 30)" />
-        <StatCard label="Tier Set" value={`${tierPieces.length}/5`} sub={tierPieces.length >= 4 ? '4pc active' : `${4 - tierPieces.length} to 4pc`} color="oklch(80% 0.18 80)" />
-        <StatCard label="Enchants" value={missingEnchants.length === 0 ? 'Done' : `${missingEnchants.length} missing`} sub={missingEnchants.length === 0 ? 'All slots' : 'Free stats!'} color={missingEnchants.length === 0 ? 'oklch(68% 0.18 155)' : 'oklch(72% 0.18 30)'} />
-        <StatCard label="Gems" value={missingGems.length === 0 ? 'Done' : `${missingGems.length} empty`} sub="Sockets" color={missingGems.length === 0 ? 'oklch(68% 0.18 155)' : 'oklch(80% 0.18 80)'} />
+        <StatCard label="Avg Gap" value={`${avgGap} ilvl`} sub={`vs ${mythIlvl} myth cap`} color="var(--color-error)" />
+        <StatCard label="Tier Set" value={`${tierPieces.length}/5`} sub={tierPieces.length >= 4 ? '4pc active' : `${4 - tierPieces.length} to 4pc`} color="var(--color-solar)" />
+        <StatCard label="Enchants" value={missingEnchants.length === 0 ? 'Done' : `${missingEnchants.length} missing`} sub={missingEnchants.length === 0 ? 'All slots' : 'Free stats!'} color={missingEnchants.length === 0 ? 'var(--color-nature)' : 'var(--color-error)'} />
+        <StatCard label="Gems" value={missingGems.length === 0 ? 'Done' : `${missingGems.length} empty`} sub="Sockets" color={missingGems.length === 0 ? 'var(--color-nature)' : 'var(--color-solar)'} />
       </div>
 
       {/* Tier set visual tracker */}
       <div ref={r3} className="reveal mb-16">
-        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(80% 0.18 80)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
           {bisGear.tierSet.name} Set Progress
         </div>
         <div className="flex gap-2 mb-3">
@@ -103,12 +103,12 @@ export default function GearDelta() {
               <div
                 key={slot}
                 className="glass p-3 rounded-lg flex-1 text-center"
-                style={{ borderTop: `2px solid ${has ? 'oklch(80% 0.18 80)' : 'oklch(20% 0.01 270)'}` }}
+                style={{ borderTop: `2px solid ${has ? 'var(--color-solar)' : 'var(--color-surface-3)'}` }}
               >
-                <div className="text-[11px] uppercase font-bold mb-1 capitalize" style={{ color: has ? 'oklch(80% 0.18 80)' : 'oklch(38% 0.01 50)' }}>
+                <div className="text-[11px] uppercase font-bold mb-1 capitalize" style={{ color: has ? 'var(--color-solar)' : 'var(--color-text-ghost)' }}>
                   {slot}
                 </div>
-                <div className="text-[13px]" style={{ color: has ? 'oklch(90% 0.005 55)' : 'oklch(30% 0.01 50)' }}>
+                <div className="text-[13px]" style={{ color: has ? 'var(--color-text-1)' : 'var(--color-text-ghost)' }}>
                   {has ? has.name : 'Missing'}
                 </div>
               </div>
@@ -116,18 +116,18 @@ export default function GearDelta() {
           })}
         </div>
         <div className="glass p-3 rounded-lg">
-          <div className="text-[13px] mb-1" style={{ color: 'oklch(90% 0.005 55)' }}>
-            <strong style={{ color: 'oklch(80% 0.18 80)' }}>2pc:</strong> {bisGear.tierSet.twoPiece}
+          <div className="text-[13px] mb-1" style={{ color: 'var(--color-text-1)' }}>
+            <strong style={{ color: 'var(--color-solar)' }}>2pc:</strong> {bisGear.tierSet.twoPiece}
           </div>
-          <div className="text-[13px]" style={{ color: 'oklch(90% 0.005 55)' }}>
-            <strong style={{ color: 'oklch(80% 0.18 80)' }}>4pc:</strong> {bisGear.tierSet.fourPiece}
+          <div className="text-[13px]" style={{ color: 'var(--color-text-1)' }}>
+            <strong style={{ color: 'var(--color-solar)' }}>4pc:</strong> {bisGear.tierSet.fourPiece}
           </div>
         </div>
       </div>
 
       {/* Gear comparison table */}
       <div ref={r4} className="reveal">
-        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(78% 0.16 60)', letterSpacing: '0.12em' }}>
+        <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'var(--color-solar)', letterSpacing: '0.12em' }}>
           Per-Slot Comparison (sorted by upgrade priority)
         </div>
 
@@ -137,22 +137,22 @@ export default function GearDelta() {
               key={d.slot}
               className="grid grid-cols-12 gap-2 items-center px-4 py-2.5 rounded-lg row-hover"
               style={{
-                background: i % 2 === 0 ? 'oklch(8% 0.006 45 / 0.4)' : 'oklch(9.5% 0.008 45 / 0.4)',
+                background: i % 2 === 0 ? 'color-mix(in oklch, var(--color-void) 40%, transparent)' : 'color-mix(in oklch, var(--color-surface-1) 40%, transparent)',
                 borderLeft: `2px solid ${gapColor(d.gap)}`,
               }}
             >
               {/* Slot */}
-              <div className="col-span-2 text-[13px] capitalize font-medium" style={{ color: 'oklch(90% 0.005 55)' }}>
+              <div className="col-span-2 text-[13px] capitalize font-medium" style={{ color: 'var(--color-text-1)' }}>
                 {d.slot.replace(/(\d)/, ' $1')}
-                {d.isTierSlot && <span className="ml-1 text-[10px]" style={{ color: 'oklch(80% 0.18 80)' }}>T</span>}
+                {d.isTierSlot && <span className="ml-1 text-[10px]" style={{ color: 'var(--color-solar)' }}>T</span>}
               </div>
 
               {/* Current item */}
               <div className="col-span-3">
-                <div className="text-[14px] font-semibold" style={{ color: 'oklch(75% 0.015 270)' }}>
+                <div className="text-[14px] font-semibold" style={{ color: 'var(--color-text-3)' }}>
                   {d.current.name}
                 </div>
-                <div className="text-[12px] font-mono" style={{ color: 'oklch(82% 0.005 55)', fontVariantNumeric: 'tabular-nums' }}>
+                <div className="text-[12px] font-mono" style={{ color: 'var(--color-text-2)', fontVariantNumeric: 'tabular-nums' }}>
                   ilvl {d.current.ilvl}
                 </div>
               </div>
@@ -166,17 +166,17 @@ export default function GearDelta() {
 
               {/* BiS target */}
               <div className="col-span-3">
-                <div className="text-[14px] font-semibold" style={{ color: d.bisTier ? 'oklch(80% 0.18 80)' : 'oklch(90% 0.005 55)' }}>
+                <div className="text-[14px] font-semibold" style={{ color: d.bisTier ? 'var(--color-solar)' : 'var(--color-text-1)' }}>
                   {d.bisName}
                 </div>
-                <div className="text-[12px]" style={{ color: 'oklch(82% 0.005 55)' }}>
+                <div className="text-[12px]" style={{ color: 'var(--color-text-2)' }}>
                   {d.bisSource}
                 </div>
               </div>
 
               {/* Progress bar */}
               <div className="col-span-2">
-                <div className="h-1 rounded-full overflow-hidden" style={{ background: 'oklch(12% 0.008 45)' }}>
+                <div className="h-1 rounded-full overflow-hidden" style={{ background: 'var(--color-surface-1)' }}>
                   <div className="h-full rounded-full" style={{ width: `${d.pct}%`, background: gapColor(d.gap) }} />
                 </div>
               </div>
@@ -184,12 +184,12 @@ export default function GearDelta() {
               {/* Enchant status */}
               <div className="col-span-1 text-right">
                 {d.missingEnchant && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: 'oklch(72% 0.18 30)', background: 'oklch(72% 0.18 30 / 0.1)' }}>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color: 'var(--color-error)', background: 'color-mix(in oklch, var(--color-error) 10%, transparent)' }}>
                     NO ENCHANT
                   </span>
                 )}
                 {d.isEnchantable && d.current.enchant && (
-                  <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ color: 'oklch(58% 0.14 155)', background: 'oklch(58% 0.14 155 / 0.08)' }}>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ color: 'var(--color-nature)', background: 'color-mix(in oklch, var(--color-nature) 8%, transparent)' }}>
                     OK
                   </span>
                 )}
@@ -202,21 +202,21 @@ export default function GearDelta() {
       {/* Missing enchants detail */}
       {missingEnchants.length > 0 && (
         <div className="mt-12">
-          <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'oklch(72% 0.18 30)', letterSpacing: '0.12em' }}>
+          <div className="text-[11px] uppercase font-bold mb-4" style={{ color: 'var(--color-error)', letterSpacing: '0.12em' }}>
             Missing Enchants - Priority Fix
           </div>
           <div className="space-y-1.5">
             {missingEnchants.map(d => (
               <div key={d.slot} className="flex items-center justify-between glass p-3 rounded-lg">
                 <div>
-                  <span className="text-[14px] font-semibold capitalize" style={{ color: 'oklch(75% 0.015 270)' }}>
+                  <span className="text-[14px] font-semibold capitalize" style={{ color: 'var(--color-text-3)' }}>
                     {d.slot.replace(/(\d)/, ' $1')}
                   </span>
-                  <span className="text-[13px] ml-2" style={{ color: 'oklch(48% 0.01 50)' }}>
+                  <span className="text-[13px] ml-2" style={{ color: 'var(--color-text-faint)' }}>
                     {d.current.name}
                   </span>
                 </div>
-                <div className="text-[13px] font-medium" style={{ color: 'oklch(68% 0.18 155)' }}>
+                <div className="text-[13px] font-medium" style={{ color: 'var(--color-nature)' }}>
                   {d.recommendedEnchant || 'Sim dependent'}
                 </div>
               </div>
@@ -226,7 +226,7 @@ export default function GearDelta() {
       )}
 
       <div className="mt-12 text-center">
-        <p className="text-[13px] italic" style={{ color: 'oklch(82% 0.005 55)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
+        <p className="text-[13px] italic" style={{ color: 'var(--color-text-2)', fontFamily: '"Cormorant", Georgia, serif', fontSize: '0.85rem' }}>
           BiS targets are for Mythic raid. Gear delta updates when character data syncs.
         </p>
       </div>
@@ -237,9 +237,9 @@ export default function GearDelta() {
 function StatCard({ label, value, sub, color }: { label: string; value: string; sub: string; color: string }) {
   return (
     <div className="glass p-4 rounded-lg">
-      <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'oklch(48% 0.01 50)', letterSpacing: '0.12em' }}>{label}</div>
+      <div className="text-[11px] uppercase font-bold mb-2" style={{ color: 'var(--color-text-faint)', letterSpacing: '0.12em' }}>{label}</div>
       <div className="text-lg font-extrabold font-mono mb-0.5" style={{ color, fontVariantNumeric: 'tabular-nums' }}>{value}</div>
-      <div className="text-[12px]" style={{ color: 'oklch(45% 0.01 50)' }}>{sub}</div>
+      <div className="text-[12px]" style={{ color: 'var(--color-text-faint)' }}>{sub}</div>
     </div>
   );
 }
