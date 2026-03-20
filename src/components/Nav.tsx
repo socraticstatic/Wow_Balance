@@ -26,9 +26,14 @@ const items = [
   { id: 'setup', label: 'Setup', icon: Settings },
 ];
 
-interface Props { active: string; onNav: (id: string) => void }
+interface Props {
+  active: string;
+  onNav: (id: string) => void;
+  badges?: Record<string, boolean>;
+  sectionRelevance?: Record<string, boolean>;
+}
 
-export default function Nav({ active, onNav }: Props) {
+export default function Nav({ active, onNav, badges = {}, sectionRelevance = {} }: Props) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const railRef = useRef<HTMLDivElement>(null);
@@ -137,6 +142,9 @@ export default function Nav({ active, onNav }: Props) {
             const isHovered = hovered === item.id;
             const showLabel = isHovered || isActive;
 
+            const isRelevant = sectionRelevance[item.id] !== false;
+            const hasBadge = badges[item.id] === true;
+
             return (
               <button
                 key={item.id}
@@ -149,7 +157,8 @@ export default function Nav({ active, onNav }: Props) {
                   padding: '5px 6px',
                   borderRadius: '6px',
                   background: isActive ? 'var(--color-surface-active)' : 'transparent',
-                  transition: 'background 0.15s ease',
+                  opacity: isRelevant ? 1 : 0.35,
+                  transition: 'background 0.15s ease, opacity 0.3s ease',
                 }}
               >
                 {showLabel && (
@@ -180,6 +189,18 @@ export default function Nav({ active, onNav }: Props) {
                     transition: 'color 0.15s ease',
                   }}
                 />
+
+                {hasBadge && !isActive && (
+                  <div
+                    className="absolute -top-0.5 -right-0.5"
+                    style={{
+                      width: '5px',
+                      height: '5px',
+                      borderRadius: '50%',
+                      background: 'var(--color-solar)',
+                    }}
+                  />
+                )}
 
                 {isActive && (
                   <div

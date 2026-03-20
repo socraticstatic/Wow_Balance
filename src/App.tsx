@@ -5,6 +5,10 @@ import Hero from './pages/Hero';
 import CelestialBg from './components/CelestialBg';
 import CursorTrail from './components/CursorTrail';
 import SectionArt from './components/SectionArt';
+import MissionBriefing from './components/MissionBriefing';
+import { ProgressionProvider, useProgression } from './context/ProgressionContext';
+import { useLiveData } from './hooks/useLiveData';
+import { useCoaching } from './hooks/useCoaching';
 import { meta } from './data';
 
 // Lazy load below-fold sections for faster initial paint
@@ -41,9 +45,31 @@ function SectionFallback() {
 }
 
 export default function App() {
+  const { data, sessionState, isLocal } = useLiveData();
+  const coaching = useCoaching(
+    data?.recentFights || [],
+    data?.sessionHistory || [],
+    data?.presence?.level || 86,
+    data?.presence?.ilvl || 156,
+  );
+
+  return (
+    <ProgressionProvider data={data}>
+      <AppContent data={data} sessionState={sessionState} isLocal={isLocal} coaching={coaching} />
+    </ProgressionProvider>
+  );
+}
+
+function AppContent({ data, sessionState, isLocal, coaching }: {
+  data: ReturnType<typeof useLiveData>['data'];
+  sessionState: ReturnType<typeof useLiveData>['sessionState'];
+  isLocal: boolean;
+  coaching: ReturnType<typeof useCoaching>;
+}) {
   const [active, setActive] = useState('hero');
   const [scrollPct, setScrollPct] = useState(0);
   const refs = useRef<Record<string, HTMLDivElement | null>>({});
+  const { sectionRelevance } = useProgression();
 
   // Section observer - uses scroll position as primary, IO as fallback
   useEffect(() => {
@@ -151,7 +177,7 @@ export default function App() {
       <CelestialBg />
       <CursorTrail />
       <div className="scroll-bar" style={{ width: `${scrollPct}%` }} />
-      <Nav active={active} onNav={nav} />
+      <Nav active={active} onNav={nav} sectionRelevance={sectionRelevance} />
 
       {/* Scroll to top */}
       {scrollPct > 5 && (
@@ -177,6 +203,7 @@ export default function App() {
 
       <main className="relative z-10">
         <div id="hero" ref={ref('hero')}><Hero /></div>
+        <MissionBriefing data={data} sessionState={sessionState} coaching={coaching} isLocal={isLocal} />
         <Divider />
         <ErrorBoundary>
         <Suspense fallback={<SectionFallback />}>
@@ -222,29 +249,29 @@ export default function App() {
           <Divider />
           <div id="gearpriority" ref={ref('gearpriority')}><GearPriority /></div>
           <Divider />
-          <div id="consumables" ref={ref('consumables')} className="relative">
+          <div id="consumables" ref={ref('consumables')} className="relative" style={{ opacity: sectionRelevance['consumables'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <SectionArt variant="nature" />
             <Consumables />
           </div>
           <Divider />
-          <div id="weekly" ref={ref('weekly')}><WeeklyChecklist /></div>
+          <div id="weekly" ref={ref('weekly')} style={{ opacity: sectionRelevance['weekly'] ? 1 : 0.4, transition: 'opacity 0.3s' }}><WeeklyChecklist /></div>
           <Divider />
-          <div id="raid" ref={ref('raid')} className="relative">
+          <div id="raid" ref={ref('raid')} className="relative" style={{ opacity: sectionRelevance['raid'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <SectionArt variant="solar" />
             <BossGuides />
           </div>
           <Divider />
-          <div id="dungeons" ref={ref('dungeons')} className="relative">
+          <div id="dungeons" ref={ref('dungeons')} className="relative" style={{ opacity: sectionRelevance['dungeons'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <SectionArt variant="void" />
             <DungeonGuides />
           </div>
           <Divider />
-          <div id="cdplanner" ref={ref('cdplanner')} className="relative">
+          <div id="cdplanner" ref={ref('cdplanner')} className="relative" style={{ opacity: sectionRelevance['cdplanner'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <SectionArt variant="lunar" />
             <MplusCdPlanner />
           </div>
           <Divider />
-          <div id="rankings" ref={ref('rankings')}><Rankings /></div>
+          <div id="rankings" ref={ref('rankings')} style={{ opacity: sectionRelevance['rankings'] ? 1 : 0.4, transition: 'opacity 0.3s' }}><Rankings /></div>
           <Divider />
           <div id="live" ref={ref('live')}><LiveSession /></div>
           <Divider />
