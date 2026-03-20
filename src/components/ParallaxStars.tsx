@@ -38,7 +38,9 @@ export default function ParallaxStars({ speed = 1, className = '' }: Props) {
   const shadowsBig = useMemo(() => generateBoxShadows(80, 2560, 2560, starColors), []);
 
   return (
-    <div className={`fixed inset-0 z-0 pointer-events-none overflow-hidden ${className}`} aria-hidden="true">
+    <div className={`fixed inset-0 z-0 pointer-events-none overflow-hidden transition-opacity duration-500 ${className}`} aria-hidden="true"
+      style={{ opacity: 'var(--stars-opacity, 1)' }}
+    >
       <style>{`
         @keyframes starDrift {
           from { transform: translateY(0); }

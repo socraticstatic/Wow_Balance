@@ -1,0 +1,68 @@
+<h2>Three Approaches to a Living Dossier</h2>
+<p class="subtitle">Stale → Fresh. Passive → Actionable. Wiki → War Room.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Smart Dashboard</h3>
+      <p><strong>Concept:</strong> Replace the 22-section scroll with a single adaptive dashboard. When you open the app, it shows exactly what matters based on your level, gear, and last session.</p>
+      <p><strong>What changes:</strong></p>
+      <ul>
+        <li>"Today's priorities" card - 3 things to do when you log in</li>
+        <li>Gear delta front and center - what to chase, where to get it</li>
+        <li>Rotation drill - your weakest mechanic from last session</li>
+        <li>Weekly reset awareness - vault, world bosses, lockouts</li>
+        <li>Deep sections still exist but are accessed on demand</li>
+      </ul>
+      <p><strong>Data requirement:</strong> Addon + watcher keep character state fresh. App reads level/ilvl/zone and adapts.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Immediately actionable every time you open it</li><li>No scrolling through irrelevant endgame content at level 86</li><li>Feels alive - different every session</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Big restructure of the app layout</li><li>Requires solid data pipeline to be useful</li><li>Loses the "dossier" aesthetic</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Living Dossier + Command Bar</h3>
+      <p><strong>Concept:</strong> Keep the beautiful scroll format, but inject a persistent "mission briefing" bar at the top and make sections context-aware based on your current state.</p>
+      <p><strong>What changes:</strong></p>
+      <ul>
+        <li>Sticky mission briefing - 3 prioritized actions based on your state</li>
+        <li>Sections dim/highlight based on relevance (raid guides dim at level 86)</li>
+        <li>Each section header shows freshness indicator (synced 2h ago, stale, live)</li>
+        <li>Combat coaching card appears after each session with specific fixes</li>
+        <li>"What changed" badge on sections when data updates</li>
+      </ul>
+      <p><strong>Data requirement:</strong> Same addon pipeline, but sections subscribe to data changes and re-render.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Preserves the dossier feel you built</li><li>Incrementally adoptable - enhance sections one at a time</li><li>Actionable without losing the reference depth</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Still 22 sections to scroll through</li><li>Risk of feeling like a wiki with badges bolted on</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hybrid: Mission Control + Deep Dossier</h3>
+      <p><strong>Concept:</strong> Two modes in one app. Default view is a tight mission control screen (5-6 cards max). Toggle reveals the full dossier beneath. The mission control IS the hero section.</p>
+      <p><strong>What changes:</strong></p>
+      <ul>
+        <li><strong>Mission Control (default view):</strong> Level/ilvl/spec card, "Do This Next" priorities, gear gap summary, rotation grade from last session, weekly progress</li>
+        <li><strong>Deep Dossier (toggle):</strong> Full 22-section scroll, but sections are reordered by relevance to your current progression phase</li>
+        <li>Mission control cards link directly to the relevant dossier section</li>
+        <li>Data freshness is the heartbeat - last sync timestamp always visible</li>
+      </ul>
+      <p><strong>Data requirement:</strong> Same pipeline. Mission control pulls from live-session.json + character state.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Best of both worlds - actionable AND deep</li><li>Dossier stays intact, mission control is additive</li><li>Natural upgrade path - improve mission control over time</li><li>Feels like a tool AND a reference</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Two UX modes to maintain</li><li>Transition between modes needs careful design</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top: 2rem;">My recommendation: <strong>C (Hybrid)</strong>. You keep everything you built. The mission control gives you what's actionable. The dossier gives you depth when you want it. And the toggle means you're never more than one click from either.</p>

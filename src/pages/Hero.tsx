@@ -26,8 +26,8 @@ export default function Hero() {
 
   return (
     <section className="relative px-6 sm:px-10 pt-20 sm:pt-32 pb-28 max-w-6xl mx-auto overflow-hidden">
-      {/* Lightning discharge background - Astral purple, offset right */}
-      <div className="absolute inset-0 -z-10 opacity-20" style={{ mixBlendMode: 'screen' }}>
+      {/* Lightning discharge background - Astral purple, offset right. Hidden in light mode. */}
+      <div className="absolute inset-0 -z-10 transition-opacity duration-500" style={{ opacity: 'var(--lightning-opacity, 0.2)', mixBlendMode: 'screen' }}>
         <Lightning hue={265} speed={0.35} intensity={0.45} size={1.2} xOffset={0.8} />
       </div>
       {/* Fade lightning out at bottom */}

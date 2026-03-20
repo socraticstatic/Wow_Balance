@@ -313,6 +313,7 @@ html.light ::selection { background: oklch(48% 0.14 55 / 0.3); color: oklch(15% 
 html.light .row-hover:hover { background: oklch(88% 0.01 55) !important; }
 html.light body::before { opacity: 0.02; }
 html.light body::after { background: radial-gradient(ellipse at 30% 20%, transparent 30%, oklch(96% 0.008 60 / 0.3) 100%); }
+html.light { --stars-opacity: 0; --lightning-opacity: 0; }
 html.light .glass { background: oklch(97% 0.005 55 / 0.7); border-color: oklch(78% 0.12 60 / 0.15); }
 html.light .glass-solar { background: oklch(95% 0.015 60 / 0.6); border-color: oklch(78% 0.12 60 / 0.2); }
 html.light .glass-lunar { background: oklch(94% 0.01 285 / 0.6); border-color: oklch(68% 0.12 285 / 0.2); }
