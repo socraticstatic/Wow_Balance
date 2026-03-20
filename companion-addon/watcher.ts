@@ -14,6 +14,8 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
+import { CombatLogParser, getCombatLogPath } from './combat-log-parser';
+import { startLocalServer } from './local-server';
 
 // Detect platform and set WoW paths
 const isWindows = process.platform === 'win32';
@@ -316,10 +318,104 @@ async function main() {
 }
 
 let lastModified = 0;
+let combatParser: CombatLogParser | null = null;
+let combatLogPath: string | null = null;
+let lastCombatTime: number = Date.now();
+let sessionHistory: any[] = [];
+let currentSessionFights: any[] = [];
+const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes
+const MAX_SESSION_HISTORY = 20;
+
+// Load persisted session history from disk if it exists
+function loadSessionHistory(outputDir: string): void {
+  const historyPath = join(outputDir, 'session-history.json');
+  if (existsSync(historyPath)) {
+    try {
+      sessionHistory = JSON.parse(readFileSync(historyPath, 'utf-8'));
+      console.log(`  Loaded ${sessionHistory.length} previous sessions from history.`);
+    } catch {
+      sessionHistory = [];
+    }
+  }
+}
+
+function saveSessionHistory(outputDir: string): void {
+  const historyPath = join(outputDir, 'session-history.json');
+  writeFileSync(historyPath, JSON.stringify(sessionHistory, null, 2));
+}
+
+function summarizeAndArchiveSession(outputDir: string): void {
+  if (currentSessionFights.length === 0) return;
+
+  const totalFights = currentSessionFights.length;
+  const totalDuration = currentSessionFights.reduce((sum, f) => sum + (f.duration || 0), 0);
+  const avgDps = totalFights > 0
+    ? Math.round(currentSessionFights.reduce((sum, f) => sum + (f.dps || 0), 0) / totalFights)
+    : 0;
+
+  const session = {
+    startTime: currentSessionFights[0]?.timestamp || new Date().toISOString(),
+    endTime: currentSessionFights[currentSessionFights.length - 1]?.timestamp || new Date().toISOString(),
+    totalFights,
+    totalDuration,
+    avgDps,
+    highestDps: Math.max(...currentSessionFights.map(f => f.dps || 0), 0),
+    archivedAt: new Date().toISOString(),
+  };
+
+  sessionHistory.push(session);
+  if (sessionHistory.length > MAX_SESSION_HISTORY) {
+    sessionHistory = sessionHistory.slice(-MAX_SESSION_HISTORY);
+  }
+
+  saveSessionHistory(outputDir);
+
+  const ts = new Date().toLocaleTimeString();
+  console.log(`[${ts}] Session archived: ${totalFights} fights, avg ${avgDps.toLocaleString()} DPS`);
+
+  currentSessionFights = [];
+}
+
+function checkSessionTimeout(outputDir: string): void {
+  if (currentSessionFights.length === 0) return;
+  const elapsed = Date.now() - lastCombatTime;
+  if (elapsed >= SESSION_TIMEOUT_MS) {
+    console.log('  No new combat for 30 minutes. Archiving session...');
+    summarizeAndArchiveSession(outputDir);
+  }
+}
 
 function startWatching(svPath: string) {
-  // Initial read
+  const outputDir = process.cwd();
+
+  // Start local server for real-time data access
+  startLocalServer(join(outputDir, 'live-session.json'));
+
+  // Load session history from disk
+  loadSessionHistory(outputDir);
+
+  // Initial read to get player name for combat log parser
   processFile(svPath);
+
+  // Initialize combat log parser using player name from SavedVariables
+  try {
+    const content = readFileSync(svPath, 'utf-8');
+    const db = parseSavedVariables(content);
+    const appData = db ? transformForApp(db) : null;
+    const playerName = appData?.playerName || 'Unknown';
+
+    combatParser = new CombatLogParser(playerName);
+    combatLogPath = getCombatLogPath();
+
+    if (combatLogPath) {
+      console.log(`  Combat log parser initialized for "${playerName}"`);
+      console.log(`  Watching combat log: ${combatLogPath}\n`);
+    } else {
+      console.log('  Combat log not found. Parser will skip combat log parsing.\n');
+    }
+  } catch (e) {
+    console.log(`  Could not initialize combat log parser: ${(e as Error).message}`);
+  }
 
   // Watch for changes
   console.log('Watching for changes... (WoW writes on /reload, logout, or zone change)\n');
@@ -335,7 +431,74 @@ function startWatching(svPath: string) {
     } catch {
       // File might be locked during write
     }
+
+    // Parse new combat log lines if parser and path are available
+    if (combatParser && combatLogPath && existsSync(combatLogPath)) {
+      try {
+        const newFights = combatParser.parseNewLines(combatLogPath);
+        if (newFights && newFights.length > 0) {
+          lastCombatTime = Date.now();
+          currentSessionFights.push(...newFights);
+
+          // Merge new fights into live-session.json
+          mergeCombatFights(newFights, outputDir);
+        }
+      } catch {
+        // Combat log might be locked or temporarily unavailable
+      }
+    }
+
+    // Check if we should archive the current session
+    checkSessionTimeout(outputDir);
   }, 2000);
+}
+
+function mergeCombatFights(newFights: any[], outputDir: string): void {
+  const outputPath = join(outputDir, 'live-session.json');
+  if (!existsSync(outputPath)) return;
+
+  try {
+    const existing = JSON.parse(readFileSync(outputPath, 'utf-8'));
+
+    // Append new fights to recentFights, keep last 20
+    const merged = [...(existing.recentFights || []), ...newFights];
+    existing.recentFights = merged.slice(-20);
+
+    // Recalculate summary stats with all fights
+    const allFights = existing.recentFights;
+    const totalFights = allFights.length;
+    existing.summary = {
+      ...existing.summary,
+      totalFights,
+      avgDps: totalFights > 0
+        ? Math.round(allFights.reduce((sum: number, f: any) => sum + (f.dps || 0), 0) / totalFights)
+        : 0,
+      avgStarfallUptime: totalFights > 0
+        ? Math.round(allFights.reduce((sum: number, f: any) => sum + (f.starfallUptime || 0), 0) / totalFights)
+        : 0,
+      totalApWasted: allFights.reduce((sum: number, f: any) => sum + (f.apWasted || 0), 0),
+    };
+
+    // Update bests
+    existing.bests = {
+      ...existing.bests,
+      highestDps: Math.max(...allFights.map((f: any) => f.dps || 0), existing.bests?.highestDps || 0),
+    };
+
+    // Attach session history
+    existing.sessionHistory = sessionHistory;
+
+    existing.lastUpdate = new Date().toISOString();
+    writeFileSync(outputPath, JSON.stringify(existing, null, 2));
+
+    const ts = new Date().toLocaleTimeString();
+    console.log(`[${ts}] Combat log: merged ${newFights.length} new fight(s)`);
+
+    // Push updated data to GitHub
+    pushToGitHub(existing).catch(() => {});
+  } catch (e) {
+    console.error('  Error merging combat fights:', (e as Error).message);
+  }
 }
 
 function processFile(svPath: string) {
