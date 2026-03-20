@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { meta, builds } from '../data';
 import { useReveal } from '../hooks/useReveal';
 import TiltCard from '../components/TiltCard';
+import Lightning from '../components/Lightning';
 
 export default function Hero() {
   const r1 = useReveal();
@@ -24,7 +25,15 @@ export default function Hero() {
   const letters = 'Balance'.split('');
 
   return (
-    <section className="px-6 sm:px-10 pt-20 sm:pt-32 pb-28 max-w-6xl mx-auto">
+    <section className="relative px-6 sm:px-10 pt-20 sm:pt-32 pb-28 max-w-6xl mx-auto overflow-hidden">
+      {/* Lightning discharge background - Astral purple, offset right */}
+      <div className="absolute inset-0 -z-10 opacity-20" style={{ mixBlendMode: 'screen' }}>
+        <Lightning hue={265} speed={0.35} intensity={0.45} size={1.2} xOffset={0.8} />
+      </div>
+      {/* Fade lightning out at bottom */}
+      <div className="absolute inset-x-0 bottom-0 h-40 -z-10" style={{
+        background: 'linear-gradient(to top, var(--color-void), transparent)',
+      }} />
       {/* Context breadcrumb */}
       <div ref={r1} className="reveal flex items-center gap-2.5 mb-14">
         {[meta.expansion, `Patch ${meta.patch}`, meta.season].map((t, i) => (
