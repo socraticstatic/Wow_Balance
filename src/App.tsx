@@ -4,7 +4,6 @@ import Nav from './components/Nav';
 import Hero from './pages/Hero';
 import CelestialBg from './components/CelestialBg';
 import CursorTrail from './components/CursorTrail';
-import SectionArt from './components/SectionArt';
 import MissionBriefing from './components/MissionBriefing';
 import { ProgressionProvider, useProgression } from './context/ProgressionContext';
 import { useLiveData } from './hooks/useLiveData';
@@ -213,35 +212,29 @@ function AppContent({ data, sessionState, isLocal, coaching }: {
           <Divider />
           <div id="faith" ref={ref('faith')}><Faith /></div>
           <Divider />
-          <div id="aoe" ref={ref('aoe')} className="relative">
-            <SectionArt variant="eclipse" />
+          <div id="aoe" ref={ref('aoe')}>
             <AoeOptimization />
           </div>
           <Divider />
-          <div id="talentbuild" ref={ref('talentbuild')} className="relative">
-            <SectionArt variant="solar" />
+          <div id="talentbuild" ref={ref('talentbuild')}>
             <TalentBuild />
           </div>
           <Divider />
-          <div id="breakpoints" ref={ref('breakpoints')} className="relative">
-            <SectionArt variant="lunar" />
+          <div id="breakpoints" ref={ref('breakpoints')}>
             <AoeBreakpoints />
           </div>
           <Divider />
-          <div id="keybinds" ref={ref('keybinds')} className="relative">
-            <SectionArt variant="solar" />
+          <div id="keybinds" ref={ref('keybinds')}>
             <ActionBars />
           </div>
           <Divider />
           <div id="macros" ref={ref('macros')}><Macros /></div>
           <Divider />
-          <div id="builds" ref={ref('builds')} className="relative">
-            <SectionArt variant="lunar" />
+          <div id="builds" ref={ref('builds')}>
             <Builds />
           </div>
           <Divider />
-          <div id="gear" ref={ref('gear')} className="relative">
-            <SectionArt variant="solar" />
+          <div id="gear" ref={ref('gear')}>
             <Gear />
           </div>
           <Divider />
@@ -249,25 +242,21 @@ function AppContent({ data, sessionState, isLocal, coaching }: {
           <Divider />
           <div id="gearpriority" ref={ref('gearpriority')}><GearPriority /></div>
           <Divider />
-          <div id="consumables" ref={ref('consumables')} className="relative" style={{ opacity: sectionRelevance['consumables'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
-            <SectionArt variant="nature" />
+          <div id="consumables" ref={ref('consumables')} style={{ opacity: sectionRelevance['consumables'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <Consumables />
           </div>
           <Divider />
           <div id="weekly" ref={ref('weekly')} style={{ opacity: sectionRelevance['weekly'] ? 1 : 0.4, transition: 'opacity 0.3s' }}><WeeklyChecklist /></div>
           <Divider />
-          <div id="raid" ref={ref('raid')} className="relative" style={{ opacity: sectionRelevance['raid'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
-            <SectionArt variant="solar" />
+          <div id="raid" ref={ref('raid')} style={{ opacity: sectionRelevance['raid'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <BossGuides />
           </div>
           <Divider />
-          <div id="dungeons" ref={ref('dungeons')} className="relative" style={{ opacity: sectionRelevance['dungeons'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
-            <SectionArt variant="void" />
+          <div id="dungeons" ref={ref('dungeons')} style={{ opacity: sectionRelevance['dungeons'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <DungeonGuides />
           </div>
           <Divider />
-          <div id="cdplanner" ref={ref('cdplanner')} className="relative" style={{ opacity: sectionRelevance['cdplanner'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
-            <SectionArt variant="lunar" />
+          <div id="cdplanner" ref={ref('cdplanner')} style={{ opacity: sectionRelevance['cdplanner'] ? 1 : 0.4, transition: 'opacity 0.3s' }}>
             <MplusCdPlanner />
           </div>
           <Divider />
